@@ -1,0 +1,266 @@
+.main-navigation {
+  font-family: 'Futura Bold', sans-serif;
+  display: block;
+  width: 100%;
+  padding-bottom: 26px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.main-navigation-footer {
+  height: 40px;
+}
+
+.main-navigation .menu-nav-container {
+  display: table;
+  width: 100%;
+  border-top: 2px solid #4d4d4d;
+  border-bottom: 2px solid #4d4d4d;
+  position: relative;
+}
+
+.main-navigation ul {
+  width: 100%;
+  list-style: none;
+  display: table-row;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation .menu > li {
+  display: table-cell;
+  text-align: center;
+  letter-spacing: -0.054em;
+}
+
+.main-navigation .menu > li > a {
+  height: 28px;
+  margin: 4px 0;
+  padding: 8px 6px 6px 5px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  border-collapse: separate; /* IE9 (for box-shadows) */
+  position: relative;
+}
+
+.main-navigation .menu > li > a:hover,
+.main-navigation .menu > li > a:focus {
+  background-color: #303030;
+  border-color: rgba(255, 255, 255, .05);
+  box-shadow: inset rgba(0, 0, 0, 0.05) 0px 0px 1px;
+  text-shadow: 0px 1.5px rgba(0, 0, 0, .6), 0px -1.25px rgba(0, 0, 0, 1);
+}
+
+.main-navigation .menu > li:first-child > a {
+  margin-left: 0px;
+  background-color: #f06;
+  border-color: rgba(255, 255, 255, .1);
+  color: black;
+  box-shadow: inset rgba(0, 0, 0, 0.1) 0px 0px 1px;
+  text-shadow: 0px 1px rgba(255, 255, 255, .25);
+}
+
+.main-navigation .menu > li:first-child > a:hover,
+.main-navigation .menu > li:first-child > a:focus {
+  background-color: white;
+  border-color: white;
+}
+
+.main-navigation .menu > li.current-menu-item:first-child > a,
+.main-navigation .menu > li.current-menu-ancestor:first-child > a,
+.main-navigation .menu > li.current-page-ancestor:first-child > a,
+.main-navigation .menu > li.current-menu-item:first-child > a:hover,
+.main-navigation .menu > li.current-menu-item:first-child > a:focus,
+.main-navigation .menu > li.current-menu-ancestor:first-child > a:hover,
+.main-navigation .menu > li.current-menu-ancestor:first-child > a:focus,
+.main-navigation .menu > li.current-page-ancestor:first-child > a:hover,
+.main-navigation .menu > li.current-page-ancestor:first-child > a:focus {
+  background-color: #f06;
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.main-navigation .menu > li.current-menu-item:first-child > a:after,
+.main-navigation .menu > li.current-menu-item:first-child > a::after,
+.main-navigation .menu > li.current-menu-ancestor:first-child > a:after,
+.main-navigation .menu > li.current-menu-ancestor:first-child > a::after,
+.main-navigation .menu > li.current-page-ancestor:first-child > a:after,
+.main-navigation .menu > li.current-page-ancestor:first-child > a::after {
+  border-top-color: #f06;
+}
+
+.main-navigation-footer .menu > li.current-menu-item:first-child > a:after,
+.main-navigation-footer .menu > li.current-menu-item:first-child > a::after,
+.main-navigation-footer .menu > li.current-menu-ancestor:first-child > a:after,
+.main-navigation-footer .menu > li.current-menu-ancestor:first-child > a::after,
+.main-navigation-footer .menu > li.current-page-ancestor:first-child > a:after,
+.main-navigation-footer .menu > li.current-page-ancestor:first-child > a::after {
+  border-bottom-color: #f06;
+}
+
+.main-navigation .menu > li.current-menu-item > a,
+.main-navigation .menu > li.current-menu-ancestor > a,
+.main-navigation .menu > li.current-page-ancestor > a {
+  background-color: #3cf;
+  border-color: rgba(255, 255, 255, .3);
+  box-shadow: inset rgba(0, 0, 0, 0.1) 0px 0px 1px;
+  color: black;
+  text-shadow: 0px 1px rgba(255, 255, 255, .25);
+}
+
+/* the transparent borders clip the top border into a triangle */
+.main-navigation .menu > li.current-menu-item > a:before, /* IE8 support */
+.main-navigation .menu > li.current-menu-item > a::before,
+.main-navigation .menu > li.current-menu-ancestor > a:before, /* IE8 support */
+.main-navigation .menu > li.current-menu-ancestor > a::before,
+.main-navigation .menu > li.current-page-ancestor > a:before, /* IE8 support */
+.main-navigation .menu > li.current-page-ancestor > a::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -8px;
+  border-top: 8px solid black;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+
+/* the border stuff makes it a triangle */
+.main-navigation .menu > li.current-menu-item > a:after, /* IE8 support */
+.main-navigation .menu > li.current-menu-item > a::after,
+.main-navigation .menu > li.current-menu-ancestor > a:after, /* IE8 support */
+.main-navigation .menu > li.current-menu-ancestor > a::after,
+.main-navigation .menu > li.current-page-ancestor > a:after, /* IE8 support */
+.main-navigation .menu > li.current-page-ancestor > a::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -8px;
+  border-top: 8px solid #3cf;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+
+.main-navigation-footer .menu > li.current-menu-item > a:before, /* IE8 support */
+.main-navigation-footer .menu > li.current-menu-item > a::before,
+.main-navigation-footer .menu > li.current-menu-ancestor > a:before, /* IE8 support */
+.main-navigation-footer .menu > li.current-menu-ancestor > a::before,
+.main-navigation-footer .menu > li.current-page-ancestor > a:before, /* IE8 support */
+.main-navigation-footer .menu > li.current-page-ancestor > a::before {
+  bottom: auto;
+  top: -9px;
+  border-top: none;
+  border-bottom: 8px solid black;
+}
+
+.main-navigation-footer .menu > li.current-menu-item > a:after, /* IE8 support */
+.main-navigation-footer .menu > li.current-menu-item > a::after,
+.main-navigation-footer .menu > li.current-menu-ancestor > a:after, /* IE8 support */
+.main-navigation-footer .menu > li.current-menu-ancestor > a::after,
+.main-navigation-footer .menu > li.current-page-ancestor > a:after, /* IE8 support */
+.main-navigation-footer .menu > li.current-page-ancestor > a::after {
+  bottom: auto;
+  top: -7px;
+  border-top: none;
+  border-bottom: 8px solid #3cf;
+}
+
+.main-navigation a {
+  color: inherit;
+  line-height: 12px;
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+.main-navigation ul ul {
+  position: absolute;
+  float: left;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin-top: -2px;
+  padding-top: 8px;
+  font-family: 'Lucida Grande', Arial, Helvetica, san-serif;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: none;
+}
+
+.main-navigation ul li.current-menu-item ul,
+.main-navigation ul li.current-menu-ancestor ul,
+.main-navigation ul li.current-page-ancestor ul {
+  display: block;
+}
+
+/* Need .main-navigation-footer to give this rule higer precedence than the above */
+.main-navigation.main-navigation-footer ul li ul {
+  display: none;
+}
+
+.main-navigation ul ul:before,
+.main-navigation ul ul::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  background: url(images/bg_subNav.gif) no-repeat;
+}
+
+.main-navigation ul.sub-menu ul.sub-menu {
+  display: none;
+}
+
+.main-navigation ul ul a {
+  color: #0cf;
+  display: inline;
+}
+
+.main-navigation ul ul li.current-menu-item a,
+.main-navigation ul ul li.current-page-ancestor a {
+  color: white;
+}
+
+.main-navigation ul ul li.current-menu-ancestor a {
+  color: #0cf;
+}
+
+.main-navigation ul ul li {
+  display: inline-block;
+}
+
+.main-navigation ul ul li + li:before,
+.main-navigation ul ul li + li::before {
+  content: " • ";
+  padding: 0 4px;
+}
+
+.main-navigation li:hover > a {
+}
+
+.main-navigation ul ul :hover > a {
+}
+
+.main-navigation ul ul a:hover {
+  color: white;
+}
+
+.main-navigation ul li:hover > ul {
+}
+
+.main-navigation ul ul li:hover > ul {
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a {
+}
