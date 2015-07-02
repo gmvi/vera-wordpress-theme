@@ -577,10 +577,23 @@ a:active {
   display: inline-block;
 }
 
-.site-header .attachment-post-thumbnail {
-  padding-top: 5px;
+.attachment-post-thumbnail {
+  padding-top: 3px;
   padding-bottom: 14px;
   border-bottom: 2px solid #4d4d4d;
+  margin: 0 auto;
+}
+
+.attachment-post-thumbnail img {
+  padding-top: ;
+  display: block;
+  margin: 0 auto;
+}
+
+/* hack for front page not having a real post thumbnail */
+.home .attachment-post-thumbnail img {
+  margin-top: 19px;
+  height: 291px;
 }
 
 .site-content {
@@ -589,6 +602,10 @@ a:active {
 
 .site-header.has-thumbnail + .site-content {
   margin-top: 17px;
+}
+
+.home .site-content {
+  margin-top: 24px;
 }
 
 /*--------------------------------------------------------------
@@ -1046,6 +1063,7 @@ span.sep {
   font-family: 'Lucida Grande', Arial, Helvetica, san-serif;
   font-size: 11px;
   line-height: 14px;
+  padding-left: 1px;
 }
 
 .left-nav ul {
@@ -1055,12 +1073,12 @@ span.sep {
   letter-spacing: .12em;
 }
 
-.left-nav li {
+.left-nav .menu {
   text-align: right;
   font-family: 'Lucida Grande', Arial, Helvetica, san-serif;
 }
 
-.left-nav li a {
+.left-nav .menu li a {
   display: inline-block;
   text-transform: uppercase;
   color: #0cf;
@@ -1070,13 +1088,13 @@ span.sep {
   margin-bottom: 8px;
 }
 
-.left-nav li.current-menu-item a,
-.left-nav li a:hover {
+.left-nav .menu li.current-menu-item a,
+.left-nav .menu li a:hover {
   color: white;
 }
 
-.left-nav li + li:before,
-.left-nav li + li::before {
+.left-nav .menu li + li:before,
+.left-nav .menu li + li::before {
   content: "";
   display: block;
   height: 3px;
@@ -1086,7 +1104,7 @@ span.sep {
   background-repeat: no-repeat;
 }
 
-.left-nav ul ul {
+.left-nav .menu ul ul {
   display: none;
 }
 
@@ -1126,6 +1144,13 @@ span.sep {
   font-family: Georgia, Garamond, serif;
   font-size: 14px;
   line-height: 22px;
+}
+
+/* override max-width from generic img style; wordpress uses attributes */
+.page-content img,
+.entry-content img,
+.entry-summary img {
+  max-width: none;
 }
 
 .entry-footer .edit-link {
@@ -1180,6 +1205,80 @@ span.sep {
   margin-left: -100%;
   padding-right: 15px;
   padding-top: 54px;
+}
+
+.home .left-nav {
+  font-family: Georgia, Garamond, serif;
+  padding-top: 0px;
+}
+
+.home .left-nav h3 {
+  margin: 0;
+  padding-bottom: 20px;
+  font-family: 'Futura', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.home .left-nav .events {
+  margin-top: 4px;
+  letter-spacing: 0;
+  line-height: 1.2em;
+}
+
+.events .event {
+  padding-bottom: 25px;
+}
+
+.event::after,
+.event:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.event .event-date {
+  float: left;
+  width: 47px;
+  height: 50px;
+  background: url(images/bg_dates.gif) no-repeat;
+  color: black;
+  padding-top: 9px;
+  padding-right: 7px;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.event .event-date .month {
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+  line-height: 7px;
+  text-transform: uppercase;
+}
+
+.event .event-date .day {
+  color: #000;
+  font-size: 25px;
+  text-align: center;
+  line-height: 14px;
+}
+
+.event .event-info {
+  float: left;
+  width: 130px;
+  font-size: 12px;
+  line-height: 14px;
+  margin-left: 8px;
+  margin-top: -2px;
+}
+.event .tickets-link {
+  display: block;
+  width: 61px;
+  height: 16px;
+  background-image: url("images/b_tickets.gif");
+  margin-top: 5px;
+  margin-bottom: 3px;
 }
 
 .site-content .widget-area {
