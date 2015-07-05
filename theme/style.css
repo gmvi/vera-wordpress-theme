@@ -329,7 +329,7 @@ h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
 dfn,
@@ -659,6 +659,7 @@ a:active {
 .main-navigation .menu > li:nth-child(9) > a {width: 62px; background-position: -703px 0;}
 .main-navigation .menu > li:nth-child(10) > a {width: 57px; background-position: -765px 0;}
 .main-navigation .menu > li:nth-child(11) > a {width: 78px; background-position: -822px 0;}
+.main-navigation .menu > li:nth-child(n+12) { width: 0px; overflow: hidden; }
 
 .main-navigation .menu > li:nth-child(1) > a:hover,
 .main-navigation .menu > li:nth-child(1) > a:focus {
@@ -710,7 +711,8 @@ a:active {
   background-position: 0 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(2) > a,
-.main-navigation .menu > li.current-page-ancestor:nth-child(2) > a {
+.main-navigation .menu > li.current-page-ancestor:nth-child(2) > a,
+.main-navigation.shows-page .menu > li:nth-child(2) > a {
   background-position: -71px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(3) > a,
@@ -834,9 +836,11 @@ a:active {
 .main-navigation ul ul li.current-menu-item a,
 .main-navigation ul ul li.current-page-ancestor a {
   color: white;
+  pointer-events: none;
+  cursor: default;
 }
 
-.main-navigation ul ul li.current-menu-ancestor a {
+.main-navigation ul ul li.current-page-parent a {
   color: #0cf;
 }
 
@@ -1125,7 +1129,7 @@ span.sep {
 }
 
 .hentry {
-  margin: 0 1em 1.5em 1em;
+  margin: 0 1em;
 }
 
 .byline,
@@ -1151,6 +1155,10 @@ span.sep {
 .entry-content img,
 .entry-summary img {
   max-width: none;
+}
+
+.entry-content > p:last-child {
+  margin-bottom: 0;
 }
 
 .entry-footer .edit-link {
