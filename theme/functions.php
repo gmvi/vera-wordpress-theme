@@ -161,3 +161,46 @@ function customformatTinyMCE($init) {
 
 // Modify Tiny_MCE init
 add_filter('tiny_mce_before_init', 'customformatTinyMCE' );
+
+
+/**
+ * get event list
+ */
+
+function vera_get_events() {
+  $options = array( 'user-agent' => 'Mozilla (really WP)' );
+  $etag = get_option('vera_events_etag');
+  if ($etag) {
+    $options['headers'] = array( 'If-None-Match' => "$etag" );
+  }
+
+  $response = wp_remote_get("http://do206.com/venues/the-vera-project.json", $options);
+  $status = $response['response']['code'];
+  if ($status == 200) {
+    $events = vera_parse_events($response['body']);
+    update_option('vera_events', $events);
+    update_option('vera_events_etag', $response['headers']['etag']);
+  } else if ($status == 304) {
+    $events = get_option('vera_events');
+  }
+  return $events;
+}
+
+function vera_parse_events($body) {
+  $data = json_decode($body);
+  $copy = array();
+  foreach ($data->event_groups as $group) {
+    $date = strtotime($group->date);
+    foreach ($group->events as $event) {
+      $buy_url = isset($event->buy_url) ? $event->buy_url : NULL;
+      if (!preg_match("|^([a-z]*://)?(www\.)?theveraproject\.org/classes|", $buy_url)) {
+        array_push($copy, array(
+          'date' => $date,
+          'title' => $event->title,
+          'buy_url' => $buy_url
+        ));
+      }
+    }
+  }
+  return $copy;
+}
