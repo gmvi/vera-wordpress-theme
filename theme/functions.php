@@ -51,6 +51,7 @@ function the_vera_project_setup() {
   register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'the-vera-project' ),
     'getinvolved' => __( 'Get Involved', 'the-vera-project' ),
+    'audioprogram' => __( 'Audio Program', 'the-vera-project' ),
   ) );
 
   /*
@@ -183,6 +184,25 @@ function vera_get_events() {
   } else if ($status == 304) {
     $events = get_option('vera_events');
   }
+  // echo "etag: $etag<br/>";
+  // echo "status: $status<br/>";
+  // echo $events[0]['title'];
+  // die();
+  return $events;
+}
+
+function vera_get_events_periodically() {
+  $options = array( 'user-agent' => 'Mozilla (really WP)' );
+  $next_update = get_option('vera_events_timestamp');
+  if ($next_update < time()) {
+    $response = wp_remote_get("http://do206.com/venues/the-vera-project.json", $options);
+    $events = vera_parse_events($response['body']);
+    update_option('vera_events', $events);
+    update_option('vera_events_timestamp', time() + 5*60 /*5 mins*/);
+  } else {
+    $events = get_option('vera_events');
+  }
+
   return $events;
 }
 

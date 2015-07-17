@@ -52,10 +52,9 @@ get_header(); ?>
 
 	<h3>UPCOMING SHOWS</h3>
 
-	<?php
-	$events = vera_get_events();
-
-	echo "<ul class=\"events\">";
+	<ul class="events">
+		<?php
+		$events = vera_get_events_periodically();
 		foreach ($events as $event) {
 			?>
 			<li class="event">
@@ -72,9 +71,9 @@ get_header(); ?>
 			</li>
 			<?php
 		}
-	echo "</ul>";
-	?>
+		?>
 
+		</ul>
 	</div>
 
 	<?php get_sidebar(); ?>
