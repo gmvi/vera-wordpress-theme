@@ -577,23 +577,20 @@ a:active {
   display: inline-block;
 }
 
-.attachment-post-thumbnail {
-  padding-top: 3px;
-  padding-bottom: 14px;
+.thumbnail-container {
   border-bottom: 2px solid #4d4d4d;
-  margin: 0 auto;
+  margin-bottom: 7px;
 }
 
-.attachment-post-thumbnail img {
-  padding-top: ;
+.attachment-post-thumbnail {
+  margin: 3px auto 10px;
   display: block;
-  margin: 0 auto;
 }
 
-/* hack for front page not having a real post thumbnail */
-.home .attachment-post-thumbnail img {
-  margin-top: 19px;
+.home .attachment-post-thumbnail {
+  margin: 22px auto 14px;
   height: 291px;
+  width: auto;
 }
 
 .site-content {
@@ -842,6 +839,8 @@ a:active {
 
 .main-navigation ul ul li.current-page-parent a {
   color: #0cf;
+  pointer-events: inherit;
+  cursor: inherit;
 }
 
 .main-navigation ul ul li {
@@ -1064,7 +1063,6 @@ span.sep {
 --------------------------------------------------------------*/
 
 .left-nav {
-  font-family: 'Lucida Grande', Arial, Helvetica, san-serif;
   font-size: 11px;
   line-height: 14px;
   padding-left: 1px;
@@ -1116,19 +1114,58 @@ span.sep {
   display: block;
 }
 
-.entry-header {
-}
-
-.entry-title {
-  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: normal;
-  line-height: 22px;
-  margin-top: 0;
+.blog-title {
   text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 18px;
 }
 
 .hentry {
+  margin-bottom: 60px;
+}
+
+.hentry.page .entry-header {
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+.hentry.page .entry-header .entry-title {
+  line-height: 22px;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.hentry.post .entry-header {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 12px;
+}
+
+.hentry.post .entry-header .entry-title {
+  color: #f06;
+  margin-top: 0;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.hentry.post .entry-header .entry-meta {
+  font-size: 13px;
+  font-style: italic;
+}
+.home .hentry.post .entry-header .entry-title {
+  font-size: 20px;
+}
+
+.home .hentry.post .entry-header .entry-meta {
+  font-size: 16px;
+  font-style: normal;
+}
+
+.site-main {
   margin: 0 1em;
 }
 
@@ -1152,17 +1189,21 @@ span.sep {
 
 /* override max-width from generic img style; wordpress uses attributes */
 .page-content img,
-.entry-content img,
+.entry-content img[width],
 .entry-summary img {
   max-width: none;
+}
+
+.home .entry-content img {
+  max-height: 320px;
 }
 
 .entry-content > p:last-child {
   margin-bottom: 0;
 }
 
-.entry-footer .edit-link {
-  display: none; /*TODO: move to top */
+.entry-footer {
+  display: none; /*TODO: move edit link to top */
 }
 
 .page-links {
@@ -1173,6 +1214,7 @@ span.sep {
 /* sidebar layout */
 .site-content {
   /*margin-right: 220px;*/
+  font-family: Georgia, Garamond, serif;
   margin-right: 226px;
   position: relative;
 }
@@ -1216,7 +1258,6 @@ span.sep {
 }
 
 .home .left-nav {
-  font-family: Georgia, Garamond, serif;
   padding-top: 0px;
 }
 

@@ -48,7 +48,9 @@ function thumbnail_class() {
     </nav><!-- #site-navigation -->
 
     <?php if ( has_post_thumbnail() ) : ?>
+      <div class="thumbnail-container">
         <?php echo get_the_post_thumbnail(); ?>
+      </div>
     <?php endif; // End header image check. ?>
 
   </header><!-- #masthead -->
