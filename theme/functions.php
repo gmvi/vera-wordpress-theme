@@ -6,6 +6,8 @@
  */
 
 /**
+ * TODO: figure out what this does. It came with the underscores theme and I'm not sure what it actually does.
+ *
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
@@ -28,10 +30,14 @@ function the_vera_project_setup() {
    * If you're building a theme based on The Vera Project, use a find and replace
    * to change 'the-vera-project' to the name of your theme in all the template files
    */
+  /***
   load_theme_textdomain( 'the-vera-project', get_template_directory() . '/languages' );
+  ***/
 
   // Add default posts and comments RSS feed links to head.
+  /***
   add_theme_support( 'automatic-feed-links' );
+  ***/
 
   /*
    * Let WordPress manage the document title.
@@ -46,8 +52,11 @@ function the_vera_project_setup() {
    *
    * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
    */
-  //add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'post-thumbnails' );
 
+  /*
+   * The navigation menus
+   */
   register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'the-vera-project' ),
     'getinvolved' => __( 'Get Involved', 'the-vera-project' ),
@@ -66,12 +75,11 @@ function the_vera_project_setup() {
    * Enable support for Post Formats.
    * See http://codex.wordpress.org/Post_Formats
    */
-  // add_theme_support( 'post-formats', array(
-  //   'aside', 'image', 'video', 'quote', 'link',
-  // ) );
-
-  // Enable Support for post-thumbnails
-  add_theme_support( 'post-thumbnails' ); 
+  /***
+  add_theme_support( 'post-formats', array(
+    'aside', 'image', 'video', 'quote', 'link',
+  ) );
+  ***/
 
   // Set up the WordPress core custom background feature.
   add_theme_support( 'custom-background', apply_filters( 'the_vera_project_custom_background_args', array(
@@ -82,24 +90,56 @@ function the_vera_project_setup() {
 endif; // the_vera_project_setup
 add_action( 'after_setup_theme', 'the_vera_project_setup' );
 
+function the_vera_project_init() {
+  // register_post_type must be called after the 'after_setup_theme' hook
+  register_post_type( 'gallery-show',
+    array(
+      'labels' => array(
+        'name' => __( 'Gallery Shows' ),
+        'singular_name' => __( 'Gallery Show' )
+      ),
+      'public' => true,
+      'publicly_queryable' => true,
+      'menu_position' => 5,
+      'supports' => array('title', 'editor', 'thumbnail'),
+      'rewrite' => array(
+        'slug' => 'artgallery/shows',
+        'with_front' => false
+      ),
+      'query_var' => false
+    )
+  );
+}
+add_action( 'init', 'the_vera_project_init' );
+
+/**
+ * Init for MEM plugin
+ */
+function the_vera_project_mem_settings() {
+  mem_plugin_settings( array( 'gallery-show' ), 'full' );
+}
+add_action( 'mem_init', 'the_vera_project_mem_settings' );
+
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+/***
 function the_vera_project_widgets_init() {
   // right sidebar
-  // register_sidebar( array(
-  //   'name'          => __( 'Right Sidebar', 'the-vera-project' ),
-  //   'id'            => 'sidebar-1',
-  //   'description'   => '',
-  //   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-  //   'after_widget'  => '</aside>',
-  //   'before_title'  => '<h1 class="widget-title">',
-  //   'after_title'   => '</h1>',
-  // ) );
+  register_sidebar( array(
+    'name'          => __( 'Right Sidebar', 'the-vera-project' ),
+    'id'            => 'sidebar-1',
+    'description'   => '',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h1 class="widget-title">',
+    'after_title'   => '</h1>',
+  ) );
 }
 add_action( 'widgets_init', 'the_vera_project_widgets_init' );
+***/
 
 /**
  * Enqueue scripts and styles.
@@ -146,26 +186,21 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * custom plugin for TinyMCE
  */
-
+// This doesn't work. Is it just for regular tinymce, not tinymce advanced?
 function customformatTinyMCE($init) {
   // Add block format elements you want to show in dropdown
   $init['theme_advanced_blockformats'] = 'p,pre,h2,h3';
-
-  //die('customformatTinyMCE'); // this is being run
-  // why doesn't it affect the dropdown?
 
   // Add elements not included in standard tinyMCE dropdown p,pre,h1,h2,h3,h4,h5,h6
   //$init['extended_valid_elements'] = 'code[*]';
 
   return $init;
 }
-
-// Modify Tiny_MCE init
 add_filter('tiny_mce_before_init', 'customformatTinyMCE' );
 
 
 /**
- * get event list
+ * Custom functions for templates.
  */
 
 function vera_get_events() {

@@ -37,17 +37,24 @@ function thumbnail_class() {
       </a>
       <!-- <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
     </div><!-- .site-branding -->
-    <?php $post = get_post();
-          $ancestors = array_slice($post->ancestors, -1);
-          $top = $ancestors? get_post( $ancestors[0] )->post_name : $post->post_name;
-          $class = $top == "shows" ? "shows-page" : ""; ?>
-    <nav id="site-navigation" class="main-navigation <?php echo $class; ?>" role="navigation">
-      <?php wp_nav_menu( array( 'theme_location'  => 'primary',
-                                'menu_id'         => 'primary-menu',
-                                'container-class' => $class ) ); ?>
-    </nav><!-- #site-navigation -->
+    <?php
+    $post = get_post();
+    if ($post) {
+      $ancestors = array_slice($post->ancestors, -1);
+      $top = $ancestors? get_post( $ancestors[0] )->post_name : $post->post_name;
+    } else {
+      $top = null;
+    }
+    $class = $top == "shows" ? "shows-page" : ""; ?>
+      <nav id="site-navigation" class="main-navigation <?php echo $class; ?>" role="navigation">
+        <?php wp_nav_menu( array( 'theme_location'  => 'primary',
+                                  'menu_id'         => 'primary-menu',
+                                  'container-class' => $class ) ); ?>
+      </nav><!-- #site-navigation -->
 
-    <?php if ( has_post_thumbnail() ) : ?>
+    <?php
+    // TODO: only if page
+    if ( has_post_thumbnail() ) : ?>
       <div class="thumbnail-container">
         <?php echo get_the_post_thumbnail(); ?>
       </div>

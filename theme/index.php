@@ -13,11 +13,7 @@
 
 get_header(); ?>
 
-<div class="attachment-post-thumbnail">
-	<img width="745" height="291" src="<?php echo get_template_directory_uri();?>/images/media_home.jpg">
-</div>
-
-<div id="content" class="site-content with-left-nav clear">
+<div id="content" class="site-content clear">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -47,34 +43,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<div class="left-nav">
-
-	<h3>UPCOMING SHOWS</h3>
-
-	<ul class="events">
-		<?php
-		$events = vera_get_events_periodically();
-		foreach ($events as $event) {
-			?>
-			<li class="event">
-				<div class="event-date">
-					<span class="month"><?php echo date("M", $event['date']); ?></span>
-					<span class="day"><?php echo date("d", $event['date']); ?></span>
-				</div>
-				<div class="event-info">
-					<?php echo $event['title']; ?>
-					<?php if ($event['buy_url']) {
-						echo "<a class=\"tickets-link\" href=\"${event['buy_url']}\" target=\"_blank\"></a>";
-					} ?>
-				</div>
-			</li>
-			<?php
-		}
-		?>
-
-		</ul>
-	</div>
 
 	<?php get_sidebar(); ?>
 
