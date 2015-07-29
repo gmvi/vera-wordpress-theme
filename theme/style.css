@@ -178,6 +178,14 @@ textarea {
   margin: 0;
 }
 
+input::-webkit-input-placeholder { color: inherit; }
+
+input:-moz-placeholder { /* Firefox 18- */ color: inherit; }
+
+input::-moz-placeholder { /* Firefox 19+ */ color: inherit; }
+
+input:-ms-input-placeholder { color: inherit; }
+
 button {
   overflow: visible;
 }
@@ -504,9 +512,12 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  font-family: sans-serif;
+  background-color: #1A1A1A;
+  color: #666666;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 0px;
 }
 
 input[type="text"]:focus,
@@ -515,7 +526,6 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #111;
 }
 
 input[type="text"],
@@ -523,7 +533,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-  padding: 3px;
+  padding: 3px 3px 3px 5px;
 }
 
 textarea {
@@ -569,12 +579,39 @@ a:active {
 }
 
 .site-branding {
+  height: 94px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .site-branding a {
   display: inline-block;
+}
+
+.site-branding .search-form {
+  float: right;
+  height: 100%;
+  padding-top: 60px;
+  padding-right: 10px;
+  width: 240px;
+  text-align: right;
+}
+.site-branding .search-field {
+  width: 150px;
+}
+.search-form .search-field {
+  background-color: #1a1a1a;
+}
+.search-form .search-submit {
+  width: 34px;
+  height: 28px;
+  background: url(images/b_search.gif) no-repeat;
+  border: 0;
+  text-indent: -9999px;
+  box-shadow: none;
+}
+.search-form .search-submit:hover {
+  box-shadow: none;
 }
 
 .thumbnail-container {
@@ -1122,28 +1159,25 @@ span.sep {
   margin-bottom: 18px;
 }
 
+.page-title {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: 'Lucida Grande', Arial, Helvetica, san-serif;;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
 .hentry {
   margin-bottom: 60px;
 }
 
-.hentry.page .entry-header {
-  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
-  font-size: 18px;
-}
-.hentry.page .entry-header .entry-title {
-  line-height: 22px;
-  margin-top: 0;
-  text-transform: uppercase;
-  font-weight: normal;
-}
-
-.hentry.post .entry-header {
+.hentry .entry-header {
   font-size: 18px;
   line-height: 22px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
-.hentry.post .entry-header .entry-title {
+.hentry .entry-header .entry-title {
   color: #f06;
   margin-top: 0;
   text-transform: none;
@@ -1152,16 +1186,46 @@ span.sep {
   margin-bottom: 2px;
 }
 
-.hentry.post .entry-header .entry-meta {
+.hentry .entry-header .entry-meta {
   font-size: 13px;
   font-style: italic;
 }
-.home .hentry.post .entry-header .entry-title {
+
+.home .hentry .entry-header .entry-title {
   font-size: 20px;
 }
-
-.home .hentry.post .entry-header .entry-meta {
+.home .hentry .entry-header .entry-meta {
   font-size: 16px;
+  font-style: normal;
+}
+
+.search-results .hentry .entry-header .entry-title,
+.search-results .hentry.page .entry-header .entry-title {
+  font-size: 18px;
+  text-transform: none;
+}
+
+.hentry.page .entry-header {
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.hentry.page .entry-header .entry-title {
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 0;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.hentry.gallery_show .entry-header .entry-title {
+  font-size: 26px;
+  line-height: normal;
+}
+
+.hentry.gallery_show .entry-header .entry-meta {
+  font-size: 14px;
   font-style: normal;
 }
 
@@ -1174,7 +1238,7 @@ span.sep {
   display: none;
 }
 
-.single .byline,
+.single-post .byline,
 .group-blog .byline {
   display: inline;
 }
@@ -1346,7 +1410,7 @@ span.sep {
 .site-content .widget-area h3 {
   margin: 5px 0;
   font-weight: normal;
-  font-family: "Lucida Grande", Arial, Helvetica, san-serif;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
 
 }
 

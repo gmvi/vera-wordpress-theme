@@ -13,12 +13,13 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+    <header class="page-title"><?php the_title(); ?></header>
 
 		<?php
 
     $post_type = get_post_meta( get_the_ID(), 'post_type', true );
     $date_range = get_post_meta( get_the_ID(), 'date_range', true );
-    $today = mem_date_of_today()['iso'];
+    $today = date( 'Y-m-d H:i' ); // now, formatted like start and end dates
 
     if ($date_range == "current") {
       $meta_query = array(
@@ -33,7 +34,6 @@ get_header(); ?>
           'compare' => '>=',
         ),
       );
-      $order = 'ASC';
       $meta_key_orderby = '_mem_end_date';
     } elseif ($date_range == "future") {
       $meta_query = array(
@@ -43,7 +43,6 @@ get_header(); ?>
           'compare' => '>',
         ),
       );
-      $order = 'ASC';
       $meta_key_orderby = '_mem_start_date';
     } elseif ($date_range == "past") {
       $meta_query = array(
@@ -53,7 +52,6 @@ get_header(); ?>
           'compare' => '<',
         ),
       );
-      $order = 'DESC';
       $meta_key_orderby = '_mem_end_date';
     }
 
@@ -61,7 +59,7 @@ get_header(); ?>
       'post_type' => $post_type,
       'meta_query' => $meta_query,
       'order_by' => 'meta_value',
-      'order' => $order,
+      'order' => 'ASC',
       'meta_key' => $meta_key_orderby,
     ));
 

@@ -92,21 +92,28 @@ add_action( 'after_setup_theme', 'the_vera_project_setup' );
 
 function the_vera_project_init() {
   // register_post_type must be called after the 'after_setup_theme' hook
-  register_post_type( 'gallery-show',
+  register_post_type( 'gallery_show',
     array(
       'labels' => array(
         'name' => __( 'Gallery Shows' ),
-        'singular_name' => __( 'Gallery Show' )
+        'singular_name' => __( 'Gallery Show' ),
+        'add_new_item' => __( 'Add New Gallery Show'),
+        'edit_item' => __( 'Edit Gallery Show'),
+        'new_item' => __('New Gallery Show'),
+        'view_item' => __('View Gallery Show'),
+        'search_items' => __('Search Gallery Shows'),
+        'not_found' => __('No gallery shows found'),
+        'not_found_in_trash' => __('No gallery shows found in Trash'),
       ),
       'public' => true,
-      'publicly_queryable' => true,
+      'show_in_nav_menus' => false,
       'menu_position' => 5,
+      'menu_icon' => 'dashicons-art',
       'supports' => array('title', 'editor', 'thumbnail'),
       'rewrite' => array(
         'slug' => 'artgallery/shows',
-        'with_front' => false
+        'with_front' => false,
       ),
-      'query_var' => false
     )
   );
 }
@@ -116,7 +123,7 @@ add_action( 'init', 'the_vera_project_init' );
  * Init for MEM plugin
  */
 function the_vera_project_mem_settings() {
-  mem_plugin_settings( array( 'gallery-show' ), 'full' );
+  mem_plugin_settings( array( 'gallery_show' ), 'full' );
 }
 add_action( 'mem_init', 'the_vera_project_mem_settings' );
 
@@ -150,6 +157,8 @@ function the_vera_project_scripts() {
   wp_enqueue_script( 'the-vera-project-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
   wp_enqueue_script( 'the-vera-project-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+  wp_enqueue_script( 'the-vera-project-mondernizr', get_template_directory_uri() . '/js/modernizr.custom.52359.js', array(), '20150728', true);
 
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
