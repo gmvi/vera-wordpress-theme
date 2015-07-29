@@ -569,6 +569,10 @@ a:hover,
 a:active {
 }
 
+.entry-title a {
+  color: inherit;
+}
+
 /*--------------------------------------------------------------
 5.2 Header
 --------------------------------------------------------------*/
@@ -762,7 +766,8 @@ a:active {
   background-position: -344px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(6) > a,
-.main-navigation .menu > li.current-page-ancestor:nth-child(6) > a {
+.main-navigation .menu > li.current-page-ancestor:nth-child(6) > a,
+.single-gallery_show .main-navigation .menu > li:nth-child(6) > a {
   background-position: -476px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(7) > a,
@@ -770,7 +775,8 @@ a:active {
   background-position: -579px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(8) > a,
-.main-navigation .menu > li.current-page-ancestor:nth-child(8) > a {
+.main-navigation .menu > li.current-page-ancestor:nth-child(8) > a,
+.single-post .main-navigation .menu > li:nth-child(8) > a {
   background-position: -650px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(9) > a,
@@ -837,7 +843,8 @@ a:active {
 
 .main-navigation ul li.current-menu-item ul,
 .main-navigation ul li.current-menu-ancestor ul,
-.main-navigation ul li.current-page-ancestor ul {
+.main-navigation ul li.current-page-ancestor ul,
+.single-gallery_show .main-navigation ul li:nth-child(6) ul {
   display: block;
 }
 
