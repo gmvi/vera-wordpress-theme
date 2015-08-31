@@ -56,7 +56,7 @@ get_header(); ?>
             'operator' => 'NOT EXISTS',
           )),
         ));
-        if (!empty($other)) {
+        if ( $other->have_posts() ) {
           echo '<section class="class-category">';
           echo '<header id="more" class="page-title">' .
                'Classes <font color="#00ccff">/</font> More Classes</header>';

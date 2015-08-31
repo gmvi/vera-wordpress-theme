@@ -11,7 +11,7 @@ function the_vera_project_init() {
   register_post_type( 'gallery_exhibit',
     array(
       'labels' => array(
-        'name' => __( 'Gallery Exhibit' ),
+        'name' => __( 'Gallery Exhibits' ),
         'singular_name' => __( 'Gallery Exhibit' ),
         'add_new_item' => __( 'Add New Gallery Exhibit'),
         'edit_item' => __( 'Edit Gallery Exhibit'),
@@ -52,7 +52,6 @@ function the_vera_project_init() {
       'show_tagcloud' => false,
       'hierarchical' => true,
       'sort' => true,
-      'query_var' => false,
     )
   );
   register_post_type( 'class',
