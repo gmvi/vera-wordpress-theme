@@ -35,9 +35,7 @@ function the_vera_project_setup() {
   ***/
 
   // Add default posts and comments RSS feed links to head.
-  /***
   add_theme_support( 'automatic-feed-links' );
-  ***/
 
   /*
    * Let WordPress manage the document title.
@@ -90,42 +88,7 @@ function the_vera_project_setup() {
 endif; // the_vera_project_setup
 add_action( 'after_setup_theme', 'the_vera_project_setup' );
 
-function the_vera_project_init() {
-  // register_post_type must be called after the 'after_setup_theme' hook
-  register_post_type( 'gallery_show',
-    array(
-      'labels' => array(
-        'name' => __( 'Gallery Shows' ),
-        'singular_name' => __( 'Gallery Show' ),
-        'add_new_item' => __( 'Add New Gallery Show'),
-        'edit_item' => __( 'Edit Gallery Show'),
-        'new_item' => __('New Gallery Show'),
-        'view_item' => __('View Gallery Show'),
-        'search_items' => __('Search Gallery Shows'),
-        'not_found' => __('No gallery shows found'),
-        'not_found_in_trash' => __('No gallery shows found in Trash'),
-      ),
-      'public' => true,
-      'show_in_nav_menus' => false,
-      'menu_position' => 5,
-      'menu_icon' => 'dashicons-art',
-      'supports' => array('title', 'editor', 'thumbnail'),
-      'rewrite' => array(
-        'slug' => 'artgallery/shows',
-        'with_front' => false,
-      ),
-    )
-  );
-}
-add_action( 'init', 'the_vera_project_init' );
 
-/**
- * Init for MEM plugin
- */
-function the_vera_project_mem_settings() {
-  mem_plugin_settings( array( 'gallery_show' ), 'full' );
-}
-add_action( 'mem_init', 'the_vera_project_mem_settings' );
 
 /**
  * Register widget area.

@@ -771,7 +771,8 @@ a:active {
   background-position: -476px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(7) > a,
-.main-navigation .menu > li.current-page-ancestor:nth-child(7) > a {
+.main-navigation .menu > li.current-page-ancestor:nth-child(7) > a,
+.single-class .main-navigation .menu > li:nth-child(7) > a {
   background-position: -579px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(8) > a,
@@ -844,7 +845,8 @@ a:active {
 .main-navigation ul li.current-menu-item ul,
 .main-navigation ul li.current-menu-ancestor ul,
 .main-navigation ul li.current-page-ancestor ul,
-.single-gallery_show .main-navigation ul li:nth-child(6) ul {
+.single-gallery_show .main-navigation ul li:nth-child(6) ul,
+.single-class .main-navigation ul li:nth-child(7) ul {
   display: block;
 }
 
@@ -874,8 +876,8 @@ a:active {
   display: inline;
 }
 
-.main-navigation ul ul li.current-menu-item a,
-.main-navigation ul ul li.current-page-ancestor a {
+.main-navigation ul ul li.current-menu-item:not(.menu-item-type-custom) a,
+.main-navigation ul ul li.current-page-ancestor:not(.menu-item-type-custom):not(.current-page-parent) a {
   color: white;
   pointer-events: none;
   cursor: default;
@@ -1175,7 +1177,7 @@ span.sep {
 }
 
 .hentry {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .hentry .entry-header {
@@ -1269,12 +1271,8 @@ span.sep {
   max-height: 320px;
 }
 
-.entry-content > p:last-child {
-  margin-bottom: 0;
-}
-
-.entry-footer {
-  display: none; /*TODO: move edit link to top */
+.edit-link {
+  display: none; /* TODO: move edit link to top */
 }
 
 .page-links {
@@ -1553,4 +1551,41 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+/*--------------------------------------------------------------
+13.0 Other
+--------------------------------------------------------------*/
+.IATS_Div button,
+.IATS_Div input,
+.IATS_Div select {
+  background-color: white;
+  color: black;
+  font-size: 13px;
+  font-family: sans-serif;
+  border-radius: 0;
+}
+
+.IATS_QtyDiv button.IATS_IncreaseQty {
+  background-color: #DDD;
+  width: 21px;
+  padding: 2px 6px;
+  border: 1px solid #999;
+  border-right: none;
+}
+.IATS_QtyDiv input.IATS_QtyInput {
+  width: 22px;
+}
+.IATS_QtyDiv input.IATS_QtyInput + button.IATS_IncreaseQty {
+  border: 1px solid #999;
+  border-left: none;
+}
+
+input.IATS_PaymentInputField {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.IATS_Div button.IATS_Action {
+  padding: .3em .5em;
 }
