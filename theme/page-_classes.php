@@ -78,4 +78,10 @@ get_header(); ?>
 
 </div><!-- #content -->
 
+<script type="text/javascript">
+  smoothScroll.init({
+    easing: 'easeInOutCubic'
+  });
+</script>
+
 <?php get_footer(); ?>

@@ -111,6 +111,12 @@ function the_vera_project_widgets_init() {
 add_action( 'widgets_init', 'the_vera_project_widgets_init' );
 ***/
 
+function vera_custom_nav_attributes ( $atts, $item, $args ) {
+    $atts['data-scroll'] = 'true';
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'vera_custom_nav_attributes', 10, 3 );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -126,6 +132,8 @@ function the_vera_project_scripts() {
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
+
+  wp_enqueue_script( 'the-vera-project-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.min.js', array(), '20150831', false );
 }
 add_action( 'wp_enqueue_scripts', 'the_vera_project_scripts' );
 
@@ -153,22 +161,6 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-
-/**
- * custom plugin for TinyMCE
- */
-// This doesn't work. Is it just for regular tinymce, not tinymce advanced?
-function customformatTinyMCE($init) {
-  // Add block format elements you want to show in dropdown
-  $init['theme_advanced_blockformats'] = 'p,pre,h2,h3';
-
-  // Add elements not included in standard tinyMCE dropdown p,pre,h1,h2,h3,h4,h5,h6
-  //$init['extended_valid_elements'] = 'code[*]';
-
-  return $init;
-}
-add_filter('tiny_mce_before_init', 'customformatTinyMCE' );
 
 
 /**
