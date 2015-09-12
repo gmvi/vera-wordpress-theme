@@ -6,6 +6,14 @@ window.onload = function() {
       rename_no_class_category();
     }
   });
+  var class_category_fields = document.querySelectorAll('.taxonomy-class_category');
+  Array.prototype.forEach.call(class_category_fields, function(e) {
+    var content = e.textContent;
+    if (content == '—') {
+      content = 'Uncategorized';
+    }
+    e.textContent = content;
+  });
 }
 
 function rename_no_class_category() {

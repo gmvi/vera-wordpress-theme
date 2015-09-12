@@ -28,46 +28,45 @@ get_header(); ?>
 
       <?php
 
-        $class_categories = get_terms('class_category');
+        $classes = (new WP_Query( array( 'post_type' => 'class' )))->posts;
+        $class_categories = (new WP_Query( array( 'post_type' => 'class_category')))->posts;
+        $buckets = array();
 
-        foreach ($class_categories as $class_category) {
+        foreach ( $class_categories as $category ) {
+          $buckets[$category->post_name] = array();
+        }
+        $buckets[""] = array();
+        foreach ( $classes as $class ) {
+          $category = get_post_meta( $class->ID, '_category', true );
+          array_push($buckets[$category], $class);
+        }
+        foreach ( $class_categories as $category ) {
           echo '<section class="class-category">';
-          echo '<header id="' . $class_category->slug . '" class="page-title">' .
+          echo '<header id="' . $category->post_name . '" class="page-title">' .
                'Classes <font color="#00ccff">/</font> ' .
-               $class_category->name . ' Classes</header>';
-          $classes = new WP_Query( array(
-            'post_type' => 'class',
-            'tax_query' => array( array(
-              'taxonomy' => 'class_category',
-              'terms'    => $class_category->term_id,
-             )),
-          ));
-          while ( $classes->have_posts() ) {
-            $classes->the_post();
+               $category->post_title . ' Classes</header>';
+          foreach ( $buckets[$category->post_name] as $class ) {
+            global $post;
+            $post = $class;
+            setup_postdata( $post );
             get_template_part( 'content', 'class-summary' );
           }
           echo '</section>';
         }
 
-        $other = new WP_Query( array(
-          'post_type' => 'class',
-          'tax_query' => array( array(
-            'taxonomy' => 'class_category',
-            'operator' => 'NOT EXISTS',
-          )),
-        ));
-        if ( $other->have_posts() ) {
+        if ( !empty($buckets[""]) ) {
           echo '<section class="class-category">';
           echo '<header id="more" class="page-title">' .
                'Classes <font color="#00ccff">/</font> More Classes</header>';
-          while ( $other->have_posts() ) {
-            $other->the_post();
+          foreach ( $buckets[""] as $class ) {
+            global $post;
+            $post = $class;
+            setup_postdata( $post );
             get_template_part( 'content', 'class-summary' );
           }
           echo '</section>';
         }
         wp_reset_postdata();
-
 
       ?>
 
