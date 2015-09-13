@@ -5,15 +5,19 @@ Plugin Name: The Vera Project Classes
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+if( ! class_exists( 'WP_List_Table' ) ) {
+    require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
+}
+
 /*** Register class post type and class_category taxonomy ***/
 function vera_classes_init() {
-  // register_post_type must be called after the 'after_setup_theme' hook
+  // // register_post_type must be called after the 'after_setup_theme' hook
   // register_taxonomy( 'class_category', 'class',
   //   array(
   //     'labels' => array(
   //       'name' => 'Class Categories',
   //       'singular_name' => 'Class Category',
-  //       'menu_name' => 'Categories',
+  //       'menu_name' => 'Class Categories',
   //       'all_items' => 'All Class Categories',
   //       'edit_item' => 'Edit Class Category',
   //       'view_item' => 'View Class Category',
@@ -73,7 +77,88 @@ function vera_classes_init() {
 }
 add_action( 'init', 'vera_classes_init' );
 
+
+/** Admin Interface **/
+
+function vera_admin_init() {
+  add_submenu_page( 'edit.php?post_type=class', 'Categories', 'Categories', 'read',
+    'class-categories', 'vera_edit_class_categories_cb' );
+}
+add_action( 'admin_menu', 'vera_admin_init');
+
+class Classes_Order_List_Table extends WP_List_Table {
+
+  public $category;
+
+  function __construct( $category ) {
+    parent::__construct( array(
+      'singular'=> 'vera_list_class',
+      'plural' => 'vera_list_classes',
+      'ajax'   => true,
+    ) );
+    $this->category = $category;
+  }
+
+  function get_columns() {
+    return $columns = array(
+      'col_class_title' => __('Title'),
+    );
+  }
+
+  function prepare_items() {
+    $columns = $this->get_columns();
+    $hidden = array();
+    $sortable = array();
+    $this->_column_headers = array($columns, $hidden, $sortable, 'col_class_title');
+    $meta_compare = "";
+    $meta_value = $this->category;
+    if ( empty($meta_value) ) {
+      $meta_compare = "IN";
+      $meta_value = array("");
+    }
+    $this->items = get_posts( array(
+      'post_type' => 'class',
+      'numberposts' => -1,
+      'meta_key' => '_category',
+      'meta_value' => $meta_value,
+      'meta_compare' => $meta_compare,
+    ));
+    foreach ( $this->items as &$item ) {
+      $item->class_category = get_post_meta( $item->ID, '_category', true );
+    }
+  }
+
+  function column_default( $item, $column_name ) {
+    switch( $column_name ) {
+      case 'col_class_title':
+        return $item->post_title;
+      default:
+        return print_r( $item, true ) ; //Show the whole array for troubleshooting purposes
+    }
+  }
+}
+
+function vera_edit_class_categories_cb() {
+  $categories = get_posts(array(
+    'post_type' => 'class_category',
+    'numberposts' => -1,
+  ));
+  $categories = array_map( function( $category ) {
+    return $category->post_name;
+  }, $categories);
+  array_push($categories, '');
+  foreach ( $categories as $category ) {
+    echo '<div class="">';
+    $test_lt = new Classes_Order_List_Table($category);
+    $test_lt->prepare_items();
+    $test_lt->display();
+    echo '</div>';
+  }
+}
+
+
 /*** Add payment script metabox to class page ***/
+
 function add_classes_metabox() {
   add_meta_box( 'payment_script', 'Payment Script URL', 'classes_payments_metabox_cb', 'class', 'normal' );
   add_meta_box( 'class_category', 'Class Category',     'classes_category_metabox_cb', 'class', 'side' );
