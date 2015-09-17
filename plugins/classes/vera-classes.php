@@ -287,7 +287,7 @@ function vera_set_default_class_order($post_id, $class_category) {
     'numposts' => 1,
     'meta_key' => '_order',
     'meta_compare' => 'EXISTS',
-    'orderby' => 'meta_key_num',
+    'orderby' => 'meta_value_num',
     'order' => 'DESC',
     'meta_query' => array(
       vera_category_query($class_category),
