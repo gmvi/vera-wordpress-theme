@@ -22,6 +22,23 @@ function vera_get_classes($category) {
   ));
 }
 
+function vera_set_default_class_order($post_id, $class_category) {
+  $max = get_posts(array(
+    'post_type' => 'class',
+    'numposts' => 1,
+    'meta_key' => '_order',
+    'meta_compare' => 'EXISTS',
+    'orderby' => 'meta_value_num',
+    'order' => 'DESC',
+    'meta_query' => array(
+      vera_category_query($class_category),
+    ),
+  ));
+  $order = empty($max) ? 0 : get_post_meta($max[0]->ID, '_order', true) + 1;
+  update_post_meta( $post_id, '_order', $order );
+  return $order;
+}
+
 // Extension of WP_List_Table to display a list of classes for a category
 class Classes_Order_List_Table extends WP_List_Table {
 

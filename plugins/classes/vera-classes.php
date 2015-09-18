@@ -162,6 +162,7 @@ function classes_category_metabox_cb( $post ) {
   $checked = $value == "" ? " checked" : "";
   echo '<li><label><input type="radio" name="class_category" value=""'. $checked . '>Other</label></li></ul>';
 }
+
 function classes_save_meta_box_data( $post_id ) {
   // We need to verify this came from our screen and with proper authorization,
   // because the save_post action can be triggered at other times.
@@ -192,31 +193,15 @@ function classes_save_meta_box_data( $post_id ) {
     vera_set_default_class_order($post_id, $class_category);
   }
 }
-
-function vera_set_default_class_order($post_id, $class_category) {
-  $max = get_posts(array(
-    'post_type' => 'class',
-    'numposts' => 1,
-    'meta_key' => '_order',
-    'meta_compare' => 'EXISTS',
-    'orderby' => 'meta_value_num',
-    'order' => 'DESC',
-    'meta_query' => array(
-      vera_category_query($class_category),
-    ),
-  ));
-  $order = empty($max) ? 0 : get_post_meta($max[0]->ID, '_order', true) + 1;
-  add_post_meta( $post_id, '_order', $order, true );
-  return $order;
-}
 add_action( 'save_post', 'classes_save_meta_box_data' );
 
-function vera_classes_trash_class($post_id) {
+function vera_classes_untrash_class($post_id) {
   if( get_post_type($post_id) == 'class' ) {
-    // delete _order, because a class doesn't have a position in the trash
-    delete_post_meta($post_id, '_order');
+    $category = get_post_meta($post_id, '_category');
+    vera_set_default_class_order($post_id, $category);
   }
 }
+add_action( 'untrash_post', 'vera_classes_untrash_class' );
 
 function vera_classes_content_filter($content) {
   /* This filter adds the payment script to the content on display */
