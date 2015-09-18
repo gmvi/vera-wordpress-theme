@@ -89,7 +89,7 @@ function vera_reorder_classes() {
   // get querystring parameters
   // TODO: try/catch around $_REQUEST gets
   $class_id = (int) $_REQUEST['class_id'];
-  $movement = (int) $_REQUEST['movement'];
+  $movement = $_REQUEST['movement'];
   // verify parameters
   $post_type = get_post_type($class_id);
   if( $post_type === false || $post_type != "class") {
