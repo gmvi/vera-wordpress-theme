@@ -116,7 +116,7 @@ function vera_reorder_classes() {
           $classes[$i-1] = $class;
         }
       } else {
-        if ($i != sizeof(classes)) {
+        if ($i != sizeof($classes)) {
           $class = $classes[$i];
           $classes[$i] = $classes[$i+1];
           $classes[$i+1] = $class;
