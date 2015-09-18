@@ -109,7 +109,7 @@ function vera_reorder_classes() {
   $classes = vera_get_classes($category);
   for ($i=0; $i < sizeof($classes); $i++) {
     if ($classes[$i]->ID == $class_id) {
-      if ($movement == 'down') {
+      if ($movement == 'up') {
         if ($i != 0) {
           $class = $classes[$i];
           $classes[$i] = $classes[$i-1];
