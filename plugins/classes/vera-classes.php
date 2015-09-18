@@ -9,6 +9,8 @@ if( ! class_exists( 'WP_List_Table' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
 
+include( plugin_dir_path( __FILE__ ) . 'includes.php');
+
 /*** Register class post type and class_category taxonomy ***/
 function vera_classes_init() {
   register_post_type( 'class_category',
@@ -53,78 +55,7 @@ add_action( 'init', 'vera_classes_init' );
 
 /** Admin Interface **/
 
-class Classes_Order_List_Table extends WP_List_Table {
-
-  public $category;
-  public $category_display_name;
-
-  function __construct( $category ) {
-    parent::__construct( array(
-      'singular'=> 'class',
-      'plural' => 'classes',
-      'ajax'   => true,
-    ) );
-    $this->category = $category;
-    $this->category_display_name = empty($category) ? "other classes" : $category . " classes";
-  }
-
-  function get_columns() {
-    return $columns = array(
-      'col_class_order' => __('Order'),
-      'col_class_title' => __('Title'),
-    );
-  }
-
-  function prepare_items() {
-    $columns = $this->get_columns();
-    $hidden = array();
-    $sortable = array();
-    $this->_column_headers = array($columns, $hidden, $sortable, 'col_class_title');
-    $this->items = get_posts( array(
-      'post_type' => 'class',
-      'numberposts' => -1,
-      'meta_key' => '_order',
-      'orderby' => 'meta_value_num',
-      'order' => 'ASC',
-      'meta_query' => array(
-        vera_category_query($this->category),
-      ),
-    ));
-    foreach( $this->items as &$item ) {
-      $item->order = (int) get_post_meta( $item->ID, "_order", true );
-    }
-  }
-
-  function column_col_class_title($item) {
-    return "<strong class=\"row-title\">$item->post_title</a></strong>"
-         . "<p class=\"excerpt\">$item->post_excerpt</p>";
-  }
-
-  function column_col_class_order( $item ) {
-    return "<div><a class=\"class-order-btn class-order-btn-up dashicons dashicons-arrow-up-alt2\" "
-         . "href=\"admin-post.php?action=reorder_classes&class_id=$item->ID&order=". ($item->order-1) .'"></a></div>'
-         . "<div><strong>$item->order</strong></div>"
-         . "<div><a class=\"class-order-btn class-order-btn-down dashicons dashicons-arrow-down-alt2\" "
-         . "href=\"admin-post.php?action=reorder_classes&class_id=$item->ID&order=". ($item->order+1) .'"></a></div>';
-  }
-
-  function display_tablenav( $which ) {
-    // Use the tablenav top section as a secondary header
-    switch( $which ) {
-      case 'top':
-        echo '<h3 style="margin-bottom:5px;">';
-        echo ucwords($this->category_display_name) . ' <span class="count">(' . sizeof($this->items) . ')</span>';
-        echo '</h3>';
-        break;
-      case 'bottom':
-        break;
-      default:
-        parent::display_tablenav( $which );
-    }
-  }
-}
-
-function vera_edit_class_categories_cb() {
+function vera_edit_class_categories_page() {
   echo '<div class="wrap">';
   echo '<h2>Class Categories</h2>';
   $categories = get_posts(array(
@@ -147,7 +78,7 @@ function vera_edit_class_categories_cb() {
 
 function vera_admin_init() {
   add_submenu_page( 'edit.php?post_type=class', 'Categories', 'Categories',
-    'read', 'class-categories', 'vera_edit_class_categories_cb' );
+    'read', 'class-categories', 'vera_edit_class_categories_page' );
 }
 add_action( 'admin_menu', 'vera_admin_init');
 
@@ -158,57 +89,44 @@ function vera_reorder_classes() {
   // get querystring parameters
   // TODO: try/catch around $_REQUEST gets
   $class_id = (int) $_REQUEST['class_id'];
-  $new_position = (int) $_REQUEST['order'];
-  // get the post and verify input
-  $post = get_post($class_id);
-  if( empty($post) || $post->post_type != "class") {
+  $movement = (int) $_REQUEST['movement'];
+  // verify parameters
+  $post_type = get_post_type($class_id);
+  if( $post_type === false || $post_type != "class") {
     status_header(404);
     die("class not found");
   }
-  $old_position = get_post_meta($post->ID, '_order', true);
-  $category = get_post_meta($post->ID, '_category', true);
+  if( $movement != 'up' && $movement != 'down' ) {
+    status_header(400);
+    die("movement parameter must be 'up' or 'down'");
+  }
+  $old_position = get_post_meta($class_id, '_order', true);
+  $category = get_post_meta($class_id, '_category', true);
   if( $old_position === false ) {
-    $old_position = vera_set_default_class_order($post->ID, $category);
+    $old_position = vera_set_default_class_order($class_id, $category);
   }
   $old_position = (int) $old_position;
-  if( $old_position == $new_position ) {
-    // nothing to do
-    status_header(200);
-    die();
+  $classes = vera_get_classes($category);
+  for ($i=0; $i < sizeof($classes); $i++) {
+    if ($classes[$i]->ID == $class_id) {
+      if ($movement == 'down') {
+        if ($i != 0) {
+          $class = $classes[$i];
+          $classes[$i] = $classes[$i-1];
+          $classes[$i-1] = $class;
+        }
+      } else {
+        if ($i != sizeof(classes)) {
+          $class = $classes[$i];
+          $classes[$i] = $classes[$i+1];
+          $classes[$i+1] = $class;
+        }
+      }
+      break;
+    }
   }
-  // shift as needed
-  if ($new_position < $old_position ) {
-    $between = array($new_position, $old_position-1);
-    $start_position = $new_position;
-  } else {
-    $between = array($old_position+1, $new_position);
-    $start_position = $old_position;
-  }
-  $displaced_posts = get_posts( array(
-    'post_type' => 'class',
-    'meta_key' => '_order',
-    'orderby' => 'meta_value_num',
-    'order' => 'ASC',
-    'meta_query' => array(
-      'relation' => 'AND',
-      array(
-        'key' => '_order',
-        'compare' => 'between',
-        'value' => $between,
-      ),
-      vera_category_query($category),
-    ),
-  ));
-  $displaced_ids = array_map(function($item) { return $item->ID; }, $displaced_posts);
-  if ($old_position < $new_position) {
-    array_push($displaced_ids, $class_id);
-  } else {
-    array_unshift($displaced_ids, $class_id);
-  }
-  $current_position = $start_position;
-  foreach ($displaced_ids as $id) {
-    update_post_meta($id, '_order', $current_position);
-    $current_position++;
+  for ($i=0; $i < sizeof($classes); $i++) {
+    update_post_meta($classes[$i]->ID, '_order', $i);
   }
   wp_redirect("/wp-admin/edit.php?post_type=class&page=class-categories");
   die();
@@ -274,13 +192,7 @@ function classes_save_meta_box_data( $post_id ) {
     vera_set_default_class_order($post_id, $class_category);
   }
 }
-function vera_category_query($category) {
-  return array(
-    'key' => '_category',
-    'value' => $category,
-    'compare' => empty($category) ? "NOT EXISTS" : "=",
-  );
-}
+
 function vera_set_default_class_order($post_id, $class_category) {
   $max = get_posts(array(
     'post_type' => 'class',
@@ -299,8 +211,15 @@ function vera_set_default_class_order($post_id, $class_category) {
 }
 add_action( 'save_post', 'classes_save_meta_box_data' );
 
+function vera_classes_trash_class($post_id) {
+  if( get_post_type($post_id) == 'class' ) {
+    // delete _order, because a class doesn't have a position in the trash
+    delete_post_meta($post_id, '_order');
+  }
+}
+
 function vera_classes_content_filter($content) {
-  /* This filter adds the payment script to the content */
+  /* This filter adds the payment script to the content on display */
   global $post;
   if ( get_post_type() == "class" ) {
     // append payment stuff
