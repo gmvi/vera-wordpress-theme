@@ -8,11 +8,13 @@
 
 .category-wrap:nth-child(2n) {
   padding-left: 0px;
+  float: left;
 }
 
 
 .category-wrap:nth-child(2n+1) {
   padding-right: 0px;
+  float: right;
 }
 
 @media screen and (max-width:782px) {
@@ -40,11 +42,6 @@
   margin-bottom: 5px;
   padding-left: 5px;
 }
-
-/*.category-wrap tbody > tr .class-order-btn:hover,
-.category-wrap tbody > tr .class-order-btn:focus {
-  cursor: pointer;
-}*/
 
 .category-wrap tbody > tr:first-child .class-order-btn-up {
   color: #888;
