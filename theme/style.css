@@ -1558,12 +1558,15 @@ object {
 --------------------------------------------------------------*/
 .IATS_Div button,
 .IATS_Div input,
-.IATS_Div select {
+.IATS_Div select,
+.IATS_Div textarea {
   background-color: white;
   color: black;
   font-size: 13px;
   font-family: sans-serif;
   border-radius: 0;
+  font-weight: inherit;
+  width: inherit;
 }
 
 .IATS_QtyDiv button.IATS_IncreaseQty {
