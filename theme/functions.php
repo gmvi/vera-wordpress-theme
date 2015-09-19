@@ -112,8 +112,10 @@ add_action( 'widgets_init', 'the_vera_project_widgets_init' );
 ***/
 
 function vera_custom_nav_attributes ( $atts, $item, $args ) {
+  if ($item->type == "custom" && $item->current) {
     $atts['data-scroll'] = 'true';
-    return $atts;
+  }
+  return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'vera_custom_nav_attributes', 10, 3 );
 
