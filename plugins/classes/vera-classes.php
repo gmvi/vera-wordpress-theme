@@ -44,7 +44,7 @@ function vera_classes_init() {
       'capability_type' => 'page',
       'supports' => array('title', 'editor', 'excerpt'),
       'rewrite' => array(
-        'slug' => '_classes/detail',
+        'slug' => 'classes/detail',
         'with_front' => false,
       ),
     )
