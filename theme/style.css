@@ -1269,6 +1269,8 @@ span.sep {
 
 .home .entry-content img {
   max-height: 320px;
+  width: auto;
+  max-width: 442px;
 }
 
 .edit-link {
