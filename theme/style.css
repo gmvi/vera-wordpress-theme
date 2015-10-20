@@ -767,7 +767,7 @@ a:active {
 }
 .main-navigation .menu > li.current-menu-item:nth-child(6) > a,
 .main-navigation .menu > li.current-page-ancestor:nth-child(6) > a,
-.single-gallery_show .main-navigation .menu > li:nth-child(6) > a {
+.single-gallery_exhibit .main-navigation .menu > li:nth-child(6) > a {
   background-position: -476px 100%;
 }
 .main-navigation .menu > li.current-menu-item:nth-child(7) > a,
@@ -845,7 +845,7 @@ a:active {
 .main-navigation ul li.current-menu-item ul,
 .main-navigation ul li.current-menu-ancestor ul,
 .main-navigation ul li.current-page-ancestor ul,
-.single-gallery_show .main-navigation ul li:nth-child(6) ul,
+.single-gallery_exhibit .main-navigation ul li:nth-child(6) ul,
 .single-class .main-navigation ul li:nth-child(7) ul {
   display: block;
 }
@@ -1228,12 +1228,12 @@ span.sep {
   text-transform: uppercase;
 }
 
-.hentry.gallery_show .entry-header .entry-title {
+.hentry.gallery_exhibit .entry-header .entry-title {
   font-size: 26px;
   line-height: normal;
 }
 
-.hentry.gallery_show .entry-header .entry-meta {
+.hentry.gallery_exhibit .entry-header .entry-meta {
   font-size: 14px;
   font-style: normal;
 }

@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: The Vera Project Classes
+Plugin Name: disable post categories and tags
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
