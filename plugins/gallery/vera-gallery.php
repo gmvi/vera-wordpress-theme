@@ -38,7 +38,7 @@ add_action( 'init', 'vera_gallery_init' );
  * Init for MEM plugin
  */
 function vera_gallery_mem_settings() {
-  mem_plugin_settings( array( 'gallery_show' ), 'full' );
+  mem_plugin_settings( array( 'gallery_exhibit' ), 'full' );
 }
 add_action( 'mem_init', 'vera_gallery_mem_settings' );
 
