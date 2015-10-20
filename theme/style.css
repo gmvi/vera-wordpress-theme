@@ -850,8 +850,9 @@ a:active {
   display: block;
 }
 
-/* Need .main-navigation-footer to give this rule higer precedence than the above */
-.main-navigation.main-navigation-footer ul li ul {
+.main-navigation.main-navigation-footer ul li ul,
+.single-gallery_exhibit .main-navigation.main-navigation-footer ul li ul,
+.single-class .main-navigation.main-navigation-footer ul li ul {
   display: none;
 }
 
@@ -1234,8 +1235,7 @@ span.sep {
 }
 
 .hentry.gallery_exhibit .entry-header .entry-meta {
-  font-size: 14px;
-  font-style: normal;
+  display: none;
 }
 
 .site-main {
