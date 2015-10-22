@@ -681,6 +681,7 @@ a:active {
   position: relative;
   
   /* ermahgerd flexbox! */
+  /* the -moz- prefixed ones are probably not necessary at this point */
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -688,6 +689,8 @@ a:active {
   display: -moz-flex;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   -webkit-justify-content: space-between; 
   justify-content: space-between; 
 }
@@ -749,8 +752,6 @@ a:active {
   color: black;
   text-shadow: 0px 1px rgba(255, 255, 255, .25);
 }
-
-.main-navigation.shows-page .menu > li:nth-child(2) > a {}
 
 .single-gallery_exhibit .main-navigation .menu > li:nth-child(6) > a {}
 
@@ -874,9 +875,9 @@ a:active {
 
 .main-navigation ul li.current-menu-item ul,
 .main-navigation ul li.current-menu-ancestor ul,
-.main-navigation ul li.current-page-ancestor ul,
+.main-navigation ul li.current-page-ancestor ul/*,
 .single-gallery_exhibit .main-navigation ul li:nth-child(6) ul,
-.single-class .main-navigation ul li:nth-child(7) ul {
+.single-class .main-navigation ul li:nth-child(7) ul*/ {
   display: block;
 }
 
