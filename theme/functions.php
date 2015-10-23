@@ -80,10 +80,12 @@ function the_vera_project_setup() {
   ***/
 
   // Set up the WordPress core custom background feature.
+  /***
   add_theme_support( 'custom-background', apply_filters( 'the_vera_project_custom_background_args', array(
     'default-color' => 'ffffff',
     'default-image' => '',
   ) ) );
+  ***/
 }
 endif; // the_vera_project_setup
 add_action( 'after_setup_theme', 'the_vera_project_setup' );
@@ -142,7 +144,7 @@ add_action( 'wp_enqueue_scripts', 'the_vera_project_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -153,11 +155,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
