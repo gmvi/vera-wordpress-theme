@@ -38,7 +38,7 @@ function vera_classes_init() {
         'not_found_in_trash' => __( 'No classes found in Trash' ),
       ),
       'public' => true,
-      'show_in_nav_menus' => true,
+      'show_in_nav_menus' => false,
       'menu_position' => 9,
       'menu_icon' => 'dashicons-book-alt',
       'capability_type' => 'page',
