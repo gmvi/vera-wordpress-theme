@@ -728,7 +728,10 @@ a:active {
 .main-navigation .menu > li:first-child > a,
 .main-navigation .menu > li.current-menu-item:first-child > a,
 .main-navigation .menu > li.current-menu-item:first-child > a:hover,
-.main-navigation .menu > li.current-menu-item:first-child > a:focus {
+.main-navigation .menu > li.current-menu-item:first-child > a:focus,
+.main-navigation .menu > li.current-page-ancestor:first-child > a,
+.main-navigation .menu > li.current-page-ancestor:first-child > a:hover,
+.main-navigation .menu > li.current-page-ancestor:first-child > a:focus {
   margin-left: 0px;
   background-color: #f06;
   border-color: rgba(255, 255, 255, .1);
@@ -744,8 +747,8 @@ a:active {
 }
 
 .main-navigation .menu > li.current-menu-item > a,
-.main-navigation .menu > li.current-menu-ancestor > a,
-.main-navigation .menu > li.current-page-ancestor > a {
+.main-navigation .menu > li.current-page-ancestor > a,
+.single-post .main-navigation .menu > li.current_page_parent > a {
   background-color: #3cf;
   border-color: rgba(255, 255, 255, .2);
   box-shadow: inset rgba(0, 0, 0, 0.1) 0px 0px 1px;
@@ -762,10 +765,10 @@ a:active {
 /* the transparent borders clip the top border into a triangle */
 .main-navigation .menu > li.current-menu-item > a:before, /* IE8 support */
 .main-navigation .menu > li.current-menu-item > a::before,
-.main-navigation .menu > li.current-menu-ancestor > a:before, /* IE8 support */
-.main-navigation .menu > li.current-menu-ancestor > a::before,
 .main-navigation .menu > li.current-page-ancestor > a:before, /* IE8 support */
-.main-navigation .menu > li.current-page-ancestor > a::before {
+.main-navigation .menu > li.current-page-ancestor > a::before,
+.single-post .main-navigation .menu > li.current_page_parent > a:before,
+.single-post .main-navigation .menu > li.current_page_parent > a::before {
   content: " ";
   display: block;
   position: absolute;
@@ -780,10 +783,10 @@ a:active {
 /* the border stuff makes it a triangle */
 .main-navigation .menu > li.current-menu-item > a:after, /* IE8 support */
 .main-navigation .menu > li.current-menu-item > a::after,
-.main-navigation .menu > li.current-menu-ancestor > a:after, /* IE8 support */
-.main-navigation .menu > li.current-menu-ancestor > a::after,
 .main-navigation .menu > li.current-page-ancestor > a:after, /* IE8 support */
-.main-navigation .menu > li.current-page-ancestor > a::after {
+.main-navigation .menu > li.current-page-ancestor > a::after,
+.single-post .main-navigation .menu > li.current_page_parent > a:after,
+.single-post .main-navigation .menu > li.current_page_parent > a::after {
   content: " ";
   display: block;
   position: absolute;
@@ -797,10 +800,10 @@ a:active {
 
 .main-navigation-footer .menu > li.current-menu-item > a:before, /* IE8 support */
 .main-navigation-footer .menu > li.current-menu-item > a::before,
-.main-navigation-footer .menu > li.current-menu-ancestor > a:before, /* IE8 support */
-.main-navigation-footer .menu > li.current-menu-ancestor > a::before,
 .main-navigation-footer .menu > li.current-page-ancestor > a:before, /* IE8 support */
-.main-navigation-footer .menu > li.current-page-ancestor > a::before {
+.main-navigation-footer .menu > li.current-page-ancestor > a::before,
+.single-post .main-navigation-footer .menu > li.current_page_parent > a:before,
+.single-post .main-navigation-footer .menu > li.current_page_parent > a::before {
   bottom: auto;
   top: -9px;
   border-top: none;
@@ -809,10 +812,10 @@ a:active {
 
 .main-navigation-footer .menu > li.current-menu-item > a:after, /* IE8 support */
 .main-navigation-footer .menu > li.current-menu-item > a::after,
-.main-navigation-footer .menu > li.current-menu-ancestor > a:after, /* IE8 support */
-.main-navigation-footer .menu > li.current-menu-ancestor > a::after,
 .main-navigation-footer .menu > li.current-page-ancestor > a:after, /* IE8 support */
-.main-navigation-footer .menu > li.current-page-ancestor > a::after {
+.main-navigation-footer .menu > li.current-page-ancestor > a::after,
+.single-post .main-navigation-footer .menu > li.current_page_parent > a:after,
+.single-post .main-navigation-footer .menu > li.current_page_parent > a::after {
   bottom: auto;
   top: -7px;
   border-top: none;
@@ -821,8 +824,6 @@ a:active {
 
 .main-navigation .menu > li.current-menu-item:first-child > a:after,
 .main-navigation .menu > li.current-menu-item:first-child > a::after,
-.main-navigation .menu > li.current-menu-ancestor:first-child > a:after,
-.main-navigation .menu > li.current-menu-ancestor:first-child > a::after,
 .main-navigation .menu > li.current-page-ancestor:first-child > a:after,
 .main-navigation .menu > li.current-page-ancestor:first-child > a::after {
   border-top-color: #f06;
@@ -830,8 +831,6 @@ a:active {
 
 .main-navigation-footer .menu > li.current-menu-item:first-child > a:after,
 .main-navigation-footer .menu > li.current-menu-item:first-child > a::after,
-.main-navigation-footer .menu > li.current-menu-ancestor:first-child > a:after,
-.main-navigation-footer .menu > li.current-menu-ancestor:first-child > a::after,
 .main-navigation-footer .menu > li.current-page-ancestor:first-child > a:after,
 .main-navigation-footer .menu > li.current-page-ancestor:first-child > a::after {
   border-bottom-color: #f06;
@@ -873,17 +872,15 @@ a:active {
   background: url(images/bg_subNav.gif) no-repeat;
 }
 
-.main-navigation ul li.current-menu-item ul,
-.main-navigation ul li.current-menu-ancestor ul,
-.main-navigation ul li.current-page-ancestor ul/*,
-.single-gallery_exhibit .main-navigation ul li:nth-child(6) ul,
-.single-class .main-navigation ul li:nth-child(7) ul*/ {
+.main-navigation .menu > li.current-menu-item > ul,
+.main-navigation .menu > li.current-page-ancestor > ul,
+.single-post .main-navigation .menu > li.current_page_parent > ul {
   display: block;
 }
 
 .main-navigation.main-navigation-footer ul li ul,
 .single-gallery_exhibit .main-navigation.main-navigation-footer ul li ul,
-.single-class .main-navigation.main-navigation-footer ul li ul {
+.single-class .main-navigation.main-navigation-footer > ul > li > ul {
   display: none;
 }
 
@@ -925,8 +922,8 @@ a:active {
 .main-navigation ul ul :hover > a {
 }
 
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a:focus {
+.main-navigation ul ul li a:hover,
+.main-navigation ul ul li a:focus {
   color: white;
 }
 
