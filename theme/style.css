@@ -878,9 +878,9 @@ a:active {
   display: block;
 }
 
-.main-navigation.main-navigation-footer ul li ul,
-.single-gallery_exhibit .main-navigation.main-navigation-footer ul li ul,
-.single-class .main-navigation.main-navigation-footer > ul > li > ul {
+.main-navigation.main-navigation-footer .menu > li.current-menu-item > ul,
+.main-navigation.main-navigation-footer .menu > li.current-page-ancestor > ul,
+.single-post .main-navigation.main-navigation-footer .menu > li.current_page_parent > ul {
   display: none;
 }
 
