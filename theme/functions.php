@@ -116,6 +116,12 @@ add_action( 'widgets_init', 'the_vera_project_widgets_init' );
 function vera_custom_nav_attributes ( $atts, $item, $args ) {
   if ($item->type == "custom" && $item->current) {
     $atts['data-scroll'] = 'true';
+  } else {
+    $path = parse_url($item->url, PHP_URL_PATH);
+    $path = trim($path, "/");
+    if ($path == 'shows') {
+      $atts['href'] = 'http://theveraproject.do206.com/';
+    }
   }
   return $atts;
 }
@@ -185,7 +191,6 @@ function vera_get_events() {
   // echo "etag: $etag<br/>";
   // echo "status: $status<br/>";
   // echo $events[0]['title'];
-  // die();
   return $events;
 }
 
