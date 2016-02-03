@@ -120,7 +120,7 @@ function vera_custom_nav_attributes ( $atts, $item, $args ) {
     $path = parse_url($item->url, PHP_URL_PATH);
     $path = trim($path, "/");
     if ($path == 'shows') {
-      $atts['href'] = 'http://theveraproject.do206.com/';
+      $atts['href'] = 'http://events.theveraproject.org/';
     }
   }
   return $atts;
