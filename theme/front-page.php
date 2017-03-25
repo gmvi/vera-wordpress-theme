@@ -43,7 +43,7 @@ get_header(); ?>
 
 	<ul class="events">
 		<?php
-		$events = vera_get_events_periodically();
+		$events = vera_get_events();
 		foreach ($events as $event) {
 			?>
 			<li class="event">

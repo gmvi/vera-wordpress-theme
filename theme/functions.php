@@ -175,37 +175,25 @@ require get_template_directory() . '/inc/jetpack.php';
 function vera_get_events() {
   $options = array( 'user-agent' => 'Mozilla (really WP)' );
   $etag = get_option('vera_events_etag');
-  if ($etag) {
-    $options['headers'] = array( 'If-None-Match' => "$etag" );
-  }
-
-  $response = wp_remote_get("http://do206.com/venues/the-vera-project.json", $options);
-  $status = $response['response']['code'];
-  if ($status == 200) {
-    $events = vera_parse_events($response['body']);
-    update_option('vera_events', $events);
-    update_option('vera_events_etag', $response['headers']['etag']);
-  } else if ($status == 304) {
-    $events = get_option('vera_events');
-  }
-  // echo "etag: $etag<br/>";
-  // echo "status: $status<br/>";
-  // echo $events[0]['title'];
-  return $events;
-}
-
-function vera_get_events_periodically() {
-  $options = array( 'user-agent' => 'Mozilla (really WP)' );
-  $next_update = get_option('vera_events_timestamp');
+  $next_update = get_option('vera_events_timestamp') + 30 /*seconds*/;
   if ($next_update < time()) {
-    $response = wp_remote_get("http://do206.com/venues/the-vera-project.json", $options);
-    $events = vera_parse_events($response['body']);
-    update_option('vera_events', $events);
-    update_option('vera_events_timestamp', time() + 5*60 /*5 mins*/);
-  } else {
+    if ($etag) {
+      $options['headers'] = array( 'If-None-Match' => "$etag" );
+    }
+    $response = wp_remote_get("http://events.theveraproject.org/events.json?view=list&sort=popularity", $options);
+    $status = $response['response']['code'];
+    if ($status == 200) {
+      $events = vera_parse_events($response['body']);
+      update_option('vera_events', $events);
+      update_option('vera_events_etag', $response['headers']['etag']);
+      update_option('vera_events_timestamp', time()); // close enough
+    } else if ($status != 304) {
+      // TODO: this is a failure state that I'd like to get notifications about
+    }
+  }
+  if (!isset($events)) {
     $events = get_option('vera_events');
   }
-
   return $events;
 }
 
@@ -216,6 +204,7 @@ function vera_parse_events($body) {
     $date = strtotime($group->date);
     foreach ($group->events as $event) {
       $buy_url = isset($event->buy_url) ? $event->buy_url : NULL;
+      // TODO: verify that this can be removed
       if (!preg_match("|^([a-z]*://)?(www\.)?theveraproject\.org/classes|", $buy_url)) {
         array_push($copy, array(
           'date' => $date,
