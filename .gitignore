@@ -1,1 +1,15 @@
-theme/images_
+.sass-cache
+
+bower_components
+
+node_modules
+
+understrap.zip
+
+dist
+
+dist-product
+
+npm-debug.log
+
+/vendor/
