@@ -1,6 +1,6 @@
 {
-  "name": "The Vera Project 2018",
-  "version": "alpha",
+  "name": "The-Vera-Project-2018",
+  "version": "0.0.0-alpha",
   "description": "2018 Redesign of The Vera Project's website",
   "main": "index.js",
   "scripts": {
