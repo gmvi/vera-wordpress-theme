@@ -1,0 +1,95 @@
+@font-face {
+  font-family: BebasNeue;
+  src: url('../fonts/BebasNeue-Regular.woff2') format('woff2'), 
+    url('../fonts/BebasNeue-Regular.woff') format('woff'),
+    url('../fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+/* Tags and Classes */
+
+body {
+	color: $darkgray;
+	background-color: $background;
+}
+
+h3 {
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+h3 b {
+	color: $primary;
+}
+
+.wrapper {
+	padding: 0;
+}
+
+.donate {
+	height: 56px;
+	width: 126px;
+	border: 2px solid $primary;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+/* Specific Elements */
+
+.navbar {
+	margin: 0;
+	padding: 0 40px;
+	font-size: 18px;
+	font-family: "BebasNeue", sans-serif;
+	font-weight: 500;
+}
+
+.navbar .navbar-brand {
+	height: 130px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar .navbar-brand .img-fluid {
+	height: 100%;
+	width: auto;
+}
+
+.navbar .navbar-collapse {
+	position: relative;
+}
+
+.navbar .navbar-nav {
+	position: absolute;
+	right: 0;
+}
+
+.navbar .navbar-nav .donate {
+	margin-left: 40px;
+}
+
+.navbar .navbar-nav .menu-item {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.navbar .navbar-nav a {
+	color: black;
+}
+
+#content {
+	padding: 0;
+}
+
+article {
+	text-align: center;
+}
+
+article .wp-post-image {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+}
+

@@ -23,3 +23,15 @@ function theme_enqueue_styles() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+
+add_filter( 'sidebars_widgets', 'disable_all_widgets' ); 
+function disable_all_widgets( $sidebars_widgets ) 
+{ 
+   return array( false ); 
+}
+
+// 999 here means we're forcing high priority, otherwise the remove_submenu_page call won't work
+add_action( 'admin_menu', 'remove_menus', 999 );
+function remove_menus() {
+    remove_submenu_page( 'themes.php', 'widgets.php' );
+}
