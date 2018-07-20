@@ -29,27 +29,32 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 
 				</div><!-- .entry-header -->
+				<div class="section-main">
+					<div class="row header-main">
+						<div class="col-md-12">
+							<h3><?php the_field('header'); ?></h3>
+						</div>
+					</div><!-- .section-header -->
+					<div class="row body-main">
+						<div class="col-md-12">
+							<?php the_content(); ?>
+							<a href class="more">Learn More About Us</a>
+						</div>
+					</div><!-- .section-body -->
+				</div><!-- .section-main -->
 
-				<div class="row">
-					<div class="col-md-12">
-						<h3><?php the_field('header'); ?></h3>
-						<div><?php the_content(); ?></div>
-						<div>Learn More About Us</div>
+				<div class="section-concerts">
+					<div class="row header-concerts">
+						<div class="col-md-12">
+							<div class="label">Concerts</div>
+							<h2><b>On Stage</b></h2>
+						</div>
 					</div>
-
-				</div><!-- .entry-content -->
-
-				<div class="row">
-					<div class="col-md-12">
-						<header>
-							<div class="label label-primary">Concerts</div>
-							<h2>On Stage</h2>
-						</header>
-
-						<div class="shows-block">
+					<div class="row body-concerts">
+						<div class="col-md-12">
 							<div class="featured-concert">
 								<div class="featured-info">
-									<div class="label label-primary">Featured Concert</div>
+									<div class="label">Featured Concert</div>
 									<div class="presented-by">Soundgig Presents</div>
 									<div class="featured-title">Peach Kelli Pop</div>
 									<div class="featured-details">
@@ -57,7 +62,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 										<br>
 										$10 ADV | $12 DOS
 									</div>
-									<a href="localhost">Learn More</a>
+									<a class="more">Learn More</a>
 								</div>
 							</div>
 							<div class="upcoming-concerts">

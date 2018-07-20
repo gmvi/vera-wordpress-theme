@@ -9503,22 +9503,29 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
+/* Fonts */
 @font-face {
   font-family: BebasNeue;
   src: url("../fonts/BebasNeue-Regular.woff2") format("woff2"), url("../fonts/BebasNeue-Regular.woff") format("woff"), url("../fonts/BebasNeue-Regular.ttf") format("truetype"); }
 
-/* Tags and Classes */
+@font-face {
+  font-family: GothicA1;
+  src: url("../fonts/GothicA1-Regular.ttf") format("truetype"); }
+
+/* Plain Tags */
 body {
+  min-width: 960px;
+  max-width: 1440px;
+  margin: 0 auto;
   color: #4C4E56;
   background-color: #FFF; }
 
-h3 {
-  font-weight: normal;
-  text-transform: uppercase; }
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0; }
 
-h3 b {
-  color: #D41C53; }
-
+/* Uncatagorized */
 .wrapper {
   padding: 0; }
 
@@ -9531,7 +9538,45 @@ h3 b {
   flex-direction: column;
   text-align: center; }
 
-/* Specific Elements */
+a.more {
+  height: 24px;
+  font-family: BebasNeue;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: inherit;
+  border-bottom: 2px solid #D41C53; }
+
+a.more:hover {
+  color: #D41C53;
+  border-bottom: none;
+  padding-bottom: 2px; }
+
+.label {
+  background-color: #D41C53;
+  color: white;
+  font-family: BebasNeue;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  padding: 2px 6px 0; }
+
+#content {
+  padding: 0; }
+
+article {
+  text-align: center; }
+
+article .wp-post-image {
+  width: 100%;
+  min-width: 960px;
+  max-width: 1440px;
+  height: 400px;
+  object-fit: cover; }
+
+/* Standard Bootstrap Navbar */
 .navbar {
   margin: 0;
   padding: 0 40px;
@@ -9566,13 +9611,28 @@ h3 b {
 .navbar .navbar-nav a {
   color: black; }
 
-#content {
-  padding: 0; }
+/* Primary Title Area */
+/* Sections */
+.section, .section-main, .section-concerts {
+  padding: 90px 0 0px; }
 
-article {
-  text-align: center; }
+.header, .section-main .header-main, .section-concerts .header-concerts {
+  text-transform: uppercase;
+  font-family: BebasNeue;
+  font-size: 56px;
+  letter-spacing: 1.8px;
+  margin-bottom: 30px; }
+  .header b, .section-main .header-main b, .section-concerts .header-concerts b {
+    font-weight: 600;
+    color: #D41C53; }
 
-article .wp-post-image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover; }
+.section-main .body-main, .section-concerts .body-concerts {
+  font-family: GothicA1;
+  font-size: 24px;
+  color: black; }
+  .section-main .body-main p, .section-concerts .body-concerts p {
+    width: 940px;
+    margin: 0 auto 40px; }
+
+.section-concerts .header-concerts {
+  font-size: 72px; }
