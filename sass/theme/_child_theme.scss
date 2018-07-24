@@ -30,122 +30,138 @@
 /* Plain Tags */
 
 body {
-	min-width: 960px;
-	max-width: 1440px;
-	margin: 0 auto;
-	color: $darkgray;
-	background-color: $background;
+    min-width: 960px;
+    max-width: 1440px;
+    margin: 0 auto;
+    color: $darkgray;
+    background-color: $background;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	// h tags are for blind people and robots, not for styling
-	font-size: inherit;
-	font-weight: inherit;
-	margin: 0;
+    // h tags are for blind people and robots, not for styling
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
 }
 
 /* Uncatagorized */
 // TODO: catagorize these
 
 .wrapper {
-	padding: 0;
+    padding: 0;
 }
 
 .donate {
-	height: 56px;
-	width: 126px;
-	border: 2px solid $primary;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
+    height: 56px;
+    width: 126px;
+    border: 2px solid $primary;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 a.more {
-	height: 24px;
-	font-family: BebasNeue;
-	font-size: 24px;
-	font-weight: bold;
-	letter-spacing: 1.5px;
-	color: inherit;
-	border-bottom: 2px solid $primary;
+    height: 24px;
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: inherit;
+    border-bottom: 2px solid $primary;
 }
 a.more:hover {
-	color: $primary;
-	border-bottom: none;
-	padding-bottom: 2px;
+    color: $primary;
+    border-bottom: none;
+    padding-bottom: 2px;
 }
 
 .label {
-	background-color: $primary;
-	color: white;
-	font-family: BebasNeue;
-	font-size: 18px;
-	line-height: 23px;
-	font-weight: 400;
-	letter-spacing: 1.5px;
-	display: inline-block;
-	padding: 2px 6px 0;
+    background-color: $primary;
+    color: white;
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 19px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    padding: 5px 10px 2px;
 }
 
-#content {
-	padding: 0;
+.list-title {
+	width: 100%;
+	height: 40px;
+	font-family: BebasNeue;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    padding-top: 8px;
+    text-align: center;
+	background-color: black;
+	color: white;
+}
+
+.list-item {
+	margin: 0;
+	padding: 30px 20px;
 }
 
 article {
-	text-align: center;
+    text-align: center;
 }
 
 article .wp-post-image {
-	width: 100%;
-	min-width: 960px;
-	max-width: 1440px;
-	height: 400px;
-	object-fit: cover;
+    width: 100%;
+    min-width: 960px;
+    max-width: 1440px;
+    height: 400px;
+    object-fit: cover;
 }
 
 /* Standard Bootstrap Navbar */
 
 .navbar {
-	margin: 0;
-	padding: 0 40px;
-	font-size: 18px;
-	font-family: "BebasNeue", sans-serif;
-	font-weight: 500;
+    margin: 0;
+    padding: 0 40px;
+    font-size: 18px;
+    font-family: "BebasNeue", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .navbar .navbar-brand {
-	height: 130px;
+    height: 130px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
 .navbar .navbar-brand .img-fluid {
-	height: 100%;
-	width: auto;
+    height: 100%;
+    width: auto;
 }
 
 .navbar .navbar-collapse {
-	position: relative;
+    position: relative;
 }
 
 .navbar .navbar-nav {
-	position: absolute;
-	right: 0;
+    position: absolute;
+    right: 0;
 }
 
 .navbar .navbar-nav .donate {
-	margin-left: 40px;
+    margin-left: 40px;
 }
 
 .navbar .navbar-nav .menu-item {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .navbar .navbar-nav a {
-	color: black;
+    color: black;
 }
 
 /* Primary Title Area */
@@ -153,53 +169,108 @@ article .wp-post-image {
 /* Sections */
 
 %section {
-	padding: 90px 0 0px;
+    padding: 90px 0 0px;
 } .section { @extend %section; }
 
 %header {
-	text-transform: uppercase;
-	font-family: BebasNeue;
-	font-size: 56px;
-	letter-spacing: 1.8px;
-	margin-bottom: 30px;
-
-	b {
-		font-weight: 600;
-		color: $primary;
-	}
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    font-size: 56px;
+    letter-spacing: 1.8px;
+    margin-bottom: 30px;
+    b {
+        font-weight: 600;
+        color: $primary;
+    }
 } .header { @extend %header; }
 
 %body {
-	font-family: GothicA1;
-	font-size: 24px;
-	color: black;
-	p {
-		width: 940px;
-		margin: 0 auto 40px;
-	}
+    font-family: GothicA1;
+    font-size: 24px;
+    color: black;
+    p {
+        width: 940px;
+        margin: 0 auto 40px;
+    }
 }
 
-.section-main {
-	@extend %section;
+/* All Pages */
 
-	.header-main {
-		@extend %header;
-	}
-	
-	.body-main {
-		@extend %body;
-	}
+#content {
+    padding: 0;
+}
+
+/* Front Page */
+
+.section-main {
+    @extend %section;
+
+    .header-main {
+        @extend %header;
+    }
+    
+    .body-main {
+        @extend %body;
+    }
 }
 
 .section-concerts {
-	@extend %section;
+    @extend %section;
 
-	.header-concerts {
-		@extend %header;
-		font-size: 72px;
-	}
-	
-	.body-concerts {
-		@extend %body;
-	}
+    .header-concerts {
+        @extend %header;
+        font-size: 72px;
+    }
+    
+    .body-concerts {
+        @extend %body;
+    }
+}
+
+.section-concerts {
+    @extend %section;
+
+    .header-concerts {
+        @extend %header;
+    }
+
+    .body-concerts {
+
+    	> div {
+    		padding: 0;
+    	}
+
+        .featured-concert {
+        	background-color: grey;
+        	color: white;
+            text-align: left;
+            padding: 60px 70px;
+            height: 100%;
+
+            .presented-by {
+            	font-size: 12px;
+            	font-weight: bold;
+            	letter-spacing: 1.5px;
+            	text-transform: uppercase;
+            	margin-top: 20px;
+            }
+
+            .featured-title {
+            	font-size: 56px;
+            	font-family: BebasNeue;
+            	text-transform: uppercase;
+            	letter-spacing: 1.5px;
+            	line-height: 0.8;
+            	margin-bottom: 25px;
+            }
+
+            .featured-details {
+            	font-size: 18px;
+            	margin-bottom: 15px;
+            }
+        }
+    
+        .concerts-list {
+        }
+    }
 }

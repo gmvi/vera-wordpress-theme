@@ -9541,6 +9541,7 @@ h1, h2, h3, h4, h5, h6 {
 a.more {
   height: 24px;
   font-family: BebasNeue;
+  text-transform: uppercase;
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 1.5px;
@@ -9556,15 +9557,28 @@ a.more:hover {
   background-color: #D41C53;
   color: white;
   font-family: BebasNeue;
+  text-transform: uppercase;
   font-size: 18px;
-  line-height: 23px;
+  line-height: 19px;
   font-weight: 400;
   letter-spacing: 1.5px;
   display: inline-block;
-  padding: 2px 6px 0; }
+  padding: 5px 10px 2px; }
 
-#content {
-  padding: 0; }
+.list-title {
+  width: 100%;
+  height: 40px;
+  font-family: BebasNeue;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  padding-top: 8px;
+  text-align: center;
+  background-color: black;
+  color: white; }
+
+.list-item {
+  margin: 0;
+  padding: 30px 20px; }
 
 article {
   text-align: center; }
@@ -9582,6 +9596,7 @@ article .wp-post-image {
   padding: 0 40px;
   font-size: 18px;
   font-family: "BebasNeue", sans-serif;
+  text-transform: uppercase;
   font-weight: 500; }
 
 .navbar .navbar-brand {
@@ -9617,8 +9632,8 @@ article .wp-post-image {
   padding: 90px 0 0px; }
 
 .header, .section-main .header-main, .section-concerts .header-concerts {
-  text-transform: uppercase;
   font-family: BebasNeue;
+  text-transform: uppercase;
   font-size: 56px;
   letter-spacing: 1.8px;
   margin-bottom: 30px; }
@@ -9634,5 +9649,36 @@ article .wp-post-image {
     width: 940px;
     margin: 0 auto 40px; }
 
+/* All Pages */
+#content {
+  padding: 0; }
+
+/* Front Page */
 .section-concerts .header-concerts {
   font-size: 72px; }
+
+.section-concerts .body-concerts > div {
+  padding: 0; }
+
+.section-concerts .body-concerts .featured-concert {
+  background-color: grey;
+  color: white;
+  text-align: left;
+  padding: 60px 70px;
+  height: 100%; }
+  .section-concerts .body-concerts .featured-concert .presented-by {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 20px; }
+  .section-concerts .body-concerts .featured-concert .featured-title {
+    font-size: 56px;
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 0.8;
+    margin-bottom: 25px; }
+  .section-concerts .body-concerts .featured-concert .featured-details {
+    font-size: 18px;
+    margin-bottom: 15px; }

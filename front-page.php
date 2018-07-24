@@ -51,24 +51,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 					</div>
 					<div class="row body-concerts">
-						<div class="col-md-12">
+						<div class="col-md-8">
 							<div class="featured-concert">
-								<div class="featured-info">
-									<div class="label">Featured Concert</div>
-									<div class="presented-by">Soundgig Presents</div>
-									<div class="featured-title">Peach Kelli Pop</div>
-									<div class="featured-details">
-										The Vera Project | 7PM Doors
-										<br>
-										$10 ADV | $12 DOS
-									</div>
-									<a class="more">Learn More</a>
+								<div class="label">Featured Concert</div>
+								<div class="presented-by">Soundgig Presents</div>
+								<div class="featured-title">Peach Kelli Pop</div>
+								<div class="featured-details">
+									The Vera Project&nbsp;&nbsp;|&nbsp;&nbsp;7PM Doors
+									<br>
+									$10 ADV&nbsp;&nbsp;|&nbsp;&nbsp;$12 DOS
 								</div>
+								<a href class="more">Learn More</a>
 							</div>
-							<div class="upcoming-concerts">
+						</div>
+						<div class="col-md-4">
+							<div class="concerts-list">
 								<div class="list-title">Upcoming Shows</div>
-								<ul class="event-list">
-									<li class="event-item">
+								<ul class="list-body">
+									<li class="list-item">
 										<div class="event-date">Sat, Dec 16, 2017</div>
 										<div class="event-title">Freak Heat Waves</div>
 										<div class="event-icon icon-ticket"></div>
