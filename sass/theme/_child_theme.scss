@@ -35,6 +35,7 @@ body {
     margin: 0 auto;
     color: $darkgray;
     background-color: $background;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -84,27 +85,9 @@ a.more:hover {
     text-transform: uppercase;
     font-size: 18px;
     line-height: 19px;
-    font-weight: 400;
+    font-weight: normal;
     letter-spacing: 1.5px;
-    display: inline-block;
     padding: 5px 10px 2px;
-}
-
-.list-title {
-	width: 100%;
-	height: 40px;
-	font-family: BebasNeue;
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    padding-top: 8px;
-    text-align: center;
-	background-color: black;
-	color: white;
-}
-
-.list-item {
-	margin: 0;
-	padding: 30px 20px;
 }
 
 article {
@@ -115,7 +98,7 @@ article .wp-post-image {
     width: 100%;
     min-width: 960px;
     max-width: 1440px;
-    height: 400px;
+    height: 650px;
     object-fit: cover;
 }
 
@@ -127,7 +110,7 @@ article .wp-post-image {
     font-size: 18px;
     font-family: "BebasNeue", sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: normal;
 }
 
 .navbar .navbar-brand {
@@ -142,27 +125,36 @@ article .wp-post-image {
 }
 
 .navbar .navbar-collapse {
-    position: relative;
+	justify-content: flex-end;
+}
+
+.navbar .navbar-collapse.show {
+	margin-bottom: 20px;
 }
 
 .navbar .navbar-nav {
-    position: absolute;
-    right: 0;
+    float: right;
+}
+
+.navbar .navbar-toggler-icon {
+	background-color: black;
 }
 
 .navbar .navbar-nav .donate {
     margin-left: 40px;
 }
 
-.navbar .navbar-nav .menu-item {
+.navbar .nav-item {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: right;
 }
 
-.navbar .navbar-nav a {
-    color: black;
+.navbar .nav-link {
+	color: black;
 }
+
 
 /* Primary Title Area */
 
@@ -179,7 +171,7 @@ article .wp-post-image {
     letter-spacing: 1.8px;
     margin-bottom: 30px;
     b {
-        font-weight: 600;
+        font-weight: bold;
         color: $primary;
     }
 } .header { @extend %header; }
@@ -199,6 +191,20 @@ article .wp-post-image {
 #content {
     padding: 0;
 }
+
+.list-title {
+	width: 100%;
+	height: 40px;
+	font-family: BebasNeue;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    padding-top: 8px;
+    text-align: center;
+	background-color: black;
+	color: white;
+}
+
+
 
 /* Front Page */
 
@@ -221,18 +227,6 @@ article .wp-post-image {
         @extend %header;
         font-size: 72px;
     }
-    
-    .body-concerts {
-        @extend %body;
-    }
-}
-
-.section-concerts {
-    @extend %section;
-
-    .header-concerts {
-        @extend %header;
-    }
 
     .body-concerts {
 
@@ -249,10 +243,9 @@ article .wp-post-image {
 
             .presented-by {
             	font-size: 12px;
-            	font-weight: bold;
             	letter-spacing: 1.5px;
             	text-transform: uppercase;
-            	margin-top: 20px;
+            	margin: 20px 0 4px;
             }
 
             .featured-title {
@@ -266,11 +259,172 @@ article .wp-post-image {
 
             .featured-details {
             	font-size: 18px;
-            	margin-bottom: 15px;
+            	margin-bottom: 20px;
             }
         }
     
         .concerts-list {
+        	.list-body {
+				padding: 0 20px;
+				margin: 0;
+				text-align: left;
+				border-right: 1px solid darkgray;
+			
+				.list-item {
+					margin: 0;
+					padding: 30px 0;
+					list-style: none;
+					position: relative;
+			
+					.wrapper-left {
+						float: left;
+						margin-right: 80px;
+					}
+			
+					.wrapper-right {
+						width: 60px;
+						float: right;
+						position: absolute;
+						right: 0;
+						height: 100%;
+						margin-top: -30px;
+						display: flex;
+						align-items: center;
+					}
+			
+					.event-date {
+						font-family: GothicA1;
+						font-size: 12px;
+						font-weight: bold;
+						letter-spacing: 1.5px;
+						text-transform: uppercase;
+					}
+			
+					.event-title {
+						margin-top: 12px;
+						color: $primary;
+						font-family: BebasNeue;
+						font-size: 34px;
+						font-weight: normal;
+						line-height: 1;
+						letter-spacing: 1.5px;
+					}
+			
+					.event-icon {
+						width: 60px;
+						height: 60px;
+						float: right;
+					}
+				}
+			
+				.list-item:not(:last-child) {
+					border-bottom: 1px solid darkgray;
+				}
+			}
+
+			.list-more {
+				padding: 32px 0;
+				background-color: $primary;
+				color: white;
+				font-family: BebasNeue;
+				font-size: 24px;
+				font-weight: normal;
+				line-height: 0.8;
+				letter-spacing: 1.5px;
+			}
         }
+    }
+}
+
+.section-classes {
+    @extend %section;
+
+    .header-classes {
+        @extend %header;
+    }
+    
+    .body-classes {
+        @extend %body;
+
+        .card {
+        	width: 472px;
+        	margin: 0 auto;
+
+        	.card-image {
+        		width: 470px;
+        		height: 350px;
+        	}
+
+        	.card-title {
+        		height: 100px;
+        		margin-bottom: 0;
+        		font-family: BebasNeue;
+				font-size: 34px;
+				text-align: left;
+				display: flex;
+				align-items: center;
+				padding-left: 40px;
+				margin-right: 100px;
+
+				.icon-arrow {
+					width: 100px;
+					height: 100px;
+					padding: 30px;
+				}
+        	}
+        }
+    }
+}
+
+.section-banner {
+	@extend %section;
+	padding: 130px 0;
+	margin-top: 80px;
+	height: 910px;
+	color: white;
+
+	.banner-body {
+		position: relative;
+		padding: 115px 200px 115px 240px;
+		text-align: left;
+	}
+
+	.banner-headline {
+		margin: 40px 0 30px;
+		width: 50%;
+		font-family: BebasNeue;
+		font-size: 96px;
+		line-height: 0.9;
+		letter-spacing: 1.5px;
+	}
+
+	.label {
+		background-color: white;
+		color: $primary;
+	}
+
+	.more { border-color: white; }
+	.more:hover { color: white; }
+
+	.banner-background {
+		position: absolute;
+		left: 0;
+		height: 600px;
+		width: 120%;
+		margin-left: -10%;
+		background-color: $primary;
+		transform: rotate(10deg);
+	}
+}
+
+.section-blog {
+    @extend %section;
+
+    .header-blog {
+        @extend %header;
+    }
+    
+    .body-blog {
+        @extend %body;
     }
 }

@@ -9518,7 +9518,8 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   color: #4C4E56;
-  background-color: #FFF; }
+  background-color: #FFF;
+  overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
@@ -9560,25 +9561,9 @@ a.more:hover {
   text-transform: uppercase;
   font-size: 18px;
   line-height: 19px;
-  font-weight: 400;
+  font-weight: normal;
   letter-spacing: 1.5px;
-  display: inline-block;
   padding: 5px 10px 2px; }
-
-.list-title {
-  width: 100%;
-  height: 40px;
-  font-family: BebasNeue;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  padding-top: 8px;
-  text-align: center;
-  background-color: black;
-  color: white; }
-
-.list-item {
-  margin: 0;
-  padding: 30px 20px; }
 
 article {
   text-align: center; }
@@ -9587,7 +9572,7 @@ article .wp-post-image {
   width: 100%;
   min-width: 960px;
   max-width: 1440px;
-  height: 400px;
+  height: 650px;
   object-fit: cover; }
 
 /* Standard Bootstrap Navbar */
@@ -9597,7 +9582,7 @@ article .wp-post-image {
   font-size: 18px;
   font-family: "BebasNeue", sans-serif;
   text-transform: uppercase;
-  font-weight: 500; }
+  font-weight: normal; }
 
 .navbar .navbar-brand {
   height: 130px;
@@ -9609,49 +9594,66 @@ article .wp-post-image {
   width: auto; }
 
 .navbar .navbar-collapse {
-  position: relative; }
+  justify-content: flex-end; }
+
+.navbar .navbar-collapse.show {
+  margin-bottom: 20px; }
 
 .navbar .navbar-nav {
-  position: absolute;
-  right: 0; }
+  float: right; }
+
+.navbar .navbar-toggler-icon {
+  background-color: black; }
 
 .navbar .navbar-nav .donate {
   margin-left: 40px; }
 
-.navbar .navbar-nav .menu-item {
+.navbar .nav-item {
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  text-align: right; }
 
-.navbar .navbar-nav a {
+.navbar .nav-link {
   color: black; }
 
 /* Primary Title Area */
 /* Sections */
-.section, .section-main, .section-concerts {
+.section, .section-main, .section-concerts, .section-classes, .section-banner, .section-blog {
   padding: 90px 0 0px; }
 
-.header, .section-main .header-main, .section-concerts .header-concerts {
+.header, .section-main .header-main, .section-concerts .header-concerts, .section-classes .header-classes, .section-blog .header-blog {
   font-family: BebasNeue;
   text-transform: uppercase;
   font-size: 56px;
   letter-spacing: 1.8px;
   margin-bottom: 30px; }
-  .header b, .section-main .header-main b, .section-concerts .header-concerts b {
-    font-weight: 600;
+  .header b, .section-main .header-main b, .section-concerts .header-concerts b, .section-classes .header-classes b, .section-blog .header-blog b {
+    font-weight: bold;
     color: #D41C53; }
 
-.section-main .body-main, .section-concerts .body-concerts {
+.section-main .body-main, .section-classes .body-classes, .section-blog .body-blog {
   font-family: GothicA1;
   font-size: 24px;
   color: black; }
-  .section-main .body-main p, .section-concerts .body-concerts p {
+  .section-main .body-main p, .section-classes .body-classes p, .section-blog .body-blog p {
     width: 940px;
     margin: 0 auto 40px; }
 
 /* All Pages */
 #content {
   padding: 0; }
+
+.list-title {
+  width: 100%;
+  height: 40px;
+  font-family: BebasNeue;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  padding-top: 8px;
+  text-align: center;
+  background-color: black;
+  color: white; }
 
 /* Front Page */
 .section-concerts .header-concerts {
@@ -9668,10 +9670,9 @@ article .wp-post-image {
   height: 100%; }
   .section-concerts .body-concerts .featured-concert .presented-by {
     font-size: 12px;
-    font-weight: bold;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-top: 20px; }
+    margin: 20px 0 4px; }
   .section-concerts .body-concerts .featured-concert .featured-title {
     font-size: 56px;
     font-family: BebasNeue;
@@ -9681,4 +9682,110 @@ article .wp-post-image {
     margin-bottom: 25px; }
   .section-concerts .body-concerts .featured-concert .featured-details {
     font-size: 18px;
-    margin-bottom: 15px; }
+    margin-bottom: 20px; }
+
+.section-concerts .body-concerts .concerts-list .list-body {
+  padding: 0 20px;
+  margin: 0;
+  text-align: left;
+  border-right: 1px solid darkgray; }
+  .section-concerts .body-concerts .concerts-list .list-body .list-item {
+    margin: 0;
+    padding: 30px 0;
+    list-style: none;
+    position: relative; }
+    .section-concerts .body-concerts .concerts-list .list-body .list-item .wrapper-left {
+      float: left;
+      margin-right: 80px; }
+    .section-concerts .body-concerts .concerts-list .list-body .list-item .wrapper-right {
+      width: 60px;
+      float: right;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      margin-top: -30px;
+      display: flex;
+      align-items: center; }
+    .section-concerts .body-concerts .concerts-list .list-body .list-item .event-date {
+      font-family: GothicA1;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase; }
+    .section-concerts .body-concerts .concerts-list .list-body .list-item .event-title {
+      margin-top: 12px;
+      color: #D41C53;
+      font-family: BebasNeue;
+      font-size: 34px;
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: 1.5px; }
+    .section-concerts .body-concerts .concerts-list .list-body .list-item .event-icon {
+      width: 60px;
+      height: 60px;
+      float: right; }
+  .section-concerts .body-concerts .concerts-list .list-body .list-item:not(:last-child) {
+    border-bottom: 1px solid darkgray; }
+
+.section-concerts .body-concerts .concerts-list .list-more {
+  padding: 32px 0;
+  background-color: #D41C53;
+  color: white;
+  font-family: BebasNeue;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 0.8;
+  letter-spacing: 1.5px; }
+
+.section-classes .body-classes .card {
+  width: 472px;
+  margin: 0 auto; }
+  .section-classes .body-classes .card .card-image {
+    width: 470px;
+    height: 350px; }
+  .section-classes .body-classes .card .card-title {
+    height: 100px;
+    margin-bottom: 0;
+    font-family: BebasNeue;
+    font-size: 34px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    margin-right: 100px; }
+    .section-classes .body-classes .card .card-title .icon-arrow {
+      width: 100px;
+      height: 100px;
+      padding: 30px; }
+
+.section-banner {
+  padding: 130px 0;
+  margin-top: 80px;
+  height: 910px;
+  color: white; }
+  .section-banner .banner-body {
+    position: relative;
+    padding: 115px 200px 115px 240px;
+    text-align: left; }
+  .section-banner .banner-headline {
+    margin: 40px 0 30px;
+    width: 50%;
+    font-family: BebasNeue;
+    font-size: 96px;
+    line-height: 0.9;
+    letter-spacing: 1.5px; }
+  .section-banner .label {
+    background-color: white;
+    color: #D41C53; }
+  .section-banner .more {
+    border-color: white; }
+  .section-banner .more:hover {
+    color: white; }
+  .section-banner .banner-background {
+    position: absolute;
+    left: 0;
+    height: 600px;
+    width: 120%;
+    margin-left: -10%;
+    background-color: #D41C53;
+    transform: rotate(10deg); }

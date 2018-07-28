@@ -46,14 +46,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="section-concerts">
 					<div class="row header-concerts">
 						<div class="col-md-12">
-							<div class="label">Concerts</div>
+							<span class="label">Concerts</span>
 							<h2><b>On Stage</b></h2>
 						</div>
 					</div>
 					<div class="row body-concerts">
 						<div class="col-md-8">
 							<div class="featured-concert">
-								<div class="label">Featured Concert</div>
+								<span class="label">Featured Concert</span>
 								<div class="presented-by">Soundgig Presents</div>
 								<div class="featured-title">Peach Kelli Pop</div>
 								<div class="featured-details">
@@ -68,25 +68,41 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="concerts-list">
 								<div class="list-title">Upcoming Shows</div>
 								<ul class="list-body">
-									<li class="list-item">
-										<div class="event-date">Sat, Dec 16, 2017</div>
-										<div class="event-title">Freak Heat Waves</div>
-										<div class="event-icon icon-ticket"></div>
+									<li class="list-item clearfix">
+										<div class="wrapper-left">
+											<div class="event-date">Sat, Dec 16, 2017</div>
+											<div class="event-title">Freak Heat Waves</div>
+										</div>
+										<div class="wrapper-right">
+											<span class="event-icon icon-ticket"></span>
+										</div>
 									</li>
-									<li class="event-item">
-										<div class="event-date">Sat, Dec 16, 2017</div>
-										<div class="event-title">Bright Moments & the Camas High School Choir</div>
-										<div class="event-icon icon-ticket"></div>
+									<li class="list-item clearfix">
+										<div class="wrapper-left">
+											<div class="event-date">Sat, Dec 16, 2017</div>
+											<div class="event-title">Bright Moments & the Camas High School Choir</div>
+										</div>
+										<div class="wrapper-right">
+											<span class="event-icon icon-ticket"></span>
+										</div>
 									</li>
-									<li class="event-item">
-										<div class="event-date">Sat, Dec 16, 2017</div>
-										<div class="event-title">La Luz, Savila, Anchient Forest</div>
-										<div class="event-icon icon-ticket"></div>
+									<li class="list-item clearfix">
+										<div class="wrapper-left">
+											<div class="event-date">Sat, Dec 16, 2017</div>
+											<div class="event-title">La Luz, Savila, Anchient Forest</div>
+										</div>
+										<div class="wrapper-right">
+											<span class="event-icon icon-ticket"></span>
+										</div>
 									</li>
-									<li class="event-item">
-										<div class="event-date">Sat, Dec 16, 2017</div>
-										<div class="event-title">La Luz, Savila, Anchient Forest</div>
-										<div class="event-icon icon-ticket"></div>
+									<li class="list-item clearfix">
+										<div class="wrapper-left">
+											<div class="event-date">Sat, Dec 16, 2017</div>
+											<div class="event-title">La Luz, Savila, Anchient Forest</div>
+										</div>
+										<div class="wrapper-right">
+											<span class="event-icon icon-ticket"></span>
+										</div>
 									</li>
 								</ul>
 								<div class="list-more">View All</div>
@@ -95,8 +111,66 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div><!-- .col-md-12 -->
 				</div><!-- .row -->
 
-				<div class="row">
+				<div class="section-classes">
+					<div class="row header-classes">
+						<div class="col-md-12">
+							<span class="label">Classes</span>
+							<h2><b>In The Studio</b></h2>
+						</div>
+					</div>
+					<div class="row body-classes">
+						<div class="col-md-1">
+						</div>
+						<div class="col-md-5">
+							<div class="card card-silkscreen">
+								<div class="card-image"></div>
+								<a href class="card-title">
+									Silkscreen
+									<div class="icon-arrow"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="card card-silkscreen">
+								<div class="card-image"></div>
+								<a href class="card-title">
+									Audio & Stage
+									<div class="icon-arrow"></div>
+								</a>
+							</div>
+						</div>
+						<div class="col-md-1">
+						</div>
+					</div>
 				</div>
+
+				<div class="section-banner">
+					<div class="banner-background"></div>
+					<div class="row">
+						<div class="col-md-12 banner-body">
+							<span class="label">Get Involved</span>
+							<div class="banner-headline">Volunteer Today</div>
+							<a href class="more">Learn More</a>
+						</div>
+					</div>
+				</div><!-- .section-banner -->
+
+				<div class="section-blog">
+					<div class="row header-blog">
+						<div class="col-md-12">
+							<span class="label">News</span>
+							<h2><b>On The Blog</b></h2>
+						</div>
+					</div>
+					<div class="row body-blog">
+						<div class="col-md-4">
+						</div>
+						<div class="col-md-4">
+						</div>
+						<div class="col-md-4">
+						</div>
+					</div>
+				</div><!-- .section-blog -->
 			</article><!-- #post-## -->
 	
 		</main><!-- #main -->
