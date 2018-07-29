@@ -9518,8 +9518,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   color: #4C4E56;
-  background-color: #FFF;
-  overflow-x: hidden; }
+  background-color: #FFF; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
@@ -9572,7 +9571,7 @@ article .wp-post-image {
   width: 100%;
   min-width: 960px;
   max-width: 1440px;
-  height: 650px;
+  height: 670px;
   object-fit: cover; }
 
 /* Standard Bootstrap Navbar */
@@ -9620,14 +9619,14 @@ article .wp-post-image {
 /* Primary Title Area */
 /* Sections */
 .section, .section-main, .section-concerts, .section-classes, .section-banner, .section-blog {
-  padding: 90px 0 0px; }
+  padding: 80px 0 0px; }
 
 .header, .section-main .header-main, .section-concerts .header-concerts, .section-classes .header-classes, .section-blog .header-blog {
   font-family: BebasNeue;
   text-transform: uppercase;
-  font-size: 56px;
+  font-size: 72px;
   letter-spacing: 1.8px;
-  margin-bottom: 30px; }
+  margin-bottom: 35px; }
   .header b, .section-main .header-main b, .section-concerts .header-concerts b, .section-classes .header-classes b, .section-blog .header-blog b {
     font-weight: bold;
     color: #D41C53; }
@@ -9637,8 +9636,7 @@ article .wp-post-image {
   font-size: 24px;
   color: black; }
   .section-main .body-main p, .section-classes .body-classes p, .section-blog .body-blog p {
-    width: 940px;
-    margin: 0 auto 40px; }
+    margin-bottom: 35px; }
 
 /* All Pages */
 #content {
@@ -9655,9 +9653,14 @@ article .wp-post-image {
   background-color: black;
   color: white; }
 
-/* Front Page */
-.section-concerts .header-concerts {
-  font-size: 72px; }
+/* Import Pages */
+.section-main {
+  padding-top: 90px; }
+  .section-main .header-main {
+    font-size: 56px; }
+  .section-main .body-main {
+    max-width: 970px;
+    margin: 0 auto; }
 
 .section-concerts .body-concerts > div {
   padding: 0; }
@@ -9737,35 +9740,37 @@ article .wp-post-image {
   line-height: 0.8;
   letter-spacing: 1.5px; }
 
-.section-classes .body-classes .card {
-  width: 472px;
-  margin: 0 auto; }
-  .section-classes .body-classes .card .card-image {
-    width: 470px;
-    height: 350px; }
-  .section-classes .body-classes .card .card-title {
-    height: 100px;
-    margin-bottom: 0;
-    font-family: BebasNeue;
-    font-size: 34px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    padding-left: 40px;
-    margin-right: 100px; }
-    .section-classes .body-classes .card .card-title .icon-arrow {
-      width: 100px;
+.section-classes {
+  padding-top: 30px; }
+  .section-classes .body-classes .card {
+    width: 472px;
+    margin: 0 auto; }
+    .section-classes .body-classes .card .card-image {
+      width: 470px;
+      height: 350px; }
+    .section-classes .body-classes .card .card-title {
       height: 100px;
-      padding: 30px; }
+      margin-bottom: 0;
+      font-family: BebasNeue;
+      font-size: 34px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      margin-right: 100px; }
+      .section-classes .body-classes .card .card-title .icon-arrow {
+        width: 100px;
+        height: 100px;
+        padding: 30px; }
 
 .section-banner {
   padding: 130px 0;
-  margin-top: 80px;
-  height: 910px;
+  margin-top: 90px;
+  height: 860px;
   color: white; }
   .section-banner .banner-body {
     position: relative;
-    padding: 115px 200px 115px 240px;
+    padding: 80px 200px 115px 240px;
     text-align: left; }
   .section-banner .banner-headline {
     margin: 40px 0 30px;
@@ -9789,3 +9794,89 @@ article .wp-post-image {
     margin-left: -10%;
     background-color: #D41C53;
     transform: rotate(10deg); }
+
+.section-blog {
+  padding-top: 0px;
+  color: black;
+  margin-bottom: 100px; }
+  .section-blog .body-blog {
+    text-align: left;
+    padding: 0 120px;
+    margin-bottom: 70px; }
+    .section-blog .body-blog .blog-item {
+      padding: 0 20px; }
+      .section-blog .body-blog .blog-item .blog-image-wrapper {
+        width: 360px;
+        height: 250px;
+        margin-bottom: 32px;
+        overflow: hidden; }
+        .section-blog .body-blog .blog-item .blog-image-wrapper img {
+          width: 360px;
+          height: auto;
+          min-width: unset; }
+      .section-blog .body-blog .blog-item .blog-date {
+        height: 25px;
+        font-family: GothicA1;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        margin-bottom: 11px; }
+      .section-blog .body-blog .blog-item .blog-title {
+        height: 70px;
+        font-family: BebasNeue;
+        font-size: 34px;
+        line-height: 1;
+        letter-spacing: 1.5px;
+        color: #D41C53;
+        margin-bottom: 10px; }
+      .section-blog .body-blog .blog-item .blog-content {
+        height: 100px;
+        overflow-y: hidden;
+        margin-bottom: 25px; }
+      .section-blog .body-blog .blog-item .more {
+        height: 24px;
+        font-family: BebasNeue;
+        font-size: 24px; }
+  .section-blog .blog-link {
+    display: inline-block;
+    font-family: BebasNeue;
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    padding: 25px 40px 20px;
+    border: solid 2px #D41C53; }
+
+.section-donate {
+  padding-top: 63px;
+  height: 180px;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  background-color: black;
+  color: white;
+  font-family: BebasNeue;
+  font-size: 72px; }
+  .section-donate b {
+    color: #D41C53; }
+
+/* Footer */
+.site-footer {
+  color: white;
+  background-color: #252525; }
+  .site-footer .footer-title {
+    margin-top: 120px;
+    padding-bottom: 5px;
+    font-family: BebasNeue;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    color: #D41C53; }
+  .site-footer .footer-content {
+    font-family: GothicA1;
+    font-size: 18px;
+    line-height: 1.5;
+    padding-bottom: 15px; }
+  .site-footer .footer-directions {
+    font-family: BebasNeue;
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: 1.5px; }

@@ -1,0 +1,296 @@
+.section-main {
+    @extend %section;
+    padding-top: 90px;
+
+    .header-main {
+        @extend %header;
+    	font-size: 56px;
+    }
+    
+    .body-main {
+        @extend %body;
+        max-width: 970px;
+        margin: 0 auto;
+    }
+}
+
+.section-concerts {
+    @extend %section;
+
+    .header-concerts {
+        @extend %header;
+    }
+
+    .body-concerts {
+
+    	> div {
+    		padding: 0;
+    	}
+
+        .featured-concert {
+        	background-color: grey;
+        	color: white;
+            text-align: left;
+            padding: 60px 70px;
+            height: 100%;
+
+            .presented-by {
+            	font-size: 12px;
+            	letter-spacing: 1.5px;
+            	text-transform: uppercase;
+            	margin: 20px 0 4px;
+            }
+
+            .featured-title {
+            	font-size: 56px;
+            	font-family: BebasNeue;
+            	text-transform: uppercase;
+            	letter-spacing: 1.5px;
+            	line-height: 0.8;
+            	margin-bottom: 25px;
+            }
+
+            .featured-details {
+            	font-size: 18px;
+            	margin-bottom: 20px;
+            }
+        }
+    
+        .concerts-list {
+        	.list-body {
+				padding: 0 20px;
+				margin: 0;
+				text-align: left;
+				border-right: 1px solid darkgray;
+			
+				.list-item {
+					margin: 0;
+					padding: 30px 0;
+					list-style: none;
+					position: relative;
+			
+					.wrapper-left {
+						float: left;
+						margin-right: 80px;
+					}
+			
+					.wrapper-right {
+						width: 60px;
+						float: right;
+						position: absolute;
+						right: 0;
+						height: 100%;
+						margin-top: -30px;
+						display: flex;
+						align-items: center;
+					}
+			
+					.event-date {
+						font-family: GothicA1;
+						font-size: 12px;
+						font-weight: bold;
+						letter-spacing: 1.5px;
+						text-transform: uppercase;
+					}
+			
+					.event-title {
+						margin-top: 12px;
+						color: $primary;
+						font-family: BebasNeue;
+						font-size: 34px;
+						font-weight: normal;
+						line-height: 1;
+						letter-spacing: 1.5px;
+					}
+			
+					.event-icon {
+						width: 60px;
+						height: 60px;
+						float: right;
+					}
+				}
+			
+				.list-item:not(:last-child) {
+					border-bottom: 1px solid darkgray;
+				}
+			}
+
+			.list-more {
+				padding: 32px 0;
+				background-color: $primary;
+				color: white;
+				font-family: BebasNeue;
+				font-size: 24px;
+				font-weight: normal;
+				line-height: 0.8;
+				letter-spacing: 1.5px;
+			}
+        }
+    }
+}
+
+.section-classes {
+    @extend %section;
+    padding-top: 30px;
+
+    .header-classes {
+        @extend %header;
+    }
+    
+    .body-classes {
+        @extend %body;
+
+        .card {
+        	width: 472px;
+        	margin: 0 auto;
+
+        	.card-image {
+        		width: 470px;
+        		height: 350px;
+        	}
+
+        	.card-title {
+        		height: 100px;
+        		margin-bottom: 0;
+        		font-family: BebasNeue;
+				font-size: 34px;
+				text-align: left;
+				display: flex;
+				align-items: center;
+				padding-left: 40px;
+				margin-right: 100px;
+
+				.icon-arrow {
+					width: 100px;
+					height: 100px;
+					padding: 30px;
+				}
+        	}
+        }
+    }
+}
+
+.section-banner {
+	@extend %section;
+	padding: 130px 0;
+	margin-top: 90px;
+	height: 860px;
+	color: white;
+
+	.banner-body {
+		position: relative;
+		padding: 80px 200px 115px 240px;
+		text-align: left;
+	}
+
+	.banner-headline {
+		margin: 40px 0 30px;
+		width: 50%;
+		font-family: BebasNeue;
+		font-size: 96px;
+		line-height: 0.9;
+		letter-spacing: 1.5px;
+	}
+
+	.label {
+		background-color: white;
+		color: $primary;
+	}
+
+	.more { border-color: white; }
+	.more:hover { color: white; }
+
+	.banner-background {
+		position: absolute;
+		left: 0;
+		height: 600px;
+		width: 120%;
+		margin-left: -10%;
+		background-color: $primary;
+		transform: rotate(10deg);
+	}
+}
+
+.section-blog {
+    @extend %section;
+	padding-top: 0px;
+	color: black;
+	margin-bottom: 100px;
+
+    .header-blog {
+        @extend %header;
+    }
+    
+    .body-blog {
+        @extend %body;
+    	text-align: left;
+        padding: 0 120px;
+        margin-bottom: 70px;
+
+        .blog-item {
+        	padding: 0 20px;
+
+        	.blog-image-wrapper {
+        		width: 360px;
+        		height: 250px;
+        		margin-bottom: 32px;
+        		overflow: hidden;
+
+        		img { width: 360px; height: auto; min-width: unset; }
+        	}
+
+        	.blog-date {
+        		height: 25px;
+        		font-family: GothicA1;
+				font-size: 12px;
+				font-weight: bold;
+				letter-spacing: 1.5px;
+        		margin-bottom: 11px;
+        	}
+
+        	.blog-title {
+        		height: 70px;
+  				font-family: BebasNeue;
+  				font-size: 34px;
+  				line-height: 1;
+				letter-spacing: 1.5px;
+				color: $primary;
+				margin-bottom: 10px;
+        	}
+
+        	.blog-content {
+        		height: 100px;
+        		overflow-y: hidden;
+        		margin-bottom: 25px;
+        	}
+
+        	.more {
+        		height: 24px;
+				font-family: BebasNeue;
+				font-size: 24px;
+        	}
+        }
+    }
+
+    .blog-link {
+    	display: inline-block;
+    	font-family: BebasNeue;
+		font-size: 34px;
+		line-height: 1;
+		letter-spacing: 1.5px;
+		padding: 25px 40px 20px;
+		border: solid 2px $primary;
+    }
+}
+
+.section-donate {
+	padding-top: 63px;
+    height: 180px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    background-color: black;
+    color: white;
+    font-family: BebasNeue;
+	font-size: 72px;
+	b { color: $primary; }
+}

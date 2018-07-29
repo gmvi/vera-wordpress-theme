@@ -35,7 +35,6 @@ body {
     margin: 0 auto;
     color: $darkgray;
     background-color: $background;
-    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,7 +97,7 @@ article .wp-post-image {
     width: 100%;
     min-width: 960px;
     max-width: 1440px;
-    height: 650px;
+    height: 670px;
     object-fit: cover;
 }
 
@@ -161,15 +160,15 @@ article .wp-post-image {
 /* Sections */
 
 %section {
-    padding: 90px 0 0px;
+    padding: 80px 0 0px;
 } .section { @extend %section; }
 
 %header {
     font-family: BebasNeue;
     text-transform: uppercase;
-    font-size: 56px;
+    font-size: 72px;
     letter-spacing: 1.8px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     b {
         font-weight: bold;
         color: $primary;
@@ -181,8 +180,7 @@ article .wp-post-image {
     font-size: 24px;
     color: black;
     p {
-        width: 940px;
-        margin: 0 auto 40px;
+        margin-bottom: 35px;
     }
 }
 
@@ -204,227 +202,33 @@ article .wp-post-image {
 	color: white;
 }
 
+/* Import Pages */
+@import "front_page";
 
-
-/* Front Page */
-
-.section-main {
-    @extend %section;
-
-    .header-main {
-        @extend %header;
-    }
-    
-    .body-main {
-        @extend %body;
-    }
-}
-
-.section-concerts {
-    @extend %section;
-
-    .header-concerts {
-        @extend %header;
-        font-size: 72px;
-    }
-
-    .body-concerts {
-
-    	> div {
-    		padding: 0;
-    	}
-
-        .featured-concert {
-        	background-color: grey;
-        	color: white;
-            text-align: left;
-            padding: 60px 70px;
-            height: 100%;
-
-            .presented-by {
-            	font-size: 12px;
-            	letter-spacing: 1.5px;
-            	text-transform: uppercase;
-            	margin: 20px 0 4px;
-            }
-
-            .featured-title {
-            	font-size: 56px;
-            	font-family: BebasNeue;
-            	text-transform: uppercase;
-            	letter-spacing: 1.5px;
-            	line-height: 0.8;
-            	margin-bottom: 25px;
-            }
-
-            .featured-details {
-            	font-size: 18px;
-            	margin-bottom: 20px;
-            }
-        }
-    
-        .concerts-list {
-        	.list-body {
-				padding: 0 20px;
-				margin: 0;
-				text-align: left;
-				border-right: 1px solid darkgray;
-			
-				.list-item {
-					margin: 0;
-					padding: 30px 0;
-					list-style: none;
-					position: relative;
-			
-					.wrapper-left {
-						float: left;
-						margin-right: 80px;
-					}
-			
-					.wrapper-right {
-						width: 60px;
-						float: right;
-						position: absolute;
-						right: 0;
-						height: 100%;
-						margin-top: -30px;
-						display: flex;
-						align-items: center;
-					}
-			
-					.event-date {
-						font-family: GothicA1;
-						font-size: 12px;
-						font-weight: bold;
-						letter-spacing: 1.5px;
-						text-transform: uppercase;
-					}
-			
-					.event-title {
-						margin-top: 12px;
-						color: $primary;
-						font-family: BebasNeue;
-						font-size: 34px;
-						font-weight: normal;
-						line-height: 1;
-						letter-spacing: 1.5px;
-					}
-			
-					.event-icon {
-						width: 60px;
-						height: 60px;
-						float: right;
-					}
-				}
-			
-				.list-item:not(:last-child) {
-					border-bottom: 1px solid darkgray;
-				}
-			}
-
-			.list-more {
-				padding: 32px 0;
-				background-color: $primary;
-				color: white;
-				font-family: BebasNeue;
-				font-size: 24px;
-				font-weight: normal;
-				line-height: 0.8;
-				letter-spacing: 1.5px;
-			}
-        }
-    }
-}
-
-.section-classes {
-    @extend %section;
-
-    .header-classes {
-        @extend %header;
-    }
-    
-    .body-classes {
-        @extend %body;
-
-        .card {
-        	width: 472px;
-        	margin: 0 auto;
-
-        	.card-image {
-        		width: 470px;
-        		height: 350px;
-        	}
-
-        	.card-title {
-        		height: 100px;
-        		margin-bottom: 0;
-        		font-family: BebasNeue;
-				font-size: 34px;
-				text-align: left;
-				display: flex;
-				align-items: center;
-				padding-left: 40px;
-				margin-right: 100px;
-
-				.icon-arrow {
-					width: 100px;
-					height: 100px;
-					padding: 30px;
-				}
-        	}
-        }
-    }
-}
-
-.section-banner {
-	@extend %section;
-	padding: 130px 0;
-	margin-top: 80px;
-	height: 910px;
+/* Footer */
+.site-footer {
 	color: white;
+	background-color: #252525;
 
-	.banner-body {
-		position: relative;
-		padding: 115px 200px 115px 240px;
-		text-align: left;
+	.footer-title {
+		margin-top: 120px;
+		padding-bottom: 5px;
+		font-family: BebasNeue;
+  font-size: 72px;  line-height: 1;
+  letter-spacing: 1.5px;
+  color: $primary;
 	}
 
-	.banner-headline {
-		margin: 40px 0 30px;
-		width: 50%;
+	.footer-content {
+		font-family: GothicA1;
+  font-size: 18px;  line-height: 1.5;
+		padding-bottom: 15px;
+	}
+
+	.footer-directions {
 		font-family: BebasNeue;
-		font-size: 96px;
-		line-height: 0.9;
+		font-size: 34px;
+		line-height: 1;
 		letter-spacing: 1.5px;
 	}
-
-	.label {
-		background-color: white;
-		color: $primary;
-	}
-
-	.more { border-color: white; }
-	.more:hover { color: white; }
-
-	.banner-background {
-		position: absolute;
-		left: 0;
-		height: 600px;
-		width: 120%;
-		margin-left: -10%;
-		background-color: $primary;
-		transform: rotate(10deg);
-	}
-}
-
-.section-blog {
-    @extend %section;
-
-    .header-blog {
-        @extend %header;
-    }
-    
-    .body-blog {
-        @extend %body;
-    }
 }

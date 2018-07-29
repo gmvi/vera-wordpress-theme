@@ -51,7 +51,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 					</div>
 					<div class="row body-concerts">
-						<div class="col-md-8">
+						<div class="col-md-7">
 							<div class="featured-concert">
 								<span class="label">Featured Concert</span>
 								<div class="presented-by">Soundgig Presents</div>
@@ -64,7 +64,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<a href class="more">Learn More</a>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-5">
 							<div class="concerts-list">
 								<div class="list-title">Upcoming Shows</div>
 								<ul class="list-body">
@@ -163,14 +163,34 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 					</div>
 					<div class="row body-blog">
-						<div class="col-md-4">
+<?php	query_posts( 'category_name=blog&posts_per_page=3' );
+		if ( !have_posts() ) : ?>
+						<div class="col-md-12">
+							<!-- TODO -->
 						</div>
-						<div class="col-md-4">
+<?php	else :
+			while ( have_posts() ) : the_post(); ?>
+						<div class="blog-item col-md-4">
+							<div class="blog-image-wrapper"><?php the_post_thumbnail(); ?></div>
+							<div class="blog-date"><?php echo get_the_date(); ?></div>
+							<div class="blog-title"><?php the_title(); ?></div>
+							<div class="blog-content"><?php the_content(); ?></div>
+							<a href="<?php the_permalink();?>" class="more">Read More</a>
 						</div>
-						<div class="col-md-4">
+<?php		endwhile; // end of the loop.
+		endif;
+		wp_reset_query(); ?>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<a class="blog-link">View All</a>
 						</div>
 					</div>
 				</div><!-- .section-blog -->
+
+				<div class="section-donate">
+					Support Vera! <b>Donate Today!</b>
+				</div>
 			</article><!-- #post-## -->
 	
 		</main><!-- #main -->
