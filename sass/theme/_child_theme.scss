@@ -2,7 +2,7 @@
 // 
 // Style Guide:
 // 
-// All SASS %placeholders are to be followed with instatiation like so:
+// %placeholders should be followed with a generic:
 //   %header {
 //     content: "goes here";
 //   } .header { @extend: %header; }
@@ -11,7 +11,6 @@
 //     @extend: %header;
 //     content: "goes here";
 //   }
-// We should not have to guess whether a generic like .header is available
 
 /* Fonts */
 
@@ -29,19 +28,26 @@
 
 /* Plain Tags */
 
+html {
+	overflow-x: hidden;
+}
+
 body {
-    min-width: 960px;
     max-width: 1440px;
     margin: 0 auto;
     color: $darkgray;
     background-color: $background;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    // h tags are for blind people and robots, not for styling
+.site h1, h2, h3, h4, h5, h6 {
+    // h tags are primarily for blind people and robots
+    // They can have header styling but it should be conditional
     font-size: inherit;
     font-weight: inherit;
     margin: 0;
+    line-height: 1;
 }
 
 /* Uncatagorized */
@@ -49,9 +55,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .wrapper {
     padding: 0;
+    position: relative;
 }
 
-.donate {
+.overlay {
+	padding: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.center-vertical {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a.donate {
     height: 56px;
     width: 126px;
     border: 2px solid $primary;
@@ -78,6 +102,7 @@ a.more:hover {
 }
 
 .label {
+	display: inline-block;
     background-color: $primary;
     color: white;
     font-family: BebasNeue;
@@ -87,71 +112,120 @@ a.more:hover {
     font-weight: normal;
     letter-spacing: 1.5px;
     padding: 5px 10px 2px;
+    margin-bottom: 30px;
 }
 
 article {
     text-align: center;
 }
 
-article .wp-post-image {
+.entry-header .entry-title {
+    color: white;
+    font-family: BebasNeue;
+    font-size: 96px;
+    letter-spacing: 1.5px;
+}
+
+.entry-header .wp-post-image {
     width: 100%;
     min-width: 960px;
     max-width: 1440px;
-    height: 670px;
+    height: 450px;
     object-fit: cover;
 }
 
-/* Standard Bootstrap Navbar */
+.entry-header .header-texture {
+	background-image: url('../img/header-texture.png');
+}
+
+/* Navigation */
 
 .navbar {
     margin: 0;
     padding: 0 40px;
     font-size: 18px;
     font-family: "BebasNeue", sans-serif;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: normal;
+
+	.navbar-brand {
+	    height: 130px;
+	    padding-top: 15px;
+	    padding-bottom: 15px;
+	}
+	
+	.navbar-brand .img-fluid {
+	    height: 100%;
+	    width: auto;
+	}
+	
+	.navbar-collapse {
+		justify-content: flex-end;
+	}
+	
+	.navbar-collapse.show {
+		margin-bottom: 20px;
+	}
+	
+	.navbar-nav {
+	    float: right;
+	}
+	
+	.navbar-toggler-icon {
+		background-color: black;
+	}
+	
+	.navbar-nav .donate {
+	    margin-left: 30px;
+	}
+	
+	.nav-item {
+	    display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	    text-align: right;
+	}
+	
+	.nav-item > .nav-link {
+		/* direct child to override rules from bootstrap */
+		color: black;
+		padding-left: .8rem;
+		padding-right: .8rem;
+	}
 }
 
-.navbar .navbar-brand {
-    height: 130px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+ul.menu {
+	margin: 0;
+	padding: 0;
 }
 
-.navbar .navbar-brand .img-fluid {
-    height: 100%;
-    width: auto;
-}
+.entry-header .menu {
+	justify-content: center;
+	height: 50px;
+	background-color: $accent;
+	align-content: center;
+	font-family: BebasNeue;
+	font-size: 18px;
+	line-height: 1;
+	letter-spacing: 1.5px;
 
-.navbar .navbar-collapse {
-	justify-content: flex-end;
-}
+	.menu-item {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		list-style: none;
+		padding: 0 20px;
+		height: 100%;
 
-.navbar .navbar-collapse.show {
-	margin-bottom: 20px;
-}
+		a {
+			color: $darkgray;
+		}
+	}
 
-.navbar .navbar-nav {
-    float: right;
-}
-
-.navbar .navbar-toggler-icon {
-	background-color: black;
-}
-
-.navbar .navbar-nav .donate {
-    margin-left: 40px;
-}
-
-.navbar .nav-item {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: right;
-}
-
-.navbar .nav-link {
-	color: black;
+	.menu-item.current-menu-item a {
+		color: white;
+	}
 }
 
 
@@ -159,20 +233,18 @@ article .wp-post-image {
 
 /* Sections */
 
-%section {
-    padding: 80px 0 0px;
-} .section { @extend %section; }
+.entry-content section {
+    padding: 90px 0 0px;
+}
 
 %header {
     font-family: BebasNeue;
     text-transform: uppercase;
-    font-size: 72px;
     letter-spacing: 1.8px;
-    margin-bottom: 35px;
-    b {
-        font-weight: bold;
-        color: $primary;
-    }
+    margin-bottom: 40px;
+    h1 { font-size: 96px; }
+    h2 { font-size: 72px; }
+    h3 { font-size: 56px; }
 } .header { @extend %header; }
 
 %body {
@@ -184,26 +256,124 @@ article .wp-post-image {
     }
 }
 
-/* All Pages */
+/* Styling that affects multiple pages */
 
 #content {
     padding: 0;
 }
 
-.list-title {
-	width: 100%;
-	height: 40px;
-	font-family: BebasNeue;
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    padding-top: 8px;
-    text-align: center;
-	background-color: black;
-	color: white;
+section.info {
+    padding-bottom: 50px;
+
+    .header-main {
+        @extend %header;
+		b { color: $primary; }
+    }
+    
+    .body-main {
+        @extend %body;
+        max-width: 970px;
+        margin: 0 auto;
+    }
 }
 
-/* Import Pages */
+section.banner {
+	position: relative;
+	margin-top: 70px;
+	padding: 0;
+	height: 900px;
+	color: white;
+	text-align: left;
+
+	> * {
+		position: absolute;
+		width: 100%;
+	}
+
+	&::before {
+		content:" ";
+		position: absolute;
+		top: 0;
+		left: -210px;
+		height: 100%;
+		width: 209px;
+		background-color: $background;
+		z-index: -1;
+	}
+
+	&::after {
+		content:" ";
+		position: absolute;
+		top: 0;
+		right: -215px;
+		height: 105%;
+		width: 214px;
+		background-color: $background;
+		z-index: -1;
+	}
+
+	.row > *:first-child {
+		padding: 240px 20px 115px 240px;
+	}
+
+	.row > *:last-child:not(:first-child) {
+		padding: 0;
+	}
+
+	.banner-headline {
+		margin-bottom: 30px;
+		width: 50%;
+		font-family: BebasNeue;
+		font-size: 96px;
+		line-height: 0.9;
+		letter-spacing: 1.5px;
+	}
+
+	.label {
+		background-color: white;
+		color: $primary;
+	}
+
+	.more {
+		display: inline-flex;
+		height: 56px;
+		padding: 0 20px;
+		border: 2px solid white;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+	.more:hover {
+		text-decoration: none;
+		color: white;
+	}
+
+	.banner-background {
+		height: 640px;
+		width: 124%;
+		margin-left: -11%;
+		background-color: $primary;
+		transform: rotate(9.2deg);
+		transform-origin: left;
+		z-index: -2;
+	}
+}
+
+
+section.donate {
+	padding: 63px 0 45px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    background-color: black;
+    color: white;
+    font-family: BebasNeue;
+	font-size: 72px;
+	b { color: $primary; }
+}
+
+/* Page-specific styling */
 @import "front_page";
+@import "landing_page";
 
 /* Footer */
 .site-footer {

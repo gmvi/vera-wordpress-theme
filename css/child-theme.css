@@ -9513,23 +9513,44 @@ a.skip-link {
   src: url("../fonts/GothicA1-Regular.ttf") format("truetype"); }
 
 /* Plain Tags */
+html {
+  overflow-x: hidden; }
+
 body {
-  min-width: 960px;
   max-width: 1440px;
   margin: 0 auto;
-  color: #4C4E56;
-  background-color: #FFF; }
+  color: #4A4A4A;
+  background-color: #FFF;
+  box-sizing: border-box;
+  border: 1px solid black; }
 
-h1, h2, h3, h4, h5, h6 {
+.site h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit;
-  margin: 0; }
+  margin: 0;
+  line-height: 1; }
 
 /* Uncatagorized */
 .wrapper {
-  padding: 0; }
+  padding: 0;
+  position: relative; }
 
-.donate {
+.overlay {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; }
+
+.center-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+a.donate {
   height: 56px;
   width: 126px;
   border: 2px solid #D41C53;
@@ -9554,6 +9575,7 @@ a.more:hover {
   padding-bottom: 2px; }
 
 .label {
+  display: inline-block;
   background-color: #D41C53;
   color: white;
   font-family: BebasNeue;
@@ -9562,87 +9584,229 @@ a.more:hover {
   line-height: 19px;
   font-weight: normal;
   letter-spacing: 1.5px;
-  padding: 5px 10px 2px; }
+  padding: 5px 10px 2px;
+  margin-bottom: 30px; }
 
 article {
   text-align: center; }
 
-article .wp-post-image {
+.entry-header .entry-title {
+  color: white;
+  font-family: BebasNeue;
+  font-size: 96px;
+  letter-spacing: 1.5px; }
+
+.entry-header .wp-post-image {
   width: 100%;
   min-width: 960px;
   max-width: 1440px;
-  height: 670px;
+  height: 450px;
   object-fit: cover; }
 
-/* Standard Bootstrap Navbar */
+.entry-header .header-texture {
+  background-image: url("../img/header-texture.png"); }
+
+/* Navigation */
 .navbar {
   margin: 0;
   padding: 0 40px;
   font-size: 18px;
   font-family: "BebasNeue", sans-serif;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   font-weight: normal; }
+  .navbar .navbar-brand {
+    height: 130px;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  .navbar .navbar-brand .img-fluid {
+    height: 100%;
+    width: auto; }
+  .navbar .navbar-collapse {
+    justify-content: flex-end; }
+  .navbar .navbar-collapse.show {
+    margin-bottom: 20px; }
+  .navbar .navbar-nav {
+    float: right; }
+  .navbar .navbar-toggler-icon {
+    background-color: black; }
+  .navbar .navbar-nav .donate {
+    margin-left: 30px; }
+  .navbar .nav-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: right; }
+  .navbar .nav-item > .nav-link {
+    /* direct child to override rules from bootstrap */
+    color: black;
+    padding-left: .8rem;
+    padding-right: .8rem; }
 
-.navbar .navbar-brand {
-  height: 130px;
-  padding-top: 15px;
-  padding-bottom: 15px; }
+ul.menu {
+  margin: 0;
+  padding: 0; }
 
-.navbar .navbar-brand .img-fluid {
-  height: 100%;
-  width: auto; }
-
-.navbar .navbar-collapse {
-  justify-content: flex-end; }
-
-.navbar .navbar-collapse.show {
-  margin-bottom: 20px; }
-
-.navbar .navbar-nav {
-  float: right; }
-
-.navbar .navbar-toggler-icon {
-  background-color: black; }
-
-.navbar .navbar-nav .donate {
-  margin-left: 40px; }
-
-.navbar .nav-item {
-  display: flex;
+.entry-header .menu {
   justify-content: center;
-  flex-direction: column;
-  text-align: right; }
-
-.navbar .nav-link {
-  color: black; }
+  height: 50px;
+  background-color: #96C0CE;
+  align-content: center;
+  font-family: BebasNeue;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 1.5px; }
+  .entry-header .menu .menu-item {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    padding: 0 20px;
+    height: 100%; }
+    .entry-header .menu .menu-item a {
+      color: #4A4A4A; }
+  .entry-header .menu .menu-item.current-menu-item a {
+    color: white; }
 
 /* Primary Title Area */
 /* Sections */
-.section, .section-main, .section-concerts, .section-classes, .section-banner, .section-blog {
-  padding: 80px 0 0px; }
+.entry-content section {
+  padding: 90px 0 0px; }
 
-.header, .section-main .header-main, .section-concerts .header-concerts, .section-classes .header-classes, .section-blog .header-blog {
+.header, section.info .header-main, section.concerts .header-concerts, section.classes .header-classes, section.blog .header-blog {
   font-family: BebasNeue;
   text-transform: uppercase;
-  font-size: 72px;
   letter-spacing: 1.8px;
-  margin-bottom: 35px; }
-  .header b, .section-main .header-main b, .section-concerts .header-concerts b, .section-classes .header-classes b, .section-blog .header-blog b {
-    font-weight: bold;
-    color: #D41C53; }
+  margin-bottom: 40px; }
+  .header h1, section.info .header-main h1, section.concerts .header-concerts h1, section.classes .header-classes h1, section.blog .header-blog h1 {
+    font-size: 96px; }
+  .header h2, section.info .header-main h2, section.concerts .header-concerts h2, section.classes .header-classes h2, section.blog .header-blog h2 {
+    font-size: 72px; }
+  .header h3, section.info .header-main h3, section.concerts .header-concerts h3, section.classes .header-classes h3, section.blog .header-blog h3 {
+    font-size: 56px; }
 
-.section-main .body-main, .section-classes .body-classes, .section-blog .body-blog {
+section.info .body-main, section.classes .body-classes, section.blog .body-blog {
   font-family: GothicA1;
   font-size: 24px;
   color: black; }
-  .section-main .body-main p, .section-classes .body-classes p, .section-blog .body-blog p {
+  section.info .body-main p, section.classes .body-classes p, section.blog .body-blog p {
     margin-bottom: 35px; }
 
-/* All Pages */
+/* Styling that affects multiple pages */
 #content {
   padding: 0; }
 
-.list-title {
+section.info {
+  padding-bottom: 50px; }
+  section.info .header-main b {
+    color: #D41C53; }
+  section.info .body-main {
+    max-width: 970px;
+    margin: 0 auto; }
+
+section.banner {
+  position: relative;
+  margin-top: 70px;
+  padding: 0;
+  height: 900px;
+  color: white;
+  text-align: left; }
+  section.banner > * {
+    position: absolute;
+    width: 100%; }
+  section.banner::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -210px;
+    height: 100%;
+    width: 209px;
+    background-color: #FFF;
+    z-index: -1; }
+  section.banner::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: -215px;
+    height: 105%;
+    width: 214px;
+    background-color: #FFF;
+    z-index: -1; }
+  section.banner .row > *:first-child {
+    padding: 240px 20px 115px 240px; }
+  section.banner .row > *:last-child:not(:first-child) {
+    padding: 0; }
+  section.banner .banner-headline {
+    margin-bottom: 30px;
+    width: 50%;
+    font-family: BebasNeue;
+    font-size: 96px;
+    line-height: 0.9;
+    letter-spacing: 1.5px; }
+  section.banner .label {
+    background-color: white;
+    color: #D41C53; }
+  section.banner .more {
+    display: inline-flex;
+    height: 56px;
+    padding: 0 20px;
+    border: 2px solid white;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; }
+  section.banner .more:hover {
+    text-decoration: none;
+    color: white; }
+  section.banner .banner-background {
+    height: 640px;
+    width: 124%;
+    margin-left: -11%;
+    background-color: #D41C53;
+    transform: rotate(9.2deg);
+    transform-origin: left;
+    z-index: -2; }
+
+section.donate {
+  padding: 63px 0 45px;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  background-color: black;
+  color: white;
+  font-family: BebasNeue;
+  font-size: 72px; }
+  section.donate b {
+    color: #D41C53; }
+
+/* Page-specific styling */
+body.home .entry-header .wp-post-image {
+  height: 670px; }
+
+body.home .entry-header .label {
+  margin-top: 80px; }
+
+section.concerts .body-concerts .featured-concert {
+  background-color: grey;
+  color: white;
+  text-align: left;
+  padding: 60px 70px;
+  height: 100%; }
+  section.concerts .body-concerts .featured-concert .presented-by {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 20px 0 4px; }
+  section.concerts .body-concerts .featured-concert .featured-title {
+    font-size: 56px;
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 0.8;
+    margin-bottom: 25px; }
+  section.concerts .body-concerts .featured-concert .featured-details {
+    font-size: 18px;
+    margin-bottom: 20px; }
+
+section.concerts .body-concerts .concerts-list .list-title {
   width: 100%;
   height: 40px;
   font-family: BebasNeue;
@@ -9653,54 +9817,20 @@ article .wp-post-image {
   background-color: black;
   color: white; }
 
-/* Import Pages */
-.section-main {
-  padding-top: 90px; }
-  .section-main .header-main {
-    font-size: 56px; }
-  .section-main .body-main {
-    max-width: 970px;
-    margin: 0 auto; }
-
-.section-concerts .body-concerts > div {
-  padding: 0; }
-
-.section-concerts .body-concerts .featured-concert {
-  background-color: grey;
-  color: white;
-  text-align: left;
-  padding: 60px 70px;
-  height: 100%; }
-  .section-concerts .body-concerts .featured-concert .presented-by {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 20px 0 4px; }
-  .section-concerts .body-concerts .featured-concert .featured-title {
-    font-size: 56px;
-    font-family: BebasNeue;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    line-height: 0.8;
-    margin-bottom: 25px; }
-  .section-concerts .body-concerts .featured-concert .featured-details {
-    font-size: 18px;
-    margin-bottom: 20px; }
-
-.section-concerts .body-concerts .concerts-list .list-body {
+section.concerts .body-concerts .concerts-list .list-body {
   padding: 0 20px;
   margin: 0;
   text-align: left;
   border-right: 1px solid darkgray; }
-  .section-concerts .body-concerts .concerts-list .list-body .list-item {
+  section.concerts .body-concerts .concerts-list .list-body .list-item {
     margin: 0;
-    padding: 30px 0;
+    padding: 29px 0;
     list-style: none;
     position: relative; }
-    .section-concerts .body-concerts .concerts-list .list-body .list-item .wrapper-left {
+    section.concerts .body-concerts .concerts-list .list-body .list-item .wrapper-left {
       float: left;
       margin-right: 80px; }
-    .section-concerts .body-concerts .concerts-list .list-body .list-item .wrapper-right {
+    section.concerts .body-concerts .concerts-list .list-body .list-item .wrapper-right {
       width: 60px;
       float: right;
       position: absolute;
@@ -9709,28 +9839,28 @@ article .wp-post-image {
       margin-top: -30px;
       display: flex;
       align-items: center; }
-    .section-concerts .body-concerts .concerts-list .list-body .list-item .event-date {
+    section.concerts .body-concerts .concerts-list .list-body .list-item .event-date {
       font-family: GothicA1;
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 1.5px;
       text-transform: uppercase; }
-    .section-concerts .body-concerts .concerts-list .list-body .list-item .event-title {
-      margin-top: 12px;
+    section.concerts .body-concerts .concerts-list .list-body .list-item .event-title {
+      margin-top: 10px;
       color: #D41C53;
       font-family: BebasNeue;
       font-size: 34px;
       font-weight: normal;
       line-height: 1;
       letter-spacing: 1.5px; }
-    .section-concerts .body-concerts .concerts-list .list-body .list-item .event-icon {
+    section.concerts .body-concerts .concerts-list .list-body .list-item .event-icon {
       width: 60px;
       height: 60px;
       float: right; }
-  .section-concerts .body-concerts .concerts-list .list-body .list-item:not(:last-child) {
+  section.concerts .body-concerts .concerts-list .list-body .list-item:not(:last-child) {
     border-bottom: 1px solid darkgray; }
 
-.section-concerts .body-concerts .concerts-list .list-more {
+section.concerts .body-concerts .concerts-list .list-more {
   padding: 32px 0;
   background-color: #D41C53;
   color: white;
@@ -9740,88 +9870,54 @@ article .wp-post-image {
   line-height: 0.8;
   letter-spacing: 1.5px; }
 
-.section-classes {
-  padding-top: 30px; }
-  .section-classes .body-classes .card {
-    width: 472px;
-    margin: 0 auto; }
-    .section-classes .body-classes .card .card-image {
-      width: 470px;
-      height: 350px; }
-    .section-classes .body-classes .card .card-title {
-      height: 100px;
-      margin-bottom: 0;
-      font-family: BebasNeue;
-      font-size: 34px;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      padding-left: 40px;
-      margin-right: 100px; }
-      .section-classes .body-classes .card .card-title .icon-arrow {
-        width: 100px;
-        height: 100px;
-        padding: 30px; }
-
-.section-banner {
-  padding: 130px 0;
-  margin-top: 90px;
-  height: 860px;
-  color: white; }
-  .section-banner .banner-body {
-    position: relative;
-    padding: 80px 200px 115px 240px;
-    text-align: left; }
-  .section-banner .banner-headline {
-    margin: 40px 0 30px;
-    width: 50%;
+section.classes .body-classes .card {
+  width: 472px;
+  margin: 0 auto; }
+  section.classes .body-classes .card .card-image {
+    width: 470px;
+    height: 350px; }
+  section.classes .body-classes .card .card-title {
+    height: 100px;
+    margin-bottom: 0;
     font-family: BebasNeue;
-    font-size: 96px;
-    line-height: 0.9;
-    letter-spacing: 1.5px; }
-  .section-banner .label {
-    background-color: white;
-    color: #D41C53; }
-  .section-banner .more {
-    border-color: white; }
-  .section-banner .more:hover {
-    color: white; }
-  .section-banner .banner-background {
-    position: absolute;
-    left: 0;
-    height: 600px;
-    width: 120%;
-    margin-left: -10%;
-    background-color: #D41C53;
-    transform: rotate(10deg); }
+    font-size: 34px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    margin-right: 100px; }
+    section.classes .body-classes .card .card-title .icon-arrow {
+      width: 100px;
+      height: 100px;
+      padding: 30px; }
 
-.section-blog {
+section.blog {
   padding-top: 0px;
   color: black;
   margin-bottom: 100px; }
-  .section-blog .body-blog {
+  section.blog .body-blog {
     text-align: left;
     padding: 0 120px;
     margin-bottom: 70px; }
-    .section-blog .body-blog .blog-item {
+    section.blog .body-blog .blog-item {
       padding: 0 20px; }
-      .section-blog .body-blog .blog-item .blog-image-wrapper {
+      section.blog .body-blog .blog-item .blog-image-wrapper {
         width: 360px;
         height: 250px;
         margin-bottom: 32px;
         overflow: hidden; }
-        .section-blog .body-blog .blog-item .blog-image-wrapper img {
+        section.blog .body-blog .blog-item .blog-image-wrapper img {
           width: 360px;
           height: auto;
           min-width: unset; }
-      .section-blog .body-blog .blog-item .blog-date {
+      section.blog .body-blog .blog-item .blog-date {
         height: 25px;
         font-family: GothicA1;
         font-size: 12px;
         font-weight: bold;
         letter-spacing: 1.5px;
         margin-bottom: 11px; }
-      .section-blog .body-blog .blog-item .blog-title {
+      section.blog .body-blog .blog-item .blog-title {
         height: 70px;
         font-family: BebasNeue;
         font-size: 34px;
@@ -9829,15 +9925,15 @@ article .wp-post-image {
         letter-spacing: 1.5px;
         color: #D41C53;
         margin-bottom: 10px; }
-      .section-blog .body-blog .blog-item .blog-content {
+      section.blog .body-blog .blog-item .blog-content {
         height: 100px;
         overflow-y: hidden;
         margin-bottom: 25px; }
-      .section-blog .body-blog .blog-item .more {
+      section.blog .body-blog .blog-item .more {
         height: 24px;
         font-family: BebasNeue;
         font-size: 24px; }
-  .section-blog .blog-link {
+  section.blog .blog-link {
     display: inline-block;
     font-family: BebasNeue;
     font-size: 34px;
@@ -9846,17 +9942,54 @@ article .wp-post-image {
     padding: 25px 40px 20px;
     border: solid 2px #D41C53; }
 
-.section-donate {
-  padding-top: 63px;
-  height: 180px;
-  line-height: 1;
-  letter-spacing: 1.5px;
-  background-color: black;
-  color: white;
-  font-family: BebasNeue;
-  font-size: 72px; }
-  .section-donate b {
-    color: #D41C53; }
+section.quote {
+  position: relative;
+  padding: 0;
+  height: 600px; }
+  section.quote .background {
+    position: absolute;
+    top: -250px;
+    bottom: 0;
+    width: 100%;
+    background-color: #96C0CE;
+    z-index: -3; }
+  section.quote .quote-picture {
+    float: left;
+    height: 524px;
+    width: 524px;
+    margin-top: -35px;
+    margin-left: 155px;
+    background-color: black; }
+  section.quote .quote-body {
+    position: relative;
+    float: left;
+    width: 550px;
+    margin-top: 175px;
+    margin-left: 128px;
+    text-align: left; }
+    section.quote .quote-body:before {
+      content: "“";
+      position: absolute;
+      color: white;
+      opacity: .35;
+      top: -78px;
+      left: -30px;
+      font-family: "GothicA1";
+      font-size: 200px; }
+    section.quote .quote-body .quote-text {
+      font-family: "BebasNeue";
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: 1.5px; }
+      section.quote .quote-body .quote-text b {
+        color: #D41C53; }
+    section.quote .quote-body .quote-author {
+      font-family: GothicA1;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 2;
+      letter-spacing: 1.6px;
+      text-transform: uppercase; }
 
 /* Footer */
 .site-footer {

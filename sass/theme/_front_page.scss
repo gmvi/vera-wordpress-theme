@@ -1,31 +1,24 @@
-.section-main {
-    @extend %section;
-    padding-top: 90px;
-
-    .header-main {
-        @extend %header;
-    	font-size: 56px;
-    }
-    
-    .body-main {
-        @extend %body;
-        max-width: 970px;
-        margin: 0 auto;
+// Modify some styles on the front page
+body.home {
+	.entry-header {
+		.wp-post-image {
+			// taller titlecard
+    		height: 670px;
+    	}
+    	.label {
+    		margin-top: 80px;
+    	}
     }
 }
 
-.section-concerts {
-    @extend %section;
 
+
+section.concerts {
     .header-concerts {
         @extend %header;
     }
 
     .body-concerts {
-
-    	> div {
-    		padding: 0;
-    	}
 
         .featured-concert {
         	background-color: grey;
@@ -57,6 +50,18 @@
         }
     
         .concerts-list {
+			.list-title {
+				width: 100%;
+				height: 40px;
+				font-family: BebasNeue;
+			    font-size: 18px;
+			    letter-spacing: 1.5px;
+			    padding-top: 8px;
+			    text-align: center;
+				background-color: black;
+				color: white;
+			}
+
         	.list-body {
 				padding: 0 20px;
 				margin: 0;
@@ -65,7 +70,7 @@
 			
 				.list-item {
 					margin: 0;
-					padding: 30px 0;
+					padding: 29px 0;
 					list-style: none;
 					position: relative;
 			
@@ -94,7 +99,7 @@
 					}
 			
 					.event-title {
-						margin-top: 12px;
+						margin-top: 10px;
 						color: $primary;
 						font-family: BebasNeue;
 						font-size: 34px;
@@ -129,10 +134,7 @@
     }
 }
 
-.section-classes {
-    @extend %section;
-    padding-top: 30px;
-
+section.classes {
     .header-classes {
         @extend %header;
     }
@@ -170,49 +172,7 @@
     }
 }
 
-.section-banner {
-	@extend %section;
-	padding: 130px 0;
-	margin-top: 90px;
-	height: 860px;
-	color: white;
-
-	.banner-body {
-		position: relative;
-		padding: 80px 200px 115px 240px;
-		text-align: left;
-	}
-
-	.banner-headline {
-		margin: 40px 0 30px;
-		width: 50%;
-		font-family: BebasNeue;
-		font-size: 96px;
-		line-height: 0.9;
-		letter-spacing: 1.5px;
-	}
-
-	.label {
-		background-color: white;
-		color: $primary;
-	}
-
-	.more { border-color: white; }
-	.more:hover { color: white; }
-
-	.banner-background {
-		position: absolute;
-		left: 0;
-		height: 600px;
-		width: 120%;
-		margin-left: -10%;
-		background-color: $primary;
-		transform: rotate(10deg);
-	}
-}
-
-.section-blog {
-    @extend %section;
+section.blog {
 	padding-top: 0px;
 	color: black;
 	margin-bottom: 100px;
@@ -281,16 +241,4 @@
 		padding: 25px 40px 20px;
 		border: solid 2px $primary;
     }
-}
-
-.section-donate {
-	padding-top: 63px;
-    height: 180px;
-    line-height: 1;
-    letter-spacing: 1.5px;
-    background-color: black;
-    color: white;
-    font-family: BebasNeue;
-	font-size: 72px;
-	b { color: $primary; }
 }

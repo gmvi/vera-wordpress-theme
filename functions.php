@@ -30,8 +30,21 @@ function disable_all_widgets( $sidebars_widgets )
    return array( false ); 
 }
 
+// Remove things we don't need
+
+// Widgets! No, por favor!
 // 999 here means we're forcing high priority, otherwise the remove_submenu_page call won't work
 add_action( 'admin_menu', 'remove_menus', 999 );
 function remove_menus() {
     remove_submenu_page( 'themes.php', 'widgets.php' );
 }
+
+// Unwanted templates
+function vera_remove_page_templates( $templates ) {
+    unset( $templates['page-templates/fullwidthpage.php'] );
+    unset( $templates['page-templates/left-sidebarpage.php'] );
+    unset( $templates['page-templates/both-sidebarspage.php'] );
+    unset( $templates['page-templates/right-sidebarpage.php'] );
+    return $templates;
+}
+add_filter( 'theme_page_templates', 'vera_remove_page_templates' );
