@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/holger1411/understrap-child.git"
+    "url": "https://github.com/gmvi/vera-wordpress-theme.git"
   },
   "keywords": [
     "wordpress",
@@ -17,19 +17,16 @@
     "bootstrap",
     "underscores"
   ],
-  "author": "Holger Koenemann",
+  "author": "George Matter",
   "license": "GPL-2.0",
-  "bugs": {
-    "url": "https://github.com/holger1411/understrap-child/issues"
-  },
   "homepage": "https://understrap.com",
   "dependencies": {
     "bootstrap": "4.0.0",
-    "browser-sync": "^2.22.0",
+    "browser-sync": "^2.24.7",
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
     "gulp-clone": "^1.1.4",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
@@ -37,18 +34,18 @@
     "gulp-imagemin": "^4.0.0",
     "gulp-merge": "^0.1.1",
     "gulp-plumber": "^1.2.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.6.1",
     "gulp-rimraf": "^0.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sequence": "^0.4.6",
     "gulp-sourcemaps": "2.6.2",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.1",
     "gulp-watch": "^4.3.11",
-    "merge2": "^1.2.1",
-    "popper.js": "^1.13.0",
+    "merge2": "^1.2.2",
+    "popper.js": "^1.14.4",
     "run-sequence": "^2.2.1",
-    "undescores-for-npm": "^1.0.0",
-    "understrap": "^0.8.0"
+    "understrap": "^0.8.7",
+    "undescores-for-npm": "^1.0.0"
   }
 }
