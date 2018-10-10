@@ -21,10 +21,11 @@
   "license": "GPL-2.0",
   "homepage": "https://understrap.com",
   "dependencies": {
-    "bootstrap": "4.0.0",
+    "bootstrap": "^4.0.0",
     "browser-sync": "^2.24.7",
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
+    "fs-extra": "^7.0.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.10.0",
     "gulp-clone": "^1.1.4",
@@ -45,6 +46,7 @@
     "merge2": "^1.2.2",
     "popper.js": "^1.14.4",
     "run-sequence": "^2.2.1",
+    "tar-fs": "^1.16.3",
     "understrap": "^0.8.7",
     "undescores-for-npm": "^1.0.0"
   }

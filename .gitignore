@@ -7,3 +7,7 @@ dist-product/
 npm-debug.log
 vendor/
 package-lock.json
+scripts/credentials/
+scripts/tmp/
+scripts/credentials.sh
+credentials.sh
