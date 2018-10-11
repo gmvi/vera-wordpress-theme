@@ -30,7 +30,7 @@ cp -a $WORDPRESS/wp-content/uploads/ $TMP/
 # replay backup into the staging server
 echo "uploading"
 tar -czf - -C $TMP uploads database.sql 2>/dev/null \
-    | sshpass -p "$STAGING_PASSWORD" \
-          ssh $STAGING_USER:@$STAGING_HOST '~/scripts/receive_push.sh'
+    | sshpass -p "$STAGING_PASSWORD" ssh $STAGING_USER:@$STAGING_HOST '~/scripts/receive_push.sh' \
+    2>/dev/null
 
 echo "done"
