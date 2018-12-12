@@ -46,10 +46,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 						?>
 							<div class="row">
 								<div class="col-md-1"></div>
-								<div class="col-md-5 landing-feature-image">
+								<div class="col-md-5 featured-image">
 									<img src="<?php the_field($field_prefix."image") ?>">
 								</div>
-								<div class="col-md-5 landing-feature-info">
+								<div class="col-md-5 featured-info">
 									<h2><?php the_field($field_prefix."title") ?></h2>
 									<p><?php the_field($field_prefix."content") ?></p>
 									<a class="more" href="<?php the_field($field_prefix.'link') ?>">

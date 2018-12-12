@@ -1,3 +1,30 @@
+section.featured {
+	padding-top: 0px;
+
+	.featured-image {
+
+		height: 480px;
+	}
+
+	.featured-info {
+		text-align: left;
+		padding-left: 75px;
+		padding-top: 80px;
+
+		h2 {
+			font-family: BebasNeue;
+			font-size: 72px;
+		}
+		p {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-family: GothicA1;
+			font-size: 18px;
+			line-height: 1.5;
+		}
+	}
+}
+
 section.quote {
 	position: relative;
 	padding: 0;
