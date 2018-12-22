@@ -4,7 +4,7 @@ $custom_title = get_field('title');
 $subnav = get_field('subnav');
 ?>
 
-<header class="entry-header">
+<header class="entry-header text-center">
 	<div class="row row-block">
 		<div class="col-md-12">
 			<div class="wrapper"><!-- titlecard -->

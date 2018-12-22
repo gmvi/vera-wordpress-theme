@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
 
-				<div class="entry-content">
+				<div class="entry-content text-center">
 
 					<section class="info">
 						<div class="row header-main">

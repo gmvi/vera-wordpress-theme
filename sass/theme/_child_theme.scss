@@ -75,6 +75,10 @@ body {
     justify-content: center;
 }
 
+.text-center {
+    text-align: center;
+}
+
 a.donate {
     height: 56px;
     width: 126px;
@@ -113,10 +117,6 @@ a.more:hover {
     letter-spacing: 1.5px;
     padding: 5px 10px 2px;
     margin-bottom: 30px;
-}
-
-article {
-    text-align: center;
 }
 
 .entry-header .entry-title {
