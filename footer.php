@@ -18,6 +18,32 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row site-footer">
 
 			<div class="col-md-6">
+                <div class="row footer-links">
+                    <div class="col-md-6">
+                        <div class="footer-link">About</div>
+                        <div class="footer-link">Get Involved</div>
+                        <div class="footer-link">Rentals</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-link">Shows</div>
+                        <div class="footer-link">Silkscreen</div>
+                        <div class="footer-link">Audio & Stage</div>
+                    </div>
+                </div>
+                <div class="row footer-social-media">
+                    <div class="col-md-1">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="fab fa-facebook-f fa-lg"></i>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="fab fa-youtube fa-lg"></i>
+                    </div>
+                </div>
 			</div>
 			<div class="col-md-6">
 				<div class="footer-title">

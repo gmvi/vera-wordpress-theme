@@ -22,6 +22,7 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+    wp_enqueue_style( 'wpb-fa', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 }
 
 add_filter( 'sidebars_widgets', 'disable_all_widgets' ); 

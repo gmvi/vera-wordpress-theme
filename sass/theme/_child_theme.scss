@@ -379,10 +379,29 @@ section.donate {
 .site-footer {
 	color: white;
 	background-color: #252525;
-
+	.footer-social-media {
+		padding: 1rem;
+	}
+	.footer-social-media-box {
+		border-style: solid;
+	}
+	.footer-links {
+		margin-top: 4rem;
+	}
+	.footer-link {
+		font-family: BebasNeue;
+		font-size: 34px;
+		//font-style: normal;
+		//font-stretch: normal;
+		line-height: 1;
+		letter-spacing: 1.5px;
+		padding: 1rem;
+		font-weight: 100;
+		text-transform: uppercase;
+	}
 	.footer-title {
-		margin-top: 120px;
-		padding-bottom: 5px;
+		margin-top: 4rem;
+		padding-bottom: 1rem;
 		font-family: BebasNeue;
   font-size: 72px;  line-height: 1;
   letter-spacing: 1.5px;
@@ -400,5 +419,6 @@ section.donate {
 		font-size: 34px;
 		line-height: 1;
 		letter-spacing: 1.5px;
+		padding-bottom: 5rem;
 	}
 }

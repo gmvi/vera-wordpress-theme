@@ -11,3 +11,4 @@ scripts/credentials/
 scripts/tmp/
 scripts/credentials.sh
 credentials.sh
+.idea/

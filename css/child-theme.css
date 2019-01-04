@@ -6341,7 +6341,8 @@ button.bg-dark:focus {
   margin-top: auto !important; }
 
 .mr-auto,
-.mx-auto {
+.mx-auto,
+.aligncenter {
   margin-right: auto !important; }
 
 .mb-auto,
@@ -6349,7 +6350,8 @@ button.bg-dark:focus {
   margin-bottom: auto !important; }
 
 .ml-auto,
-.mx-auto {
+.mx-auto,
+.aligncenter {
   margin-left: auto !important; }
 
 @media (min-width: 576px) {
@@ -7332,14 +7334,8 @@ a.text-dark:hover, a.text-dark:focus {
   float: right;
   margin-left: 1.5em; }
 
-.aligncenter {
-  margin: 0px auto; }
-
 .entry-footer span {
   padding-right: 10px; }
-
-figure.woocommerce-product-gallery__wrapper {
-  max-width: inherit !important; }
 
 img.wp-post-image,
 article img,
@@ -7390,6 +7386,9 @@ a.skip-link {
   color: #fff; }
   .navbar-dark .navbar-brand a:hover, .navbar-dark .navbar-brand a:focus {
     color: #fff; }
+
+.navbar h1 {
+  font-weight: 400; }
 
 /*
 * Use existing Bootstrap 4 classes and
@@ -10264,9 +10263,23 @@ section.quote {
 .site-footer {
   color: white;
   background-color: #252525; }
+  .site-footer .footer-social-media {
+    padding: 1rem; }
+  .site-footer .footer-social-media-box {
+    border-style: solid; }
+  .site-footer .footer-links {
+    margin-top: 4rem; }
+  .site-footer .footer-link {
+    font-family: BebasNeue;
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    padding: 1rem;
+    font-weight: 100;
+    text-transform: uppercase; }
   .site-footer .footer-title {
-    margin-top: 120px;
-    padding-bottom: 5px;
+    margin-top: 4rem;
+    padding-bottom: 1rem;
     font-family: BebasNeue;
     font-size: 72px;
     line-height: 1;
@@ -10281,4 +10294,5 @@ section.quote {
     font-family: BebasNeue;
     font-size: 34px;
     line-height: 1;
-    letter-spacing: 1.5px; }
+    letter-spacing: 1.5px;
+    padding-bottom: 5rem; }
