@@ -10264,14 +10264,13 @@ section.quote {
   color: white;
   background-color: #252525; }
   .site-footer .footer-social-media {
-    padding: 1rem; }
-  .site-footer .footer-social-media-box {
-    border-style: solid; }
+    padding-top: 1rem;
+    padding-left: 2rem; }
   .site-footer .footer-links {
     margin-top: 4rem; }
   .site-footer .footer-link {
     font-family: BebasNeue;
-    font-size: 34px;
+    font-size: 25px;
     line-height: 1;
     letter-spacing: 1.5px;
     padding: 1rem;

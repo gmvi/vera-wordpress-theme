@@ -31,16 +31,16 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
                 </div>
                 <div class="row footer-social-media">
-                    <div class="col-md-1">
+                    <div class="col-xs-1" style="padding-right:1rem;">
                         <i class="fab fa-instagram fa-lg"></i>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-xs-1" style="padding-right:1rem;">
                         <i class="fab fa-facebook-f fa-lg"></i>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-xs-1" style="padding-right:1rem;">
                         <i class="fab fa-twitter fa-lg"></i>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-xs-1" style="padding-right:1rem;">
                         <i class="fab fa-youtube fa-lg"></i>
                     </div>
                 </div>
