@@ -9923,16 +9923,16 @@ ul.menu {
 .entry-content section {
   padding: 90px 0 0px; }
 
-.header, section.info .header-main, section.concerts .header-concerts, section.classes .header-classes, section.blog .header-blog {
+.header, section.info .header-main, section.concerts .header-concerts, section.classes .header-classes, section.blog .header-blog, .centered {
   font-family: BebasNeue;
   text-transform: uppercase;
   letter-spacing: 1.8px;
   margin-bottom: 40px; }
-  .header h1, section.info .header-main h1, section.concerts .header-concerts h1, section.classes .header-classes h1, section.blog .header-blog h1 {
+  .header h1, section.info .header-main h1, section.concerts .header-concerts h1, section.classes .header-classes h1, section.blog .header-blog h1, .centered h1 {
     font-size: 96px; }
-  .header h2, section.info .header-main h2, section.concerts .header-concerts h2, section.classes .header-classes h2, section.blog .header-blog h2 {
+  .header h2, section.info .header-main h2, section.concerts .header-concerts h2, section.classes .header-classes h2, section.blog .header-blog h2, .centered h2 {
     font-size: 72px; }
-  .header h3, section.info .header-main h3, section.concerts .header-concerts h3, section.classes .header-classes h3, section.blog .header-blog h3 {
+  .header h3, section.info .header-main h3, section.concerts .header-concerts h3, section.classes .header-classes h3, section.blog .header-blog h3, .centered h3 {
     font-size: 56px; }
 
 section.info .body-main, section.classes .body-classes, section.blog .body-blog {
@@ -10258,6 +10258,24 @@ section.quote {
       line-height: 2;
       letter-spacing: 1.6px;
       text-transform: uppercase; }
+
+section.volunteer-hero {
+  background-image: url("../img/volunteer-today.jpg");
+  /* Set a specific height */
+  height: 25rem;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+
+.centered {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; }
 
 /* Footer */
 .site-footer {

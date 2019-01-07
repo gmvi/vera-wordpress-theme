@@ -62,6 +62,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="col-md-5">
 								<div class="concerts-list">
 									<div class="list-title">Upcoming Shows</div>
+
 									<ul class="list-body">
 										<li class="list-item clearfix">
 											<div class="wrapper-left">
