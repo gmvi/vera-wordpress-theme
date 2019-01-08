@@ -10279,6 +10279,7 @@ section.volunteer-hero {
 
 /* Footer */
 .site-footer {
+  padding: 0 120px;
   color: white;
   background-color: #252525; }
   .site-footer .footer-social-media {

@@ -45,7 +45,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
                 </div>
 			</div>
-			<div class="col-md-6">
+            <div class="col-md-1 d-none d-md-block">
+            </div>
+			<div class="col-sm-12 col-md-5">
 				<div class="footer-title">
 					The Vera Project
 				</div>
