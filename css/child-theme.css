@@ -10294,7 +10294,10 @@ section.steps {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  min-height: 720px; }
+  padding-bottom: 20px; }
+  @media (min-width: 768px) {
+    section.steps {
+      min-height: 720px; } }
   section.steps div.steps-header {
     font-family: BebasNeue;
     font-size: 18px;
@@ -10372,7 +10375,8 @@ section.volunteer-committees {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    padding: 40px 0px; }
     section.volunteer-committees div.row div#volunteer-content div#content-wrapper {
       max-width: 60%; }
       section.volunteer-committees div.row div#volunteer-content div#content-wrapper div.small-primary-bg-header {

@@ -37,7 +37,11 @@ section.steps {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  min-height: $section-height;
+  padding-bottom: 20px;
+
+  @include media-breakpoint-up(md) {
+    min-height: $section-height;
+  }
 
   div.steps-header {
     font-family: $header-font;
@@ -150,6 +154,7 @@ section.volunteer-committees {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px 0px;
 
     div#content-wrapper {
       max-width: 60%;

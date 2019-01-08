@@ -75,11 +75,11 @@ function pad_zeroes( $num ) {
                              id="<?php echo $step_element_id ?>" role="tabpanel"
                              aria-labelledby="<?php echo $step_element_id ?>">
                             <div class="row">
-                                <div class="col-sm-12 col-md-6 tab-image">
+                                <div class="col-md-6 tab-image d-none d-md-block">
                                     <img src="<?php echo wp_get_attachment_url($step['step_image']); ?>"/>
                                 </div>
 
-                                <div class="col-sm-12 col-md-6">
+                                <div class="col-sm-12 col-md-6 px-sm-5 px-md-0">
                                     <div id="step-label">
                                         <div class="small-primary-bg-header">
                                             <?php echo pad_zeroes( $step['numbered_step_header'] ); ?>
@@ -114,7 +114,7 @@ function pad_zeroes( $num ) {
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-md-6 d-none d-md-block">
                         <img class="volunteer-image" src="<?php echo get_field( 'get_involved_image' )['url'];?>" />
                     </div>
                 </div>
