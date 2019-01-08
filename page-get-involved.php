@@ -9,8 +9,8 @@ get_header();
 // Get container type from Wordpress Customizer
 $container = get_theme_mod( 'understrap_container_type' );
 
+// Grab steps from custom fields plugin
 $getting_involved_steps = SCF::get( 'Steps' );
-error_log(print_r($getting_involved_steps, true));
 
 ?>
 
@@ -30,31 +30,42 @@ error_log(print_r($getting_involved_steps, true));
 
             <section class="adventure">
                 <div class="container">
-                    <div id="adventure-header"><?php the_field('adventure_header'); ?></div>
+                    <div id="adventure-header"><?php the_field( 'adventure_header' ); ?></div>
 
-                    <?php if( get_field('adventure_text') ): ?>
-                        <div id="adventure-text"><?php the_field('adventure_text'); ?></div>
-                    <?php endif; ?>
+					<?php if ( get_field( 'adventure_text' ) ): ?>
+                        <div id="adventure-text"><?php the_field( 'adventure_text' ); ?></div>
+					<?php endif; ?>
                 </div>
             </section>
 
             <section class="steps">
-                <div class="steps-header text-center"> Getting involved at Vera is easy: </div>
+                <div class="steps-header text-center"> Getting involved at Vera is easy:</div>
                 <div class="row">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <?php foreach ($getting_involved_steps as $i=>$step) { ?>
-                            <?php $step_label = (str_replace(' ', '-', strtolower($step['numbered_step_header'])));?>
-                            <li class="nav-item">
-                                <a class="nav-link <?php echo ($i == 0) ? 'active' : ''?>" id="tab-<?php echo $step_label?>" data-toggle="tab" href="#<?php echo $step_label?>" role="tab" aria-controls="<?php $step_label?>" aria-selected="true"><?php echo $step['numbered_step_header']?></a>
-                            </li>
-                        <?php } ?>
-                    </ul>
+                    <div class="step-tabs">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+							<?php foreach ( $getting_involved_steps as $i => $step ) { ?>
+								<?php $step_label = ( str_replace( ' ', '-', strtolower( $step['numbered_step_header'] ) ) ); ?>
+                                <li class="nav-item">
+                                    <a class="nav-link <?php echo ( $i == 0 ) ? 'active' : '' ?>"
+                                       id="tab-<?php echo $step_label ?>" data-toggle="tab"
+                                       href="#<?php echo $step_label ?>" role="tab" aria-controls="<?php $step_label ?>"
+                                       aria-selected="true"><?php echo $step['numbered_step_header'] ?></a>
+                                </li>
+							<?php } ?>
+                        </ul>
+                    </div>
+                </div>
 
-                    <div class="tab-content">
-	                    <?php foreach ($getting_involved_steps as $i=>$step) { ?>
-	                    <?php $step_label = (str_replace(' ', '-', strtolower($step['numbered_step_header'])));?>
-                            <div class="tab-pane <?php echo ($i == 0) ? 'active' : '' ?>" id="<?php echo $step_label?>" role="tabpanel" aria-labelledby="<?php echo $step_label?>"><?php echo $step['step_content'] ?></div>
-                        <?php } ?>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                    </div>
+                    <div class="tab-content col-sm-12 col-md-6">
+						<?php foreach ( $getting_involved_steps as $i => $step ) { ?>
+							<?php $step_label = ( str_replace( ' ', '-', strtolower( $step['numbered_step_header'] ) ) ); ?>
+                            <div class="tab-pane <?php echo ( $i == 0 ) ? 'active' : '' ?>"
+                                 id="<?php echo $step_label ?>" role="tabpanel"
+                                 aria-labelledby="<?php echo $step_label ?>"><?php echo $step['step_content'] ?></div>
+						<?php } ?>
                     </div>
                 </div>
             </section>
@@ -62,7 +73,13 @@ error_log(print_r($getting_involved_steps, true));
             <section class="volunteer-committees">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
+						<?php if ( get_field( 'adventure_text' ) ):
+							echo the_field( 'get_involved_small_header' );
+						endif; ?>
 
+						<?php echo the_field( 'get_involved_header' ); ?>
+						<?php echo the_field( 'get_involved_content' ); ?>
+						<?php echo the_field( 'get_involved_link' ); ?>
                     </div>
                     <div class="col-sm-12 col-md-6">
 
