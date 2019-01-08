@@ -81,14 +81,16 @@ function pad_zeroes( $num ) {
 
                                 <div class="col-sm-12 col-md-6">
                                     <div id="step-label">
-                                        <span><?php echo pad_zeroes( $step['numbered_step_header'] ); ?></span>
+                                        <div id="step-number">
+                                            <?php echo pad_zeroes( $step['numbered_step_header'] ); ?>
+                                        </div>
                                         <?php if ( $step['mark_if_required'] ):
                                             echo '<span>required</span>';
                                         endif;
                                         ?>
                                     </div>
                                     <h2><?php echo $step['step_header'] ?></h2>
-                                    <p><?php echo $step['step_content'] ?></p>
+                                    <div id="step-content"><?php echo $step['step_content'] ?></div>
                                 </div>
                             </div>
                         </div>
@@ -99,16 +101,23 @@ function pad_zeroes( $num ) {
             <section class="volunteer-committees">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
+                        <img src="<?php echo wp_get_attachment_url(the_field( 'get_involved_image' ));?>" />
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <p>
+
 						<?php if ( get_field( 'adventure_text' ) ):
 							echo the_field( 'get_involved_small_header' );
 						endif; ?>
 
 						<?php echo the_field( 'get_involved_header' ); ?>
-						<?php echo the_field( 'get_involved_content' ); ?>
-						<?php echo the_field( 'get_involved_link' ); ?>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
 
+						<?php echo the_field( 'get_involved_content' ); ?>
+
+						<?php echo the_field( 'get_involved_link' ); ?>
+
+                        </p>
                     </div>
                 </div>
             </section>

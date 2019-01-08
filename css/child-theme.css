@@ -10301,7 +10301,7 @@ section.steps {
     padding: 20px 0px; }
   section.steps div.step-tabs {
     border-bottom: 1px solid #adb5bd;
-    margin-bottom: 20px; }
+    margin-bottom: 40px; }
     section.steps div.step-tabs .nav-tabs {
       border: none;
       justify-content: center; }
@@ -10320,11 +10320,39 @@ section.steps {
   section.steps div.tab-image img {
     width: 100%;
     padding: 20px; }
+  section.steps div.tab-content div#step-label {
+    font-family: BebasNeue;
+    font-size: 18px;
+    letter-spacing: 1.5px; }
+    section.steps div.tab-content div#step-label div#step-number {
+      background-color: #D41C53;
+      color: white;
+      text-align: center;
+      display: inline-block;
+      line-height: 1.3;
+      width: 28px;
+      height: 20px;
+      margin-right: 10px; }
+  section.steps div.tab-content h2 {
+    font-size: 56px;
+    font-family: BebasNeue;
+    letter-spacing: 1.8px;
+    margin-top: 20px; }
+  section.steps div.tab-content div#step-content {
+    font-family: GothicA1;
+    font-size: 16px;
+    margin-top: 15px;
+    letter-spacing: 1.5px;
+    letter-spacing: normal; }
 
 section.volunteer-committees {
   min-height: 720px;
   opacity: 0.6;
   background-color: #ebeeef; }
+  section.volunteer-committees div.row div:last-child p {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 section.volunteer-hero {
   background-image: url("../img/volunteer-today.jpg");
