@@ -22,6 +22,16 @@
 }
 
 @font-face {
+	font-family: BebasNeueThin;
+ 	src: url('../fonts/BebasNeue Thin.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: BebasNeueLight;
+	src: url('../fonts/BebasNeue Light.ttf') format('truetype');
+}
+
+@font-face {
   font-family: GothicA1;
   src: url('../fonts/GothicA1-Regular.ttf') format('truetype');
 }
@@ -374,11 +384,11 @@ section.donate {
 /* Page-specific styling */
 @import "front_page";
 @import "landing_page";
-@import "about_page";
+@import "get_involved_page";
 
 /* Footer */
 .site-footer {
-	padding: 0 120px;
+	padding: 0px 120px;
 	color: white;
 	background-color: #252525;
 	.footer-social-media {
