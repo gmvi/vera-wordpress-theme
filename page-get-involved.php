@@ -81,16 +81,16 @@ function pad_zeroes( $num ) {
 
                                 <div class="col-sm-12 col-md-6">
                                     <div id="step-label">
-                                        <div id="step-number">
+                                        <div class="small-primary-bg-header">
                                             <?php echo pad_zeroes( $step['numbered_step_header'] ); ?>
                                         </div>
                                         <?php if ( $step['mark_if_required'] ):
                                             echo '<span>required</span>';
-                                        endif;
+                                            endif;
                                         ?>
                                     </div>
-                                    <h2><?php echo $step['step_header'] ?></h2>
-                                    <div id="step-content"><?php echo $step['step_content'] ?></div>
+                                    <h2 class="large-header"><?php echo $step['step_header'] ?></h2>
+                                    <div class="paragraph-content"><?php echo $step['step_content'] ?></div>
                                 </div>
                             </div>
                         </div>
@@ -98,26 +98,24 @@ function pad_zeroes( $num ) {
                 </div>
             </section>
 
-            <section class="volunteer-committees">
+            <section class="volunteer-committees row">
                 <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <img src="<?php echo wp_get_attachment_url(the_field( 'get_involved_image' ));?>" />
+                    <div id="volunteer-content" class="col-sm-12 col-md-6">
+                        <div id="content-wrapper">
+                            <?php if ( get_field( 'adventure_text' ) ):
+                                echo '<div class="small-primary-bg-header">' . get_field( 'get_involved_small_header' ) . '</div>';
+                            endif;
+
+                            echo '<h2 class="large-header">' . get_field( 'get_involved_header' ) . '</h2>';
+
+                            echo '<div class="paragraph-content">' . get_field( 'get_involved_content' ) . '</div>';
+
+                            echo '<a class="btn btn-outline-primary" href="' . get_field( 'get_involved_link' ) . '"> Learn More </a>'; ?>
+                        </div>
                     </div>
 
                     <div class="col-sm-12 col-md-6">
-                        <p>
-
-						<?php if ( get_field( 'adventure_text' ) ):
-							echo the_field( 'get_involved_small_header' );
-						endif; ?>
-
-						<?php echo the_field( 'get_involved_header' ); ?>
-
-						<?php echo the_field( 'get_involved_content' ); ?>
-
-						<?php echo the_field( 'get_involved_link' ); ?>
-
-                        </p>
+                        <img class="volunteer-image" src="<?php echo get_field( 'get_involved_image' )['url'];?>" />
                     </div>
                 </div>
             </section>
