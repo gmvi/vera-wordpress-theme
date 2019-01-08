@@ -1,4 +1,5 @@
 $max-width: 960px;
+$section-height: 720px;
 
 section.adventure {
   max-width: $max-width;
@@ -33,12 +34,56 @@ section.steps {
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
+  min-height: $section-height;
 
   div.steps-header {
     font-family: BebasNeue;
     font-size: 18px;
-    padding: 5px 0px;
+    padding: 20px 0px;
   }
+
+  div.step-tabs {
+    border-bottom: 1px solid $gray-500;
+    margin-bottom: 20px;
+
+    .nav-tabs {
+      border: none;
+      justify-content: center;
+
+      .nav-item {
+        padding: 0px 5px;
+      }
+
+      a.nav-link {
+        color: $gray-600;
+        border: none;
+        font-family: BebasNeue;
+        font-size: 34px;
+
+        &:hover {
+          color: $gray-800;
+        }
+      }
+
+      a.nav-link.active {
+        color: $primary;
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+
+  div.tab-image {
+    img {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+}
+
+section.volunteer-committees {
+  min-height: $section-height;
+  opacity: 0.6;
+  background-color: #ebeeef;
 }
 
 section.volunteer-hero {

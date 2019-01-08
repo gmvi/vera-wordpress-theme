@@ -10293,11 +10293,38 @@ section.adventure {
 section.steps {
   max-width: 960px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  min-height: 720px; }
   section.steps div.steps-header {
     font-family: BebasNeue;
     font-size: 18px;
-    padding: 5px 0px; }
+    padding: 20px 0px; }
+  section.steps div.step-tabs {
+    border-bottom: 1px solid #adb5bd;
+    margin-bottom: 20px; }
+    section.steps div.step-tabs .nav-tabs {
+      border: none;
+      justify-content: center; }
+      section.steps div.step-tabs .nav-tabs .nav-item {
+        padding: 0px 5px; }
+      section.steps div.step-tabs .nav-tabs a.nav-link {
+        color: #6c757d;
+        border: none;
+        font-family: BebasNeue;
+        font-size: 34px; }
+        section.steps div.step-tabs .nav-tabs a.nav-link:hover {
+          color: #343a40; }
+      section.steps div.step-tabs .nav-tabs a.nav-link.active {
+        color: #D41C53;
+        border-bottom: 2px solid #D41C53; }
+  section.steps div.tab-image img {
+    width: 100%;
+    padding: 20px; }
+
+section.volunteer-committees {
+  min-height: 720px;
+  opacity: 0.6;
+  background-color: #ebeeef; }
 
 section.volunteer-hero {
   background-image: url("../img/volunteer-today.jpg");
@@ -10318,16 +10345,32 @@ section.volunteer-hero {
   color: white; }
 
 /* Footer */
-.site-footer {
+div#wrapper-footer div.donate-footer {
+  height: 180px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  div#wrapper-footer div.donate-footer h1 {
+    font-family: BebasNeueLight;
+    font-size: 72px;
+    color: white;
+    letter-spacing: 1.5px; }
+    div#wrapper-footer div.donate-footer h1 strong {
+      color: #D41C53;
+      font-family: BebasNeue;
+      font-weight: normal; }
+
+div#wrapper-footer .site-footer {
   padding: 0px 120px;
   color: white;
   background-color: #252525; }
-  .site-footer .footer-social-media {
+  div#wrapper-footer .site-footer .footer-social-media {
     padding-top: 1rem;
     padding-left: 2rem; }
-  .site-footer .footer-links {
+  div#wrapper-footer .site-footer .footer-links {
     margin-top: 4rem; }
-  .site-footer .footer-link {
+  div#wrapper-footer .site-footer .footer-link {
     font-family: BebasNeue;
     font-size: 25px;
     line-height: 1;
@@ -10335,7 +10378,7 @@ section.volunteer-hero {
     padding: 1rem;
     font-weight: 100;
     text-transform: uppercase; }
-  .site-footer .footer-title {
+  div#wrapper-footer .site-footer .footer-title {
     margin-top: 4rem;
     padding-bottom: 1rem;
     font-family: BebasNeue;
@@ -10343,12 +10386,12 @@ section.volunteer-hero {
     line-height: 1;
     letter-spacing: 1.5px;
     color: #D41C53; }
-  .site-footer .footer-content {
+  div#wrapper-footer .site-footer .footer-content {
     font-family: GothicA1;
     font-size: 18px;
     line-height: 1.5;
     padding-bottom: 15px; }
-  .site-footer .footer-directions {
+  div#wrapper-footer .site-footer .footer-directions {
     font-family: BebasNeue;
     font-size: 34px;
     line-height: 1;

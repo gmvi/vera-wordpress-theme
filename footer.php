@@ -12,11 +12,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php get_sidebar( 'footerfull' ); ?>
 
 <div class="wrapper" id="wrapper-footer">
-
+    <div class="col-sm-12 donate-footer">
+        <h1>Support Vera! <strong>Donate Today!</strong></h1>
+    </div>
 	<div class="<?php echo esc_attr( $container ); ?>">
-
 		<div class="row site-footer">
-
 			<div class="col-md-6">
                 <div class="row footer-links">
                     <div class="col-md-6">

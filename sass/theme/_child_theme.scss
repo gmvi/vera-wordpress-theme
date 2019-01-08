@@ -387,48 +387,75 @@ section.donate {
 @import "get_involved_page";
 
 /* Footer */
-.site-footer {
-	padding: 0px 120px;
-	color: white;
-	background-color: #252525;
-	.footer-social-media {
-		padding-top: 1rem;
-		padding-left: 2rem;
-	}
-	.footer-links {
-		margin-top: 4rem;
-	}
-	.footer-link {
-		font-family: BebasNeue;
-		font-size: 25px;
-		//font-style: normal;
-		//font-stretch: normal;
-		line-height: 1;
-		letter-spacing: 1.5px;
-		padding: 1rem;
-		font-weight: 100;
-		text-transform: uppercase;
-	}
-	.footer-title {
-		margin-top: 4rem;
-		padding-bottom: 1rem;
-		font-family: BebasNeue;
-  font-size: 72px;  line-height: 1;
-  letter-spacing: 1.5px;
-  color: $primary;
+
+div#wrapper-footer {
+
+	div.donate-footer {
+		height: 180px;
+		background-color: #000000;
+		//text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		h1 {
+			font-family: BebasNeueLight;
+			font-size: 72px;
+			color: white;
+			letter-spacing: 1.5px;
+
+			strong {
+				color: $primary;
+				font-family: BebasNeue;
+				font-weight: normal;
+			}
+		}
 	}
 
-	.footer-content {
-		font-family: GothicA1;
-  font-size: 18px;  line-height: 1.5;
-		padding-bottom: 15px;
-	}
+	.site-footer {
+		padding: 0px 120px;
+		color: white;
+		background-color: #252525;
 
-	.footer-directions {
-		font-family: BebasNeue;
-		font-size: 34px;
-		line-height: 1;
-		letter-spacing: 1.5px;
-		padding-bottom: 5rem;
+		.footer-social-media {
+			padding-top: 1rem;
+			padding-left: 2rem;
+		}
+		.footer-links {
+			margin-top: 4rem;
+		}
+		.footer-link {
+			font-family: BebasNeue;
+			font-size: 25px;
+			//font-style: normal;
+			//font-stretch: normal;
+			line-height: 1;
+			letter-spacing: 1.5px;
+			padding: 1rem;
+			font-weight: 100;
+			text-transform: uppercase;
+		}
+		.footer-title {
+			margin-top: 4rem;
+			padding-bottom: 1rem;
+			font-family: BebasNeue;
+			font-size: 72px;  line-height: 1;
+			letter-spacing: 1.5px;
+			color: $primary;
+		}
+
+		.footer-content {
+			font-family: GothicA1;
+			font-size: 18px;  line-height: 1.5;
+			padding-bottom: 15px;
+		}
+
+		.footer-directions {
+			font-family: BebasNeue;
+			font-size: 34px;
+			line-height: 1;
+			letter-spacing: 1.5px;
+			padding-bottom: 5rem;
+		}
 	}
 }
