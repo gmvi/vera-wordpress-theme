@@ -10,6 +10,7 @@ const zlib = require('zlib');
 // paths
 const tmp = path.join(__dirname, 'tmp');
 const uploads_dir = path.join(__dirname, '..', '..', '..', '/uploads');
+const plugins_dir = path.join(__dirname, '..', '..', '..', '/plugins');
 const wp_config = path.join(__dirname, '..', '..', '..', '..', 'wp-config.php');
 
 // utility constructs
@@ -72,13 +73,16 @@ rl.on('close', () => {
       tarball = response.pipe(zlib.createUnzip()).on('error', errHandler("zip"));
       tarball.pipe(tar.extract(tmp)).on('finish', () => {
         if (!fs.existsSync(path.join(tmp, 'uploads')) ||
+            !fs.existsSync(path.join(tmp, 'plugins')) ||
             !fs.existsSync(path.join(tmp, 'database.sql'))) {
           console.error("database incomplete");
           process.exit(1);
         }
         console.log("loading database");
         fs.removeSync(uploads_dir);
+        fs.removeSync(plugins_dir);
         fs.copySync(path.join(tmp, 'uploads'), uploads_dir);
+        fs.copySync(path.join(tmp, 'plugins'), plugins_dir);
         fs.readFile(path.join(tmp, 'database.sql'), 'utf8', (err, data) => {
           if (err) throw err;
           conn.query(data, errHandler("mysql query"));
