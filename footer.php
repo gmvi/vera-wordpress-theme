@@ -12,14 +12,42 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php get_sidebar( 'footerfull' ); ?>
 
 <div class="wrapper" id="wrapper-footer">
-
+    <div class="col-sm-12 donate-footer">
+        <h1>Support Vera! <strong>Donate Today!</strong></h1>
+    </div>
 	<div class="<?php echo esc_attr( $container ); ?>">
-
 		<div class="row site-footer">
-
 			<div class="col-md-6">
+                <div class="row footer-links">
+                    <div class="col-md-6">
+                        <div class="footer-link">About</div>
+                        <div class="footer-link">Get Involved</div>
+                        <div class="footer-link">Rentals</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-link">Shows</div>
+                        <div class="footer-link">Silkscreen</div>
+                        <div class="footer-link">Audio & Stage</div>
+                    </div>
+                </div>
+                <div class="row footer-social-media">
+                    <div class="col-xs-1" style="padding-right:1rem;">
+                        <i class="fa fa-instagram fa-lg"></i>
+                    </div>
+                    <div class="col-xs-1" style="padding-right:1rem;">
+                        <i class="fa fa-facebook-f fa-lg"></i>
+                    </div>
+                    <div class="col-xs-1" style="padding-right:1rem;">
+                        <i class="fa fa-twitter fa-lg"></i>
+                    </div>
+                    <div class="col-xs-1" style="padding-right:1rem;">
+                        <i class="fa fa-youtube fa-lg"></i>
+                    </div>
+                </div>
 			</div>
-			<div class="col-md-6">
+            <div class="col-md-1 d-none d-md-block">
+            </div>
+			<div class="col-sm-12 col-md-5">
 				<div class="footer-title">
 					The Vera Project
 				</div>
