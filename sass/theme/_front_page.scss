@@ -12,9 +12,6 @@ body.home {
 }
 
 section.concerts {
-    .header-concerts {
-        @extend %header;
-    }
 
     .body-concerts {
 
@@ -134,11 +131,11 @@ section.concerts {
 
 section.classes {
     .header-classes {
-        @extend %header;
+        @extend %section-header;
     }
     
     .body-classes {
-        @extend %body;
+        @extend %section-body;
 
         .card {
         	width: 472px;
@@ -174,13 +171,8 @@ section.blog {
 	padding-top: 0px;
 	color: black;
 	margin-bottom: 100px;
-
-    .header-blog {
-        @extend %header;
-    }
     
-    .body-blog {
-        @extend %body;
+    .body {
     	text-align: left;
         padding: 0 120px;
         margin-bottom: 70px;

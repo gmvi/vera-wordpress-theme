@@ -1,7 +1,6 @@
 <?php
 $label = get_field('label');
 $custom_title = get_field('title');
-$subnav = get_field('subnav');
 ?>
 
 <header class="entry-header text-center">
@@ -23,13 +22,6 @@ $subnav = get_field('subnav');
 				</div>
 				<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 			</div>
-			<?php
-				if ($subnav) {
-					wp_nav_menu(array(
-						'menu' => $subnav
-			    	));
-			    }
-			?>
 		</div>
 	</div>
 </header>

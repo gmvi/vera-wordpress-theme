@@ -25,12 +25,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="entry-content text-center">
 
 					<section class="info">
-						<div class="row header-main">
+						<div class="row header">
 							<div class="col-md-12">
 								<h3><?php the_field('header'); ?></h3>
 							</div>
 						</div><!-- .section-header -->
-						<div class="row body-main">
+						<div class="row body">
 							<div class="col-md-12">
 								<?php the_content(); ?>
 								<a href class="more">Learn More About Us</a>
@@ -39,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</section><!-- section.info -->
 
 					<section class="concerts">
-						<div class="row header-concerts">
+						<div class="row header">
 							<div class="col-md-12">
 								<span class="label">Concerts</span>
 								<h2><b>On Stage</b></h2>
@@ -108,17 +108,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</section><!-- .concerts -->
 
 					<section class="classes">
-						<div class="row header-classes">
+						<div class="row header">
 							<div class="col-md-12">
 								<span class="label">Classes</span>
 								<h2><b>In The Studio</b></h2>
 							</div>
 						</div>
-						<div class="row body-classes">
-							<div class="col-md-1">
-							</div>
+						<div class="row body">
+							<div class="col-md-1"></div>
 							<div class="col-md-5">
-								<div class="card card-silkscreen">
+								<div class="card">
 									<div class="card-image"></div>
 									<a href class="card-title">
 										Silkscreen
@@ -127,7 +126,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</div>
 							</div>
 							<div class="col-md-5">
-								<div class="card card-silkscreen">
+								<div class="card">
 									<div class="card-image"></div>
 									<a href class="card-title">
 										Audio & Stage
@@ -135,8 +134,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									</a>
 								</div>
 							</div>
-							<div class="col-md-1">
-							</div>
+							<div class="col-md-1"></div>
 						</div>
 					</section>
 
