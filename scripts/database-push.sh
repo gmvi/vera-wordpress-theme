@@ -20,8 +20,8 @@ mysqldump --protocol="TCP" -u"$DB_USER" -p"$DB_PASS" \
 	> $TMP/database.sql
 
 # update the backup file to match staging server expectations
-sed -i "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'siteurl','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
-sed -i "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'home','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
+sed -i.bak -e "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'siteurl','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
+sed -i.bak -e "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'home','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
 
 # copy uploads directory
 echo "copying uploads"
