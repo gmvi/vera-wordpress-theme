@@ -26,10 +26,12 @@ sed -i.bak -e "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'home','\\)[^']*'|\1http
 # copy uploads directory
 echo "copying uploads"
 cp -a $WORDPRESS/wp-content/uploads/ $TMP/
+cp -a $WORDPRESS/wp-content/plugins/ $TMP/
 
 # replay backup into the staging server
 echo "uploading"
-tar -czf - -C $TMP uploads database.sql \
+tar -czf - -C $TMP uploads plugins database.sql \
     | sshpass -p "$STAGING_PASSWORD" ssh $STAGING_USER:@$STAGING_HOST '~/scripts/receive_push.sh'
 
 echo "done"
+#rm $TMP
