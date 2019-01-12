@@ -184,14 +184,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</div>
 						</div>
 					</section><!-- .section-blog -->
-	
-					<section class="donate">
-						<div class="row">
-							<div class="col-md-12">
-								Support Vera! <b>Donate Today!</b>
-							</div>
-						</div>
-					</section>
 			</article><!-- #post-## -->
 	
 		</main><!-- #main -->

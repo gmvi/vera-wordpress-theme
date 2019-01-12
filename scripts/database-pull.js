@@ -51,6 +51,7 @@ rl.on('close', () => {
   // connect to database to get siteurl option
   const conn = mysql.createConnection({
     host: 'localhost',
+    port: '8889',
     user: mysqlUser,
     password: mysqlPass,
     database: mysqlDB,
