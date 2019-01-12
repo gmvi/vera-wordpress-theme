@@ -24,17 +24,22 @@ function theme_enqueue_styles() {
     }
 }
 
+// Include bundled plugins
+$includes = array_filter(glob(__DIR__.'/plugins/*/index.php'), 'is_file');
+foreach ($includes as $filename) {
+    include $filename;
+}
+
+// Remove things we don't want
+
+// Widgets? No por favor!
 add_filter( 'sidebars_widgets', 'disable_all_widgets' ); 
 function disable_all_widgets( $sidebars_widgets ) 
 { 
    return array( false ); 
 }
-
-// Remove things we don't need
-
-// Widgets! No, por favor!
-// 999 here means we're forcing high priority, otherwise the remove_submenu_page call won't work
 add_action( 'admin_menu', 'remove_menus', 999 );
+// 999 above forces high priority, otherwise remove_submenu_page won't work
 function remove_menus() {
     remove_submenu_page( 'themes.php', 'widgets.php' );
 }

@@ -1,16 +1,4 @@
 // The Vera Project Website 2018 Redesign
-// 
-// Style Guide:
-// 
-// %placeholders should be followed with a generic:
-//   %header {
-//     content: "goes here";
-//   } .header { @extend: %header; }
-//
-//   .header-main {
-//     @extend: %header;
-//     content: "goes here";
-//   }
 
 /* Fonts */
 
@@ -129,6 +117,11 @@ a.more:hover {
     margin-bottom: 30px;
 }
 
+.icon {
+	width: 60px;
+	height: 60px;
+}
+
 .entry-header .entry-title {
     color: white;
     font-family: BebasNeue;
@@ -238,16 +231,9 @@ ul.menu {
 	}
 }
 
-
-/* Primary Title Area */
-
 /* Sections */
 
-.entry-content section {
-    padding: 90px 0 0px;
-}
-
-%header {
+%section-header {
     font-family: BebasNeue;
     text-transform: uppercase;
     letter-spacing: 1.8px;
@@ -255,14 +241,26 @@ ul.menu {
     h1 { font-size: 96px; }
     h2 { font-size: 72px; }
     h3 { font-size: 56px; }
-} .header { @extend %header; }
+}
 
-%body {
+%section-body {
     font-family: GothicA1;
     font-size: 24px;
     color: black;
     p {
         margin-bottom: 35px;
+    }
+}
+
+.entry-content section {
+    padding: 90px 0 0px;
+
+    .header {
+    	@extend %section-header;
+    }
+
+    .body {
+    	@extend %section-body;
     }
 }
 
@@ -275,13 +273,11 @@ ul.menu {
 section.info {
     padding-bottom: 50px;
 
-    .header-main {
-        @extend %header;
+    .header {
 		b { color: $primary; }
     }
     
-    .body-main {
-        @extend %body;
+    .body {
         max-width: 970px;
         margin: 0 auto;
     }
@@ -369,7 +365,6 @@ section.banner {
 	}
 }
 
-
 section.donate {
 	padding: 63px 0 45px;
     line-height: 1;
@@ -385,6 +380,7 @@ section.donate {
 @import "front_page";
 @import "landing_page";
 @import "get_involved_page";
+@import "classes_page";
 
 /* Footer */
 
