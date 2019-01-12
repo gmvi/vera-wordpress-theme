@@ -9,9 +9,10 @@ const zlib = require('zlib');
 
 // paths
 const tmp = path.join(__dirname, 'tmp');
-const uploads_dir = path.join(__dirname, '..', '..', '..', '/uploads');
-const plugins_dir = path.join(__dirname, '..', '..', '..', '/plugins');
-const wp_config = path.join(__dirname, '..', '..', '..', '..', 'wp-config.php');
+const wordpress = path.join(__dirname, '..', '..', '..', '..');
+const uploads_dir = path.join(wordpress, 'wp-content', '/uploads');
+const plugins_dir = path.join(wordpress, 'wp-content', '/plugins');
+const wp_config = path.join(wordpress, 'wp-config.php');
 
 // utility constructs
 function errHandler(for_) {
