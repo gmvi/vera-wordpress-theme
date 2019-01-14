@@ -20,17 +20,18 @@ mysqldump --protocol="TCP" -u"$DB_USER" -p"$DB_PASS" \
 	> $TMP/database.sql
 
 # update the backup file to match staging server expectations
-sed -i "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'siteurl','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
-sed -i "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'home','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
+sed -i.bak -e "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'siteurl','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
+sed -i.bak -e "s|\\(INSERT INTO \`wp_options\`.*([0-9]*,'home','\\)[^']*'|\1http://$STAGING_HOST'|" $TMP/database.sql
 
 # copy uploads directory
 echo "copying uploads"
 cp -a $WORDPRESS/wp-content/uploads/ $TMP/
+cp -a $WORDPRESS/wp-content/plugins/ $TMP/
 
 # replay backup into the staging server
 echo "uploading"
-tar -czf - -C $TMP uploads database.sql 2>/dev/null \
-    | sshpass -p "$STAGING_PASSWORD" ssh $STAGING_USER:@$STAGING_HOST '~/scripts/receive_push.sh' \
-    2>/dev/null
+tar -czf - -C $TMP uploads plugins database.sql \
+    | sshpass -p "$STAGING_PASSWORD" ssh $STAGING_USER:@$STAGING_HOST '~/scripts/receive_push.sh'
 
 echo "done"
+rm $TMP
