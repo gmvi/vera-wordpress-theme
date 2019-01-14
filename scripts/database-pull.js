@@ -89,6 +89,7 @@ rl.on('close', () => {
           conn.query(data, errHandler("mysql query"));
           conn.end((err) => {
             if (err) throw err;
+            fs.removeSync(tmp);
             console.log("done");
           });
         });

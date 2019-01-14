@@ -34,4 +34,4 @@ tar -czf - -C $TMP uploads plugins database.sql \
     | sshpass -p "$STAGING_PASSWORD" ssh $STAGING_USER:@$STAGING_HOST '~/scripts/receive_push.sh'
 
 echo "done"
-#rm $TMP
+rm $TMP
