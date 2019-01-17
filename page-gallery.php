@@ -67,8 +67,13 @@ function pad_zeroes( $num ) {
                     <div class="col-md-6 mx-auto p-5">
                         <img class="rounded-circle" src="<?php echo get_field( 'author_image' )['url'];?>" />
                     </div>
-                    <div class="col-md-6 text-center align-items-center">
-                        <p class="quote"><?php the_field('quote'); ?></p>
+                    <div class="col-md-6">
+                        <div class="row h-100 align-items-center text-center">
+                            <div class="col-md-12">
+                                <p class="quote"><?php the_field('quote'); ?></p>
+                                <span class="author"><?php the_field('author'); ?> | <?php the_field('author_title'); ?></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

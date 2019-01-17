@@ -10507,7 +10507,15 @@ section.classes {
   height: 600px; }
   .gallery-quote p.quote {
     font-size: 34px;
+    font-weight: bold;
     font-family: BebasNeueLight; }
+    .gallery-quote p.quote strong {
+      color: #D41C53; }
+  .gallery-quote span.author {
+    font-size: 14px;
+    font-family: GothicA1;
+    text-transform: uppercase;
+    font-weight: bold; }
 
 .smaller-margin-container {
   padding: 0px !important;
