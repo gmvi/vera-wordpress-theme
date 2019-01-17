@@ -9911,6 +9911,7 @@ ul.menu {
 
 .entry-header .menu {
   justify-content: center;
+  text-align: center;
   height: 50px;
   background-color: #96C0CE;
   align-content: center;
@@ -9928,7 +9929,8 @@ ul.menu {
     .entry-header .menu .menu-item a {
       color: #4A4A4A; }
   .entry-header .menu .menu-item.current-menu-item a {
-    color: white; }
+    color: white;
+    font-weight: lighter; }
 
 /* Sections */
 .entry-content section .header, section.classes .header-classes, .centered {
@@ -10023,6 +10025,7 @@ section.banner {
     width: 124%;
     margin-left: -11%;
     background-color: #D41C53;
+    background-image: url("../img/top-texture.png");
     transform: rotate(9.2deg);
     transform-origin: left;
     z-index: -2; }
@@ -10483,6 +10486,13 @@ section.classes {
         border: 2px solid #D41C53; }
       section.classes .list-item .flex .class-register.disabled {
         color: #C5C2D2; }
+
+.current-gallery {
+  height: 600px;
+  background: #ebeeef; }
+  .current-gallery img.current-gallery-image {
+    height: 100%;
+    object-fit: cover; }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {

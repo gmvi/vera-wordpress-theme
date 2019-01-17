@@ -1,0 +1,11 @@
+.current-gallery {
+  // todo ask marianne: how do we best make this snap to full screen or something on mobile? setting
+  // explicit pixel heights on sections feels unresponsive
+  height: 600px;
+  background: #ebeeef;
+  img.current-gallery-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+}

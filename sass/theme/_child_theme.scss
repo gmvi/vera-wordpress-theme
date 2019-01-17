@@ -198,6 +198,7 @@ a.more:hover {
 	}
 }
 
+
 ul.menu {
 	margin: 0;
 	padding: 0;
@@ -205,6 +206,7 @@ ul.menu {
 
 .entry-header .menu {
 	justify-content: center;
+	text-align: center;
 	height: 50px;
 	background-color: $accent;
 	align-content: center;
@@ -228,6 +230,7 @@ ul.menu {
 
 	.menu-item.current-menu-item a {
 		color: white;
+		font-weight: lighter;
 	}
 }
 
@@ -359,6 +362,7 @@ section.banner {
 		width: 124%;
 		margin-left: -11%;
 		background-color: $primary;
+		background-image: url('../img/top-texture.png');
 		transform: rotate(9.2deg);
 		transform-origin: left;
 		z-index: -2;
@@ -381,6 +385,7 @@ section.donate {
 @import "landing_page";
 @import "get_involved_page";
 @import "classes_page";
+@import "gallery_page";
 
 /* Footer */
 
