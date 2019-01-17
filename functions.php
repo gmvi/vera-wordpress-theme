@@ -47,6 +47,7 @@ function remove_menus() {
 add_action( 'admin_init', 'hide_editor' );
 
 // hides editor for pages that don't need it (like Get Involved)
+// to hide editor for more pages, add them as ors to line 57
 function hide_editor() {
 	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
 	if ( ! isset( $post_id ) ) {
