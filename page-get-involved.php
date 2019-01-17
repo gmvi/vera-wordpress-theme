@@ -12,6 +12,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 // Grab steps from custom fields plugin
 $getting_involved_steps = SCF::get( 'Steps' );
 
+$getting_involved_img="";
+if (has_post_thumbnail($post ->ID)):
+	$getting_involved_img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail')[0];
+endif;
+
 function pad_zeroes( $num ) {
 	if ( $num > 9 ) {
 		return $num;
@@ -27,7 +32,7 @@ function pad_zeroes( $num ) {
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
         <main class="site-main" id="main">
-            <section class="volunteer-hero">
+            <section class="volunteer-hero" style="background-image: url(<?php echo $getting_involved_img; ?>)">
                 <div class="volunteer-hero-text">
                     <div class="centered">
                         <p class="label">Get Involved</p>

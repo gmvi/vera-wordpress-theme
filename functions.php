@@ -44,6 +44,21 @@ function remove_menus() {
     remove_submenu_page( 'themes.php', 'widgets.php' );
 }
 
+add_action( 'admin_init', 'hide_editor' );
+
+// hides editor for pages that don't need it (like Get Involved)
+function hide_editor() {
+	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+	if ( ! isset( $post_id ) ) {
+		return;
+	}
+	$pagetitle = get_the_title( $post_id );
+	if ( $pagetitle == 'Get Involved' ) {
+		remove_post_type_support( 'page', 'editor' );
+	}
+}
+
+
 // Unwanted templates
 function vera_remove_page_templates( $templates ) {
     unset( $templates['page-templates/fullwidthpage.php'] );
