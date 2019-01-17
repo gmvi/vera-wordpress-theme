@@ -91,10 +91,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</div>
 						</section>
 
-						<section class="donate">
-							Support Vera! <b>Donate Today!</b>
-						</section>
-
 						<?php
 						//wp_link_pages( array(
 						//	'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
