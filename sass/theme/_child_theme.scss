@@ -122,6 +122,8 @@ a.more:hover {
 	height: 60px;
 }
 
+
+
 .entry-header .entry-title {
     color: white;
     font-family: BebasNeue;
@@ -139,6 +141,13 @@ a.more:hover {
 
 .entry-header .header-texture {
 	background-image: url('../img/header-texture.png');
+}
+
+.entry-header .header-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
 
 /* Navigation */
@@ -232,6 +241,10 @@ ul.menu {
 		color: white;
 		font-weight: lighter;
 	}
+}
+
+.quote {
+	background: $accent;
 }
 
 /* Sections */

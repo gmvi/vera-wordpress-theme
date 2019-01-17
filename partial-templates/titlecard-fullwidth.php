@@ -7,7 +7,7 @@ $custom_title = get_field('title');
 	<div class="row row-block">
 		<div class="col-md-12">
 			<div class="wrapper"><!-- titlecard -->
-				<div class="overlay center-vertical header-texture">
+				<div class="overlay center-vertical header-texture ">
 					<?php if ($label) { ?>
 						<span class="label">
 							<?php echo $label ?>
@@ -20,7 +20,7 @@ $custom_title = get_field('title');
 						?>
 					</h1>
 				</div>
-				<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+				<?php echo get_the_post_thumbnail( $post->ID, 'large', array('class' => 'header-image')); ?>
 			</div>
 		</div>
 	</div>

@@ -9868,6 +9868,12 @@ a.more:hover {
 .entry-header .header-texture {
   background-image: url("../img/header-texture.png"); }
 
+.entry-header .header-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+
 /* Navigation */
 .navbar {
   margin: 0;
@@ -9931,6 +9937,9 @@ ul.menu {
   .entry-header .menu .menu-item.current-menu-item a {
     color: white;
     font-weight: lighter; }
+
+.quote {
+  background: #96C0CE; }
 
 /* Sections */
 .entry-content section .header, section.classes .header-classes, .centered {
@@ -10493,6 +10502,16 @@ section.classes {
   .current-gallery img.current-gallery-image {
     height: 100%;
     object-fit: cover; }
+
+.gallery-quote {
+  height: 600px; }
+  .gallery-quote p.quote {
+    font-size: 34px;
+    font-family: BebasNeueLight; }
+
+.smaller-margin-container {
+  padding: 0px !important;
+  margin: 0px !important; }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {

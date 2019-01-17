@@ -61,6 +61,18 @@ function pad_zeroes( $num ) {
                     </div>
                 </div>
             </section>
+            <section class="quote gallery-quote"><!-- quote -->
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                    <div class="col-md-6 mx-auto p-5">
+                        <img class="rounded-circle" src="<?php echo get_field( 'author_image' )['url'];?>" />
+                    </div>
+                    <div class="col-md-6 text-center align-items-center">
+                        <p class="quote"><?php the_field('quote'); ?></p>
+                    </div>
+                </div>
+            </div>
+            </section>
 
         </main><!-- #main -->
 

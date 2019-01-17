@@ -1,3 +1,5 @@
+$container-padding: 0px !important;
+
 .current-gallery {
   // todo ask marianne: how do we best make this snap to full screen or something on mobile? setting
   // explicit pixel heights on sections feels unresponsive
@@ -7,5 +9,18 @@
     height: 100%;
     object-fit: cover;
   }
+}
 
+.gallery-quote {
+  height: 600px;
+  p.quote {
+    font-size: 34px;
+    font-family: BebasNeueLight;
+  }
+
+}
+
+.smaller-margin-container {
+  padding: $container-padding;
+  margin: $container-padding;
 }
