@@ -87,6 +87,9 @@ function pad_zeroes( $num ) {
                         </div>
                         <div class="col-md-6 p-4">
                             <p class="label">Call For Artists</p>
+                            <h2 class="medium-header mb-1"><?php the_field('cfa_block_header'); ?></h2>
+                            <p><?php the_field('cfa_block_description'); ?></p>
+                            <a href="" class="btn bordered-button btn-outline-primary">Submit A Proposal</a>
                         </div>
                     </div>
 
