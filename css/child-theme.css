@@ -10050,6 +10050,17 @@ section.donate {
   section.donate b {
     color: #D41C53; }
 
+/* Buttons */
+a.bordered-button {
+  border-radius: 0px;
+  margin-top: 20px;
+  color: #4a4a4a;
+  font-family: BebasNeue;
+  font-size: 24px;
+  border-width: 2px; }
+  a.bordered-button:hover {
+    color: white; }
+
 /* Page-specific styling */
 body.home .entry-header .wp-post-image {
   height: 670px; }
@@ -10396,15 +10407,6 @@ section.volunteer-committees {
       max-width: 60%; }
       section.volunteer-committees div.row div#volunteer-content div#content-wrapper div.small-primary-bg-header {
         padding: 1px 5px; }
-      section.volunteer-committees div.row div#volunteer-content div#content-wrapper a.btn {
-        border-radius: 0px;
-        margin-top: 20px;
-        color: #4a4a4a;
-        font-family: BebasNeue;
-        font-size: 24px;
-        border-width: 2px; }
-        section.volunteer-committees div.row div#volunteer-content div#content-wrapper a.btn:hover {
-          color: white; }
 
 section.volunteer-hero {
   /* Set a specific height */
@@ -10501,21 +10503,29 @@ section.classes {
   background: #ebeeef; }
   .current-gallery img.current-gallery-image {
     height: 100%;
-    object-fit: cover; }
+    max-height: 600px;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; }
 
 .gallery-quote {
   height: 600px; }
-  .gallery-quote p.quote {
+  .gallery-quote p.quote-text {
     font-size: 34px;
     font-weight: bold;
     font-family: BebasNeueLight; }
-    .gallery-quote p.quote strong {
-      color: #D41C53; }
   .gallery-quote span.author {
     font-size: 14px;
     font-family: GothicA1;
     text-transform: uppercase;
     font-weight: bold; }
+
+h2.medium-header {
+  font-size: 48px;
+  font-family: BebasNeue;
+  letter-spacing: 1.8px; }
 
 .smaller-margin-container {
   padding: 0px !important;

@@ -42,43 +42,56 @@ function pad_zeroes( $num ) {
                 </div>
             </section>
             <?php get_template_part('partial-templates/pageblurb'); ?>
-            <section>
-                <div class="row  no-gutters current-gallery">
+            <div class="container-fluid">
+                <section class="row no-gutters current-gallery">
+
                     <div class="col-sm-6">
                         <div class="row align-items-center h-100">
                             <div class="col-9 mx-auto">
                                 <p class="label">Current Show</p>
-                                <h2 class="large-header"><?php the_field( 'current_gallery_header' ); ?></h2>
+                                <h2 class="medium-header mb-1"><?php the_field( 'current_gallery_header' ); ?></h2>
                                 <p><?php the_field('current_gallery_description'); ?></p>
                                 <p><b>Exhibit up until <?php the_field('current_gallery_end_date'); ?><br>
                                         Opening: <?php the_field('current_gallery_opening_datetime'); ?></b></p>
-                                <a href="<?php the_field('current_gallery_link'); ?>" class="more">Learn More</a>
+                                <a href="<?php the_field('current_gallery_link'); ?>" class=" btn bordered-button btn-outline-primary">Learn More</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <img class="current-gallery-image" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" />
+                        <img class="current-gallery-image" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" /> -
                     </div>
-                </div>
-            </section>
-            <section class="quote gallery-quote"><!-- quote -->
-            <div class="container-fluid h-100">
-                <div class="row h-100">
+
+                </section>
+                <section class="row h-100 quote gallery-quote">
+
                     <div class="col-md-6 mx-auto p-5">
                         <img class="rounded-circle" src="<?php echo get_field( 'author_image' )['url'];?>" />
                     </div>
                     <div class="col-md-6">
                         <div class="row h-100 align-items-center text-center">
                             <div class="col-md-12">
-                                <p class="quote"><?php the_field('quote'); ?></p>
+                                <p class="quote-text"><?php the_field('quote'); ?></p>
                                 <span class="author"><?php the_field('author'); ?> | <?php the_field('author_title'); ?></span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            </section>
 
+                </section>
+                <section class="row">
+                    <div class="row h-100 p-5">
+                        <div class="col-md-6 p-4">
+                            <p class="label">Get Involved</p>
+                            <h2 class="medium-header mb-1"><?php the_field('committee_block_header'); ?></h2>
+                            <p><?php the_field('committee_block_description'); ?></p>
+                            <a href="<?php the_field('committee_block_contact_url'); ?>" class="btn bordered-button btn-outline-primary">Contact the committee</a>
+                        </div>
+                        <div class="col-md-6 p-4">
+                            <p class="label">Call For Artists</p>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
         </main><!-- #main -->
 
     </div><!-- #content -->

@@ -7,17 +7,21 @@ $container-padding: 0px !important;
   background: #ebeeef;
   img.current-gallery-image {
     height: 100%;
+    max-height: 600px;
     object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
   }
 }
 
 .gallery-quote {
   height: 600px;
-  p.quote {
+  p.quote-text {
     font-size: 34px;
     font-weight: bold;
     font-family: BebasNeueLight;
-    strong { color: $primary; }
   }
   span.author {
     font-size: 14px;
@@ -27,6 +31,15 @@ $container-padding: 0px !important;
   }
 
 }
+
+
+// put this somewhere else
+h2.medium-header {
+  font-size: 48px;
+  font-family: BebasNeue;
+  letter-spacing: 1.8px;
+}
+
 
 .smaller-margin-container {
   padding: $container-padding;

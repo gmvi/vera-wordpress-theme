@@ -115,7 +115,7 @@ function pad_zeroes( $num ) {
 
                             echo '<div class="paragraph-content">' . get_field( 'get_involved_content' ) . '</div>';
 
-                            echo '<a class="btn btn-outline-primary" href="' . get_field( 'get_involved_link' ) . '"> Learn More </a>'; ?>
+                            echo '<a class="btn bordered-button btn-outline-primary" href="' . get_field( 'get_involved_link' ) . '"> Learn More </a>'; ?>
                         </div>
                     </div>
 

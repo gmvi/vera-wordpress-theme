@@ -393,6 +393,20 @@ section.donate {
 	b { color: $primary; }
 }
 
+/* Buttons */
+
+a.bordered-button {
+	border-radius: 0px;
+	margin-top: 20px;
+	color: #4a4a4a;
+	font-family: BebasNeue;
+	font-size: 24px;
+	border-width: 2px;
+	&:hover {
+		color: white;
+	}
+}
+
 /* Page-specific styling */
 @import "front_page";
 @import "landing_page";
