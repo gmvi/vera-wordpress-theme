@@ -9835,10 +9835,8 @@ a.more:hover {
   border-bottom: none;
   padding-bottom: 2px; }
 
-.label {
+.label, .label-white {
   display: inline-block;
-  background-color: #D41C53;
-  color: white;
   font-family: BebasNeue;
   text-transform: uppercase;
   font-size: 18px;
@@ -9847,6 +9845,14 @@ a.more:hover {
   letter-spacing: 1.5px;
   padding: 5px 10px 2px;
   margin-bottom: 30px; }
+
+.label {
+  background-color: #D41C53;
+  color: white; }
+
+.label-white {
+  background-color: white;
+  color: #D41C53; }
 
 .icon {
   width: 60px;
@@ -10051,15 +10057,21 @@ section.donate {
     color: #D41C53; }
 
 /* Buttons */
-a.bordered-button {
+a.bordered-button, a.bordered-button-white {
   border-radius: 0px;
   margin-top: 20px;
-  color: #4a4a4a;
   font-family: BebasNeue;
   font-size: 24px;
   border-width: 2px; }
+
+a.bordered-button {
+  color: #4a4a4a; }
   a.bordered-button:hover {
     color: white; }
+
+a.bordered-button-white {
+  color: white;
+  border-color: white; }
 
 /* Page-specific styling */
 body.home .entry-header .wp-post-image {
@@ -10530,6 +10542,38 @@ h2.medium-header {
 .smaller-margin-container {
   padding: 0px !important;
   margin: 0px !important; }
+
+.gallery-banner {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px; }
+  .gallery-banner .banner-background {
+    height: 640px;
+    width: 124%;
+    position: absolute;
+    margin-left: -11%;
+    background-color: #D41C53;
+    background-image: url("../img/top-texture.png");
+    transform: rotate(9.2deg);
+    transform-origin: left;
+    z-index: -9; }
+  .gallery-banner .banner-content {
+    padding-top: 15rem;
+    padding-left: 5rem; }
+
+.support-banner {
+  height: 640px;
+  width: 124%;
+  margin-left: -11%;
+  margin-right: -11%;
+  background-color: #D41C53;
+  background-image: url("../img/top-texture.png");
+  transform: rotate(7.2deg);
+  transform-origin: left;
+  bottom: -25px;
+  z-index: -3; }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {

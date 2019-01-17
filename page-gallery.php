@@ -58,6 +58,7 @@ function pad_zeroes( $num ) {
                         </div>
                     </div>
                     <div class="col-sm-6">
+                        <!-- fixme: this looks absolutely horrible on mobile and i don't know how to mend -->
                         <img class="current-gallery-image" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" /> -
                     </div>
 
@@ -92,8 +93,23 @@ function pad_zeroes( $num ) {
                             <a href="" class="btn bordered-button btn-outline-primary">Submit A Proposal</a>
                         </div>
                     </div>
-
                 </section>
+                <section class="gallery-banner">
+                    <div class="banner-background"></div>
+                    <div class="row no-gutters banner-content">
+                        <div class="col-md-6 p-4">
+                            <p class="label-white">Support Vera</p><br/>
+                            <h2 class="large-header" style="color:white;">Support the Gallery</h2>
+                            <a href="" class="btn bordered-button-white">Donate Today</a>
+                        </div>
+                    </div>
+                </section>
+<!--                <section class="row" style="overflow: hidden;">-->
+<!--                    <div class="support-banner"></div>-->
+<!--                    <div class="col-md-6 p-4">-->
+<!--                        <p class="label">Get Involved</p>-->
+<!--                    </div>-->
+<!--                </section>-->
             </div>
         </main><!-- #main -->
 

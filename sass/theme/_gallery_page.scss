@@ -45,3 +45,39 @@ h2.medium-header {
   padding: $container-padding;
   margin: $container-padding;
 }
+
+.gallery-banner {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  .banner-background {
+    height: 640px;
+    width: 124%;
+    position: absolute;
+    margin-left: -11%;
+    background-color: $primary;
+    background-image: url('../img/top-texture.png');
+    transform: rotate(9.2deg);
+    transform-origin: left;
+    z-index: -9;
+  }
+  .banner-content {
+    padding-top: 15rem;
+    padding-left: 5rem;
+  }
+
+}
+.support-banner {
+  height: 640px;
+  width: 124%;
+  margin-left: -11%;
+  margin-right: -11%;
+  background-color: $primary;
+  background-image: url('../img/top-texture.png');
+  transform: rotate(7.2deg);
+  transform-origin: left;
+  bottom: -25px;
+  z-index: -3;
+}

@@ -103,18 +103,28 @@ a.more:hover {
     padding-bottom: 2px;
 }
 
-.label {
+%label-base {
 	display: inline-block;
+	font-family: BebasNeue;
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 19px;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	padding: 5px 10px 2px;
+	margin-bottom: 30px;
+}
+
+.label {
+	@extend %label-base;
     background-color: $primary;
     color: white;
-    font-family: BebasNeue;
-    text-transform: uppercase;
-    font-size: 18px;
-    line-height: 19px;
-    font-weight: normal;
-    letter-spacing: 1.5px;
-    padding: 5px 10px 2px;
-    margin-bottom: 30px;
+}
+
+.label-white {
+	@extend %label-base;
+	background-color: white;
+	color: $primary;
 }
 
 .icon {
@@ -395,16 +405,26 @@ section.donate {
 
 /* Buttons */
 
-a.bordered-button {
+%bordered-button-base {
 	border-radius: 0px;
 	margin-top: 20px;
-	color: #4a4a4a;
 	font-family: BebasNeue;
 	font-size: 24px;
 	border-width: 2px;
+}
+
+a.bordered-button {
+	@extend %bordered-button-base;
+	color: #4a4a4a;
 	&:hover {
 		color: white;
 	}
+}
+
+a.bordered-button-white {
+	@extend %bordered-button-base;
+	color: white;
+	border-color: white;
 }
 
 /* Page-specific styling */
