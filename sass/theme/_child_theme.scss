@@ -150,7 +150,8 @@ a.more:hover {
 }
 
 .entry-header .header-texture {
-	background-image: url('../img/header-texture.png');
+	//background-image: url('../img/header-texture.png');
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .entry-header .header-image {
@@ -197,7 +198,7 @@ a.more:hover {
 	.navbar-toggler-icon {
 		background-color: black;
 	}
-	
+
 	.navbar-nav .donate {
 	    margin-left: 30px;
 	}

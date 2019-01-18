@@ -9872,7 +9872,7 @@ a.more:hover {
   object-fit: cover; }
 
 .entry-header .header-texture {
-  background-image: url("../img/header-texture.png"); }
+  background: rgba(0, 0, 0, 0.3); }
 
 .entry-header .header-image {
   background-position: center;
