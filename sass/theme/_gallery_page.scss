@@ -47,6 +47,7 @@ h1.large-header {
     width: 124%;
     position: absolute;
     margin-left: -11%;
+    background-size:cover;
     background-color: $primary;
     background-image: url('../img/header-texture.png');
     transform: rotate(9.2deg);
