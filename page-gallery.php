@@ -42,7 +42,7 @@ function pad_zeroes( $num ) {
                 </div>
             </section>
             <?php get_template_part('partial-templates/pageblurb'); ?>
-            <div class="container-fluid">
+            <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
                 <section class="row no-gutters current-gallery">
 
                     <div class="col-sm-6">
