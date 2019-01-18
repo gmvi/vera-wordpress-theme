@@ -9924,7 +9924,6 @@ ul.menu {
 .entry-header .menu {
   justify-content: center;
   text-align: center;
-  height: 50px;
   background-color: #96C0CE;
   align-content: center;
   font-family: BebasNeue;
@@ -10511,7 +10510,6 @@ section.classes {
         color: #C5C2D2; }
 
 .current-gallery {
-  height: 600px;
   background: #ebeeef; }
   .current-gallery img.current-gallery-image {
     height: 100%;
@@ -10539,6 +10537,11 @@ h2.medium-header {
   font-family: BebasNeue;
   letter-spacing: 1.8px; }
 
+h1.large-header {
+  font-size: 80px;
+  font-family: BebasNeue;
+  letter-spacing: 1.8px; }
+
 .smaller-margin-container {
   padding: 0px !important;
   margin: 0px !important; }
@@ -10555,26 +10558,19 @@ h2.medium-header {
     position: absolute;
     margin-left: -11%;
     background-color: #D41C53;
-    background-image: url("../img/top-texture.png");
+    background-image: url("../img/header-texture.png");
     transform: rotate(9.2deg);
     transform-origin: left;
     z-index: -9; }
   .gallery-banner .banner-content {
     margin-top: 12rem; }
   .gallery-banner img.support-gallery-graphic {
-    height: 20%; }
+    height: 23%; }
 
-.support-banner {
-  height: 640px;
-  width: 124%;
-  margin-left: -11%;
-  margin-right: -11%;
-  background-color: #D41C53;
-  background-image: url("../img/top-texture.png");
-  transform: rotate(7.2deg);
-  transform-origin: left;
-  bottom: -25px;
-  z-index: -3; }
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%); }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {

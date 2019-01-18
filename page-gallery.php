@@ -33,13 +33,29 @@ function pad_zeroes( $num ) {
             <?php the_post(); // This is a page template ?>
             <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
             <section class="entry-header">
-                <div class="menu">
-                    <!-- TODO: once we know more about this sub menu from george swap this out for something more reusable -->
-                    <!-- TODO QUESTION: this looks weird af on mobile but i don't know what it should look like, should the blue bar expand vertically on mobile?-->
-                    <div class="menu-item current-menu-item"><a>overview</a></div>
-                    <div class="menu-item"><a href="/" class="menu-item">classes</a></div>
-                    <div class="menu-item"><a href="/" class="menu-item">recording studio</a></div>
-                </div>
+                <nav class="navbar navbar-expand-lg navbar-light menu">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav mx-auto mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" href="#">Overview <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Classes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Recording Studio</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+<!--                <div class="menu">-->
+<!--                   <div class="menu-item current-menu-item"><a>overview</a></div>-->
+<!--                    <div class="menu-item"><a href="/" class="menu-item">classes</a></div>-->
+<!--                    <div class="menu-item"><a href="/" class="menu-item">recording studio</a></div>-->
+<!--                </div>-->
             </section>
             <?php get_template_part('partial-templates/pageblurb'); ?>
             <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
@@ -47,7 +63,7 @@ function pad_zeroes( $num ) {
 
                     <div class="col-sm-6">
                         <div class="row align-items-center h-100">
-                            <div class="col-9 mx-auto">
+                            <div class="col-9 mx-auto mt-3 mb-3">
                                 <p class="label">Current Show</p>
                                 <h2 class="medium-header mb-1"><?php the_field( 'current_gallery_header' ); ?></h2>
                                 <p><?php the_field('current_gallery_description'); ?></p>
@@ -58,8 +74,7 @@ function pad_zeroes( $num ) {
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <!-- fixme: this looks absolutely horrible on mobile and i don't know how to mend -->
-                        <img class="current-gallery-image" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" /> -
+                        <img class="current-gallery-image" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" />
                     </div>
 
                 </section>
@@ -99,20 +114,14 @@ function pad_zeroes( $num ) {
                     <div class="row no-gutters pl-4 ml-4 pr-4 mr-4 banner-content">
                         <div class="col-md-6 p-4">
                             <p class="label-white">Support Vera</p><br/>
-                            <h2 class="large-header" style="color:white;">Support the Gallery</h2>
+                            <h1 class="large-header" style="color:white;">Support the Gallery</h1>
                             <a href="" class="btn bordered-button-white">Donate Today</a>
                         </div>
-                        <div class="col-md-6 p-1">
-                            <img class="support-gallery-graphic" src="<?php echo get_field( 'support_gallery_graphic' )['url'];?>" /> -
+                        <div class="col-md-6 p-1 d-none d-md-block">
+                            <img class="support-gallery-graphic" src="<?php echo get_field( 'support_gallery_graphic' )['url'];?>" />
                         </div>
                     </div>
                 </section>
-<!--                <section class="row" style="overflow: hidden;">-->
-<!--                    <div class="support-banner"></div>-->
-<!--                    <div class="col-md-6 p-4">-->
-<!--                        <p class="label">Get Involved</p>-->
-<!--                    </div>-->
-<!--                </section>-->
             </div>
         </main><!-- #main -->
 
