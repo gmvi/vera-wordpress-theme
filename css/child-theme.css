@@ -10560,8 +10560,9 @@ h2.medium-header {
     transform-origin: left;
     z-index: -9; }
   .gallery-banner .banner-content {
-    padding-top: 15rem;
-    padding-left: 5rem; }
+    margin-top: 12rem; }
+  .gallery-banner img.support-gallery-graphic {
+    height: 20%; }
 
 .support-banner {
   height: 640px;

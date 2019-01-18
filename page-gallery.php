@@ -96,11 +96,14 @@ function pad_zeroes( $num ) {
                 </section>
                 <section class="gallery-banner">
                     <div class="banner-background"></div>
-                    <div class="row no-gutters banner-content">
+                    <div class="row no-gutters pl-4 ml-4 pr-4 mr-4 banner-content">
                         <div class="col-md-6 p-4">
                             <p class="label-white">Support Vera</p><br/>
                             <h2 class="large-header" style="color:white;">Support the Gallery</h2>
                             <a href="" class="btn bordered-button-white">Donate Today</a>
+                        </div>
+                        <div class="col-md-6 p-1">
+                            <img class="support-gallery-graphic" src="<?php echo get_field( 'support_gallery_graphic' )['url'];?>" /> -
                         </div>
                     </div>
                 </section>
