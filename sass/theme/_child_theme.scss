@@ -404,6 +404,52 @@ section.donate {
 	b { color: $primary; }
 }
 
+/* quotes */
+.vera-quote {
+	background-color: $accent;
+	.background {
+		position: absolute;
+		top: -250px;
+		bottom: 0;
+		width: 100%;
+		background-color: $accent;
+		z-index: -3;
+	}
+	p.quote-text {
+		font-size: 34px;
+		font-weight: bold;
+		font-family: BebasNeueLight;
+		strong {
+			font-family: BebasNeue;
+			color: $primary;
+		}
+		&:after {
+			content: "“";
+			position: absolute;
+			color: white;
+			opacity: .2;
+			top: -78px;
+			left: -30px;
+			font-family: GothicA1;
+			font-size: 200px;
+		}
+	}
+	span.author {
+		font-size: 14px;
+		font-family: GothicA1;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.textured {
+		background-image: url('../img/tvp-halftone-center-white.png');
+		height: 100%;
+		object-fit: cover;
+		background-size:cover
+	}
+
+
+}
+
 /* Buttons */
 
 %bordered-button-base {

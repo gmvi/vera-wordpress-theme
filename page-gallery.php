@@ -78,10 +78,9 @@ function pad_zeroes( $num ) {
                     </div>
 
                 </section>
-                <section class="row h-100 quote gallery-quote">
-
-                    <div class="col-md-6 mx-auto p-5">
-                        <img class="rounded-circle" src="<?php echo get_field( 'author_image' )['url'];?>" />
+                <section class="row h-100 vera-quote">
+                    <div class="col-md-6 mx-auto p-5 textured">
+                        <img class="rounded-circle p-3" src="<?php echo get_field( 'author_image' )['url'];?>" />
                     </div>
                     <div class="col-md-6">
                         <div class="row h-100 align-items-center text-center">
@@ -91,7 +90,6 @@ function pad_zeroes( $num ) {
                             </div>
                         </div>
                     </div>
-
                 </section>
                 <section class="row">
                     <div class="row h-100 p-5">
