@@ -38,17 +38,33 @@ function pad_zeroes( $num ) {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mx-auto mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link text-white" href="#">Overview <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Classes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Recording Studio</a>
-                            </li>
-                        </ul>
+
+                        <?php
+                        $donate_btn = '<a href="'.esc_url( home_url( '/' ) ).'/donate/" class="donate">Donate</a>';
+                        wp_nav_menu(
+                            array(
+                                'menu'            => 'gallery-menu',
+                                'theme_location'  => 'primary',
+                                'container_class' => 'collapse navbar-collapse',
+                                'container_id'    => 'navbarNavDropdown',
+                                'menu_class'      => 'navbar-nav',
+                                'fallback_cb'     => '',
+                                'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+                                'items_wrap'			=> '<ul id="%1$s" class="%2$s mx-auto mr-auto">%3$s</ul>'
+                            )
+                        ); ?>
+
+<!--                        <ul class="navbar-nav mx-auto mr-auto">-->
+<!--                            <li class="nav-item active">-->
+<!--                                <a class="nav-link text-white" href="#">Overview <span class="sr-only">(current)</span></a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a class="nav-link text-white" href="#">Classes</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a class="nav-link text-white" href="#">Recording Studio</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
                     </div>
                 </nav>
 <!--                <div class="menu">-->

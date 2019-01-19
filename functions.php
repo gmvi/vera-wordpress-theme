@@ -59,6 +59,11 @@ function hide_editor() {
 	}
 }
 
+function register_custom_menus() {
+    register_nav_menu('gallery-menu',__( 'Gallery Menu' ));
+}
+add_action( 'init', 'register_custom_menus' );
+
 
 // Unwanted templates
 function vera_remove_page_templates( $templates ) {
