@@ -38,21 +38,17 @@ function pad_zeroes( $num ) {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
+                        <?php /* Primary navigation */
+                        wp_nav_menu( array(
+                                'menu' => 'gallery-menu',
+                                'depth' => 2,
+                                'container' => false,
+                                'menu_class' => 'nav navbar-nav mx-auto mr-auto',
+                                //Process nav menu using our custom nav walker
+                                'walker' => new understrap_WP_Bootstrap_Navwalker())
+                        );
+                        ?>
 
-                        <?php
-                        $donate_btn = '<a href="'.esc_url( home_url( '/' ) ).'/donate/" class="donate">Donate</a>';
-                        wp_nav_menu(
-                            array(
-                                'menu'            => 'gallery-menu',
-                                'theme_location'  => 'primary',
-                                'container_class' => 'collapse navbar-collapse',
-                                'container_id'    => 'navbarNavDropdown',
-                                'menu_class'      => 'navbar-nav',
-                                'fallback_cb'     => '',
-                                'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-                                'items_wrap'			=> '<ul id="%1$s" class="%2$s mx-auto mr-auto">%3$s</ul>'
-                            )
-                        ); ?>
 
 <!--                        <ul class="navbar-nav mx-auto mr-auto">-->
 <!--                            <li class="nav-item active">-->
@@ -67,11 +63,6 @@ function pad_zeroes( $num ) {
 <!--                        </ul>-->
                     </div>
                 </nav>
-<!--                <div class="menu">-->
-<!--                   <div class="menu-item current-menu-item"><a>overview</a></div>-->
-<!--                    <div class="menu-item"><a href="/" class="menu-item">classes</a></div>-->
-<!--                    <div class="menu-item"><a href="/" class="menu-item">recording studio</a></div>-->
-<!--                </div>-->
             </section>
             <?php get_template_part('partial-templates/pageblurb'); ?>
             <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
