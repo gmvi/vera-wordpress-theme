@@ -32,38 +32,11 @@ function pad_zeroes( $num ) {
         <main class="site-main" id="main">
             <?php the_post(); // This is a page template ?>
             <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
-            <section class="entry-header">
-                <nav class="navbar navbar-expand-lg navbar-light menu">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <?php /* Primary navigation */
-                        wp_nav_menu( array(
-                                'menu' => 'gallery-menu',
-                                'depth' => 2,
-                                'container' => false,
-                                'menu_class' => 'nav navbar-nav mx-auto mr-auto',
-                                //Process nav menu using our custom nav walker
-                                'walker' => new understrap_WP_Bootstrap_Navwalker())
-                        );
-                        ?>
+            <?php
+                $menu_name = 'gallery-menu';
+                include( locate_template( 'partial-templates/submenu.php') );
+            ?>
 
-
-<!--                        <ul class="navbar-nav mx-auto mr-auto">-->
-<!--                            <li class="nav-item active">-->
-<!--                                <a class="nav-link text-white" href="#">Overview <span class="sr-only">(current)</span></a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link text-white" href="#">Classes</a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a class="nav-link text-white" href="#">Recording Studio</a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-                    </div>
-                </nav>
-            </section>
             <?php get_template_part('partial-templates/pageblurb'); ?>
             <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
                 <section class="row no-gutters current-gallery">

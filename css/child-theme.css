@@ -10593,11 +10593,6 @@ h1.large-header {
   .gallery-banner img.support-gallery-graphic {
     height: 23%; }
 
-.navbar-nav.navbar-center {
-  position: absolute;
-  left: 50%;
-  transform: translatex(-50%); }
-
 /* Footer */
 div#wrapper-footer div.donate-footer {
   height: 180px;
