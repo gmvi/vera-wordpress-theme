@@ -556,11 +556,13 @@ div#wrapper-footer {
 }
 
 .square {
-	width: 50%;
+	width: 100%;
+	height: 20vw;
+	object-fit: cover;
 }
 
-.square:after {
-	content: "";
-	display: block;
-	padding-bottom: 100%;
+.blog-title {
+	color: $primary;
+	font-family: BebasNeue;
+	font-size: 34px;
 }

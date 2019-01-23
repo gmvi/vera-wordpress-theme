@@ -10648,9 +10648,11 @@ div#wrapper-footer .site-footer {
     padding-bottom: 5rem; }
 
 .square {
-  width: 50%; }
+  width: 100%;
+  height: 20vw;
+  object-fit: cover; }
 
-.square:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%; }
+.blog-title {
+  color: #D41C53;
+  font-family: BebasNeue;
+  font-size: 34px; }

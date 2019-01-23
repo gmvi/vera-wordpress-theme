@@ -20,14 +20,13 @@
         <div class="row">
         <?php if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
             <div class="col-md-<?php echo $bootstrapColWidth; ?>">
-                <div class="card-deck">
-                    <div class="card">
-                        <img class="card-img-top" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo get_the_date(); ?></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                <div class="card">
+                    <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>" alt="Card image cap">
+                    <div class="card-body">
+                        <p><?php echo get_the_date(); ?></p>
+                        <h5 class="card-title blog-title"><?php echo the_title();?></h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
