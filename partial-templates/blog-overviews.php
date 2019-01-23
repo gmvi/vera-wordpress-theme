@@ -7,7 +7,7 @@
             </div>
         </section>
         <section class="row justify-content-md-center">
-            <div class="col-md-10 text-center">
+            <div class="col-md-8 text-center">
                 <p><?php the_field('blog_overview_description', get_option('page_for_posts')); ?></p>
             </div>
         </section>
@@ -27,6 +27,7 @@
                 <div class="card-deck">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
                         <div class="card border-0">
+                            <?php get_template_part('partial-templates/category-labels'); ?>
                             <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>" alt="Card image cap">
                             <div class="card-body d-flex flex-column">
                                 <p><?php echo get_the_date(); ?></p>

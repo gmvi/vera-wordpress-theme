@@ -10622,6 +10622,11 @@ a.blog-more {
   color: white;
   background-color: #D41C53; }
 
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px; }
+
 /* Footer */
 div#wrapper-footer div.donate-footer {
   height: 180px;
