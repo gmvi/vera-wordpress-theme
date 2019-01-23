@@ -10646,3 +10646,11 @@ div#wrapper-footer .site-footer {
     line-height: 1;
     letter-spacing: 1.5px;
     padding-bottom: 5rem; }
+
+.square {
+  width: 50%; }
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; }
