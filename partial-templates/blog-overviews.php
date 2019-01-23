@@ -13,6 +13,7 @@
         </section>
         <?php
         $menu_name = 'blogs';
+        $wrapper_class_name = 'blog-subheader';
         include( locate_template( 'partial-templates/submenu.php') );
         ?>
         <?php
@@ -40,8 +41,8 @@
                         <?php if($count % $numOfCols == 0) echo '</div><div class="card-deck">'; ?>
                     <?php endwhile; ?>
                     <?php else : ?>
-                    <div class="col-md-12 mx-auto">
-                        <h1>No posts were found.</h1>
+                    <div class="col-sm-6 mx-auto text-center">
+                        <h2 class="medium-header pt-3">No posts were found.</h2>
                     </div>
                 </div>
                 <?php endif; ?>

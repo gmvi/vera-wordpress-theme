@@ -9921,24 +9921,27 @@ ul.menu {
   margin: 0;
   padding: 0; }
 
-.entry-header .menu {
+.entry-header .menu, .blog-subheader .menu {
   justify-content: center;
   text-align: center;
-  background-color: #96C0CE;
   align-content: center;
   font-family: BebasNeue;
   font-size: 18px;
   line-height: 1;
   letter-spacing: 1.5px; }
-  .entry-header .menu .menu-item {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    list-style: none;
-    padding: 0 20px;
-    height: 100%; }
-    .entry-header .menu .menu-item a {
-      color: #4A4A4A; }
+
+.entry-header .menu .menu-item, .blog-subheader .menu .menu-item {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  padding: 0 20px;
+  height: 100%; }
+
+.entry-header .menu {
+  background-color: #96C0CE; }
+  .entry-header .menu .menu-item a {
+    color: #4A4A4A; }
   .entry-header .menu .menu-item.current-menu-item a {
     color: white;
     font-weight: lighter; }
@@ -10593,6 +10596,32 @@ h1.large-header {
   .gallery-banner img.support-gallery-graphic {
     height: 23%; }
 
+.square {
+  width: 100%;
+  height: 20vw;
+  object-fit: cover; }
+
+.blog-title {
+  color: #D41C53;
+  font-family: BebasNeue;
+  font-size: 26px; }
+
+a.blog-more {
+  color: #4A4A4A;
+  font-family: BebasNeue;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: #D41C53;
+  text-transform: uppercase; }
+
+.blog-subheader .menu .menu-item a {
+  color: #4A4A4A;
+  background-color: #EBEEEF; }
+
+.blog-subheader .menu .menu-item.current-menu-item a {
+  color: white;
+  background-color: #D41C53; }
+
 /* Footer */
 div#wrapper-footer div.donate-footer {
   height: 180px;
@@ -10646,21 +10675,3 @@ div#wrapper-footer .site-footer {
     line-height: 1;
     letter-spacing: 1.5px;
     padding-bottom: 5rem; }
-
-.square {
-  width: 100%;
-  height: 20vw;
-  object-fit: cover; }
-
-.blog-title {
-  color: #D41C53;
-  font-family: BebasNeue;
-  font-size: 26px; }
-
-a.blog-more {
-  color: #4A4A4A;
-  font-family: BebasNeue;
-  font-size: 20px;
-  text-decoration: underline;
-  text-decoration-color: #D41C53;
-  text-transform: uppercase; }

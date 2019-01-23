@@ -34,6 +34,7 @@ function pad_zeroes( $num ) {
             <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
             <?php
                 $menu_name = 'gallery-menu';
+                $wrapper_class_name = 'entry-header';
                 include( locate_template( 'partial-templates/submenu.php') );
             ?>
 
