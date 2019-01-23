@@ -10655,4 +10655,12 @@ div#wrapper-footer .site-footer {
 .blog-title {
   color: #D41C53;
   font-family: BebasNeue;
-  font-size: 34px; }
+  font-size: 26px; }
+
+a.blog-more {
+  color: #4A4A4A;
+  font-family: BebasNeue;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: #D41C53;
+  text-transform: uppercase; }

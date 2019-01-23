@@ -564,5 +564,14 @@ div#wrapper-footer {
 .blog-title {
 	color: $primary;
 	font-family: BebasNeue;
-	font-size: 34px;
+	font-size: 26px;
+}
+
+a.blog-more {
+	color: $darkgray;
+	font-family: BebasNeue;
+	font-size: 20px;
+	text-decoration: underline;
+	text-decoration-color: $primary;
+	text-transform: uppercase;
 }
