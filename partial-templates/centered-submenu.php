@@ -5,7 +5,7 @@
  <?php
     $menu_name = 'gallery-menu';
     $wrapper_class_name = 'entry-header';
-    include( locate_template( 'partial-templates/submenu.php') );
+    include( locate_template( 'partial-templates/centered-submenu.php') );
  ?>
  * */
 ?>

@@ -10601,18 +10601,41 @@ h1.large-header {
   height: 20vw;
   object-fit: cover; }
 
-.blog-title {
-  color: #D41C53;
+.card-picture h5, .card-pictureless h5 {
   font-family: BebasNeue;
   font-size: 26px; }
 
-a.blog-more {
-  color: #4A4A4A;
+.card-picture a, .card-pictureless a {
   font-family: BebasNeue;
   font-size: 20px;
   text-decoration: underline;
   text-decoration-color: #D41C53;
   text-transform: uppercase; }
+
+.card-picture p.blog-overview-date, .card-pictureless p.blog-overview-date {
+  font-family: GothicA1;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase; }
+
+.card-picture h5 {
+  color: #D41C53; }
+
+.card-picture a {
+  color: #4A4A4A; }
+
+.card-pictureless {
+  background-color: #252525; }
+  .card-pictureless p.blog-overview-date {
+    margin-top: 3rem;
+    color: white; }
+  .card-pictureless h5 {
+    color: white; }
+  .card-pictureless a {
+    color: white; }
+  .card-pictureless p.excerpt {
+    font-family: GothicA1;
+    color: #EBEEEF; }
 
 .blog-subheader .menu .menu-item a {
   color: #4A4A4A;

@@ -4,19 +4,60 @@
   object-fit: cover;
 }
 
-.blog-title {
-  color: $primary;
+%blog-overview-titles {
   font-family: BebasNeue;
   font-size: 26px;
 }
 
-a.blog-more {
-  color: $darkgray;
+%blog-overview-learn-more {
   font-family: BebasNeue;
   font-size: 20px;
   text-decoration: underline;
   text-decoration-color: $primary;
   text-transform: uppercase;
+}
+
+%blog-overview-date {
+  font-family: GothicA1;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.card-picture {
+  p.blog-overview-date {
+    @extend %blog-overview-date;
+  }
+  h5 {
+    @extend %blog-overview-titles;
+    color: $primary;
+  }
+  a {
+    @extend %blog-overview-learn-more;
+    color: $darkgray;
+  }
+}
+
+.card-pictureless {
+  background-color: $darkergray;
+  p.blog-overview-date {
+    @extend %blog-overview-date;
+    margin-top: 3rem;
+    color: white;
+  }
+  h5 {
+    @extend %blog-overview-titles;
+    color: white;
+  }
+  a {
+    @extend %blog-overview-learn-more;
+    color: white;
+  }
+  p.excerpt {
+    font-family: GothicA1;
+    color: $lightgray;
+  }
+
 }
 
 .blog-subheader .menu {

@@ -14,7 +14,7 @@
         <?php
         $menu_name = 'blogs';
         $wrapper_class_name = 'blog-subheader';
-        include( locate_template( 'partial-templates/submenu.php') );
+        include( locate_template( 'partial-templates/centered-submenu.php') );
         ?>
         <?php
         $numOfCols = 3;
@@ -22,19 +22,28 @@
         $bootstrapColWidth = 12 / $numOfCols;
         $count = 0;
         ?>
-        <div class="row justify-content-md-center pt-2 pb-1">
+        <div class="row justify-content-md-center pt-5 pb-1">
             <div class="col-sm-11">
-                <div class="card-deck">
+                <div class="card-deck pb-2">
                     <?php if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
-                        <div class="card border-0">
+                        <?php $cardclass = (has_post_thumbnail() ? 'card-picture': 'card-pictureless')?>
+                        <div class="card border-0 <?php echo $cardclass ?>">
                             <?php get_template_part('partial-templates/category-labels'); ?>
-                            <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>" alt="Card image cap">
+                            <?php if (has_post_thumbnail()): ?>
+                                <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>">
+                            <?php endif ?>
                             <div class="card-body d-flex flex-column">
-                                <p><?php echo get_the_date(); ?></p>
-                                <h5 class="card-title blog-title"><?php echo the_title();?></h5>
-                                <div class="row  mt-auto">
+                                <p class="blog-overview-date"><?php echo get_the_date(); ?></p>
+                                <h5 class="card-title"><?php echo the_title();?></h5>
+                                <?php
+                                if (!has_post_thumbnail()):
+                                    $short_excerpt = wp_trim_words(get_the_excerpt(), 10, '...');
+                                    echo "<p class=\"excerpt\">$short_excerpt</p>";
+                                endif;
+                                ?>
+                                <div class="row mt-auto">
                                     <div class="col-md-6">
-                                        <a href="<?php echo get_permalink()?>" class="blog-more">Learn More</a>
+                                        <a href="<?php echo get_permalink()?>">Learn More</a>
                                     </div>
                                 </div>
                             </div>
