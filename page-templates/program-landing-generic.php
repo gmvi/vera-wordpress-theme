@@ -11,7 +11,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<div class="<?php echo esc_attr( $container ); ?>">
 
 		<main class="site-main" id="main" role="main">
 
@@ -21,7 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
 
-					<div class="entry-content text-center">
+					<div id="content" class="entry-content text-center">
 
 						<section class="info">
 							<div class="row header">

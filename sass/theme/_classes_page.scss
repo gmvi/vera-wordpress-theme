@@ -77,7 +77,6 @@ section.classes {
 				width: 160px;
 				text-align: center;
 				padding-top: 10px;
-				margin-left: 40px;
 				font-family: BebasNeue;
 				font-size: 24px;
 				font-weight: bold;
@@ -90,5 +89,15 @@ section.classes {
 				color: $midgray;
 			}
 		}
+	}
+
+}
+
+.modal {
+	.modal-title {
+		font-weight:bold;
+	}
+	.modal-dialog {
+		max-width: 800px;
 	}
 }
