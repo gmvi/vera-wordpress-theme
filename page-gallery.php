@@ -32,11 +32,6 @@ function pad_zeroes( $num ) {
         <main class="site-main" id="main">
             <?php the_post(); // This is a page template ?>
             <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
-            <?php
-                $menu_name = 'gallery-menu';
-                $wrapper_class_name = 'entry-header';
-                include( locate_template( 'partial-templates/centered-submenu.php') );
-            ?>
 
             <?php get_template_part('partial-templates/pageblurb'); ?>
             <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
@@ -84,7 +79,7 @@ function pad_zeroes( $num ) {
                             <p class="label">Call For Artists</p>
                             <h2 class="medium-header mb-1"><?php the_field('cfa_block_header'); ?></h2>
                             <p><?php the_field('cfa_block_description'); ?></p>
-                            <a href="" class="btn bordered-button btn-outline-primary">Submit A Proposal</a>
+                            <a href="<?php the_field('cfa_block_submit_url'); ?>" class="btn bordered-button btn-outline-primary">Submit A Proposal</a>
                         </div>
                     </div>
                 </section>
