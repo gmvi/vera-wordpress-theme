@@ -18,15 +18,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<div class="row site-footer">
 			<div class="col-md-6">
-                <div class="row footer-links">
-                    <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="footer-link">About</div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="footer-link">Get Involved</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="footer-link">Rentals</div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <div class="footer-link">Shows</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="footer-link">Silkscreen</div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="footer-link">Audio & Stage</div>
                     </div>
                 </div>

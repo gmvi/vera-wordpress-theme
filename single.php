@@ -61,7 +61,7 @@ get_header();
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div style="background-color:#ebeeef;" class="pt-3 pb-3 pr-2 pl-2">
+                        <div style="background-color:#ebeeef;" class="pt-3 pb-3 pr-2 pl-2 mr-3">
                             <div class="row m-3 recent-posts mr-1">
                                 <div class="col-sm-12">
                                     <h2 class="pt-3">Recent Posts</h2>

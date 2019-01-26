@@ -20,7 +20,7 @@ $custom_title = get_field('title');
 						?>
 					</h1>
 				</div>
-				<?php echo get_the_post_thumbnail( $post->ID, 'large', array('class' => 'header-image')); ?>
+				<?php echo get_the_post_thumbnail( $post->ID, 'large'); ?>
 			</div>
 		</div>
 	</div>

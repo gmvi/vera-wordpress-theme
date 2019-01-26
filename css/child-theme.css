@@ -9886,7 +9886,6 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
 
 .entry-header .wp-post-image {
   width: 100%;
-  min-width: 960px;
   max-width: 1440px;
   height: 450px;
   object-fit: cover; }
@@ -10671,7 +10670,7 @@ h1.large-header {
   left: 16px; }
 
 .single-blog-title {
-  font-size: 56px;
+  font-size: 4rem;
   font-family: BebasNeue;
   text-transform: uppercase;
   letter-spacing: 1.5px;
