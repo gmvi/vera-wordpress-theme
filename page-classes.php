@@ -74,6 +74,7 @@ function cat_active($cat) {
 						</div>
 						<? foreach ($classes as $class):
 							$icon = vera_get_class_cat($class->ID);
+							$is_private = SCF::get("private_class", $class->ID);
 							$next = vera_get_class_next($class->ID); 
 						?>
 							<div class="row body class">
@@ -83,13 +84,17 @@ function cat_active($cat) {
 									<div class="flex">
 										<a class="class-title" href="" data-toggle="modal" data-target="#modal-<?= $class->ID ?>"><?= $class->post_title ?></a>
 										<div class="wrapper">
-											<span class="class-info"><?= $next['date'] ?></span>
-											<span class="class-info"><?= $next['time'] ?></span>
-											<? if($next['link']): ?>
-												<a class="class-register" target="_blank" href="<?= $next['link'] ?>">Register</a>
-											<? else : ?>
-												<a class="class-register disabled">Register</a>
-											<? endif; ?>
+											<?php if ($is_private): ?>
+												<a class="class-register" href="" data-toggle="modal" data-target="#modal-<?= $class->ID ?>">Learn More</a>
+											<?php else: ?>
+												<span class="class-info"><?= $next['date'] ?></span>
+												<span class="class-info"><?= $next['time'] ?></span>
+												<? if($next['link']): ?>
+													<a class="class-register" target="_blank" href="<?= $next['link'] ?>">Register</a>
+												<? else : ?>
+													<a class="class-register disabled">Register</a>
+												<? endif; ?>
+											<?php endif; ?>
 										</div>
 									</div>
 								</div>
@@ -122,9 +127,11 @@ function cat_active($cat) {
 						</button>
 					</div>
 					<div class="modal-body"><?= wpautop( $class->post_content ) ?></div>
-					<div class="modal-footer">
-						<a type="button" class="btn btn-primary" href="<?= $next['link'] ?>">Register</a>
-					</div>
+					<?php if (!SCF::get("private_class", $class->ID)): ?>
+						<div class="modal-footer">
+							<a type="button" class="btn btn-primary" href="<?= $next['link'] ?>">Register</a>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
