@@ -58,7 +58,7 @@ get_header();
                             <i class="fa fa-instagram text-primary"></i>
                         </div>
                     </div>
-                    <div class="col-sm-4"><?php get_sidebar()?></div>
+                    <div class="col-sm-4"><?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('shmight-sidebar') ) ?></div>
                 </div>
                 <?php
                 /* End the Loop */
