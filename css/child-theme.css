@@ -10674,7 +10674,6 @@ h1.large-header {
   font-size: 56px;
   font-family: BebasNeue;
   text-transform: uppercase;
-  color: white;
   letter-spacing: 1.5px;
   line-height: 0.8;
   margin-bottom: 25px; }
@@ -10696,6 +10695,27 @@ h1.large-header {
   .blog-contents p.metadata {
     text-transform: uppercase;
     font-weight: bold; }
+
+.recent-posts hr {
+  height: 2px;
+  opacity: 0.18;
+  background-color: #9b9b9b; }
+
+.recent-posts h2 {
+  font-family: BebasNeue;
+  font-size: 24px;
+  color: #4A4A4A;
+  font-weight: lighter; }
+
+.recent-posts a {
+  font-family: BebasNeue;
+  font-size: 24px; }
+
+.recent-posts p.date {
+  font-family: GothicA1;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 .textured-blerg {
   background-image: url(../img/tvp-halftone-top-left-gray.png);

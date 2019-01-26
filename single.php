@@ -31,7 +31,7 @@ get_header();
                                 <div class="row justify-content-center pt-5 ">
                                     <div class="col-sm-8 mr-2 ml-2">
                                         <?php get_template_part('partial-templates/category-labels'); ?>
-                                        <h2 class="single-blog-title"><?php the_title()?></h2>
+                                        <h2 class="single-blog-title text-white"><?php the_title()?></h2>
                                     </div>
                                 </div>
                             </div>
@@ -39,15 +39,17 @@ get_header();
                     <?php
                     } else {
                         ?>
-                        <div class="col-sm-12">
-                            <h1><?php the_title()?></h1>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-11 mt-2">
+                            <?php get_template_part('partial-templates/category-labels'); ?>
+                            <h2 class="single-blog-title text-dark mb-0 mt-1"><?php the_title()?></h2>
                         </div>
                         <?php
                     } ?>
                 </div>
                 <div class="row pt-5 pb-4">
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-7 pb-1 blog-contents">
+                    <div class="col-sm-7 pb-3 blog-contents">
                         <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>
                         <?php the_content()?>
                         <hr class="pb-2"/>
@@ -58,7 +60,34 @@ get_header();
                             <i class="fa fa-instagram text-primary"></i>
                         </div>
                     </div>
-                    <div class="col-sm-4"><?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('shmight-sidebar') ) ?></div>
+                    <div class="col-sm-4">
+                        <div style="background-color:#ebeeef;" class="pt-3 pb-3 pr-2 pl-2">
+                            <div class="row m-3 recent-posts mr-1">
+                                <div class="col-sm-12">
+                                    <h2 class="pt-3">Recent Posts</h2>
+                                    <hr/>
+                                    <ul style="list-style-type:none;" class="pl-0">
+                                        <?php
+                                        $args = array( 'numberposts' => '5' );
+                                        $recent_posts = wp_get_recent_posts($args);
+                                        $lastElement = end($recent_posts);
+                                        foreach( $recent_posts as $recent ){ ?>
+                                            <?php if (get_the_ID() !== $recent["ID"] && $recent["post_title"] !== ""): ?>
+                                                <li class="pb-0">
+                                                    <p class="mb-0 date"><?php echo get_the_date( 'F j, Y', $recent["ID"]) ?></p>
+                                                    <a class="text-primary" href="<?php echo get_permalink($recent["ID"])?>"><?php echo $recent["post_title"]?></a>
+                                                </li>
+                                                <?php if (!($lastElement == $recent)) echo '<hr class="mt-2 mb-2"/>' ?>
+                                            <?php endif ?>
+
+                                        <?php }
+                                        wp_reset_query();
+                                        ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <?php
                 /* End the Loop */

@@ -2,7 +2,6 @@
   font-size: 56px;
   font-family: BebasNeue;
   text-transform: uppercase;
-  color: white;
   letter-spacing: 1.5px;
   line-height: 0.8;
   margin-bottom: 25px;
@@ -27,6 +26,30 @@
   p.metadata {
     text-transform: uppercase;
     font-weight: bold;
+  }
+}
+
+.recent-posts {
+  hr {
+    height: 2px;
+    opacity: 0.18;
+    background-color: #9b9b9b;
+  }
+  h2 {
+    font-family: BebasNeue;
+    font-size: 24px;
+    color: $darkgray;
+    font-weight: lighter;
+  }
+  a {
+    font-family: BebasNeue;
+    font-size: 24px;
+  }
+  p.date {
+    font-family: GothicA1;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 
