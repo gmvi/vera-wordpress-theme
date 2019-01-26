@@ -9780,8 +9780,7 @@ body {
   color: #4A4A4A;
   background-color: #FFF;
   box-sizing: border-box;
-  border: 1px solid black;
-  padding-right: 0px !important; }
+  border: 1px solid black; }
 
 .site h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
