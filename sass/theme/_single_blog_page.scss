@@ -1,0 +1,43 @@
+.single-blog-title {
+  font-size: 56px;
+  font-family: BebasNeue;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1.5px;
+  line-height: 0.8;
+  margin-bottom: 25px;
+}
+
+.single-blog-featured-image {
+  object-fit: cover;
+  width: 100%;
+  overflow: hidden;
+  max-height: 25rem;
+}
+
+.single-blog-featured-text {
+  background-color: $darkergray;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.blog-contents {
+  font-family: GothicA1;
+  p.metadata {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.textured-blerg {
+  background-image: url(../img/tvp-halftone-top-left-gray.png);
+  opacity: 100%;
+}
+
+.share-call {
+  font-family: BebasNeue;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $darkgray
+}

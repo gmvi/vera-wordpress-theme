@@ -127,11 +127,38 @@ a.more:hover {
 	color: $primary;
 }
 
-.icon {
-	width: 60px;
-	height: 60px;
+/*
+padding: 25px 50px 75px 100px;
+---
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px
+*/
+
+%vera-bordered-social {
+	border:solid 1px $primary;
+	margin-right: 0.4em;
 }
 
+div.vera-bordered-social-icons {
+	i[class^="fa fa-facebook-f"] {
+		@extend %vera-bordered-social;
+		padding: .2em .352em .15em;
+	}
+	i[class^="fa fa-twitter"] {
+		@extend %vera-bordered-social;
+		padding: .2em .2em .15em;
+	}
+	i[class^="fa fa-instagram"] {
+		@extend %vera-bordered-social;
+		padding: .2em .24em .15em;
+	}
+	i[class^="fa fa-youtube-play"] {
+		@extend %vera-bordered-social;
+		padding: .2em .2em .15em;
+	}
+}
 
 
 .entry-header .entry-title {
@@ -177,24 +204,24 @@ a.more:hover {
 	    padding-top: 15px;
 	    padding-bottom: 15px;
 	}
-	
+
 	.navbar-brand .img-fluid {
 	    height: 100%;
 	    width: auto;
 	}
-	
+
 	.navbar-collapse {
 		justify-content: flex-end;
 	}
-	
+
 	.navbar-collapse.show {
 		margin-bottom: 20px;
 	}
-	
+
 	.navbar-nav {
 	    float: right;
 	}
-	
+
 	.navbar-toggler-icon {
 		background-color: black;
 	}
@@ -202,14 +229,14 @@ a.more:hover {
 	.navbar-nav .donate {
 	    margin-left: 30px;
 	}
-	
+
 	.nav-item {
 	    display: flex;
 	    justify-content: center;
 	    flex-direction: column;
 	    text-align: right;
 	}
-	
+
 	.nav-item > .nav-link {
 		/* direct child to override rules from bootstrap */
 		color: black;
@@ -309,7 +336,7 @@ section.info {
     .header {
 		b { color: $primary; }
     }
-    
+
     .body {
         max-width: 970px;
         margin: 0 auto;
@@ -456,6 +483,8 @@ section.donate {
 
 }
 
+
+
 /* Buttons */
 
 %bordered-button-base {
@@ -487,6 +516,7 @@ a.bordered-button-white {
 @import "classes_page";
 @import "gallery_page";
 @import "blogs_overview_page";
+@import "single_blog_page";
 
 /* Footer */
 

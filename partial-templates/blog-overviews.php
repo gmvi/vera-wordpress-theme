@@ -28,7 +28,9 @@
                     <?php if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
                         <?php $cardclass = (has_post_thumbnail() ? 'card-picture': 'card-pictureless')?>
                         <div class="card border-0 <?php echo $cardclass ?>">
-                            <?php get_template_part('partial-templates/category-labels'); ?>
+                            <div class="top-left">
+                                <?php get_template_part('partial-templates/category-labels'); ?>
+                            </div>
                             <?php if (has_post_thumbnail()): ?>
                                 <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>">
                             <?php endif ?>

@@ -20,14 +20,21 @@ get_header();
                 while ( have_posts() ) :
                     the_post();?>
                 <!-- header image -->
-                <div class="row" style="max-height:25rem;">
+                <div class="row">
                     <?php
                     if (has_post_thumbnail( get_the_ID() )) { ?>
-                        <div class="col-sm-6">
-                            <img  class="h-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>" style="object-fit:cover;width: 100%;overflow:hidden;">
+                        <div class="col-sm-6 p-0 mh-100" style="">
+                            <img class="h-100 single-blog-featured-image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>">
                         </div>
-                        <div class="col-sm-6">
-                            <h1><?php the_title()?></h1>
+                        <div class="col-sm-6 p-0 mh-100 single-blog-featured-text">
+                            <div class="textured-blerg">
+                                <div class="row justify-content-center pt-5 ">
+                                    <div class="col-sm-8 mr-2 ml-2">
+                                        <?php get_template_part('partial-templates/category-labels'); ?>
+                                        <h2 class="single-blog-title"><?php the_title()?></h2>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     <?php
                     } else {
@@ -38,50 +45,25 @@ get_header();
                         <?php
                     } ?>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 text-center"><?php the_content()?></div>
+                <div class="row pt-5 pb-4">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-7 pb-1 blog-contents">
+                        <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>
+                        <?php the_content()?>
+                        <hr class="pb-2"/>
+                        <p class="share-call mb-1">Share this story</p>
+                        <div class="vera-bordered-social-icons p-0">
+                            <i class="fa fa-facebook-f text-primary"></i>
+                            <i class="fa fa-twitter text-primary"></i>
+                            <i class="fa fa-instagram text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"><?php get_sidebar()?></div>
                 </div>
                 <?php
                 /* End the Loop */
                 endwhile; ?>
             </div>
-            <?php
-            /* Start the Loop */
-            while ( have_posts() ) :
-                the_post();
-
-
-
-                if ( is_singular( 'attachment' ) ) {
-                    // Parent post navigation.
-                    the_post_navigation(
-                        array(
-                            /* translators: %s: parent post link */
-                            'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'twentynineteen' ), '%title' ),
-                        )
-                    );
-                } elseif ( is_singular( 'post' ) ) {
-                    // Previous/next post navigation.
-                    the_post_navigation(
-                        array(
-                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'twentynineteen' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Next post:', 'twentynineteen' ) . '</span> <br/>' .
-                                '<span class="post-title">%title</span>',
-                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'twentynineteen' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Previous post:', 'twentynineteen' ) . '</span> <br/>' .
-                                '<span class="post-title">%title</span>',
-                        )
-                    );
-                }
-
-                // If comments are open or we have at least one comment, load up the comment template.
-                if ( comments_open() || get_comments_number() ) {
-                    comments_template();
-                }
-
-            endwhile; // End of the loop.
-            ?>
-
         </main><!-- #main -->
     </section><!-- #primary -->
 

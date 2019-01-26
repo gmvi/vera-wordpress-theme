@@ -30,19 +30,11 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="footer-link">Audio & Stage</div>
                     </div>
                 </div>
-                <div class="row footer-social-media">
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-instagram fa-lg"></i>
-                    </div>
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-facebook-f fa-lg"></i>
-                    </div>
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-twitter fa-lg"></i>
-                    </div>
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-youtube fa-lg"></i>
-                    </div>
+                <div class="vera-bordered-social-icons pl-3 pt-3">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-youtube-play"></i>
                 </div>
 			</div>
             <div class="col-md-1 d-none d-md-block">
