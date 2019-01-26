@@ -129,7 +129,7 @@ function cat_active($cat) {
 					<div class="modal-body"><?= wpautop( $class->post_content ) ?></div>
 					<?php if (!SCF::get("private_class", $class->ID)): ?>
 						<div class="modal-footer">
-							<a type="button" class="btn btn-primary" href="<?= $next['link'] ?>">Register</a>
+							<a type="button" class="btn btn-primary" target="_blank" href="<?= $next['link'] ?>">Register</a>
 						</div>
 					<?php endif; ?>
 				</div>
