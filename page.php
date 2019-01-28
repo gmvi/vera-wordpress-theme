@@ -10,7 +10,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="container-fluid p-0 <?php echo esc_attr( $container ); ?>">
 
 		<main class="site-main" id="main" role="main">
 <!--
@@ -34,7 +34,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 <h2 class="single-blog-title text-dark mb-0 mt-1"><?php the_title()?></h2>
                             </div>
                         </div>
-                        <div class="row pt-5 pb-4">
+                        <div class="row pt-4 pb-4">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-9 pb-3 blog-contents">
                                 <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>
