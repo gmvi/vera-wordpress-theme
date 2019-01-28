@@ -73,22 +73,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<section class="quote">
 							<div class="background"></div>
-							<div class="row no-gutters">
-								<div class="col-md-12">
-									<div class="quote-picture">
-									</div>
-									<div class="quote-body">
-										<p class="quote-text"><?php the_field("quote_text") ?></p>
-										<span class="quote-author">
-											<?php // replace spaces with non-breaking
-												// TODO: break this out into it's own function to handle links properly
-												$content = get_field("quote_author");
-												echo str_replace(' ', '&nbsp;', $content);
-											?>
-										</span>
-									</div>
-								</div>
-							</div>
+                            <div class="row h-100 vera-quote">
+                                <div class="col-md-6 mx-auto p-5 textured">
+                                    <img class="rounded-circle p-3" src="<?php echo get_field( 'author_image' )['url'];?>" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row h-100 align-items-center text-center">
+                                        <div class="col-md-12">
+                                            <p class="quote-text"><?php the_field('quote'); ?></p>
+                                            <span class="author"><?php the_field('author'); ?> | <?php the_field('author_title'); ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 						</section>
 
 						<?php
