@@ -70,19 +70,7 @@ function vera_remove_page_templates( $templates ) {
     unset( $templates['page-templates/fullwidthpage.php'] );
     unset( $templates['page-templates/left-sidebarpage.php'] );
     unset( $templates['page-templates/both-sidebarspage.php'] );
-//    unset( $templates['page-templates/right-sidebarpage.php'] );
+    unset( $templates['page-templates/right-sidebarpage.php'] );
     return $templates;
 }
 add_filter( 'theme_page_templates', 'vera_remove_page_templates' );
-
-register_sidebar(
-    array(
-        'name'          => __( 'WHAT THE HELL Sidebar', 'understrap' ),
-        'id'            => 'shmight-sidebar',
-        'description'   => __( 'Right sidebar widget area', 'understrap' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    )
-);
