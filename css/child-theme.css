@@ -9899,6 +9899,10 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
   background-size: cover;
   position: relative; }
 
+.row-block {
+  margin-left: -30px;
+  margin-right: -30px; }
+
 /* Navigation */
 .navbar {
   margin: 0;
@@ -10316,8 +10320,7 @@ section.featured {
 
 section.quote {
   position: relative;
-  padding: 0;
-  height: 600px; }
+  padding: 0; }
   section.quote .background {
     position: absolute;
     top: -250px;
@@ -10547,6 +10550,7 @@ section.classes {
         right: 0; }
       section.classes .list-item .flex .class-info {
         display: inline-block;
+        text-align: center;
         width: 100px;
         margin-right: 30px;
         font-family: GothicA1;
@@ -10557,7 +10561,6 @@ section.classes {
         width: 160px;
         text-align: center;
         padding-top: 10px;
-        margin-left: 40px;
         font-family: BebasNeue;
         font-size: 24px;
         font-weight: bold;
@@ -10567,6 +10570,12 @@ section.classes {
         border: 2px solid #D41C53; }
       section.classes .list-item .flex .class-register.disabled {
         color: #C5C2D2; }
+
+.modal .modal-title {
+  font-weight: bold; }
+
+.modal .modal-dialog {
+  max-width: 800px; }
 
 .current-gallery {
   background: #ebeeef; }
