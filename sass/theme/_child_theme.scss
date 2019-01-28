@@ -103,24 +103,63 @@ a.more:hover {
     padding-bottom: 2px;
 }
 
-.label {
+%label-base {
 	display: inline-block;
-    background-color: $primary;
-    color: white;
-    font-family: BebasNeue;
-    text-transform: uppercase;
-    font-size: 18px;
-    line-height: 19px;
-    font-weight: normal;
-    letter-spacing: 1.5px;
-    padding: 5px 10px 2px;
-    margin-bottom: 30px;
+	font-family: BebasNeue;
+	text-transform: uppercase;
+	font-size: 18px;
+	line-height: 19px;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	padding: 5px 10px 2px;
+	margin-bottom: 30px;
 }
 
-.icon {
-	width: 60px;
-	height: 60px;
+.label {
+	@extend %label-base;
+    background-color: $primary;
+    color: white;
 }
+
+.label-white {
+	@extend %label-base;
+	background-color: white;
+	color: $primary;
+}
+
+/*
+padding: 25px 50px 75px 100px;
+---
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px
+*/
+
+%vera-bordered-social {
+	border:solid 1px $primary;
+	margin-right: 0.4em;
+}
+
+div.vera-bordered-social-icons {
+	i[class^="fa fa-facebook-f"] {
+		@extend %vera-bordered-social;
+		padding: .2em .352em .15em;
+	}
+	i[class^="fa fa-twitter"] {
+		@extend %vera-bordered-social;
+		padding: .2em .2em .15em;
+	}
+	i[class^="fa fa-instagram"] {
+		@extend %vera-bordered-social;
+		padding: .2em .24em .15em;
+	}
+	i[class^="fa fa-youtube-play"] {
+		@extend %vera-bordered-social;
+		padding: .2em .2em .15em;
+	}
+}
+
 
 .entry-header .entry-title {
     color: white;
@@ -131,14 +170,22 @@ a.more:hover {
 
 .entry-header .wp-post-image {
     width: 100%;
-    min-width: 960px;
+    //min-width: 960px;
     max-width: 1440px;
     height: 450px;
     object-fit: cover;
 }
 
 .entry-header .header-texture {
-	background-image: url('../img/header-texture.png');
+	//background-image: url('../img/header-texture.png');
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.entry-header .header-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
 
 .row-block {
@@ -162,39 +209,39 @@ a.more:hover {
 	    padding-top: 15px;
 	    padding-bottom: 15px;
 	}
-	
+
 	.navbar-brand .img-fluid {
 	    height: 100%;
 	    width: auto;
 	}
-	
+
 	.navbar-collapse {
 		justify-content: flex-end;
 	}
-	
+
 	.navbar-collapse.show {
 		margin-bottom: 20px;
 	}
-	
+
 	.navbar-nav {
 	    float: right;
 	}
-	
+
 	.navbar-toggler-icon {
 		background-color: black;
 	}
-	
+
 	.navbar-nav .donate {
 	    margin-left: 30px;
 	}
-	
+
 	.nav-item {
 	    display: flex;
 	    justify-content: center;
 	    flex-direction: column;
 	    text-align: right;
 	}
-	
+
 	.nav-item > .nav-link {
 		/* direct child to override rules from bootstrap */
 		color: black;
@@ -203,37 +250,50 @@ a.more:hover {
 	}
 }
 
+
 ul.menu {
 	margin: 0;
 	padding: 0;
 }
 
-.entry-header .menu {
+%submenu {
 	justify-content: center;
-	height: 50px;
-	background-color: $accent;
+	text-align: center;
+	//height: 50px;
+
 	align-content: center;
 	font-family: BebasNeue;
 	font-size: 18px;
 	line-height: 1;
 	letter-spacing: 1.5px;
+}
 
+%submenu-item {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	list-style: none;
+	padding: 0 20px;
+	height: 100%;
+}
+
+.entry-header .menu {
+	@extend %submenu;
+	background-color: $accent;
 	.menu-item {
-		display: inline-flex;
-		flex-direction: column;
-		justify-content: center;
-		list-style: none;
-		padding: 0 20px;
-		height: 100%;
-
+		@extend %submenu-item;
 		a {
 			color: $darkgray;
 		}
 	}
-
 	.menu-item.current-menu-item a {
 		color: white;
+		font-weight: lighter;
 	}
+}
+
+.quote {
+	background: $accent;
 }
 
 /* Sections */
@@ -281,7 +341,7 @@ section.info {
     .header {
 		b { color: $primary; }
     }
-    
+
     .body {
         max-width: 970px;
         margin: 0 auto;
@@ -364,6 +424,7 @@ section.banner {
 		width: 124%;
 		margin-left: -11%;
 		background-color: $primary;
+		background-image: url('../img/top-texture.png');
 		transform: rotate(9.2deg);
 		transform-origin: left;
 		z-index: -2;
@@ -381,11 +442,86 @@ section.donate {
 	b { color: $primary; }
 }
 
+/* quotes */
+.vera-quote {
+	background-color: $accent;
+	.background {
+		position: absolute;
+		top: -250px;
+		bottom: 0;
+		width: 100%;
+		background-color: $accent;
+		z-index: -3;
+	}
+	p.quote-text {
+		font-size: 34px;
+		font-weight: bold;
+		font-family: BebasNeueLight;
+		strong {
+			font-family: BebasNeue;
+			color: $primary;
+		}
+		&:after {
+			content: "“";
+			position: absolute;
+			color: white;
+			opacity: .2;
+			top: -78px;
+			left: -30px;
+			font-family: GothicA1;
+			font-size: 200px;
+		}
+	}
+	span.author {
+		font-size: 14px;
+		font-family: GothicA1;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.textured {
+		background-image: url('../img/tvp-halftone-center-white.png');
+		height: 100%;
+		object-fit: cover;
+		background-size:cover
+	}
+
+
+}
+
+
+
+/* Buttons */
+
+%bordered-button-base {
+	border-radius: 0px;
+	margin-top: 20px;
+	font-family: BebasNeue;
+	font-size: 24px;
+	border-width: 2px;
+}
+
+a.bordered-button {
+	@extend %bordered-button-base;
+	color: #4a4a4a;
+	&:hover {
+		color: white;
+	}
+}
+
+a.bordered-button-white {
+	@extend %bordered-button-base;
+	color: white;
+	border-color: white;
+}
+
 /* Page-specific styling */
 @import "front_page";
 @import "landing_page";
 @import "get_involved_page";
 @import "classes_page";
+@import "gallery_page";
+@import "blogs_overview_page";
+@import "single_blog_page";
 
 /* Footer */
 

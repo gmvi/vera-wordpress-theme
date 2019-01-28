@@ -162,24 +162,11 @@ section.volunteer-committees {
       div.small-primary-bg-header {
         padding: 1px 5px;
       }
-
-      a.btn {
-        border-radius: 0px;
-        margin-top: 20px;
-        color: #4a4a4a;
-        font-family: $header-font;
-        font-size: 24px;
-        border-width: 2px;
-        &:hover {
-          color: white;
-        }
-      }
     }
   }
 }
 
 section.volunteer-hero {
-  background-image: url("../img/volunteer-today.jpg");
   /* Set a specific height */
   height: 25rem;
   /* Position and center the image to scale nicely on all screens */

@@ -9835,10 +9835,8 @@ a.more:hover {
   border-bottom: none;
   padding-bottom: 2px; }
 
-.label {
+.label, .label-white {
   display: inline-block;
-  background-color: #D41C53;
-  color: white;
   font-family: BebasNeue;
   text-transform: uppercase;
   font-size: 18px;
@@ -9848,9 +9846,37 @@ a.more:hover {
   padding: 5px 10px 2px;
   margin-bottom: 30px; }
 
-.icon {
-  width: 60px;
-  height: 60px; }
+.label {
+  background-color: #D41C53;
+  color: white; }
+
+.label-white {
+  background-color: white;
+  color: #D41C53; }
+
+/*
+padding: 25px 50px 75px 100px;
+---
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px
+*/
+div.vera-bordered-social-icons i[class^="fa fa-facebook-f"], div.vera-bordered-social-icons i[class^="fa fa-twitter"], div.vera-bordered-social-icons i[class^="fa fa-instagram"], div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
+  border: solid 1px #D41C53;
+  margin-right: 0.4em; }
+
+div.vera-bordered-social-icons i[class^="fa fa-facebook-f"] {
+  padding: .2em .352em .15em; }
+
+div.vera-bordered-social-icons i[class^="fa fa-twitter"] {
+  padding: .2em .2em .15em; }
+
+div.vera-bordered-social-icons i[class^="fa fa-instagram"] {
+  padding: .2em .24em .15em; }
+
+div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
+  padding: .2em .2em .15em; }
 
 .entry-header .entry-title {
   color: white;
@@ -9860,13 +9886,18 @@ a.more:hover {
 
 .entry-header .wp-post-image {
   width: 100%;
-  min-width: 960px;
   max-width: 1440px;
   height: 450px;
   object-fit: cover; }
 
 .entry-header .header-texture {
-  background-image: url("../img/header-texture.png"); }
+  background: rgba(0, 0, 0, 0.3); }
+
+.entry-header .header-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
 
 .row-block {
   margin-left: -30px;
@@ -9913,26 +9944,33 @@ ul.menu {
   margin: 0;
   padding: 0; }
 
-.entry-header .menu {
+.entry-header .menu, .blog-subheader .menu {
   justify-content: center;
-  height: 50px;
-  background-color: #96C0CE;
+  text-align: center;
   align-content: center;
   font-family: BebasNeue;
   font-size: 18px;
   line-height: 1;
   letter-spacing: 1.5px; }
-  .entry-header .menu .menu-item {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    list-style: none;
-    padding: 0 20px;
-    height: 100%; }
-    .entry-header .menu .menu-item a {
-      color: #4A4A4A; }
+
+.entry-header .menu .menu-item, .blog-subheader .menu .menu-item {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  padding: 0 20px;
+  height: 100%; }
+
+.entry-header .menu {
+  background-color: #96C0CE; }
+  .entry-header .menu .menu-item a {
+    color: #4A4A4A; }
   .entry-header .menu .menu-item.current-menu-item a {
-    color: white; }
+    color: white;
+    font-weight: lighter; }
+
+.quote {
+  background: #96C0CE; }
 
 /* Sections */
 .entry-content section .header, section.classes .header-classes, .centered {
@@ -10027,6 +10065,7 @@ section.banner {
     width: 124%;
     margin-left: -11%;
     background-color: #D41C53;
+    background-image: url("../img/top-texture.png");
     transform: rotate(9.2deg);
     transform-origin: left;
     z-index: -2; }
@@ -10041,6 +10080,60 @@ section.donate {
   font-size: 72px; }
   section.donate b {
     color: #D41C53; }
+
+/* quotes */
+.vera-quote {
+  background-color: #96C0CE; }
+  .vera-quote .background {
+    position: absolute;
+    top: -250px;
+    bottom: 0;
+    width: 100%;
+    background-color: #96C0CE;
+    z-index: -3; }
+  .vera-quote p.quote-text {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: BebasNeueLight; }
+    .vera-quote p.quote-text strong {
+      font-family: BebasNeue;
+      color: #D41C53; }
+    .vera-quote p.quote-text:after {
+      content: "“";
+      position: absolute;
+      color: white;
+      opacity: .2;
+      top: -78px;
+      left: -30px;
+      font-family: GothicA1;
+      font-size: 200px; }
+  .vera-quote span.author {
+    font-size: 14px;
+    font-family: GothicA1;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .vera-quote .textured {
+    background-image: url("../img/tvp-halftone-center-white.png");
+    height: 100%;
+    object-fit: cover;
+    background-size: cover; }
+
+/* Buttons */
+a.bordered-button, a.bordered-button-white {
+  border-radius: 0px;
+  margin-top: 20px;
+  font-family: BebasNeue;
+  font-size: 24px;
+  border-width: 2px; }
+
+a.bordered-button {
+  color: #4a4a4a; }
+  a.bordered-button:hover {
+    color: white; }
+
+a.bordered-button-white {
+  color: white;
+  border-color: white; }
 
 /* Page-specific styling */
 body.home .entry-header .wp-post-image {
@@ -10227,8 +10320,7 @@ section.featured {
 
 section.quote {
   position: relative;
-  padding: 0;
-  height: 600px; }
+  padding: 0; }
   section.quote .background {
     position: absolute;
     top: -250px;
@@ -10388,18 +10480,8 @@ section.volunteer-committees {
       max-width: 60%; }
       section.volunteer-committees div.row div#volunteer-content div#content-wrapper div.small-primary-bg-header {
         padding: 1px 5px; }
-      section.volunteer-committees div.row div#volunteer-content div#content-wrapper a.btn {
-        border-radius: 0px;
-        margin-top: 20px;
-        color: #4a4a4a;
-        font-family: BebasNeue;
-        font-size: 24px;
-        border-width: 2px; }
-        section.volunteer-committees div.row div#volunteer-content div#content-wrapper a.btn:hover {
-          color: white; }
 
 section.volunteer-hero {
-  background-image: url("../img/volunteer-today.jpg");
   /* Set a specific height */
   height: 25rem;
   /* Position and center the image to scale nicely on all screens */
@@ -10494,6 +10576,164 @@ section.classes {
 
 .modal .modal-dialog {
   max-width: 800px; }
+
+.current-gallery {
+  background: #ebeeef; }
+  .current-gallery img.current-gallery-image {
+    height: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; }
+
+h2.medium-header {
+  font-size: 48px;
+  font-family: BebasNeue;
+  letter-spacing: 1.8px; }
+
+h1.large-header {
+  font-size: 80px;
+  font-family: BebasNeue;
+  letter-spacing: 1.8px; }
+
+.smaller-margin-container {
+  padding: 0px !important;
+  margin: 0px !important; }
+
+.gallery-banner {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px; }
+  .gallery-banner .banner-background {
+    height: 640px;
+    width: 124%;
+    position: absolute;
+    margin-left: -11%;
+    background-size: cover;
+    background-color: #D41C53;
+    background-image: url("../img/header-texture.png");
+    transform: rotate(9.2deg);
+    transform-origin: left;
+    z-index: -9; }
+  .gallery-banner .banner-content {
+    margin-top: 12rem; }
+  .gallery-banner img.support-gallery-graphic {
+    height: 23%; }
+
+.square {
+  width: 100%;
+  height: 20vw;
+  object-fit: cover; }
+
+.card-picture h5, .card-pictureless h5 {
+  font-family: BebasNeue;
+  font-size: 26px; }
+
+.card-picture a, .card-pictureless a {
+  font-family: BebasNeue;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: #D41C53;
+  text-transform: uppercase; }
+
+.card-picture p.blog-overview-date, .card-pictureless p.blog-overview-date {
+  font-family: GothicA1;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase; }
+
+.card-picture h5 {
+  color: #D41C53; }
+
+.card-picture a {
+  color: #4A4A4A; }
+
+.card-pictureless {
+  background-color: #252525; }
+  .card-pictureless p.blog-overview-date {
+    margin-top: 3rem;
+    color: white; }
+  .card-pictureless h5 {
+    color: white; }
+  .card-pictureless a {
+    color: white; }
+  .card-pictureless p.excerpt {
+    font-family: GothicA1;
+    color: #EBEEEF; }
+
+.blog-subheader .menu .menu-item a {
+  color: #4A4A4A;
+  background-color: #EBEEEF; }
+
+.blog-subheader .menu .menu-item.current-menu-item a {
+  color: white;
+  background-color: #D41C53; }
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px; }
+
+.single-blog-title {
+  font-size: 4rem;
+  font-family: BebasNeue;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 0.8;
+  margin-bottom: 25px; }
+
+.single-blog-featured-image {
+  object-fit: cover;
+  width: 100%;
+  overflow: hidden;
+  max-height: 25rem; }
+
+.single-blog-featured-text {
+  background-color: #252525;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto; }
+
+.blog-contents {
+  font-family: GothicA1; }
+  .blog-contents p.metadata {
+    text-transform: uppercase;
+    font-weight: bold; }
+
+.recent-posts hr {
+  height: 2px;
+  opacity: 0.18;
+  background-color: #9b9b9b; }
+
+.recent-posts h2 {
+  font-family: BebasNeue;
+  font-size: 24px;
+  color: #4A4A4A;
+  font-weight: lighter; }
+
+.recent-posts a {
+  font-family: BebasNeue;
+  font-size: 24px; }
+
+.recent-posts p.date {
+  font-family: GothicA1;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.textured-blerg {
+  background-image: url(../img/tvp-halftone-top-left-gray.png);
+  opacity: 100%; }
+
+.share-call {
+  font-family: BebasNeue;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #4A4A4A; }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {

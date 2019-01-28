@@ -18,31 +18,35 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<div class="row site-footer">
 			<div class="col-md-6">
-                <div class="row footer-links">
-                    <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="footer-link">About</div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="footer-link">Get Involved</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="footer-link">Rentals</div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <div class="footer-link">Shows</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="footer-link">Silkscreen</div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="footer-link">Audio & Stage</div>
                     </div>
                 </div>
-                <div class="row footer-social-media">
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-instagram fa-lg"></i>
-                    </div>
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-facebook-f fa-lg"></i>
-                    </div>
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-twitter fa-lg"></i>
-                    </div>
-                    <div class="col-xs-1" style="padding-right:1rem;">
-                        <i class="fa fa-youtube fa-lg"></i>
-                    </div>
+                <div class="vera-bordered-social-icons pl-3 pt-3">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-youtube-play"></i>
                 </div>
 			</div>
             <div class="col-md-1 d-none d-md-block">
