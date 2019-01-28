@@ -1,6 +1,7 @@
 <?php
-// Use for the blue submenu nav
 /*
+ * Use for the submenu nav
+ * Will do a check if the menu exists. If it doesn't, then no menu will be rendered.
  * Usage:
  <?php
     $menu_name = 'gallery-menu';
@@ -9,7 +10,7 @@
  ?>
  * */
 ?>
-
+<?php if (wp_get_nav_menu_object($menu_name)!== false): ?>
 <section class="<?php echo $wrapper_class_name ?>">
     <nav class="navbar navbar-expand-lg navbar-light menu">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,3 +30,4 @@
         </div>
     </nav>
 </section>
+<?php endif ?>
