@@ -188,10 +188,6 @@ div.vera-bordered-social-icons {
 	position: relative;
 }
 
-.row-block {
-	margin-left: -30px;
-	margin-right: -30px;
-}
 
 /* Navigation */
 
@@ -452,7 +448,7 @@ section.donate {
 
 /* quotes */
 .vera-quote {
-	background-color: $accent;
+	//background-color: $accent;
 	.background {
 		position: absolute;
 		top: -250px;
@@ -530,6 +526,7 @@ a.bordered-button-white {
 @import "gallery_page";
 @import "blogs_overview_page";
 @import "single_blog_page";
+@import "content_page";
 
 /* Footer */
 

@@ -20,6 +20,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php the_post(); // This is a page template ?>
 
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+                    <div class="row row-block align-items-center">
+                        <div class="col-sm-12 d-table">
+                            <div class="content-hero d-table-cell align-middle text-center">
+                                <h2 class="single-blog-title text-white"><?php the_title()?></h2>
+                            </div>
+                        </div>
+                    </div>
                     <?php
                         global $post;
                         $parent_submenu = get_field('subnav', $post->post_parent);
@@ -28,14 +35,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         include( locate_template( 'partial-templates/centered-submenu.php') );
                     ?>
 					<div id="content" class="entry-content">
-                        <div class="row pt-2">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-11 mt-2">
-                                <?php get_template_part('partial-templates/category-labels'); ?>
-                                <h2 class="single-blog-title text-dark mb-0 mt-1"><?php the_title()?></h2>
-                            </div>
-                        </div>
-                        <div class="row pt-4 pb-4">
+                        <div class="row pt-4 pb-4 ml-1">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-9 pb-3 blog-contents">
                                 <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>

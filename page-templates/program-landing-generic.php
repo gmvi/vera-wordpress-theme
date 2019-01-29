@@ -64,15 +64,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<section class="banner">
 							<div class="banner-background"></div>
-							<div class="row no-gutters">
-								<div class="col-md-6">
-									<span class="label">Get Involved</span>
-									<div class="banner-headline">Volunteer Today!</div>
-									<a href class="more">Join The Committee</a>
-								</div>
-								<div class="col-md-6">
-								</div>
-							</div>
+                            <div class="row no-gutters pl-4 ml-4 pr-4 mr-4 landing-donate">
+                                <div class="col-md-6 p-4">
+                                    <p class="label-white">Support Vera</p><br/>
+                                    <h1 class="large-header" style="color:white;"><?php the_field('support_vera_text') ?></h1>
+                                    <a href="" class="btn bordered-button-white">Donate Today</a>
+                                </div>
+                                <div class="col-md-6 p-1 d-none d-md-block">
+                                    <img class="support-vera-graphic" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
+                                </div>
+                            </div>
 						</section><!-- .section-banner -->
 
 						<section class="quote">

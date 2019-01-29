@@ -9899,10 +9899,6 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
   background-size: cover;
   position: relative; }
 
-.row-block {
-  margin-left: -30px;
-  margin-right: -30px; }
-
 /* Navigation */
 .navbar {
   margin: 0;
@@ -10085,41 +10081,42 @@ section.donate {
     color: #D41C53; }
 
 /* quotes */
-.vera-quote {
-  background-color: #96C0CE; }
-  .vera-quote .background {
+.vera-quote .background {
+  position: absolute;
+  top: -250px;
+  bottom: 0;
+  width: 100%;
+  background-color: #96C0CE;
+  z-index: -3; }
+
+.vera-quote p.quote-text {
+  font-size: 34px;
+  font-weight: bold;
+  font-family: BebasNeueLight; }
+  .vera-quote p.quote-text strong {
+    font-family: BebasNeue;
+    color: #D41C53; }
+  .vera-quote p.quote-text:after {
+    content: "“";
     position: absolute;
-    top: -250px;
-    bottom: 0;
-    width: 100%;
-    background-color: #96C0CE;
-    z-index: -3; }
-  .vera-quote p.quote-text {
-    font-size: 34px;
-    font-weight: bold;
-    font-family: BebasNeueLight; }
-    .vera-quote p.quote-text strong {
-      font-family: BebasNeue;
-      color: #D41C53; }
-    .vera-quote p.quote-text:after {
-      content: "“";
-      position: absolute;
-      color: white;
-      opacity: .2;
-      top: -78px;
-      left: -30px;
-      font-family: GothicA1;
-      font-size: 200px; }
-  .vera-quote span.author {
-    font-size: 14px;
+    color: white;
+    opacity: .2;
+    top: -78px;
+    left: -30px;
     font-family: GothicA1;
-    text-transform: uppercase;
-    font-weight: bold; }
-  .vera-quote .textured {
-    background-image: url("../img/tvp-halftone-center-white.png");
-    height: 100%;
-    object-fit: cover;
-    background-size: cover; }
+    font-size: 200px; }
+
+.vera-quote span.author {
+  font-size: 14px;
+  font-family: GothicA1;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.vera-quote .textured {
+  background-image: url("../img/tvp-halftone-center-white.png");
+  height: 100%;
+  object-fit: cover;
+  background-size: cover; }
 
 /* Buttons */
 a.bordered-button, a.bordered-button-white {
@@ -10320,6 +10317,11 @@ section.featured {
       font-family: GothicA1;
       font-size: 18px;
       line-height: 1.5; }
+
+div.landing-donate {
+  margin-top: 12rem; }
+  div.landing-donate .support-vera-graphic {
+    height: 23%; }
 
 section.quote {
   position: relative;
@@ -10737,6 +10739,10 @@ h1.large-header {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #4A4A4A; }
+
+.content-hero {
+  height: 400px;
+  background-color: #252525; }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {
