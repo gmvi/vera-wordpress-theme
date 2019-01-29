@@ -71,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                     <a href="" class="btn bordered-button-white">Donate Today</a>
                                 </div>
                                 <div class="col-md-6 p-1 d-none d-md-block">
-                                    <img class="support-vera-graphic" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
+                                    <img class="support-vera-graphic pl-3" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
                                 </div>
                             </div>
 						</section><!-- .section-banner -->

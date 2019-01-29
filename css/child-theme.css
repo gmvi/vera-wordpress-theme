@@ -10081,42 +10081,43 @@ section.donate {
     color: #D41C53; }
 
 /* quotes */
-.vera-quote .background {
-  position: absolute;
-  top: -250px;
-  bottom: 0;
-  width: 100%;
-  background-color: #96C0CE;
-  z-index: -3; }
-
-.vera-quote p.quote-text {
-  font-size: 34px;
-  font-weight: bold;
-  font-family: BebasNeueLight; }
-  .vera-quote p.quote-text strong {
-    font-family: BebasNeue;
-    color: #D41C53; }
-  .vera-quote p.quote-text:after {
-    content: "“";
+.vera-quote {
+  background-color: #96C0CE; }
+  .vera-quote .background {
     position: absolute;
-    color: white;
-    opacity: .2;
-    top: -78px;
-    left: -30px;
+    top: -250px;
+    bottom: 0;
+    width: 100%;
+    background-color: #96C0CE;
+    z-index: -3; }
+  .vera-quote img {
+    max-height: 450px; }
+  .vera-quote p.quote-text {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: BebasNeueLight; }
+    .vera-quote p.quote-text strong {
+      font-family: BebasNeue;
+      color: #D41C53; }
+    .vera-quote p.quote-text:after {
+      content: "“";
+      position: absolute;
+      color: white;
+      opacity: .2;
+      top: -78px;
+      left: -30px;
+      font-family: GothicA1;
+      font-size: 200px; }
+  .vera-quote span.author {
+    font-size: 14px;
     font-family: GothicA1;
-    font-size: 200px; }
-
-.vera-quote span.author {
-  font-size: 14px;
-  font-family: GothicA1;
-  text-transform: uppercase;
-  font-weight: bold; }
-
-.vera-quote .textured {
-  background-image: url("../img/tvp-halftone-center-white.png");
-  height: 100%;
-  object-fit: cover;
-  background-size: cover; }
+    text-transform: uppercase;
+    font-weight: bold; }
+  .vera-quote .textured {
+    background-image: url("../img/tvp-halftone-center-white.png");
+    height: 100%;
+    object-fit: cover;
+    background-size: cover; }
 
 /* Buttons */
 a.bordered-button, a.bordered-button-white {
@@ -10321,7 +10322,7 @@ section.featured {
 div.landing-donate {
   margin-top: 12rem; }
   div.landing-donate .support-vera-graphic {
-    height: 23%; }
+    height: 25%; }
 
 section.quote {
   position: relative;

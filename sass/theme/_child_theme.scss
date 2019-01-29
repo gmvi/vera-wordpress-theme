@@ -448,7 +448,7 @@ section.donate {
 
 /* quotes */
 .vera-quote {
-	//background-color: $accent;
+	background-color: $accent;
 	.background {
 		position: absolute;
 		top: -250px;
@@ -456,6 +456,9 @@ section.donate {
 		width: 100%;
 		background-color: $accent;
 		z-index: -3;
+	}
+	img {
+		max-height: 450px;
 	}
 	p.quote-text {
 		font-size: 34px;
