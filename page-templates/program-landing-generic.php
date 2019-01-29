@@ -11,7 +11,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container ); ?> p-0">
 
 		<main class="site-main" id="main" role="main">
 
@@ -20,7 +20,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 					<?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
-
+                    <?php
+                        $menu_name = get_field('subnav');;
+                        $wrapper_class_name = 'entry-header';
+                        include( locate_template( 'partial-templates/centered-submenu.php') );
+                    ?>
 					<div id="content" class="entry-content text-center">
 
 						<section class="info">
