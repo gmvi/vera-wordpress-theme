@@ -240,6 +240,7 @@ div.vera-bordered-social-icons {
 	    justify-content: center;
 	    flex-direction: column;
 	    text-align: right;
+
 	}
 
 	.nav-item > .nav-link {
@@ -250,6 +251,13 @@ div.vera-bordered-social-icons {
 	}
 }
 
+.header-nav {
+	.menu-item.current-menu-item, .menu-item.current-page-ancestor {
+		a {
+			border-bottom: 2px solid $primary;
+		}
+	}
+}
 
 ul.menu {
 	margin: 0;

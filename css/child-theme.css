@@ -9940,6 +9940,9 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
     padding-left: .8rem;
     padding-right: .8rem; }
 
+.header-nav .menu-item.current-menu-item a, .header-nav .menu-item.current-page-ancestor a {
+  border-bottom: 2px solid #D41C53; }
+
 ul.menu {
   margin: 0;
   padding: 0; }

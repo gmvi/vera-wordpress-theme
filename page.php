@@ -10,7 +10,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="container-fluid p-0 <?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container ); ?> p-0">
 
 		<main class="site-main" id="main" role="main">
 <!--
@@ -20,11 +20,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php the_post(); // This is a page template ?>
 
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
                     <?php
-                    $menu_name = $pagename;
-                    $wrapper_class_name = 'entry-header';
-                    include( locate_template( 'partial-templates/centered-submenu.php') );
+                        global $post;
+                        $parent_submenu = get_field('subnav', $post->post_parent);
+                        $menu_name = $parent_submenu;
+                        $wrapper_class_name = 'entry-header';
+                        include( locate_template( 'partial-templates/centered-submenu.php') );
                     ?>
 					<div id="content" class="entry-content">
                         <div class="row pt-2">
