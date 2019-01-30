@@ -166,7 +166,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<!-- TODO -->
 							</div>
 <?php	else :?>
-        <div class="row justify-content-md-center pt-5 pb-1">
+        <div class="row justify-content-md-center pb-1">
             <div class="col-sm-11">
                 <div class="card-deck pb-2">
                     <?php

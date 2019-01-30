@@ -10214,6 +10214,7 @@ h1.large-header {
 .square {
   width: 100%;
   height: 20vw;
+  min-height: 250px;
   object-fit: cover; }
 
 .card-picture h5, .card-pictureless h5 {
