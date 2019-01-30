@@ -9921,25 +9921,26 @@ section.blog {
 section.featured {
   padding-top: 0px; }
   section.featured .featured-image {
-    height: 480px; }
+    max-height: 480px;
+    min-height: 360px;
+    width: 100%;
+    object-fit: cover; }
   section.featured .featured-info {
-    text-align: left;
-    padding-left: 75px;
-    padding-top: 80px; }
+    text-align: left; }
     section.featured .featured-info h2 {
       font-family: BebasNeue;
-      font-size: 72px; }
+      font-size: 64px; }
     section.featured .featured-info p {
       margin-top: 20px;
       margin-bottom: 20px;
       font-family: GothicA1;
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.5; }
 
 div.landing-donate {
   margin-top: 12rem; }
   div.landing-donate .support-vera-graphic {
-    height: 23%; }
+    height: 25%; }
 
 section.quote {
   position: relative;
@@ -9951,43 +9952,6 @@ section.quote {
     width: 100%;
     background-color: #96C0CE;
     z-index: -3; }
-  section.quote .quote-picture {
-    float: left;
-    height: 524px;
-    width: 524px;
-    margin-top: -35px;
-    margin-left: 155px;
-    background-color: black; }
-  section.quote .quote-body {
-    position: relative;
-    float: left;
-    width: 550px;
-    margin-top: 175px;
-    margin-left: 128px;
-    text-align: left; }
-    section.quote .quote-body:before {
-      content: "“";
-      position: absolute;
-      color: white;
-      opacity: .35;
-      top: -78px;
-      left: -30px;
-      font-family: "GothicA1";
-      font-size: 200px; }
-    section.quote .quote-body .quote-text {
-      font-family: "BebasNeue";
-      font-size: 34px;
-      line-height: 1;
-      letter-spacing: 1.5px; }
-      section.quote .quote-body .quote-text b {
-        color: #D41C53; }
-    section.quote .quote-body .quote-author {
-      font-family: GothicA1;
-      font-size: 14px;
-      font-weight: bold;
-      line-height: 2;
-      letter-spacing: 1.6px;
-      text-transform: uppercase; }
 
 section.adventure {
   max-width: 960px;
@@ -10643,7 +10607,8 @@ section.banner {
   padding: 0;
   height: 900px;
   color: white;
-  text-align: left; }
+  text-align: left;
+  overflow: hidden; }
   section.banner > * {
     position: absolute;
     width: 100%; }
@@ -10654,15 +10619,6 @@ section.banner {
     left: -210px;
     height: 100%;
     width: 209px;
-    background-color: #FFF;
-    z-index: -1; }
-  section.banner::after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: -215px;
-    height: 105%;
-    width: 214px;
     background-color: #FFF;
     z-index: -1; }
   section.banner .row > *:first-child {
@@ -10712,42 +10668,43 @@ section.donate {
     color: #D41C53; }
 
 /* quotes */
-.vera-quote .background {
-  position: absolute;
-  top: -250px;
-  bottom: 0;
-  width: 100%;
-  background-color: #96C0CE;
-  z-index: -3; }
-
-.vera-quote p.quote-text {
-  font-size: 34px;
-  font-weight: bold;
-  font-family: BebasNeueLight; }
-  .vera-quote p.quote-text strong {
-    font-family: BebasNeue;
-    color: #D41C53; }
-  .vera-quote p.quote-text:after {
-    content: "“";
+.vera-quote {
+  background-color: #96C0CE; }
+  .vera-quote .background {
     position: absolute;
-    color: white;
-    opacity: .2;
-    top: -78px;
-    left: -30px;
+    top: -250px;
+    bottom: 0;
+    width: 100%;
+    background-color: #96C0CE;
+    z-index: -3; }
+  .vera-quote img {
+    max-height: 450px; }
+  .vera-quote p.quote-text {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: BebasNeueLight; }
+    .vera-quote p.quote-text strong {
+      font-family: BebasNeue;
+      color: #D41C53; }
+    .vera-quote p.quote-text:after {
+      content: "“";
+      position: absolute;
+      color: white;
+      opacity: .2;
+      top: -78px;
+      left: -30px;
+      font-family: GothicA1;
+      font-size: 200px; }
+  .vera-quote span.author {
+    font-size: 14px;
     font-family: GothicA1;
-    font-size: 200px; }
-
-.vera-quote span.author {
-  font-size: 14px;
-  font-family: GothicA1;
-  text-transform: uppercase;
-  font-weight: bold; }
-
-.vera-quote .textured {
-  background-image: url("../img/tvp-halftone-center-white.png");
-  height: 100%;
-  object-fit: cover;
-  background-size: cover; }
+    text-transform: uppercase;
+    font-weight: bold; }
+  .vera-quote .textured {
+    background-image: url("../img/tvp-halftone-center-white.png");
+    height: 100%;
+    object-fit: cover;
+    background-size: cover; }
 
 /* Buttons */
 a.bordered-button, a.bordered-button-white {

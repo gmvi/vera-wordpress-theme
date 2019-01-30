@@ -7,6 +7,9 @@
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+
+$program_types = SCF::get( 'Program Types' );
+
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -41,24 +44,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</section><!-- .section-main -->
 			
 						<section class="featured">
-						<?php
-						$max = max(0, min(3, get_field("num_feature_blocks")));
-						for ($i = 1; $i <= $max; $i++) {
-							$field_prefix="block_".$i."_";
-						?>
-							<div class="row">
-								<div class="col-md-1"></div>
-								<div class="col-md-5 featured-image">
-									<img src="<?php the_field($field_prefix."image") ?>">
-								</div>
-								<div class="col-md-5 featured-info">
-									<h2><?php the_field($field_prefix."title") ?></h2>
-									<p><?php the_field($field_prefix."content") ?></p>
-									<a class="more" href="<?php the_field($field_prefix.'link') ?>">
-										<?php the_field($field_prefix."linktext") ?>
-									</a>
-								</div>
-							</div>
+						<?php foreach ($program_types as $i => $program) { ?>
+                            <div class="row justify-content-around">
+                                <div class="col-md-5">
+                                    <img class="featured-image" src="<?php echo wp_get_attachment_url($program['program_type_image']) ?>"/>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="row pl-2">
+                                        <div class="col-sm-10 align-self-center featured-info pt-4">
+                                            <h2><?php echo $program['program_type_header']?></h2>
+                                            <p><?php echo $program['program_type_description']?></p>
+                                            <a class="btn bordered-button btn-outline-primary" href="<?php echo $program['program_type_signup']?>">sign up</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 						<?php } ?>
 						</section>
 
@@ -71,7 +71,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                     <a href="" class="btn bordered-button-white">Donate Today</a>
                                 </div>
                                 <div class="col-md-6 p-1 d-none d-md-block">
-                                    <img class="support-vera-graphic" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
+                                    <img class="support-vera-graphic pl-3" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
                                 </div>
                             </div>
 						</section><!-- .section-banner -->
@@ -80,13 +80,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="background"></div>
                             <div class="row h-100 vera-quote">
                                 <div class="col-md-6 mx-auto p-5 textured">
-                                    <img class="rounded-circle p-3" src="<?php echo get_field( 'author_image' )['url'];?>" />
+                                    <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row h-100 align-items-center text-center">
                                         <div class="col-md-12">
-                                            <p class="quote-text"><?php the_field('quote'); ?></p>
-                                            <span class="author"><?php the_field('author'); ?> | <?php the_field('author_title'); ?></span>
+                                            <p class="quote-text pr-1"><?php the_field('quote_text'); ?></p>
+                                            <span class="author"><?php the_field('quote_author'); ?></span>
                                         </div>
                                     </div>
                                 </div>

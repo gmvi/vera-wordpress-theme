@@ -370,6 +370,7 @@ section.banner {
 	height: 900px;
 	color: white;
 	text-align: left;
+	overflow: hidden;
 
 	> * {
 		position: absolute;
@@ -387,16 +388,16 @@ section.banner {
 		z-index: -1;
 	}
 
-	&::after {
-		content:" ";
-		position: absolute;
-		top: 0;
-		right: -215px;
-		height: 105%;
-		width: 214px;
-		background-color: $background;
-		z-index: -1;
-	}
+	//&::after {
+	//	content:" ";
+	//	position: absolute;
+	//	top: 0;
+	//	right: -215px;
+	//	height: 105%;
+	//	width: 214px;
+	//	background-color: $background;
+	//	z-index: -1;
+	//}
 
 	.row > *:first-child {
 		padding: 240px 20px 115px 240px;
@@ -459,7 +460,7 @@ section.donate {
 
 /* quotes */
 .vera-quote {
-	//background-color: $accent;
+	background-color: $accent;
 	.background {
 		position: absolute;
 		top: -250px;
@@ -467,6 +468,9 @@ section.donate {
 		width: 100%;
 		background-color: $accent;
 		z-index: -3;
+	}
+	img {
+		max-height: 450px;
 	}
 	p.quote-text {
 		font-size: 34px;

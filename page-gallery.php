@@ -56,13 +56,13 @@ function pad_zeroes( $num ) {
                 </section>
                 <section class="row h-100 vera-quote">
                     <div class="col-md-6 mx-auto p-5 textured">
-                        <img class="rounded-circle p-3" src="<?php echo get_field( 'author_image' )['url'];?>" />
+                        <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                     </div>
                     <div class="col-md-6">
                         <div class="row h-100 align-items-center text-center">
                             <div class="col-md-12">
-                                <p class="quote-text"><?php the_field('quote'); ?></p>
-                                <span class="author"><?php the_field('author'); ?> | <?php the_field('author_title'); ?></span>
+                                <p class="quote-text"><?php the_field('quote_text'); ?></p>
+                                <span class="author"><?php the_field('quote_author'); ?></span>
                             </div>
                         </div>
                     </div>
@@ -88,11 +88,11 @@ function pad_zeroes( $num ) {
                     <div class="row no-gutters pl-4 ml-4 pr-4 mr-4 banner-content">
                         <div class="col-md-6 p-4">
                             <p class="label-white">Support Vera</p><br/>
-                            <h1 class="large-header" style="color:white;">Support the Gallery</h1>
+                            <h1 class="large-header" style="color:white;"><?php the_field('support_vera_text')?></h1>
                             <a href="" class="btn bordered-button-white">Donate Today</a>
                         </div>
                         <div class="col-md-6 p-1 d-none d-md-block">
-                            <img class="support-gallery-graphic" src="<?php echo get_field( 'support_gallery_graphic' )['url'];?>" />
+                            <img class="support-gallery-graphic" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
                         </div>
                     </div>
                 </section>
