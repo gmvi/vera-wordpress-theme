@@ -153,6 +153,11 @@ left padding is 100px
 }
 
 div.vera-bordered-social-icons {
+
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+	}
+
 	a {
 		color: white;
 	}
@@ -238,8 +243,11 @@ div.vera-bordered-social-icons {
 	    float: right;
 	}
 
-	.navbar-toggler-icon {
-		background-color: black;
+	button.navbar-toggler {
+		border-color: transparent;
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.navbar-nav .donate {
@@ -265,7 +273,7 @@ div.vera-bordered-social-icons {
 .header-nav {
 	.menu-item.current-menu-item, .menu-item.current-page-ancestor {
 		a {
-			border-bottom: 2px solid $primary;
+			color: $primary !important;
 		}
 	}
 }
@@ -389,6 +397,7 @@ section.info {
 		left: 0;
 		width: 100%;
 		height: 10vw;
+		z-index: 102;
 		/* set height to pixels if you want angle to change with screen width */
 	}
 	div.content-overlay {
@@ -403,6 +412,9 @@ section.info {
 		height: 100%;
 		width: 100%;
 		opacity: 0.5;
+	}
+	.clickable {
+		z-index: 101;
 	}
 	.banner-headline {
 		margin-bottom: 30px;
@@ -629,12 +641,25 @@ $footer-height: 500px;
 div#wrapper-footer {
 
 	div.donate-footer {
-		height: 180px;
+
+		@include media-breakpoint-up(md) {
+			height: 180px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: 40px 15px;
+			text-align: center;
+		}
+
 		background-color: #000000;
-		//text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		
+		a:hover {
+			text-decoration: none;
+			color: $primary;
+		}
 
 		h1 {
 			font-family: BebasNeueLight;
@@ -651,10 +676,22 @@ div#wrapper-footer {
 	}
 
 	.site-footer {
-		padding: 0px 120px;
+		@include media-breakpoint-up(md) {
+			padding: 0px 120px;
+			height: $footer-height;
+
+			div.footer-overlay {
+				max-height: $footer-height;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: 30px;
+		}
+
 		color: white;
 		background-color: #252525;
-		height: $footer-height;
+		position: relative;
 
 		div.footer-overlay {
 			background-image : url('../img/vera_footer_bg.png');
@@ -663,15 +700,18 @@ div#wrapper-footer {
 			background-position: center center;
 			z-index : 50;
 			position : absolute;
-			left : 0;
+			left: 0;
+			top: 0;
 			height: 100%;
 			width: 100%;
 			opacity: 0.5;
-			max-height: $footer-height;
 		}
 
 		div.justify-content-center {
 			z-index : 100;
+			@include media-breakpoint-down(sm) {
+				text-align: center;
+			}
 		}
 
 		.footer-social-media {
@@ -703,12 +743,20 @@ div#wrapper-footer {
 			font-size: 72px;  line-height: 1;
 			letter-spacing: 1.5px;
 			color: $primary;
+
+			@include media-breakpoint-down(sm) {
+				margin-top: 3rem;
+			}
 		}
 
 		.footer-content {
 			font-family: GothicA1;
 			font-size: 18px;  line-height: 1.5;
 			padding-bottom: 15px;
+
+			@include media-breakpoint-down(sm) {
+				margin-top: 2rem;
+			}
 		}
 
 		.footer-directions {
@@ -717,6 +765,10 @@ div#wrapper-footer {
 			line-height: 1;
 			letter-spacing: 1.5px;
 			padding: 0 0 5rem 0;
+
+			@include media-breakpoint-down(sm) {
+				margin-top: 1.5rem;
+			}
 		}
 	}
 }
