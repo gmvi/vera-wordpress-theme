@@ -2,24 +2,24 @@ section.featured {
 	padding-top: 0px;
 
 	.featured-image {
-
-		height: 480px;
+		max-height: 480px;
+		min-height: 360px;
+		width: 100%;
+		object-fit: cover;
 	}
 
 	.featured-info {
 		text-align: left;
-		padding-left: 75px;
-		padding-top: 80px;
 
 		h2 {
 			font-family: BebasNeue;
-			font-size: 72px;
+			font-size: 64px;
 		}
 		p {
 			margin-top: 20px;
 			margin-bottom: 20px;
 			font-family: GothicA1;
-			font-size: 18px;
+			font-size: 16px;
 			line-height: 1.5;
 		}
 	}
