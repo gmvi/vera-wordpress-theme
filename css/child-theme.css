@@ -10835,6 +10835,9 @@ div#wrapper-footer div.donate-footer {
     div#wrapper-footer div.donate-footer {
       padding: 40px 15px;
       text-align: center; } }
+  div#wrapper-footer div.donate-footer a:hover {
+    text-decoration: none;
+    color: #D41C53; }
   div#wrapper-footer div.donate-footer h1 {
     font-family: BebasNeueLight;
     font-size: 72px;
