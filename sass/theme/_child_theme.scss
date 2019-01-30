@@ -153,21 +153,25 @@ left padding is 100px
 }
 
 div.vera-bordered-social-icons {
+	a {
+		color: white;
+	}
+
 	i[class^="fa fa-facebook-f"] {
 		@extend %vera-bordered-social;
-		padding: .2em .352em .15em;
+		padding: .6em .8em;
 	}
 	i[class^="fa fa-twitter"] {
 		@extend %vera-bordered-social;
-		padding: .2em .2em .15em;
+		padding: .6em .64em;
 	}
 	i[class^="fa fa-instagram"] {
 		@extend %vera-bordered-social;
-		padding: .2em .24em .15em;
+		padding: .6em .64em;
 	}
 	i[class^="fa fa-youtube-play"] {
 		@extend %vera-bordered-social;
-		padding: .2em .2em .15em;
+		padding: .6em .55em;
 	}
 }
 
@@ -543,6 +547,8 @@ div.centered-text p {
 
 /* Footer */
 
+$footer-height: 500px;
+
 div#wrapper-footer {
 
 	div.donate-footer {
@@ -571,6 +577,25 @@ div#wrapper-footer {
 		padding: 0px 120px;
 		color: white;
 		background-color: #252525;
+		height: $footer-height;
+
+		div.footer-overlay {
+			background-image : url('../img/vera_footer_bg.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			z-index : 50;
+			position : absolute;
+			left : 0;
+			height: 100%;
+			width: 100%;
+			opacity: 0.5;
+			max-height: $footer-height;
+		}
+
+		div.justify-content-center {
+			z-index : 100;
+		}
 
 		.footer-social-media {
 			padding-top: 1rem;
@@ -582,16 +607,20 @@ div#wrapper-footer {
 		.footer-link {
 			font-family: BebasNeue;
 			font-size: 25px;
-			//font-style: normal;
-			//font-stretch: normal;
 			line-height: 1;
 			letter-spacing: 1.5px;
 			padding: 1rem;
 			font-weight: 100;
 			text-transform: uppercase;
+			a {
+				color: white;
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 		.footer-title {
-			margin-top: 4rem;
+			margin-top: 2rem;
 			padding-bottom: 1rem;
 			font-family: BebasNeue;
 			font-size: 72px;  line-height: 1;
@@ -610,7 +639,7 @@ div#wrapper-footer {
 			font-size: 34px;
 			line-height: 1;
 			letter-spacing: 1.5px;
-			padding-bottom: 5rem;
+			padding: 0 0 5rem 0;
 		}
 	}
 }

@@ -17,41 +17,38 @@ $container = get_theme_mod( 'understrap_container_type' );
     </div>
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<div class="row site-footer">
-			<div class="col-md-6">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="footer-link">About</div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="footer-link">Get Involved</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="footer-link">Rentals</div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="footer-link">Shows</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="footer-link">Silkscreen</div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="footer-link">Audio & Stage</div>
-                    </div>
-                </div>
-                <div class="vera-bordered-social-icons pl-3 pt-3">
-                    <i class="fa fa-facebook-f"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-instagram"></i>
-                    <i class="fa fa-youtube-play"></i>
+            <div class="footer-overlay"></div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+
+                <?php
+
+                $menu_locations = get_nav_menu_locations();
+                $menu_id = $menu_locations['footer-menu'];
+
+                $footer_nav = wp_get_nav_menu_items($menu_id);
+
+                $footer_nav_rows = array_chunk($footer_nav,2);
+                error_log(print_r($footer_nav, true));
+                foreach ($footer_nav_rows as $footer_row):
+                    echo "<div class=\"row\">";
+                        foreach ($footer_row as $footer_item):
+                            echo "<div class=\"col-xs-6\">";
+	                            echo "<div class=\"footer-link\">" . "<a href=" . $footer_item->url . ">" . $footer_item->title . "</a></div>";
+	                        echo "</div>";
+                        endforeach;
+	                echo "</div>";
+                endforeach;
+                ?>
+                <div class="vera-bordered-social-icons pl-3 pt-5">
+                    <a href="https://www.facebook.com/theveraproject" target="_blank"><i class="fa fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/veraproject" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/veraproject" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC9lDuHiBg44veM-eEN_tXPg" target="_blank"><i class="fa fa-youtube-play"></i></a>
                 </div>
 			</div>
             <div class="col-md-1 d-none d-md-block">
             </div>
-			<div class="col-sm-12 col-md-5">
+			<div class="col-sm-12 col-md-5 d-flex flex-column justify-content-center">
 				<div class="footer-title">
 					The Vera Project
 				</div>
@@ -60,14 +57,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 					305 Harrison Street, Seattle, WA 98109<br/>
 					+1 206 956 8372
 				</div>
-				<div class="footer-directions">
+				<div class="footer-directions footer-link">
 					<span class="icon icon-pin"></span>
-					Directions
+                    <a href="https://goo.gl/maps/sKuTB6SrMr12" target="_blank">Directions</a>
 				</div>
 			</div>
-
 		</div><!-- row end -->
-
 	</div><!-- container end -->
 
 </div><!-- wrapper end -->
