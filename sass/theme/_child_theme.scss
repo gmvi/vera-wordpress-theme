@@ -153,6 +153,11 @@ left padding is 100px
 }
 
 div.vera-bordered-social-icons {
+
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+	}
+
 	a {
 		color: white;
 	}
@@ -552,9 +557,17 @@ $footer-height: 500px;
 div#wrapper-footer {
 
 	div.donate-footer {
-		height: 180px;
+
+		@include media-breakpoint-up(md) {
+			height: 180px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: 40px 15px;
+			text-align: center;
+		}
+
 		background-color: #000000;
-		//text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -574,10 +587,22 @@ div#wrapper-footer {
 	}
 
 	.site-footer {
-		padding: 0px 120px;
+		@include media-breakpoint-up(md) {
+			padding: 0px 120px;
+			height: $footer-height;
+
+			div.footer-overlay {
+				max-height: $footer-height;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: 30px;
+		}
+
 		color: white;
 		background-color: #252525;
-		height: $footer-height;
+		position: relative;
 
 		div.footer-overlay {
 			background-image : url('../img/vera_footer_bg.png');
@@ -586,15 +611,18 @@ div#wrapper-footer {
 			background-position: center center;
 			z-index : 50;
 			position : absolute;
-			left : 0;
+			left: 0;
+			top: 0;
 			height: 100%;
 			width: 100%;
 			opacity: 0.5;
-			max-height: $footer-height;
 		}
 
 		div.justify-content-center {
 			z-index : 100;
+			@include media-breakpoint-down(sm) {
+				text-align: center;
+			}
 		}
 
 		.footer-social-media {
@@ -626,12 +654,20 @@ div#wrapper-footer {
 			font-size: 72px;  line-height: 1;
 			letter-spacing: 1.5px;
 			color: $primary;
+
+			@include media-breakpoint-down(sm) {
+				margin-top: 3rem;
+			}
 		}
 
 		.footer-content {
 			font-family: GothicA1;
 			font-size: 18px;  line-height: 1.5;
 			padding-bottom: 15px;
+
+			@include media-breakpoint-down(sm) {
+				margin-top: 2rem;
+			}
 		}
 
 		.footer-directions {
@@ -640,6 +676,10 @@ div#wrapper-footer {
 			line-height: 1;
 			letter-spacing: 1.5px;
 			padding: 0 0 5rem 0;
+
+			@include media-breakpoint-down(sm) {
+				margin-top: 1.5rem;
+			}
 		}
 	}
 }
