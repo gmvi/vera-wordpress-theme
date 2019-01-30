@@ -7,11 +7,14 @@
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+
+$program_types = SCF::get( 'Program Types' );
+
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container ); ?> p-0">
 
 		<main class="site-main" id="main" role="main">
 
@@ -20,7 +23,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 					<?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
-
+                    <?php
+                        $menu_name = get_field('subnav');;
+                        $wrapper_class_name = 'entry-header';
+                        include( locate_template( 'partial-templates/centered-submenu.php') );
+                    ?>
 					<div id="content" class="entry-content text-center">
 
 						<section class="info">
@@ -37,51 +44,59 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</section><!-- .section-main -->
 			
 						<section class="featured">
-						<?php
-						$max = max(0, min(3, get_field("num_feature_blocks")));
-						for ($i = 1; $i <= $max; $i++) {
-							$field_prefix="block_".$i."_";
-						?>
-							<div class="row">
-								<div class="col-md-1"></div>
-								<div class="col-md-5 featured-image">
-									<img src="<?php the_field($field_prefix."image") ?>">
-								</div>
-								<div class="col-md-5 featured-info">
-									<h2><?php the_field($field_prefix."title") ?></h2>
-									<p><?php the_field($field_prefix."content") ?></p>
-									<a class="more" href="<?php the_field($field_prefix.'link') ?>">
-										<?php the_field($field_prefix."linktext") ?>
-									</a>
-								</div>
-							</div>
+						<?php foreach ($program_types as $i => $program) { ?>
+                            <div class="row justify-content-around pb-4">
+                                <div class="col-md-5">
+                                    <img class="featured-image p-2" src="<?php echo wp_get_attachment_url($program['program_type_image']) ?>"/>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="row pl-2">
+                                        <div class="col-sm-10 align-self-center featured-info pt-4">
+                                            <h2><?php echo $program['program_type_header']?></h2>
+                                            <p><?php echo $program['program_type_description']?></p>
+                                            <a class="btn bordered-button btn-outline-primary" href="<?php echo $program['program_type_signup']?>">sign up</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 						<?php } ?>
 						</section>
 
-						<section class="banner">
-							<div class="banner-background"></div>
-							<div class="row no-gutters">
-								<div class="col-md-6">
-									<span class="label">Get Involved</span>
-									<div class="banner-headline">Volunteer Today!</div>
-									<a href class="more">Join The Committee</a>
-								</div>
-								<div class="col-md-6">
-								</div>
-							</div>
-						</section><!-- .section-banner -->
+                        <section class="volunteer-today-landing pb-5 pt-5">
+                            <!--                        <h1>Header Content</h1>-->
+                            <svg class="top-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
+                                <polygon  points="0,0 50,0 50,50"></polygon>
+                            </svg>
+                            <svg class="bottom-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
+                                <polygon  points="50,50 0,50 0,0"></polygon>
+                            </svg>
+                            <div class="content-overlay"></div>
+                            <div class="row no-gutters pt-3">
+                                <div class="col-md-1"></div>
+                                <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space">
+                                    <span class="label"><?php the_field('support_vera_label') ?></span>
+                                    <h2 class="banner-headline"><?php the_field('support_vera_text') ?></h2>
+                                    <!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->
+                                    <a href="<?php the_field('support_vera_link_url') ?>" class="btn bordered-button-white"><?php the_field('support_vera_link_text') ?></a>
+                                </div>
+                                <div class="col-md-5 d-none d-md-block">
+                                    <img class="pl-3" style="max-height:486px;" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                        </section>
 
-						<section class="quote">
+						<section class="quote pt-0">
 							<div class="background"></div>
                             <div class="row h-100 vera-quote">
                                 <div class="col-md-6 mx-auto p-5 textured">
-                                    <img class="rounded-circle p-3" src="<?php echo get_field( 'author_image' )['url'];?>" />
+                                    <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row h-100 align-items-center text-center">
                                         <div class="col-md-12">
-                                            <p class="quote-text"><?php the_field('quote'); ?></p>
-                                            <span class="author"><?php the_field('author'); ?> | <?php the_field('author_title'); ?></span>
+                                            <p class="quote-text pr-1"><?php the_field('quote_text'); ?></p>
+                                            <span class="author"><?php the_field('quote_author'); ?></span>
                                         </div>
                                     </div>
                                 </div>

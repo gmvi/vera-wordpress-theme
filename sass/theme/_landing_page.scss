@@ -2,34 +2,61 @@ section.featured {
 	padding-top: 0px;
 
 	.featured-image {
-
-		height: 480px;
+		max-height: 480px;
+		min-height: 360px;
+		width: 100%;
+		object-fit: cover;
 	}
 
 	.featured-info {
 		text-align: left;
-		padding-left: 75px;
-		padding-top: 80px;
 
 		h2 {
 			font-family: BebasNeue;
-			font-size: 72px;
+			font-size: 64px;
 		}
 		p {
 			margin-top: 20px;
 			margin-bottom: 20px;
 			font-family: GothicA1;
-			font-size: 18px;
+			font-size: 16px;
 			line-height: 1.5;
 		}
 	}
 }
 
+div.landing-donate {
+	margin-top: 12rem;
+	.support-vera-graphic {
+		height: 25%;
+	}
+}
+
+section.volunteer-today-landing {
+	@extend %banner-base;
+	background-color: $primary;
+	svg.top-cutout {
+		fill: white;
+	}
+	svg.bottom-cutout {
+		fill: $accent;
+	}
+}
+
+section.landing-quote {
+	@extend %banner-base;
+	background-color: $accent;
+	svg.top-cutout {
+		fill: $accent;
+	}
+	//svg.bottom-cutout {
+	//	fill: $accent;
+	//}
+}
+
 section.quote {
 	position: relative;
 	padding: 0;
-	//height: 600px;
-
 	.background {
 		position: absolute;
 		top: -250px;
@@ -37,52 +64,5 @@ section.quote {
 		width: 100%;
 		background-color: $accent;
 		z-index: -3;
-	}
-
-	.quote-picture {
-		float: left;
-		height: 524px;
-		width: 524px;
-		margin-top: -35px;
-		margin-left: 155px;
-		background-color: black;
-	}
-
-	.quote-body {
-		position: relative;
-		float: left;
-		width: 550px;
-		margin-top: 175px;
-		margin-left: 128px;
-		text-align: left;
-
-		&:before {
-			content: "“";
-			position: absolute;
-			color: white;
-			opacity: .35;
-			top: -78px;
-			left: -30px;
-			font-family: "GothicA1";
-			font-size: 200px;
-		}
-
-		.quote-text {
-			font-family: "BebasNeue";
-			font-size: 34px;
-			line-height: 1;
-			letter-spacing: 1.5px;
-
-			b { color: $primary; }
-		}
-
-		.quote-author {
-			font-family: GothicA1;
-			font-size: 14px;
-			font-weight: bold;
-			line-height: 2;
-			letter-spacing: 1.6px;
-			text-transform: uppercase;
-		}
 	}
 }

@@ -1,0 +1,19 @@
+div.list-template-page {
+  //TODO: make this page better on mobile
+
+  @include media-breakpoint-up(md) {
+    div.template-item {
+      max-height: 450px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  div.list-wrapper:nth-child(odd) {
+    background: #f6f6f6;
+  }
+
+}
+

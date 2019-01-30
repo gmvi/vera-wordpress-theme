@@ -232,3 +232,18 @@ section.blog {
 		border: solid 2px $primary;
     }
 }
+
+section.volunteer-today {
+	@extend %banner-base;
+	background-color: $primary;
+	svg.top-cutout {
+		fill: white;
+	}
+	svg.bottom-cutout {
+		fill: white;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.mobile-space {padding-left: 1rem !important;}
+}

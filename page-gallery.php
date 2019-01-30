@@ -54,15 +54,15 @@ function pad_zeroes( $num ) {
                     </div>
 
                 </section>
-                <section class="row h-100 vera-quote">
+                <section class="row h-100 vera-quote accent-background">
                     <div class="col-md-6 mx-auto p-5 textured">
-                        <img class="rounded-circle p-3" src="<?php echo get_field( 'author_image' )['url'];?>" />
+                        <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                     </div>
                     <div class="col-md-6">
                         <div class="row h-100 align-items-center text-center">
                             <div class="col-md-12">
-                                <p class="quote-text"><?php the_field('quote'); ?></p>
-                                <span class="author"><?php the_field('author'); ?> | <?php the_field('author_title'); ?></span>
+                                <p class="quote-text"><?php the_field('quote_text'); ?></p>
+                                <span class="author"><?php the_field('quote_author'); ?></span>
                             </div>
                         </div>
                     </div>
@@ -83,19 +83,41 @@ function pad_zeroes( $num ) {
                         </div>
                     </div>
                 </section>
-                <section class="gallery-banner">
-                    <div class="banner-background"></div>
-                    <div class="row no-gutters pl-4 ml-4 pr-4 mr-4 banner-content">
-                        <div class="col-md-6 p-4">
-                            <p class="label-white">Support Vera</p><br/>
-                            <h1 class="large-header" style="color:white;">Support the Gallery</h1>
-                            <a href="" class="btn bordered-button-white">Donate Today</a>
+
+                <section class="volunteer-today-landing pb-5 pt-5">
+                    <!--                        <h1>Header Content</h1>-->
+                    <svg class="top-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
+                        <polygon  points="0,0 50,0 50,50"></polygon>
+                    </svg>
+                    <div class="content-overlay"></div>
+                    <div class="row no-gutters pt-5">
+                        <div class="col-md-1"></div>
+                        <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space">
+                            <span class="label"><?php the_field('support_vera_label') ?></span>
+                            <h2 class="banner-headline"><?php the_field('support_vera_text') ?></h2>
+                            <!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->
+                            <a href="<?php the_field('support_vera_link_url') ?>" class="btn bordered-button-white"><?php the_field('support_vera_link_text') ?></a>
                         </div>
-                        <div class="col-md-6 p-1 d-none d-md-block">
-                            <img class="support-gallery-graphic" src="<?php echo get_field( 'support_gallery_graphic' )['url'];?>" />
+                        <div class="col-md-5 d-none d-md-block">
+                            <img class="pl-3" style="max-height:486px;" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
                         </div>
+                        <div class="col-md-1"></div>
                     </div>
                 </section>
+<!--                -->
+<!--                <section class="gallery-banner">-->
+<!--                    <div class="banner-background"></div>-->
+<!--                    <div class="row no-gutters pl-4 ml-4 pr-4 mr-4 banner-content">-->
+<!--                        <div class="col-md-6 p-4">-->
+<!--                            <p class="label-white">Support Vera</p><br/>-->
+<!--                            <h1 class="large-header" style="color:white;">--><?php //the_field('support_vera_text')?><!--</h1>-->
+<!--                            <a href="" class="btn bordered-button-white">Donate Today</a>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-6 p-1 d-none d-md-block">-->
+<!--                            <img class="support-gallery-graphic" src="--><?php //echo get_field( 'support_vera_graphic' )['url'];?><!--" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </section>-->
             </div>
         </main><!-- #main -->
 
