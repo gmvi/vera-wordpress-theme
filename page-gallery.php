@@ -92,7 +92,7 @@ function pad_zeroes( $num ) {
                     <div class="content-overlay"></div>
                     <div class="row no-gutters pt-5">
                         <div class="col-md-1"></div>
-                        <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space">
+                        <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable">
                             <span class="label"><?php the_field('support_vera_label') ?></span>
                             <h2 class="banner-headline"><?php the_field('support_vera_text') ?></h2>
                             <!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->

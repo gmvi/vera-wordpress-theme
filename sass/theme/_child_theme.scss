@@ -265,7 +265,7 @@ div.vera-bordered-social-icons {
 .header-nav {
 	.menu-item.current-menu-item, .menu-item.current-page-ancestor {
 		a {
-			border-bottom: 2px solid $primary;
+			color: $primary;
 		}
 	}
 }
@@ -389,6 +389,7 @@ section.info {
 		left: 0;
 		width: 100%;
 		height: 10vw;
+		z-index: 102;
 		/* set height to pixels if you want angle to change with screen width */
 	}
 	div.content-overlay {
@@ -403,6 +404,9 @@ section.info {
 		height: 100%;
 		width: 100%;
 		opacity: 0.5;
+	}
+	.clickable {
+		z-index: 101;
 	}
 	.banner-headline {
 		margin-bottom: 30px;
