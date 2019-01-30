@@ -10563,7 +10563,7 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
     padding-right: .8rem; }
 
 .header-nav .menu-item.current-menu-item a, .header-nav .menu-item.current-page-ancestor a {
-  border-bottom: 2px solid #D41C53; }
+  color: #D41C53; }
 
 ul.menu {
   margin: 0;
@@ -10649,6 +10649,7 @@ section.volunteer-today, section.volunteer-today-landing, section.landing-quote 
     left: 0;
     width: 100%;
     height: 10vw;
+    z-index: 102;
     /* set height to pixels if you want angle to change with screen width */ }
   section.volunteer-today div.content-overlay, section.volunteer-today-landing div.content-overlay, section.landing-quote div.content-overlay {
     background-image: url("../img/header-texture.png");
@@ -10663,6 +10664,8 @@ section.volunteer-today, section.volunteer-today-landing, section.landing-quote 
     height: 100%;
     width: 100%;
     opacity: 0.5; }
+  section.volunteer-today .clickable, section.volunteer-today-landing .clickable, section.landing-quote .clickable {
+    z-index: 101; }
   section.volunteer-today .banner-headline, section.volunteer-today-landing .banner-headline, section.landing-quote .banner-headline {
     margin-bottom: 30px;
     font-family: BebasNeue;
