@@ -273,7 +273,7 @@ div.vera-bordered-social-icons {
 .header-nav {
 	.menu-item.current-menu-item, .menu-item.current-page-ancestor {
 		a {
-			color: $primary;
+			color: $primary !important;
 		}
 	}
 }

@@ -10565,7 +10565,7 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
     padding-right: .8rem; }
 
 .header-nav .menu-item.current-menu-item a, .header-nav .menu-item.current-page-ancestor a {
-  color: #D41C53; }
+  color: #D41C53 !important; }
 
 ul.menu {
   margin: 0;
