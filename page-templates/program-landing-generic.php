@@ -45,9 +45,9 @@ $program_types = SCF::get( 'Program Types' );
 			
 						<section class="featured">
 						<?php foreach ($program_types as $i => $program) { ?>
-                            <div class="row justify-content-around">
+                            <div class="row justify-content-around pb-4">
                                 <div class="col-md-5">
-                                    <img class="featured-image" src="<?php echo wp_get_attachment_url($program['program_type_image']) ?>"/>
+                                    <img class="featured-image p-2" src="<?php echo wp_get_attachment_url($program['program_type_image']) ?>"/>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="row pl-2">
@@ -66,9 +66,9 @@ $program_types = SCF::get( 'Program Types' );
 							<div class="banner-background"></div>
                             <div class="row no-gutters pl-4 ml-4 pr-4 mr-4 landing-donate">
                                 <div class="col-md-6 p-4">
-                                    <p class="label-white">Support Vera</p><br/>
+                                    <p class="label-white"><?php the_field('support_vera_label') ?></p><br/>
                                     <h1 class="large-header" style="color:white;"><?php the_field('support_vera_text') ?></h1>
-                                    <a href="" class="btn bordered-button-white">Donate Today</a>
+                                    <a href="<?php the_field('support_vera_link_url') ?>" class="btn bordered-button-white"><?php the_field('support_vera_link_text') ?></a>
                                 </div>
                                 <div class="col-md-6 p-1 d-none d-md-block">
                                     <img class="support-vera-graphic pl-3" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
