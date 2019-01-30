@@ -10547,8 +10547,10 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
     margin-bottom: 20px; }
   .navbar .navbar-nav {
     float: right; }
-  .navbar .navbar-toggler-icon {
-    background-color: black; }
+  .navbar button.navbar-toggler {
+    border-color: transparent; }
+    .navbar button.navbar-toggler:focus {
+      outline: none; }
   .navbar .navbar-nav .donate {
     margin-left: 30px; }
   .navbar .nav-item {
