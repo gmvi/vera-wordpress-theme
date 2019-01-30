@@ -652,6 +652,11 @@ div#wrapper-footer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		
+		a:hover {
+			text-decoration: none;
+			color: $primary;
+		}
 
 		h1 {
 			font-family: BebasNeueLight;

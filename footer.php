@@ -13,7 +13,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="wrapper-footer">
     <div class="col-sm-12 donate-footer">
-        <h1>Support Vera! <strong>Donate Today!</strong></h1>
+        <?php $donate_link = '<a href="'.esc_url( home_url( '/' ) ).'donate/">Donate Today!</a>';?>
+        <h1>Support Vera! <strong><?php echo $donate_link ?></strong></h1>
     </div>
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<div class="row site-footer">
