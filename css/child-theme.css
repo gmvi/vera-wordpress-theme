@@ -10461,17 +10461,20 @@ div.vera-bordered-social-icons i[class^="fa fa-facebook-f"], div.vera-bordered-s
   border: solid 1px #D41C53;
   margin-right: 0.4em; }
 
+div.vera-bordered-social-icons a {
+  color: white; }
+
 div.vera-bordered-social-icons i[class^="fa fa-facebook-f"] {
-  padding: .2em .352em .15em; }
+  padding: .6em .8em; }
 
 div.vera-bordered-social-icons i[class^="fa fa-twitter"] {
-  padding: .2em .2em .15em; }
+  padding: .6em .64em; }
 
 div.vera-bordered-social-icons i[class^="fa fa-instagram"] {
-  padding: .2em .24em .15em; }
+  padding: .6em .64em; }
 
 div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
-  padding: .2em .2em .15em; }
+  padding: .6em .55em; }
 
 .entry-header .entry-title {
   color: white;
@@ -10750,7 +10753,22 @@ div#wrapper-footer div.donate-footer {
 div#wrapper-footer .site-footer {
   padding: 0px 120px;
   color: white;
-  background-color: #252525; }
+  background-color: #252525;
+  height: 500px; }
+  div#wrapper-footer .site-footer div.footer-overlay {
+    background-image: url("../img/vera_footer_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 50;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    max-height: 500px; }
+  div#wrapper-footer .site-footer div.justify-content-center {
+    z-index: 100; }
   div#wrapper-footer .site-footer .footer-social-media {
     padding-top: 1rem;
     padding-left: 2rem; }
@@ -10764,8 +10782,12 @@ div#wrapper-footer .site-footer {
     padding: 1rem;
     font-weight: 100;
     text-transform: uppercase; }
+    div#wrapper-footer .site-footer .footer-link a {
+      color: white; }
+      div#wrapper-footer .site-footer .footer-link a:hover {
+        text-decoration: none; }
   div#wrapper-footer .site-footer .footer-title {
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding-bottom: 1rem;
     font-family: BebasNeue;
     font-size: 72px;
@@ -10782,4 +10804,4 @@ div#wrapper-footer .site-footer {
     font-size: 34px;
     line-height: 1;
     letter-spacing: 1.5px;
-    padding-bottom: 5rem; }
+    padding: 0 0 5rem 0; }
