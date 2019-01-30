@@ -1,4 +1,19 @@
 .content-hero {
-   height: 400px;
-   background-color: $darkergray;
- }
+  height: 400px;
+  background-color: $darkergray;
+
+  div.content-overlay {
+    background-image : url('../img/header-texture.png');
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+    z-index : 100;
+    position : absolute;
+    top : 0;
+    left : 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+  }
+}
+

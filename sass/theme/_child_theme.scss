@@ -1,5 +1,16 @@
 // The Vera Project Website 2018 Redesign
 
+/* Page-specific styling */
+@import "front_page";
+@import "landing_page";
+@import "get_involved_page";
+@import "classes_page";
+@import "gallery_page";
+@import "blogs_overview_page";
+@import "single_blog_page";
+@import "content_page";
+@import "list_template.scss";
+
 /* Fonts */
 
 @font-face {
@@ -255,6 +266,7 @@ div.vera-bordered-social-icons {
 	}
 }
 
+
 ul.menu {
 	margin: 0;
 	padding: 0;
@@ -264,7 +276,6 @@ ul.menu {
 	justify-content: center;
 	text-align: center;
 	//height: 50px;
-
 	align-content: center;
 	font-family: BebasNeue;
 	font-size: 18px;
@@ -522,15 +533,13 @@ a.bordered-button-white {
 	border-color: white;
 }
 
-/* Page-specific styling */
-@import "front_page";
-@import "landing_page";
-@import "get_involved_page";
-@import "classes_page";
-@import "gallery_page";
-@import "blogs_overview_page";
-@import "single_blog_page";
-@import "content_page";
+div.centered-text p {
+	font-family: GothicA1;
+	font-size: 24px;
+	line-height: 1.5;
+	text-align: center;
+	letter-spacing: normal;
+}
 
 /* Footer */
 
