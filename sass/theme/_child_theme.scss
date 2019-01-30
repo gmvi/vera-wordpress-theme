@@ -242,9 +242,12 @@ div.vera-bordered-social-icons {
 	.navbar-nav {
 	    float: right;
 	}
-
-	.navbar-toggler-icon {
-		background-color: black;
+	
+	button.navbar-toggler {
+		border-color: transparent;
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.navbar-nav .donate {
