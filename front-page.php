@@ -153,7 +153,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</section><!-- .section-banner -->
 
 					<section class="blog">
-						<div class="row header-blog">
+						<div class="row header">
 							<div class="col-md-12">
 								<span class="label">News & Information</span>
 								<h2><b>On The Blog</b></h2>
@@ -165,17 +165,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="col-md-12">
 								<!-- TODO -->
 							</div>
-<?php	else :
-			while ( have_posts() ) : the_post(); ?>
-							<div class="blog-item col-md-4">
-								<div class="blog-image-wrapper"><?php the_post_thumbnail(); ?></div>
-								<div class="blog-date"><?php echo get_the_date(); ?></div>
-								<div class="blog-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></div>
-								<div class="blog-content"><?php the_content(); ?></div>
-								<a href="<?php the_permalink();?>" class="more">Read More</a>
-							</div>
-<?php		endwhile; // end of the loop.
-		endif;
+<?php	else :?>
+        <div class="row justify-content-md-center pt-5 pb-1">
+            <div class="col-sm-11">
+                <div class="card-deck pb-2">
+                    <?php
+                        $numOfCols = 3;
+                        include( locate_template( 'partial-templates/blog-list-cards.php') );
+                    ?>
+                </div>
+            </div>
+        </div>
+
+<?php   endif;
 		wp_reset_query(); ?>
 						</div>
 						<div class="row">
