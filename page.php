@@ -23,9 +23,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php get_template_part('partial-templates/block-header'); ?>
                     <?php
                         global $post;
-                        $parent_submenu = get_field('subnav', $post->post_parent);
-                        $menu_name = $parent_submenu;
                         $wrapper_class_name = 'entry-header';
+                        // if there is a menu that is identical to the post name, then use that
+                        // to display the subnav. otherwise, check for parent post
+                        if (wp_get_nav_menu_object($post->post_name)!== false) {
+                            $menu_name = $post->post_name;
+                        } else {
+                            $menu_name = get_post_field( 'post_name', $post->post_parent );
+                        }
                         include( locate_template( 'partial-templates/centered-submenu.php') );
                     ?>
 					<div id="content" class="entry-content">
