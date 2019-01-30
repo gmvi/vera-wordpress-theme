@@ -24,7 +24,9 @@ $program_types = SCF::get( 'Program Types' );
 
 					<?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
                     <?php
-                        $menu_name = get_field('subnav');;
+                        global $post;
+                        // get menu name based off slug
+                        $menu_name=$post->post_name;
                         $wrapper_class_name = 'entry-header';
                         include( locate_template( 'partial-templates/centered-submenu.php') );
                     ?>
