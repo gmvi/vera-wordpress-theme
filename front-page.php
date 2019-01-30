@@ -168,7 +168,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<h2><b>On The Blog</b></h2>
 							</div>
 						</div>
-						<div class="row body-blog">
 <?php	query_posts( 'category_name=blog&posts_per_page=3' );
 		if ( !have_posts() ) : ?>
 							<div class="col-md-12">
@@ -188,7 +187,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php   endif;
 		wp_reset_query(); ?>
-						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<a href="/blog" class="btn bordered-button btn-outline-primary">View All</a>
