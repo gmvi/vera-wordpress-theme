@@ -20,13 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php the_post(); // This is a page template ?>
 
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-                    <div class="row row-block align-items-center">
-                        <div class="col-sm-12 d-table">
-                            <div class="content-hero d-table-cell align-middle text-center">
-                                <h2 class="single-blog-title text-white"><?php the_title()?></h2>
-                            </div>
-                        </div>
-                    </div>
+					<?php get_template_part('partial-templates/block-header'); ?>
                     <?php
                         global $post;
                         $parent_submenu = get_field('subnav', $post->post_parent);
