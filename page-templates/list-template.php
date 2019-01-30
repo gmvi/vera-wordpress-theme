@@ -16,7 +16,14 @@ $list_items = SCF::get( 'Items' );
     <div class="wrapper" id="full-width-page-wrapper">
         <div class="<?php echo esc_attr( $container ); ?> p-0 list-template-page">
             <main class="site-main" id="main" role="main">
-				<?php get_template_part( 'partial-templates/block-header' );
+				<?php
+                get_template_part( 'partial-templates/block-header' );
+
+                global $post;
+                $parent_submenu = get_field('subnav', $post->post_parent);
+                $menu_name = $parent_submenu;
+                $wrapper_class_name = 'entry-header';
+                include( locate_template( 'partial-templates/centered-submenu.php') );
 
 				while ( have_posts() ) : the_post(); ?>
                     <div class="container">
