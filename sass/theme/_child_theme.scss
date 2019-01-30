@@ -1,5 +1,16 @@
 // The Vera Project Website 2018 Redesign
 
+/* Page-specific styling */
+@import "front_page";
+@import "landing_page";
+@import "get_involved_page";
+@import "classes_page";
+@import "gallery_page";
+@import "blogs_overview_page";
+@import "single_blog_page";
+@import "content_page";
+@import "list_template.scss";
+
 /* Fonts */
 
 @font-face {
@@ -142,21 +153,25 @@ left padding is 100px
 }
 
 div.vera-bordered-social-icons {
+	a {
+		color: white;
+	}
+
 	i[class^="fa fa-facebook-f"] {
 		@extend %vera-bordered-social;
-		padding: .2em .352em .15em;
+		padding: .6em .8em;
 	}
 	i[class^="fa fa-twitter"] {
 		@extend %vera-bordered-social;
-		padding: .2em .2em .15em;
+		padding: .6em .64em;
 	}
 	i[class^="fa fa-instagram"] {
 		@extend %vera-bordered-social;
-		padding: .2em .24em .15em;
+		padding: .6em .64em;
 	}
 	i[class^="fa fa-youtube-play"] {
 		@extend %vera-bordered-social;
-		padding: .2em .2em .15em;
+		padding: .6em .55em;
 	}
 }
 
@@ -188,10 +203,6 @@ div.vera-bordered-social-icons {
 	position: relative;
 }
 
-.row-block {
-	margin-left: -30px;
-	margin-right: -30px;
-}
 
 /* Navigation */
 
@@ -240,6 +251,7 @@ div.vera-bordered-social-icons {
 	    justify-content: center;
 	    flex-direction: column;
 	    text-align: right;
+
 	}
 
 	.nav-item > .nav-link {
@@ -247,6 +259,14 @@ div.vera-bordered-social-icons {
 		color: black;
 		padding-left: .8rem;
 		padding-right: .8rem;
+	}
+}
+
+.header-nav {
+	.menu-item.current-menu-item, .menu-item.current-page-ancestor {
+		a {
+			border-bottom: 2px solid $primary;
+		}
 	}
 }
 
@@ -260,7 +280,6 @@ ul.menu {
 	justify-content: center;
 	text-align: center;
 	//height: 50px;
-
 	align-content: center;
 	font-family: BebasNeue;
 	font-size: 18px;
@@ -348,6 +367,80 @@ section.info {
     }
 }
 
+/* svg banners */
+
+%banner-base {
+	position: relative;
+	min-height: 450px;
+	//background-color: $primary; *extender of this should set background color
+	color: white;
+	svg.top-cutout {
+		//fill: white; *extender of this should set fill
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 10vw;
+	}
+	svg.bottom-cutout {
+		//fill: white; *extender of this should set fill
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 10vw;
+		/* set height to pixels if you want angle to change with screen width */
+	}
+	div.content-overlay {
+		background-image : url('../img/header-texture.png');
+		background-size:     cover;                      /* <------ */
+		background-repeat:   no-repeat;
+		background-position: center center;
+		z-index : 100;
+		position : absolute;
+		top : 0;
+		left : 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0.5;
+	}
+	.banner-headline {
+		margin-bottom: 30px;
+		font-family: BebasNeue;
+		font-size: 72px;
+		line-height: 0.9;
+		letter-spacing: 1.5px;
+	}
+
+	.label {
+		background-color: white;
+		color: $primary;
+	}
+
+	.more {
+		display: inline-flex;
+		height: 56px;
+		padding: 0 20px;
+		border: 2px solid white;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+	.more:hover {
+		text-decoration: none;
+		color: white;
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	.mobile-space {padding-left: 1rem !important;}
+}
+
+
+
+
+
 section.banner {
 	position: relative;
 	margin-top: 70px;
@@ -355,6 +448,7 @@ section.banner {
 	height: 900px;
 	color: white;
 	text-align: left;
+	overflow: hidden;
 
 	> * {
 		position: absolute;
@@ -372,16 +466,16 @@ section.banner {
 		z-index: -1;
 	}
 
-	&::after {
-		content:" ";
-		position: absolute;
-		top: 0;
-		right: -215px;
-		height: 105%;
-		width: 214px;
-		background-color: $background;
-		z-index: -1;
-	}
+	//&::after {
+	//	content:" ";
+	//	position: absolute;
+	//	top: 0;
+	//	right: -215px;
+	//	height: 105%;
+	//	width: 214px;
+	//	background-color: $background;
+	//	z-index: -1;
+	//}
 
 	.row > *:first-child {
 		padding: 240px 20px 115px 240px;
@@ -442,9 +536,12 @@ section.donate {
 	b { color: $primary; }
 }
 
+.accent-background {
+	background-color: $accent;
+}
+
 /* quotes */
 .vera-quote {
-	background-color: $accent;
 	.background {
 		position: absolute;
 		top: -250px;
@@ -452,6 +549,9 @@ section.donate {
 		width: 100%;
 		background-color: $accent;
 		z-index: -3;
+	}
+	img {
+		max-height: 450px;
 	}
 	p.quote-text {
 		font-size: 34px;
@@ -514,16 +614,17 @@ a.bordered-button-white {
 	border-color: white;
 }
 
-/* Page-specific styling */
-@import "front_page";
-@import "landing_page";
-@import "get_involved_page";
-@import "classes_page";
-@import "gallery_page";
-@import "blogs_overview_page";
-@import "single_blog_page";
+div.centered-text p {
+	font-family: GothicA1;
+	font-size: 24px;
+	line-height: 1.5;
+	text-align: center;
+	letter-spacing: normal;
+}
 
 /* Footer */
+
+$footer-height: 500px;
 
 div#wrapper-footer {
 
@@ -553,6 +654,25 @@ div#wrapper-footer {
 		padding: 0px 120px;
 		color: white;
 		background-color: #252525;
+		height: $footer-height;
+
+		div.footer-overlay {
+			background-image : url('../img/vera_footer_bg.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			z-index : 50;
+			position : absolute;
+			left : 0;
+			height: 100%;
+			width: 100%;
+			opacity: 0.5;
+			max-height: $footer-height;
+		}
+
+		div.justify-content-center {
+			z-index : 100;
+		}
 
 		.footer-social-media {
 			padding-top: 1rem;
@@ -564,16 +684,20 @@ div#wrapper-footer {
 		.footer-link {
 			font-family: BebasNeue;
 			font-size: 25px;
-			//font-style: normal;
-			//font-stretch: normal;
 			line-height: 1;
 			letter-spacing: 1.5px;
 			padding: 1rem;
 			font-weight: 100;
 			text-transform: uppercase;
+			a {
+				color: white;
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 		.footer-title {
-			margin-top: 4rem;
+			margin-top: 2rem;
 			padding-bottom: 1rem;
 			font-family: BebasNeue;
 			font-size: 72px;  line-height: 1;
@@ -592,7 +716,7 @@ div#wrapper-footer {
 			font-size: 34px;
 			line-height: 1;
 			letter-spacing: 1.5px;
-			padding-bottom: 5rem;
+			padding: 0 0 5rem 0;
 		}
 	}
 }

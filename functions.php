@@ -61,6 +61,7 @@ function hide_editor() {
 
 function register_custom_menus() {
     register_nav_menu('gallery-menu',__( 'Gallery Menu' ));
+	register_nav_menu('footer-menu',__( 'Footer Menu' ));
 }
 add_action( 'init', 'register_custom_menus' );
 
