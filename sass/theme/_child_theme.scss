@@ -367,6 +367,80 @@ section.info {
     }
 }
 
+/* svg banners */
+
+%banner-base {
+	position: relative;
+	min-height: 450px;
+	//background-color: $primary; *extender of this should set background color
+	color: white;
+	svg.top-cutout {
+		//fill: white; *extender of this should set fill
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 10vw;
+	}
+	svg.bottom-cutout {
+		//fill: white; *extender of this should set fill
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 10vw;
+		/* set height to pixels if you want angle to change with screen width */
+	}
+	div.content-overlay {
+		background-image : url('../img/header-texture.png');
+		background-size:     cover;                      /* <------ */
+		background-repeat:   no-repeat;
+		background-position: center center;
+		z-index : 100;
+		position : absolute;
+		top : 0;
+		left : 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0.5;
+	}
+	.banner-headline {
+		margin-bottom: 30px;
+		font-family: BebasNeue;
+		font-size: 72px;
+		line-height: 0.9;
+		letter-spacing: 1.5px;
+	}
+
+	.label {
+		background-color: white;
+		color: $primary;
+	}
+
+	.more {
+		display: inline-flex;
+		height: 56px;
+		padding: 0 20px;
+		border: 2px solid white;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+	.more:hover {
+		text-decoration: none;
+		color: white;
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	.mobile-space {padding-left: 1rem !important;}
+}
+
+
+
+
+
 section.banner {
 	position: relative;
 	margin-top: 70px;
@@ -462,9 +536,12 @@ section.donate {
 	b { color: $primary; }
 }
 
+.accent-background {
+	background-color: $accent;
+}
+
 /* quotes */
 .vera-quote {
-	background-color: $accent;
 	.background {
 		position: absolute;
 		top: -250px;

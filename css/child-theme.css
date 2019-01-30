@@ -9918,6 +9918,17 @@ section.blog {
     padding: 25px 40px 20px;
     border: solid 2px #D41C53; }
 
+section.volunteer-today {
+  background-color: #D41C53; }
+  section.volunteer-today svg.top-cutout {
+    fill: white; }
+  section.volunteer-today svg.bottom-cutout {
+    fill: white; }
+
+@media screen and (max-width: 767px) {
+  .mobile-space {
+    padding-left: 1rem !important; } }
+
 section.featured {
   padding-top: 0px; }
   section.featured .featured-image {
@@ -9941,6 +9952,18 @@ div.landing-donate {
   margin-top: 12rem; }
   div.landing-donate .support-vera-graphic {
     height: 25%; }
+
+section.volunteer-today-landing {
+  background-color: #D41C53; }
+  section.volunteer-today-landing svg.top-cutout {
+    fill: white; }
+  section.volunteer-today-landing svg.bottom-cutout {
+    fill: #96C0CE; }
+
+section.landing-quote {
+  background-color: #96C0CE; }
+  section.landing-quote svg.top-cutout {
+    fill: #96C0CE; }
 
 section.quote {
   position: relative;
@@ -10181,7 +10204,7 @@ h2.medium-header {
   letter-spacing: 1.8px; }
 
 h1.large-header {
-  font-size: 80px;
+  font-size: 80px !important;
   font-family: BebasNeue;
   letter-spacing: 1.8px; }
 
@@ -10605,6 +10628,62 @@ section.info {
     max-width: 970px;
     margin: 0 auto; }
 
+/* svg banners */
+section.volunteer-today, section.volunteer-today-landing, section.landing-quote {
+  position: relative;
+  min-height: 450px;
+  color: white; }
+  section.volunteer-today svg.top-cutout, section.volunteer-today-landing svg.top-cutout, section.landing-quote svg.top-cutout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 10vw; }
+  section.volunteer-today svg.bottom-cutout, section.volunteer-today-landing svg.bottom-cutout, section.landing-quote svg.bottom-cutout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vw;
+    /* set height to pixels if you want angle to change with screen width */ }
+  section.volunteer-today div.content-overlay, section.volunteer-today-landing div.content-overlay, section.landing-quote div.content-overlay {
+    background-image: url("../img/header-texture.png");
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5; }
+  section.volunteer-today .banner-headline, section.volunteer-today-landing .banner-headline, section.landing-quote .banner-headline {
+    margin-bottom: 30px;
+    font-family: BebasNeue;
+    font-size: 72px;
+    line-height: 0.9;
+    letter-spacing: 1.5px; }
+  section.volunteer-today .label, section.volunteer-today-landing .label, section.landing-quote .label {
+    background-color: white;
+    color: #D41C53; }
+  section.volunteer-today .more, section.volunteer-today-landing .more, section.landing-quote .more {
+    display: inline-flex;
+    height: 56px;
+    padding: 0 20px;
+    border: 2px solid white;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; }
+  section.volunteer-today .more:hover, section.volunteer-today-landing .more:hover, section.landing-quote .more:hover {
+    text-decoration: none;
+    color: white; }
+
+@media screen and (max-width: 767px) {
+  .mobile-space {
+    padding-left: 1rem !important; } }
+
 section.banner {
   position: relative;
   margin-top: 70px;
@@ -10671,44 +10750,49 @@ section.donate {
   section.donate b {
     color: #D41C53; }
 
-/* quotes */
-.vera-quote {
+.accent-background {
   background-color: #96C0CE; }
-  .vera-quote .background {
+
+/* quotes */
+.vera-quote .background {
+  position: absolute;
+  top: -250px;
+  bottom: 0;
+  width: 100%;
+  background-color: #96C0CE;
+  z-index: -3; }
+
+.vera-quote img {
+  max-height: 450px; }
+
+.vera-quote p.quote-text {
+  font-size: 34px;
+  font-weight: bold;
+  font-family: BebasNeueLight; }
+  .vera-quote p.quote-text strong {
+    font-family: BebasNeue;
+    color: #D41C53; }
+  .vera-quote p.quote-text:after {
+    content: "“";
     position: absolute;
-    top: -250px;
-    bottom: 0;
-    width: 100%;
-    background-color: #96C0CE;
-    z-index: -3; }
-  .vera-quote img {
-    max-height: 450px; }
-  .vera-quote p.quote-text {
-    font-size: 34px;
-    font-weight: bold;
-    font-family: BebasNeueLight; }
-    .vera-quote p.quote-text strong {
-      font-family: BebasNeue;
-      color: #D41C53; }
-    .vera-quote p.quote-text:after {
-      content: "“";
-      position: absolute;
-      color: white;
-      opacity: .2;
-      top: -78px;
-      left: -30px;
-      font-family: GothicA1;
-      font-size: 200px; }
-  .vera-quote span.author {
-    font-size: 14px;
+    color: white;
+    opacity: .2;
+    top: -78px;
+    left: -30px;
     font-family: GothicA1;
-    text-transform: uppercase;
-    font-weight: bold; }
-  .vera-quote .textured {
-    background-image: url("../img/tvp-halftone-center-white.png");
-    height: 100%;
-    object-fit: cover;
-    background-size: cover; }
+    font-size: 200px; }
+
+.vera-quote span.author {
+  font-size: 14px;
+  font-family: GothicA1;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.vera-quote .textured {
+  background-image: url("../img/tvp-halftone-center-white.png");
+  height: 100%;
+  object-fit: cover;
+  background-size: cover; }
 
 /* Buttons */
 a.bordered-button, a.bordered-button-white {

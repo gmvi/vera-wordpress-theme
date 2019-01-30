@@ -32,6 +32,28 @@ div.landing-donate {
 	}
 }
 
+section.volunteer-today-landing {
+	@extend %banner-base;
+	background-color: $primary;
+	svg.top-cutout {
+		fill: white;
+	}
+	svg.bottom-cutout {
+		fill: $accent;
+	}
+}
+
+section.landing-quote {
+	@extend %banner-base;
+	background-color: $accent;
+	svg.top-cutout {
+		fill: $accent;
+	}
+	//svg.bottom-cutout {
+	//	fill: $accent;
+	//}
+}
+
 section.quote {
 	position: relative;
 	padding: 0;

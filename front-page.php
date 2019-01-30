@@ -137,20 +137,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="col-md-1"></div>
 						</div>
 					</section>
-
-					<section class="banner">
-						<div class="banner-background"></div>
-						<div class="row no-gutters">
-							<div class="col-md-6">
-								<span class="label">Get Involved</span>
-								<div class="banner-headline">Volunteer Today!</div>
-								<a href class="more">Learn More</a>
-							</div>
-							<div class="col-md-6">
-								<img class="banner-icon">
-							</div>
-						</div>
-					</section><!-- .section-banner -->
+                    <section class="volunteer-today pb-5 pt-5">
+<!--                        <h1>Header Content</h1>-->
+                        <svg class="top-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
+                            <polygon  points="0,0 50,0 50,50"></polygon>
+                        </svg>
+                        <svg class="bottom-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
+                            <polygon  points="50,50 0,50 0,0"></polygon>
+                        </svg>
+                        <div class="content-overlay"></div>
+                        <div class="row no-gutters">
+                            <div class="col-md-1"></div>
+                            <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space">
+                                <span class="label">Get Involved</span>
+                                <h2 class="banner-headline">Volunteer Today!</h2>
+<!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->
+                                <a href class="more">Learn More</a>
+                            </div>
+                            <div class="col-md-5 d-none d-md-block">
+                                <img class="pl-3" style="max-height:486px;" src="http://localhost:8888/wp-content/uploads/2019/01/audio_white_01.png" />
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </section>
 
 					<section class="blog">
 						<div class="row header">
@@ -182,7 +191,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<a class="blog-link">View All</a>
+								<a href="/blog" class="btn bordered-button btn-outline-primary">View All</a>
 							</div>
 						</div>
 					</section><!-- .section-blog -->
