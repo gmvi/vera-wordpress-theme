@@ -1,12 +1,12 @@
 <?php get_header(); ?>
     <div class="container-fluid">
-        <section class="row justify-content-md-center pb-1">
+        <section class="row justify-content-md-center pb-1 no-gutters">
             <div class="col-md-8 text-center">
                 <p class="label"><?php the_field('blog_overview_label', get_option('page_for_posts')); ?></p>
                 <h2 class="medium-header"><?php the_field('blog_overview_title', get_option('page_for_posts')); ?></h2>
             </div>
         </section>
-        <section class="row justify-content-md-center">
+        <section class="row justify-content-md-center no-gutters">
             <div class="col-md-8 text-center">
                 <p><?php the_field('blog_overview_description', get_option('page_for_posts')); ?></p>
             </div>
@@ -22,7 +22,7 @@
         $bootstrapColWidth = 12 / $numOfCols;
         $count = 0;
         ?>
-        <div class="row justify-content-md-center pt-5 pb-1">
+        <div class="row justify-content-md-center pt-5 pb-1 no-gutters">
             <div class="col-sm-11">
                 <div class="card-deck pb-2">
                     <?php include( locate_template( 'partial-templates/blog-list-cards.php') );?>

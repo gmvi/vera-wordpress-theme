@@ -38,7 +38,7 @@ function pad_zeroes( $num ) {
                 <section class="row no-gutters current-gallery">
 
                     <div class="col-sm-6">
-                        <div class="row align-items-center h-100">
+                        <div class="row align-items-center h-100 no-gutters">
                             <div class="col-9 mx-auto mt-3 mb-3">
                                 <p class="label">Current Show</p>
                                 <h2 class="medium-header mb-1"><?php the_field( 'current_gallery_header' ); ?></h2>
@@ -54,12 +54,12 @@ function pad_zeroes( $num ) {
                     </div>
 
                 </section>
-                <section class="row h-100 vera-quote accent-background">
+                <section class="row h-100 vera-quote accent-background no-gutters">
                     <div class="col-md-6 mx-auto p-5 textured">
                         <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                     </div>
                     <div class="col-md-6">
-                        <div class="row h-100 align-items-center text-center">
+                        <div class="row no-gutters h-100 align-items-center text-center">
                             <div class="col-md-12">
                                 <p class="quote-text"><?php the_field('quote_text'); ?></p>
                                 <span class="author"><?php the_field('quote_author'); ?></span>
@@ -67,8 +67,7 @@ function pad_zeroes( $num ) {
                         </div>
                     </div>
                 </section>
-                <section class="row">
-                    <div class="row h-100 p-5">
+                <section class="row no-gutters">
                         <div class="col-md-6 p-4">
                             <p class="label">Get Involved</p>
                             <h2 class="medium-header mb-1"><?php the_field('committee_block_header'); ?></h2>
@@ -81,7 +80,7 @@ function pad_zeroes( $num ) {
                             <p><?php the_field('cfa_block_description'); ?></p>
                             <a href="<?php the_field('cfa_block_submit_url'); ?>" class="btn bordered-button btn-outline-primary">Submit A Proposal</a>
                         </div>
-                    </div>
+
                 </section>
 
                 <section class="volunteer-today-landing pb-5 pt-5">
@@ -100,6 +99,7 @@ function pad_zeroes( $num ) {
                         </div>
                         <div class="col-md-5 d-none d-md-block">
                             <img class="pl-3" style="max-height:486px;" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
+
                         </div>
                         <div class="col-md-1"></div>
                     </div>

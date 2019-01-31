@@ -34,7 +34,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         include( locate_template( 'partial-templates/centered-submenu.php') );
                     ?>
 					<div id="content" class="entry-content">
-                        <div class="row pt-4 pb-4 ml-1">
+                        <div class="row pt-4 pb-4 ml-1 no-gutters">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-9 pb-3 blog-contents">
                                 <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>

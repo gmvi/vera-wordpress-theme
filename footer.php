@@ -16,8 +16,8 @@ $container = get_theme_mod( 'understrap_container_type' );
         <?php $donate_link = '<a href="'.esc_url( home_url( '/' ) ).'donate/">Donate Today!</a>';?>
         <h1>Support Vera! <strong><?php echo $donate_link ?></strong></h1>
     </div>
-	<div class="<?php echo esc_attr( $container ); ?>">
-		<div class="row site-footer">
+	<div class="<?php echo esc_attr( $container ); ?> p-0">
+		<div class="row site-footer no-gutters">
             <div class="footer-overlay"></div>
             <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-center">
 

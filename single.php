@@ -20,7 +20,7 @@ get_header();
                 while ( have_posts() ) :
                     the_post();?>
                 <!-- header image -->
-                <div class="row">
+                <div class="row no-gutters">
                     <?php
                     if (has_post_thumbnail( get_the_ID() )) { ?>
                         <div class="col-sm-6 p-0 mh-100" style="">
@@ -28,7 +28,7 @@ get_header();
                         </div>
                         <div class="col-sm-6 p-0 mh-100 single-blog-featured-text">
                             <div class="textured-blerg">
-                                <div class="row justify-content-center pt-5 ">
+                                <div class="row no-gutters justify-content-center pt-5 ">
                                     <div class="col-sm-8 mr-2 ml-2">
                                         <?php get_template_part('partial-templates/category-labels'); ?>
                                         <h2 class="single-blog-title text-white"><?php the_title()?></h2>
@@ -47,7 +47,7 @@ get_header();
                         <?php
                     } ?>
                 </div>
-                <div class="row pt-5 pb-4">
+                <div class="row no-gutters pt-5 pb-4">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-7 pb-3 blog-contents">
                         <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>
@@ -62,7 +62,7 @@ get_header();
                     </div>
                     <div class="col-sm-4">
                         <div style="background-color:#ebeeef;" class="pt-3 pb-3 pr-2 pl-2 mr-3">
-                            <div class="row m-3 recent-posts mr-1">
+                            <div class="row no-gutters m-3 recent-posts mr-1">
                                 <div class="col-sm-12">
                                     <h2 class="pt-3">Recent Posts</h2>
                                     <hr/>
