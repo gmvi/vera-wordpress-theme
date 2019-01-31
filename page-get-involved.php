@@ -106,7 +106,7 @@ function pad_zeroes( $num ) {
                 </div>
             </section>
 
-            <section class="volunteer-committees row">
+            <section class="volunteer-committees">
                 <div class="row no-gutters">
                     <div id="volunteer-content" class="col-sm-12 col-md-6">
                         <div id="content-wrapper">
