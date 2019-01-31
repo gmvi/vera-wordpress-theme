@@ -100,9 +100,13 @@ function cat_active($cat) {
                                          <!--class register / learn more-->
                                         <div class="col-sm-2 my-auto mr-auto d-none d-sm-block">
                                             <?php if (!$is_private): ?>
-                                                <a target="_blank" href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
+                                                <?php if($next['link']): ?>
+                                                    <a target="_blank" href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
+                                                <?php else: ?>
+                                                    <a class="btn bordered-button btn-outline-primary pull-right my-auto disabled" aria-disabled="true">Register</a>
+                                                <?php endif; ?>
                                             <?php else : ?>
-                                                <a data-toggle="modal" data-target="#modal-<?= $class->ID ?>" href class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Learn More</a>
+                                                <a data-toggle="modal" data-target="#modal-<?= $class->ID ?>" href class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Private</a>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -126,6 +130,7 @@ function cat_active($cat) {
 
 <div class=modals>
 	<?php foreach ($classes as $class):
+        $is_private = SCF::get("private_class", $class->ID);
 		$next = vera_get_class_next($class->ID); ?>
 		<div class="modal fade" id="modal-<?= $class->ID ?>" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -137,9 +142,14 @@ function cat_active($cat) {
 						</button>
 					</div>
 					<div class="modal-body"><?= wpautop( $class->post_content ) ?></div>
-					<?php if (!SCF::get("private_class", $class->ID)): ?>
+                    <?php if (!$is_private): ?>
 						<div class="modal-footer">
-                            <a href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
+                            <?php if($next['link']) {
+                                $extraclass = '';
+                            } else {
+                                $extraclass = ' disabled';
+                            }?>
+                            <a href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto <?= $extraclass ?>">Register</a>
 						</div>
 					<?php endif; ?>
 				</div>

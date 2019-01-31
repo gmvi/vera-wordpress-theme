@@ -148,14 +148,15 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="content-overlay"></div>
                         <div class="row no-gutters">
                             <div class="col-md-1"></div>
-                            <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space">
+                            <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable">
                                 <span class="label">Get Involved</span>
                                 <h2 class="banner-headline">Volunteer Today!</h2>
 <!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->
-                                <a href class="more">Learn More</a>
+                                <a href="/get-involved" class="more">Learn More</a>
                             </div>
                             <div class="col-md-5 d-none d-md-block">
-                                <img class="pl-3" style="max-height:486px;" src="http://localhost:8888/wp-content/uploads/2019/01/audio_white_01.png" />
+<!--                                TODO: make configurable -->
+                                <img class="pl-3" style="max-height:486px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
                             </div>
                             <div class="col-md-1"></div>
                         </div>
