@@ -30,7 +30,7 @@
                 echo "<p class=\"excerpt\">$short_excerpt</p>";
             endif;
             ?>
-            <div class="row mt-auto">
+            <div class="row no-gutters mt-auto">
                 <div class="col-md-6">
                     <a href="<?php echo get_permalink()?>">Learn More</a>
                 </div>

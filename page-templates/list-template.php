@@ -32,7 +32,7 @@ $list_items = SCF::get( 'Items' );
 					<?php foreach ( $list_items as $i => $item ) { ?>
                         <div class="list-wrapper">
                             <div class="container">
-                                <div class="row template-item">
+                                <div class="row no-gutters template-item">
                                     <div class="col-sm-12 col-md-6">
                                         <img src="<?php echo wp_get_attachment_url( $item['item_image'] ); ?>"/>
                                     </div>

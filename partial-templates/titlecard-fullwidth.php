@@ -4,7 +4,7 @@ $custom_title = get_field('title');
 ?>
 
 <header class="entry-header text-center">
-	<div class="row row-block">
+	<div class="row row-block no-gutters">
 		<div class="col-md-12">
 			<div class="wrapper"><!-- titlecard -->
 				<div class="overlay center-vertical header-texture ">

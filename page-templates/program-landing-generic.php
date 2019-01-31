@@ -33,12 +33,12 @@ $program_types = SCF::get( 'Program Types' );
 					<div id="content" class="entry-content text-center">
 
 						<section class="info">
-							<div class="row header">
+							<div class="row header no-gutters">
 								<div class="col-md-12">
 									<h3><?php the_field('header'); ?></h3>
 								</div>
 							</div><!-- .section-header -->
-							<div class="row body">
+							<div class="row body no-gutters">
 								<div class="col-md-12">
 									<?php the_content(); ?>
 								</div>
@@ -47,12 +47,12 @@ $program_types = SCF::get( 'Program Types' );
 			
 						<section class="featured">
 						<?php foreach ($program_types as $i => $program) { ?>
-                            <div class="row justify-content-around pb-4">
+                            <div class="row justify-content-around pb-4 no-gutters">
                                 <div class="col-md-5">
                                     <img class="featured-image p-2" src="<?php echo wp_get_attachment_url($program['program_type_image']) ?>"/>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="row pl-2">
+                                    <div class="row pl-2 no-gutters">
                                         <div class="col-sm-10 align-self-center featured-info pt-4">
                                             <h2><?php echo $program['program_type_header']?></h2>
                                             <p><?php echo $program['program_type_description']?></p>
@@ -90,12 +90,12 @@ $program_types = SCF::get( 'Program Types' );
 
 						<section class="quote pt-0">
 							<div class="background"></div>
-                            <div class="row h-100 vera-quote">
+                            <div class="row h-100 vera-quote no-gutters">
                                 <div class="col-md-6 mx-auto p-5 textured">
                                     <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="row h-100 align-items-center text-center">
+                                    <div class="row h-100 align-items-center text-center no-gutters">
                                         <div class="col-md-12">
                                             <p class="quote-text pr-1"><?php the_field('quote_text'); ?></p>
                                             <span class="author"><?php the_field('quote_author'); ?></span>

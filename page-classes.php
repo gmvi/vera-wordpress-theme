@@ -49,12 +49,12 @@ function cat_active($cat) {
 					<a name="content"></a>
 
 					<section class="info text-center">
-						<div class="row header">
+						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<h3><?php the_field('header'); ?></h3>
 							</div>
 						</div><!-- .header -->
-						<div class="row body">
+						<div class="row body no-gutters">
 							<div class="col-md-12">
 								<?/* the_content() wasn't working here?? */?>
 								<?= get_post(get_the_ID())->post_content; ?>
@@ -63,7 +63,7 @@ function cat_active($cat) {
 					</section><!-- .info -->
 
 					<section class="classes">
-						<div class="row body">
+						<div class="row body no-gutters">
 							<div class="col-md-1"></div>
 							<div class="col-md-10 list-header">
 								<a class="filter-category<?= cat_active(""); ?>" href="./">All</a>
@@ -77,7 +77,7 @@ function cat_active($cat) {
 							$is_private = SCF::get("private_class", $class->ID);
 							$next = vera_get_class_next($class->ID); 
 						?>
-							<div class="row body class">
+							<div class="row body class no-gutters">
 								<div class="col-md-1"></div>
 								<div class="col-md-10 list-item">
                                     <div class="row no-gutters w-100 class-row ">

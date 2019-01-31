@@ -25,12 +25,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="entry-content text-center">
 
 					<section class="info">
-						<div class="row header">
+						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<h3><?php the_field('header'); ?></h3>
 							</div>
 						</div><!-- .section-header -->
-						<div class="row body">
+						<div class="row body no-gutters">
 							<div class="col-md-12">
 								<?php the_content(); ?>
 								<a href class="more">Learn More About Us</a>
@@ -39,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</section><!-- section.info -->
 
 					<section class="concerts">
-						<div class="row header">
+						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<span class="label">Concerts</span>
 								<h2><b>On Stage</b></h2>
@@ -108,13 +108,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</section><!-- .concerts -->
 
 					<section class="classes">
-						<div class="row header">
+						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<span class="label">Classes</span>
 								<h2><b>In The Studio</b></h2>
 							</div>
 						</div>
-						<div class="row body">
+						<div class="row body no-gutters">
 							<div class="col-md-1"></div>
 							<div class="col-md-5">
 								<div class="card">
@@ -162,7 +162,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </section>
 
 					<section class="blog">
-						<div class="row header">
+						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<span class="label">News & Information</span>
 								<h2><b>On The Blog</b></h2>
@@ -174,7 +174,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<!-- TODO -->
 							</div>
 <?php	else :?>
-        <div class="row justify-content-md-center pb-1">
+        <div class="row justify-content-md-center pb-1 no-gutters">
             <div class="col-sm-11">
                 <div class="card-deck pb-2">
                     <?php
@@ -187,7 +187,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php   endif;
 		wp_reset_query(); ?>
-						<div class="row">
+						<div class="row no-gutters">
 							<div class="col-md-12">
 								<a href="/blog" class="btn bordered-button btn-outline-primary">View All</a>
 							</div>

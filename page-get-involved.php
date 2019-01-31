@@ -57,7 +57,7 @@ function pad_zeroes( $num ) {
             <section class="steps">
                 <div class="steps-header text-center"> Getting involved at Vera is easy:</div>
 
-                <div class="row step-tabs">
+                <div class="row step-tabs no-gutters">
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
 							<?php foreach ( $getting_involved_steps as $i => $step ) { ?>
@@ -82,7 +82,7 @@ function pad_zeroes( $num ) {
                         <div class="tab-pane <?php echo ( $i == 0 ) ? 'active' : '' ?>"
                              id="<?php echo $step_element_id ?>" role="tabpanel"
                              aria-labelledby="<?php echo $step_element_id ?>">
-                            <div class="row">
+                            <div class="row no-gutters">
                                 <div class="col-md-6 tab-image d-none d-md-block">
                                     <img src="<?php echo wp_get_attachment_url($step['step_image']); ?>"/>
                                 </div>
@@ -107,7 +107,7 @@ function pad_zeroes( $num ) {
             </section>
 
             <section class="volunteer-committees row">
-                <div class="row">
+                <div class="row no-gutters">
                     <div id="volunteer-content" class="col-sm-12 col-md-6">
                         <div id="content-wrapper">
                             <?php if ( get_field( 'adventure_text' ) ):
