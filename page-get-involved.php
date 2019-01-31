@@ -87,7 +87,7 @@ function pad_zeroes( $num ) {
                                     <img src="<?php echo wp_get_attachment_url($step['step_image']); ?>"/>
                                 </div>
 
-                                <div class="col-sm-12 col-md-6 px-sm-5 px-md-0">
+                                <div class="col-sm-12 col-md-6 px-5 px-md-0">
                                     <div id="step-label">
                                         <div class="small-primary-bg-header">
                                             <?php echo pad_zeroes( $step['numbered_step_header'] ); ?>
@@ -106,7 +106,7 @@ function pad_zeroes( $num ) {
                 </div>
             </section>
 
-            <section class="volunteer-committees">
+            <section class="volunteer-committees row">
                 <div class="row no-gutters">
                     <div id="volunteer-content" class="col-sm-12 col-md-6">
                         <div id="content-wrapper">
