@@ -155,7 +155,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 <a href="/get-involved" class="more">Learn More</a>
                             </div>
                             <div class="col-md-5 d-none d-md-block">
-                                <img class="pl-3" style="max-height:486px;" src="http://localhost:8888/wp-content/uploads/2019/01/audio_white_01.png" />
+<!--                                TODO: make configurable -->
+                                <img class="pl-3" style="max-height:486px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
                             </div>
                             <div class="col-md-1"></div>
                         </div>
