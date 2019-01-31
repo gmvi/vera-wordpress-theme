@@ -40,7 +40,7 @@ function pad_zeroes( $num ) {
                     </div>
                 </div>
             </section>
-            <?php $menu_name = 'get-involved-menu';
+            <?php $menu_name = 'get-involved';
                   $wrapper_class_name = 'entry-header';
                   include( locate_template( 'partial-templates/centered-submenu.php') ); ?>
 
