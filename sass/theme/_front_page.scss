@@ -11,40 +11,63 @@ body.home {
     }
 }
 
-section.concerts {
+section.shows {
 
-    .body-concerts {
+    .body-shows {
 
-        .featured-concert {
-        	background-color: grey;
+        .featured-show {
+        	position: relative;
+        	background-color: rgba(0,0,0,0.3);
         	color: white;
             text-align: left;
             padding: 60px 70px;
             height: 100%;
 
-            .presented-by {
-            	font-size: 12px;
-            	letter-spacing: 1.5px;
-            	text-transform: uppercase;
-            	margin: 20px 0 4px;
+            .background-image {
+            	position: absolute;
+            	z-index: -1;
+            	top:0;
+            	left:0;
+            	height: 100%;
+            	width: 100%;
+
+            	img {
+            		height: 100%;
+            		width: 100%;
+            		object-fit: cover;
+            	}
             }
 
-            .featured-title {
-            	font-size: 56px;
-            	font-family: BebasNeue;
-            	text-transform: uppercase;
+            header {
             	letter-spacing: 1.5px;
-            	line-height: 0.8;
-            	margin-bottom: 25px;
-            }
+            	text-transform: uppercase;
+            	margin: 20px 0 25px;
 
-            .featured-details {
+            	.presented-by {
+            		font-size: 12px;
+            	}
+	
+            	.show-headline {
+            		font-size: 56px;
+            		font-family: BebasNeue;
+            		line-height: 0.8;
+            		padding-top: 4px;
+            	}
+
+            	.show-support {
+            		font-size: 18px;
+            		font-family: BebasNeue;
+            	}
+            }
+	
+            .show-details {
             	font-size: 18px;
             	margin-bottom: 20px;
+            	font-family: GothicA1;
             }
         }
     
-        .concerts-list {
+        .shows-list {
 			.list-title {
 				width: 100%;
 				height: 40px;

@@ -8,6 +8,7 @@ get_header();
 
 // Get container type from Wordpress Customizer
 $container = get_theme_mod( 'understrap_container_type' );
+$shows = vera_shows_get_front_page();
 ?>
 
 <div class="wrapper" id="index-wrapper">
@@ -38,68 +39,55 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div><!--  -->
 					</section><!-- section.info -->
 
-					<section class="concerts">
+					<section class="shows">
 						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<span class="label">Concerts</span>
 								<h2><b>On Stage</b></h2>
 							</div>
 						</div><!-- .header-concerts -->
-						<div class="row no-gutters body-concerts">
+						<?php
+							$first_show = array_shift($shows);
+							$info = vera_shows_get_all_info($first_show);
+						?>
+						<div class="row no-gutters body-shows">
 							<div class="col-md-7">
-								<div class="featured-concert">
-									<span class="label">Featured Concert</span>
-									<div class="presented-by">Soundgig Presents</div>
-									<div class="featured-title">Peach Kelli Pop</div>
-									<div class="featured-details">
-										The Vera Project&nbsp;&nbsp;|&nbsp;&nbsp;7PM Doors
-										<br>
-										$10 ADV&nbsp;&nbsp;|&nbsp;&nbsp;$12 DOS
+								<div class="featured-show">
+									<div class="background-image"><img src="<?= $info['image'] ?>"></div>
+									<span class="label"><?= $info['label'] ?></span>
+									<header>
+										<div class="presented-by"><?= $info['presenter'] ?></div>
+										<div class="show-headline"><?= $info['title'] ?></div>
+										<div class="show-support">with <?= $info['support'] ?></div>
+									</header>
+									<div class="show-details">
+										<?= $info['time'] ?><br>
+										<i class="fa fa-map-marker"></i> <?= $info['venue'] ?><br>
+										<?= $info['price'] ?>
 									</div>
-									<a href class="more">Learn More</a>
+									<a class="more" href=<?= $info['link'] ?> >Tickets</a>
 								</div>
 							</div>
 							<div class="col-md-5">
-								<div class="concerts-list">
-									<div class="list-title">Upcoming Shows</div>
+								<div class="shows-list">
+									<div class="list-title">More Upcoming Shows</div>
 
 									<ul class="list-body">
-										<li class="list-item clearfix">
-											<div class="wrapper-left">
-												<div class="event-date">Sat, Dec 16, 2017</div>
-												<div class="event-title">Freak Heat Waves</div>
-											</div>
-											<div class="wrapper-right">
-												<span class="event-icon icon-ticket"></span>
-											</div>
-										</li>
-										<li class="list-item clearfix">
-											<div class="wrapper-left">
-												<div class="event-date">Sat, Dec 16, 2017</div>
-												<div class="event-title">Bright Moments & the Camas High School Choir</div>
-											</div>
-											<div class="wrapper-right">
-												<span class="event-icon icon-ticket"></span>
-											</div>
-										</li>
-										<li class="list-item clearfix">
-											<div class="wrapper-left">
-												<div class="event-date">Sat, Dec 16, 2017</div>
-												<div class="event-title">La Luz, Savila, Anchient Forest</div>
-											</div>
-											<div class="wrapper-right">
-												<span class="event-icon icon-ticket"></span>
-											</div>
-										</li>
-										<li class="list-item clearfix">
-											<div class="wrapper-left">
-												<div class="event-date">Sat, Dec 16, 2017</div>
-												<div class="event-title">La Luz, Savila, Anchient Forest</div>
-											</div>
-											<div class="wrapper-right">
-												<span class="event-icon icon-ticket"></span>
-											</div>
-										</li>
+										<?  foreach ($shows as $show):
+											$info = vera_shows_get_list_info($show);
+										?>
+											<li class="list-item clearfix">
+												<div class="wrapper-left">
+													<div class="event-date"><?= $info['date'] ?></div>
+													<div class="event-title">
+														<a href="<?= $info['link'] ?>"><?= $info['title'] ?></a>
+													</div>
+												</div>
+												<div class="wrapper-right">
+													<span class="event-icon icon-ticket"></span>
+												</div>
+											</li>
+										<? endforeach; ?>
 									</ul>
 									<div class="list-more">View All</div>
 								</div>
