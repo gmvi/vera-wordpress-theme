@@ -99,10 +99,10 @@ function cat_active($cat) {
                                         </div>
                                          <!--class register / learn more-->
                                         <div class="col-sm-2 my-auto mr-auto d-none d-sm-block">
-                                            <?php if ($is_private): ?>
-                                                <a class="class-register pull-right my-auto" href="" data-toggle="modal" data-target="#modal-<?= $class->ID ?>">Learn More</a>
+                                            <?php if (!$is_private): ?>
+                                                <a target="_blank" href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
                                             <?php else : ?>
-                                                <a href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
+                                                <a data-toggle="modal" data-target="#modal-<?= $class->ID ?>" href class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Learn More</a>
                                             <?php endif; ?>
                                         </div>
                                     </div>
