@@ -20,9 +20,8 @@ $list_items = SCF::get( 'Items' );
                 get_template_part( 'partial-templates/block-header' );
 
                 global $post;
-                $parent_submenu = get_field('subnav', $post->post_parent);
-                $menu_name = $parent_submenu;
-                $wrapper_class_name = 'entry-header';
+				$wrapper_class_name = 'entry-header';
+				$menu_name = get_post_field( 'post_name', $post->post_parent );
                 include( locate_template( 'partial-templates/centered-submenu.php') );
 
 				while ( have_posts() ) : the_post(); ?>
