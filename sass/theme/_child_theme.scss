@@ -47,7 +47,7 @@ body {
     color: $darkgray;
     background-color: $background;
     box-sizing: border-box;
-    border: 1px solid black;
+    //border: 1px solid black;
 }
 
 .site h1, h2, h3, h4, h5, h6 {
@@ -287,7 +287,7 @@ ul.menu {
 %submenu {
 	justify-content: center;
 	text-align: center;
-	//height: 50px;
+	min-height: 50px;
 	align-content: center;
 	font-family: BebasNeue;
 	font-size: 18px;

@@ -9925,10 +9925,6 @@ section.volunteer-today {
   section.volunteer-today svg.bottom-cutout {
     fill: white; }
 
-@media screen and (max-width: 767px) {
-  .mobile-space {
-    padding-left: 1rem !important; } }
-
 section.featured {
   padding-top: 0px; }
   section.featured .featured-image {
@@ -10111,10 +10107,6 @@ section.volunteer-hero {
 section.classes {
   padding-bottom: 100px; }
   section.classes .list-header, section.classes .list-item {
-    margin-left: 15px;
-    padding-left: 0px;
-    margin-right: 15px;
-    padding-right: 0px;
     border-bottom: 3px solid #EBEEEF; }
   section.classes .list-header {
     padding-bottom: 30px; }
@@ -10129,6 +10121,9 @@ section.classes {
       text-align: center;
       color: #4A4A4A;
       background-color: #EBEEEF; }
+      @media screen and (max-width: 767px) {
+        section.classes .list-header .filter-category {
+          font-size: 14px !important; } }
     section.classes .list-header .filter-category.active {
       color: white;
       background-color: #D41C53; }
@@ -10137,6 +10132,9 @@ section.classes {
     display: flex;
     align-items: center;
     height: 117px; }
+    section.classes .list-item a:hover {
+      text-decoration: underline;
+      cursor: pointer; }
     section.classes .list-item .class-title {
       display: inline-block;
       color: #D41C53;
@@ -10145,41 +10143,33 @@ section.classes {
       font-weight: bold;
       line-height: 1;
       letter-spacing: 1.5px;
-      max-width: 500px;
-      padding-right: 100px; }
-    section.classes .list-item .flex {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      left: 100px;
-      right: 0; }
-      section.classes .list-item .flex .wrapper {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        right: 0; }
-      section.classes .list-item .flex .class-info {
-        display: inline-block;
-        text-align: center;
-        width: 100px;
-        margin-right: 30px;
-        font-family: GothicA1;
-        font-size: 18px; }
-      section.classes .list-item .flex .class-register {
-        display: inline-block;
-        height: 60px;
-        width: 160px;
-        text-align: center;
-        padding-top: 10px;
-        font-family: BebasNeue;
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 1.5;
-        letter-spacing: 1.5px;
-        color: #4A4A4A;
-        border: 2px solid #D41C53; }
-      section.classes .list-item .flex .class-register.disabled {
-        color: #C5C2D2; }
+      max-width: 500px; }
+      @media screen and (max-width: 767px) {
+        section.classes .list-item .class-title {
+          font-size: 24px !important; } }
+    section.classes .list-item .class-row .class-info {
+      text-align: center;
+      font-family: GothicA1;
+      font-size: 18px; }
+      @media screen and (max-width: 767px) {
+        section.classes .list-item .class-row .class-info {
+          font-size: 14px !important; } }
+    section.classes .list-item .class-row .class-register {
+      display: inline-block;
+      text-align: center;
+      padding-top: 10px;
+      font-family: BebasNeue;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.5;
+      letter-spacing: 1.5px;
+      color: #4A4A4A;
+      border: 2px solid #D41C53; }
+      @media screen and (max-width: 767px) {
+        section.classes .list-item .class-row .class-register {
+          font-size: 14px !important; } }
+    section.classes .list-item .class-row .class-register.disabled {
+      color: #C5C2D2; }
 
 .modal .modal-title {
   font-weight: bold; }
@@ -10398,8 +10388,7 @@ body {
   margin: 0 auto;
   color: #4A4A4A;
   background-color: #FFF;
-  box-sizing: border-box;
-  border: 1px solid black; }
+  box-sizing: border-box; }
 
 .site h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
@@ -10574,6 +10563,7 @@ ul.menu {
 .blog-subheader .menu, .entry-header .menu {
   justify-content: center;
   text-align: center;
+  min-height: 50px;
   align-content: center;
   font-family: BebasNeue;
   font-size: 18px;
