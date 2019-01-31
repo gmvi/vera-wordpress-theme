@@ -72,7 +72,7 @@ function cat_active($cat) {
 								<?php endforeach; ?>
 							</div>
 						</div>
-						<? foreach ($classes as $class):
+						<?php foreach ($classes as $class):
 							$icon = vera_get_class_cat($class->ID);
 							$is_private = SCF::get("private_class", $class->ID);
 							$next = vera_get_class_next($class->ID); 
@@ -80,26 +80,36 @@ function cat_active($cat) {
 							<div class="row body class">
 								<div class="col-md-1"></div>
 								<div class="col-md-10 list-item">
-									<span class="icon icon-<?= $icon ?>"></span>
-									<div class="flex">
-										<a class="class-title" href="" data-toggle="modal" data-target="#modal-<?= $class->ID ?>"><?= $class->post_title ?></a>
-										<div class="wrapper">
-											<?php if ($is_private): ?>
-												<a class="class-register" href="" data-toggle="modal" data-target="#modal-<?= $class->ID ?>">Learn More</a>
-											<?php else: ?>
-												<span class="class-info"><?= $next['date'] ?></span>
-												<span class="class-info"><?= $next['time'] ?></span>
-												<? if($next['link']): ?>
-													<a class="class-register" target="_blank" href="<?= $next['link'] ?>">Register</a>
-												<? else : ?>
-													<a class="class-register disabled">Register</a>
-												<? endif; ?>
-											<?php endif; ?>
-										</div>
-									</div>
+                                    <div class="row no-gutters w-100 class-row ">
+                                        <!-- not setting breakpoints here, just using col so it is always one row. font size will be truncated based on media query -->
+                                        <div class="col-sm-1 my-auto d-none d-sm-block"><span class="icon icon-<?= $icon ?> my-auto"></span></div>
+                                        <!-- class title-->
+                                        <div class="col-6 col-sm-6 class-title my-auto"><a data-toggle="modal" data-target="#modal-<?= $class->ID ?>"><?= $class->post_title ?></a></div>
+                                        <!-- class date-->
+                                        <div class="col-3 col-sm-2 my-auto text-center">
+                                            <?php if (!$is_private): ?>
+                                                <span class="class-info"><?= $next['date'] ?></span>
+                                            <?php endif; ?>
+                                        </div>
+                                        <!-- class time-->
+                                        <div class="col-3 col-sm-1 my-auto text-center">
+                                            <?php if (!$is_private): ?>
+                                                <span class="class-info"><?= $next['time'] ?></span>
+                                            <?php endif; ?>
+                                        </div>
+                                         <!--class register / learn more-->
+                                        <div class="col-sm-2 my-auto mr-auto d-none d-sm-block">
+                                            <?php if (!$is_private): ?>
+                                                <a target="_blank" href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
+                                            <?php else : ?>
+                                                <a data-toggle="modal" data-target="#modal-<?= $class->ID ?>" href class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Learn More</a>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+
 								</div>
 							</div>
-						<? endforeach; ?>
+						<?php endforeach; ?>
 					</section>
 
 				</div><!-- .entry-content -->
@@ -115,7 +125,7 @@ function cat_active($cat) {
 <?php get_footer(); ?>
 
 <div class=modals>
-	<? foreach ($classes as $class):
+	<?php foreach ($classes as $class):
 		$next = vera_get_class_next($class->ID); ?>
 		<div class="modal fade" id="modal-<?= $class->ID ?>" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -129,11 +139,11 @@ function cat_active($cat) {
 					<div class="modal-body"><?= wpautop( $class->post_content ) ?></div>
 					<?php if (!SCF::get("private_class", $class->ID)): ?>
 						<div class="modal-footer">
-							<a type="button" class="btn btn-primary" target="_blank" href="<?= $next['link'] ?>">Register</a>
+                            <a href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
 						</div>
 					<?php endif; ?>
 				</div>
 			</div>
 		</div>
-	<? endforeach; ?>
+	<?php endforeach; ?>
 </div>
