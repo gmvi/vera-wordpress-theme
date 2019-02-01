@@ -82,7 +82,7 @@ $program_types = SCF::get( 'Program Types' );
                                     <a href="<?php the_field('support_vera_link_url') ?>" class="btn bordered-button-white"><?php the_field('support_vera_link_text') ?></a>
                                 </div>
                                 <div class="col-md-5 d-none d-md-block">
-                                    <img class="pl-3" style="max-height:400px;" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
+                                    <img class="pl-3 support-vera-graphic" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
                                 </div>
                                 <div class="col-md-1"></div>
                             </div>

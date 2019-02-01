@@ -10678,65 +10678,12 @@ section.volunteer-today, section.volunteer-today-landing, section.landing-quote 
   section.volunteer-today .more:hover, section.volunteer-today-landing .more:hover, section.landing-quote .more:hover {
     text-decoration: none;
     color: white; }
+  section.volunteer-today img.support-vera-graphic, section.volunteer-today-landing img.support-vera-graphic, section.landing-quote img.support-vera-graphic {
+    max-height: 400px; }
 
 @media screen and (max-width: 767px) {
   .mobile-space {
     padding-left: 1rem !important; } }
-
-section.banner {
-  position: relative;
-  margin-top: 70px;
-  padding: 0;
-  height: 900px;
-  color: white;
-  text-align: left;
-  overflow: hidden; }
-  section.banner > * {
-    position: absolute;
-    width: 100%; }
-  section.banner::before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: -210px;
-    height: 100%;
-    width: 209px;
-    background-color: #FFF;
-    z-index: -1; }
-  section.banner .row > *:first-child {
-    padding: 240px 20px 115px 240px; }
-  section.banner .row > *:last-child:not(:first-child) {
-    padding: 0; }
-  section.banner .banner-headline {
-    margin-bottom: 30px;
-    width: 50%;
-    font-family: BebasNeue;
-    font-size: 96px;
-    line-height: 0.9;
-    letter-spacing: 1.5px; }
-  section.banner .label {
-    background-color: white;
-    color: #D41C53; }
-  section.banner .more {
-    display: inline-flex;
-    height: 56px;
-    padding: 0 20px;
-    border: 2px solid white;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center; }
-  section.banner .more:hover {
-    text-decoration: none;
-    color: white; }
-  section.banner .banner-background {
-    height: 640px;
-    width: 124%;
-    margin-left: -11%;
-    background-color: #D41C53;
-    background-image: url("../img/top-texture.png");
-    transform: rotate(9.2deg);
-    transform-origin: left;
-    z-index: -2; }
 
 section.donate {
   padding: 63px 0 45px;

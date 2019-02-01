@@ -156,7 +156,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             </div>
                             <div class="col-md-5 d-none d-md-block">
 <!--                                TODO: make configurable -->
-                                <img class="pl-3" style="max-height:400px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
+                                <img class="pl-3 support-vera-graphic" style="max-height:400px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
                             </div>
                             <div class="col-md-1"></div>
                         </div>
