@@ -10,7 +10,7 @@ $twit_args = array(
 );
 $twit_share_url = 'https://twitter.com/intent/tweet?' . http_build_query($twit_args);
 ?>
-<div class="vera-bordered-social-icons p-0">
+<div class="vera-bordered-social-icons p-0 pull-left">
     <a href="<?= $fb_share_url?>" target="_blank"><i class="fa fa-facebook-f text-primary"></i></a>
     <a href="<?= $twit_share_url?>" target="_blank"><i class="fa fa-twitter text-primary"></i></a>
 </div>
