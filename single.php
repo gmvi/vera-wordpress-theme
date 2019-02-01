@@ -49,7 +49,7 @@ get_header();
                 </div>
                 <div class="row no-gutters pt-5 pb-4">
                     <div class="col-sm-1"></div>
-                    <div class="col-sm-7 pb-3 blog-contents">
+                    <div class="col-sm-7 pb-3 blog-contents pr-3">
                         <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>
                         <?php the_content()?>
                         <hr class="pb-2"/>
