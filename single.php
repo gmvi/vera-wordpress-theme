@@ -54,11 +54,7 @@ get_header();
                         <?php the_content()?>
                         <hr class="pb-2"/>
                         <p class="share-call mb-1">Share this story</p>
-                        <div class="vera-bordered-social-icons p-0">
-                            <i class="fa fa-facebook-f text-primary"></i>
-                            <i class="fa fa-twitter text-primary"></i>
-                            <i class="fa fa-instagram text-primary"></i>
-                        </div>
+                        <?php get_template_part('partial-templates/share-post-icons') ?>
                     </div>
                     <div class="col-sm-4">
                         <div style="background-color:#ebeeef;" class="pt-3 pb-3 pr-2 pl-2 mr-3">

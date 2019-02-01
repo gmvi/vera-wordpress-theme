@@ -41,11 +41,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 <?php the_content()?>
                                 <hr class="pb-2"/>
                                 <p class="share-call mb-1">Share this story</p>
-                                <div class="vera-bordered-social-icons p-0">
-                                    <i class="fa fa-facebook-f text-primary"></i>
-                                    <i class="fa fa-twitter text-primary"></i>
-                                    <i class="fa fa-instagram text-primary"></i>
-                                </div>
+                                <?php get_template_part('partial-templates/share-post-icons') ?>
                             </div>
                         </div>
                     </div>
