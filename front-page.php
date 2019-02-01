@@ -146,9 +146,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                             <polygon  points="50,50 0,50 0,0"></polygon>
                         </svg>
                         <div class="content-overlay"></div>
-                        <div class="row no-gutters">
+                        <div class="row no-gutters pt-2">
                             <div class="col-md-1"></div>
-                            <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable">
+                            <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable pt-md-4">
                                 <span class="label">Get Involved</span>
                                 <h2 class="banner-headline">Volunteer Today!</h2>
 <!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->
@@ -156,7 +156,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             </div>
                             <div class="col-md-5 d-none d-md-block">
 <!--                                TODO: make configurable -->
-                                <img class="pl-3" style="max-height:486px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
+                                <img class="pl-3" style="max-height:400px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
                             </div>
                             <div class="col-md-1"></div>
                         </div>

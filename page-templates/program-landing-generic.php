@@ -75,14 +75,14 @@ $program_types = SCF::get( 'Program Types' );
                             <div class="content-overlay"></div>
                             <div class="row no-gutters pt-3">
                                 <div class="col-md-1"></div>
-                                <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable">
+                                <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable pt-md-3">
                                     <span class="label"><?php the_field('support_vera_label') ?></span>
                                     <h2 class="banner-headline"><?php the_field('support_vera_text') ?></h2>
                                     <!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->
                                     <a href="<?php the_field('support_vera_link_url') ?>" class="btn bordered-button-white"><?php the_field('support_vera_link_text') ?></a>
                                 </div>
                                 <div class="col-md-5 d-none d-md-block">
-                                    <img class="pl-3" style="max-height:486px;" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
+                                    <img class="pl-3" style="max-height:400px;" src="<?php echo get_field( 'support_vera_graphic' )['url'];?>" />
                                 </div>
                                 <div class="col-md-1"></div>
                             </div>
