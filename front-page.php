@@ -24,7 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<div class="entry-content text-center">
 
-					<section class="info">
+					<section class="info px-2 px-md-1 px-lg-0">
 						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<h3><?php the_field('header'); ?></h3>
