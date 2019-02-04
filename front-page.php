@@ -58,7 +58,9 @@ $shows = vera_shows_get_front_page();
 									<header>
 										<div class="presented-by"><?= $info['presenter'] ?></div>
 										<div class="show-headline"><?= $info['title'] ?></div>
-										<div class="show-support">with <?= $info['support'] ?></div>
+										<? if ($info['support']): ?>
+											<div class="show-support">with <?= $info['support'] ?></div>
+										<? endif; ?>
 									</header>
 									<div class="show-details">
 										<?= $info['time'] ?><br>

@@ -9797,69 +9797,70 @@ section.shows .body-shows .featured-show {
     margin-bottom: 20px;
     font-family: GothicA1; }
 
-section.shows .body-shows .shows-list .list-title {
-  width: 100%;
-  height: 40px;
-  font-family: BebasNeue;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  padding-top: 8px;
-  text-align: center;
-  background-color: black;
-  color: white; }
-
-section.shows .body-shows .shows-list .list-body {
-  padding: 0 20px;
-  margin: 0;
-  text-align: left;
-  border-right: 1px solid darkgray; }
-  section.shows .body-shows .shows-list .list-body .list-item {
-    margin: 0;
-    padding: 29px 0;
-    list-style: none;
-    position: relative; }
-    section.shows .body-shows .shows-list .list-body .list-item .wrapper-left {
-      float: left;
-      margin-right: 80px; }
-    section.shows .body-shows .shows-list .list-body .list-item .wrapper-right {
-      width: 60px;
-      float: right;
-      position: absolute;
-      right: 0;
-      height: 100%;
-      margin-top: -30px;
-      display: flex;
-      align-items: center; }
-    section.shows .body-shows .shows-list .list-body .list-item .event-date {
-      font-family: GothicA1;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      text-transform: uppercase; }
-    section.shows .body-shows .shows-list .list-body .list-item .event-title {
-      margin-top: 10px;
-      color: #D41C53;
-      font-family: BebasNeue;
-      font-size: 34px;
-      font-weight: normal;
-      line-height: 1;
-      letter-spacing: 1.5px; }
-    section.shows .body-shows .shows-list .list-body .list-item .event-icon {
-      width: 60px;
-      height: 60px;
-      float: right; }
-  section.shows .body-shows .shows-list .list-body .list-item:not(:last-child) {
-    border-bottom: 1px solid darkgray; }
-
-section.shows .body-shows .shows-list .list-more {
-  padding: 32px 0;
-  background-color: #D41C53;
-  color: white;
-  font-family: BebasNeue;
-  font-size: 24px;
-  font-weight: normal;
-  line-height: 0.8;
-  letter-spacing: 1.5px; }
+section.shows .body-shows .shows-list {
+  height: 100%; }
+  section.shows .body-shows .shows-list .list-title {
+    width: 100%;
+    height: 40px;
+    font-family: BebasNeue;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    padding-top: 8px;
+    text-align: center;
+    background-color: black;
+    color: white; }
+  section.shows .body-shows .shows-list .list-body {
+    height: 100%;
+    margin: -40px 0 -83px;
+    padding: 40px 20px 103px;
+    text-align: left;
+    border-right: 1px solid darkgray; }
+    section.shows .body-shows .shows-list .list-body .list-item {
+      margin: 0;
+      padding: 29px 0;
+      list-style: none;
+      position: relative; }
+      section.shows .body-shows .shows-list .list-body .list-item .wrapper-left {
+        float: left;
+        margin-right: 80px; }
+      section.shows .body-shows .shows-list .list-body .list-item .wrapper-right {
+        width: 60px;
+        float: right;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        margin-top: -30px;
+        display: flex;
+        align-items: center; }
+      section.shows .body-shows .shows-list .list-body .list-item .event-date {
+        font-family: GothicA1;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        text-transform: uppercase; }
+      section.shows .body-shows .shows-list .list-body .list-item .event-title {
+        margin-top: 10px;
+        color: #D41C53;
+        font-family: BebasNeue;
+        font-size: 34px;
+        font-weight: normal;
+        line-height: 1;
+        letter-spacing: 1.5px; }
+      section.shows .body-shows .shows-list .list-body .list-item .event-icon {
+        width: 60px;
+        height: 60px;
+        float: right; }
+    section.shows .body-shows .shows-list .list-body .list-item:not(:last-child) {
+      border-bottom: 1px solid darkgray; }
+  section.shows .body-shows .shows-list .list-more {
+    padding: 32px 0;
+    background-color: #D41C53;
+    color: white;
+    font-family: BebasNeue;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 0.8;
+    letter-spacing: 1.5px; }
 
 section.classes .body-classes .card {
   width: 472px;

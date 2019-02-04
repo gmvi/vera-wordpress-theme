@@ -68,6 +68,8 @@ section.shows {
         }
     
         .shows-list {
+        	height: 100%;
+
 			.list-title {
 				width: 100%;
 				height: 40px;
@@ -81,8 +83,10 @@ section.shows {
 			}
 
         	.list-body {
-				padding: 0 20px;
-				margin: 0;
+				height: 100%;
+				// TODO: replace these negative margin shenanigans with flexbox
+				margin: -40px 0 -83px;
+				padding: 40px 20px 103px;
 				text-align: left;
 				border-right: 1px solid darkgray;
 			
