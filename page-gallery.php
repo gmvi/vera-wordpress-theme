@@ -9,21 +9,6 @@ get_header();
 // Get container type from Wordpress Customizer
 $container = get_theme_mod( 'understrap_container_type' );
 
-
-$gallery_img="";
-if (has_post_thumbnail($post ->ID)):
-    $gallery_img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail')[0];
-endif;
-
-
-function pad_zeroes( $num ) {
-    if ( $num > 9 ) {
-        return $num;
-    }
-
-    return str_pad( $num, 2, '0', STR_PAD_LEFT );
-}
-
 ?>
 <div class="wrapper" id="index-wrapper">
 

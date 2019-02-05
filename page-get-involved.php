@@ -12,11 +12,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 // Grab steps from custom fields plugin
 $getting_involved_steps = SCF::get( 'Steps' );
 
-$getting_involved_img="";
-if (has_post_thumbnail($post ->ID)):
-	$getting_involved_img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail')[0];
-endif;
-
 function pad_zeroes( $num ) {
 	if ( $num > 9 ) {
 		return $num;
@@ -33,9 +28,11 @@ function pad_zeroes( $num ) {
 
         <main class="site-main" id="main">
             <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
+
             <?php $menu_name = 'get-involved';
                   $wrapper_class_name = 'entry-header';
                   include( locate_template( 'partial-templates/centered-submenu.php') ); ?>
+
             <?php get_template_part('partial-templates/pageblurb'); ?>
 
             <section class="steps">
