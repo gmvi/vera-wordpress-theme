@@ -14,7 +14,7 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
     <?php $cardclass = (has_post_thumbnail() ? 'card-picture': 'card-pictureless')?>
-    <div class="card border-0 <?php echo $cardclass ?>">
+    <div class="card border-0 <?php echo $cardclass ?> hoverable">
         <div class="top-left">
             <?php get_template_part('partial-templates/category-labels'); ?>
         </div>
@@ -30,6 +30,7 @@
                 echo "<p class=\"excerpt\">$short_excerpt</p>";
             endif;
             ?>
+            <a href="<?= get_permalink() ?>" class="stretched-link"></a>
             <div class="row no-gutters mt-auto">
                 <div class="col-md-6">
                     <a href="<?php echo get_permalink()?>">Learn More</a>

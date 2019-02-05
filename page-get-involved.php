@@ -32,27 +32,11 @@ function pad_zeroes( $num ) {
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
         <main class="site-main" id="main">
-            <section class="volunteer-hero" style="background-image: url(<?php echo $getting_involved_img; ?>)">
-                <div class="volunteer-hero-text">
-                    <div class="centered">
-                        <p class="label">Get Involved</p>
-                        <h2>Volunteer today!</h2>
-                    </div>
-                </div>
-            </section>
+            <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
             <?php $menu_name = 'get-involved';
                   $wrapper_class_name = 'entry-header';
                   include( locate_template( 'partial-templates/centered-submenu.php') ); ?>
-
-            <section class="adventure">
-                <div class="container">
-                    <div id="adventure-header"><?php the_field( 'adventure_header' ); ?></div>
-
-					<?php if ( get_field( 'adventure_text' ) ): ?>
-                        <div id="adventure-text"><?php the_field( 'adventure_text' ); ?></div>
-					<?php endif; ?>
-                </div>
-            </section>
+            <?php get_template_part('partial-templates/pageblurb'); ?>
 
             <section class="steps">
                 <div class="steps-header text-center"> Getting involved at Vera is easy:</div>

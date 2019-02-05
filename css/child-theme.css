@@ -10632,6 +10632,49 @@ section.classes .body-classes, .entry-content section .body {
 #content {
   padding: 0; }
 
+section.blurb {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4rem; }
+  section.blurb div.container div#blurb-header p {
+    font-family: BebasNeueLight;
+    text-align: center;
+    font-size: 56px;
+    letter-spacing: 1.75px;
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: normal; }
+    section.blurb div.container div#blurb-header p strong {
+      color: #d41c53;
+      font-family: BebasNeue; }
+    section.blurb div.container div#blurb-header p b {
+      color: #d41c53;
+      font-family: BebasNeue; }
+  section.blurb div.container div#blurb-text p {
+    font-family: GothicA1;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: normal; }
+  section.blurb div.container div#blurb-header p {
+    font-family: BebasNeueLight;
+    text-align: center;
+    font-size: 56px;
+    letter-spacing: 1.75px;
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: normal; }
+    section.blurb div.container div#blurb-header p strong {
+      color: #d41c53;
+      font-family: BebasNeue; }
+  section.blurb div.container div#blurb-text p {
+    font-family: GothicA1;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: normal; }
+
 section.info {
   padding-bottom: 50px; }
   section.info .header b {
@@ -10881,3 +10924,14 @@ div#wrapper-footer .site-footer {
     @media (max-width: 767.98px) {
       div#wrapper-footer .site-footer .footer-directions {
         margin-top: 1.5rem; } }
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0, 0, 0, 0); }

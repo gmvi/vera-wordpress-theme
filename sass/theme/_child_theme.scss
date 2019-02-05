@@ -362,6 +362,65 @@ ul.menu {
     padding: 0;
 }
 
+section.blurb {
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 4rem;
+	div.container {
+		div#blurb-header {
+			p {
+				font-family: $header-font-light;
+				text-align: center;
+				font-size: 56px;
+				letter-spacing: 1.75px;
+				font-weight: 100;
+				font-style: normal;
+				font-stretch: normal;
+				strong {
+					color: #d41c53;
+					font-family: $header-font;
+				}
+				b {
+					color: #d41c53;
+					font-family: $header-font;
+				}
+			}
+		}
+		div#blurb-text {
+			p {
+				font-family: GothicA1;
+				font-size: 24px;
+				line-height: 1.5;
+				text-align: center;
+				letter-spacing: normal;
+			}
+		}
+	}
+	div.container div#blurb-header p {
+		font-family: $header-font-light;
+		text-align: center;
+		font-size: 56px;
+		letter-spacing: 1.75px;
+		font-weight: 100;
+		font-style: normal;
+		font-stretch: normal;
+		strong {
+			color: #d41c53;
+			font-family: $header-font;
+		}
+	}
+
+	div.container div#blurb-text p {
+		font-family: GothicA1;
+		font-size: 24px;
+		line-height: 1.5;
+		text-align: center;
+		letter-spacing: normal;
+	}
+}
+
+
 section.info {
     padding-bottom: 50px;
 
@@ -686,5 +745,23 @@ div#wrapper-footer {
 				margin-top: 1.5rem;
 			}
 		}
+	}
+}
+
+// todo: this is copied from a bootstrap PR that will be released w/ 4.3
+// remove when it is released!!!
+.stretched-link {
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		// Just in case `pointer-events: none` is set on a parent
+		pointer-events: auto;
+		content: "";
+		// IE10 bugfix, see https://stackoverflow.com/questions/16947967/ie10-hover-pseudo-class-doesnt-work-without-background-color
+		background-color: rgba(0, 0, 0, 0);
 	}
 }

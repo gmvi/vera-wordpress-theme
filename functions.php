@@ -46,18 +46,14 @@ function remove_menus() {
 
 add_action( 'admin_init', 'hide_editor' );
 
-// hides editor for pages that don't need it (like Get Involved)
-// to hide editor for more pages, add them as ors to line 57
-function hide_editor() {
-	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
-	if ( ! isset( $post_id ) ) {
-		return;
-	}
-	$pagetitle = get_the_title( $post_id );
-	if ( $pagetitle == 'Get Involved' ) {
-		remove_post_type_support( 'page', 'editor' );
-	}
-}
+//// hides editor for pages that don't need it
+//// to hide editor for more pages, add them as ors to line 57
+//function hide_editor() {
+//	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+//	if ( ! isset( $post_id ) ) {
+//		return;
+//	}
+//}
 
 function register_custom_menus() {
     register_nav_menu('gallery-menu',__( 'Gallery Menu' ));

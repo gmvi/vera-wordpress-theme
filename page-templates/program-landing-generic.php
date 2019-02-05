@@ -31,20 +31,8 @@ $program_types = SCF::get( 'Program Types' );
                         include( locate_template( 'partial-templates/centered-submenu.php') );
                     ?>
 					<div id="content" class="entry-content text-center">
+                        <?php get_template_part('partial-templates/pageblurb'); ?>
 
-						<section class="info">
-							<div class="row header no-gutters">
-								<div class="col-md-12">
-									<h3><?php the_field('header'); ?></h3>
-								</div>
-							</div><!-- .section-header -->
-							<div class="row body no-gutters">
-								<div class="col-md-12">
-									<?php the_content(); ?>
-								</div>
-							</div><!-- .section-body -->
-						</section><!-- .section-main -->
-			
 						<section class="featured">
 						<?php foreach ($program_types as $i => $program) { ?>
                             <div class="row justify-content-around pb-4 no-gutters">
