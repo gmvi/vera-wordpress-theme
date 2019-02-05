@@ -27,6 +27,7 @@ function pad_zeroes( $num ) {
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
         <main class="site-main" id="main">
+            <?php the_post();  ?>
             <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
 
             <?php $menu_name = 'get-involved';
