@@ -51,9 +51,10 @@ $shows = vera_shows_get_front_page();
 										<? endif; ?>
 									</header>
 									<div class="show-details">
-										<?= $info['time'] ?><br>
+										<?= $info['date']; ?><br>
 										<i class="fa fa-map-marker"></i> <?= $info['venue'] ?><br>
-										<?= $info['price'] ?>
+										<?= $info['price'] ?><br>
+										<?= $info['time'] ?>
 									</div>
 									<a class="more" href=<?= $info['link'] ?> >Tickets</a>
 								</div>
