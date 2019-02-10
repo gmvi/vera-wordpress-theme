@@ -15,10 +15,11 @@ const plugins_dir = path.join(wordpress, 'wp-content', '/plugins');
 const wp_config = path.join(wordpress, 'wp-config.php');
 
 // utility constructs
-function errHandler(for_) {
+function errHandler(for_, print) {
   return (err) => {
     if (err) {
       console.log("error returned by " + for_ + ":");
+      if (print) console.log(print);
       console.log(err);
       process.exit(1);
     }
@@ -27,11 +28,13 @@ function errHandler(for_) {
 
 // read database connection info from wp-config.php
 console.log("reading local database");
-const regex_db = /define\('DB_NAME', ([^)]+)\);\s*$/
-const regex_user = /define\('DB_USER', ([^)]+)\);\s*$/
-const regex_pass = /define\('DB_PASSWORD', ([^)]+)\);\s*$/
+const regex_db = /define\('DB_NAME', ['"](.+)['"]\);\s*$/
+const regex_host = /define\('DB_HOST', ['"](.+)['"]\);\s*$/
+const regex_user = /define\('DB_USER', ['"](.+)['"]\);\s*$/
+const regex_pass = /define\('DB_PASSWORD', ['"](.+)['"]\);\s*$/
 var mysqlUser;
 var mysqlPass;
+var mysqlHost;
 var mysqlDB;
 const rl = readline.createInterface({
   input: fs.createReadStream(wp_config),
@@ -40,20 +43,21 @@ const rl = readline.createInterface({
 rl.on('line', (line) => {
   var match;
   match = line.match(regex_db);
-  if (match) mysqlDB = eval(match[1]);
+  if (match) { mysqlDB = match[1]; return; }
   match = line.match(regex_user);
-  if (match) mysqlUser = eval(match[1]);
+  if (match) { mysqlUser = match[1]; return; }
   match = line.match(regex_pass);
-  if (match) mysqlPass = eval(match[1]);
-  if (mysqlDB && mysqlUser && mysqlPass) rl.close();
+  if (match) {mysqlPass = match[1]; return; }
+  match = line.match(regex_host);
+  if (match) {mysqlHost = match[1]; return; }
+  if (mysqlDB && mysqlUser && mysqlPass && mysqlHost) rl.close();
 });
 rl.on('error', errHandler("readline"));
 
 rl.on('close', () => {
   // connect to database to get siteurl option
   const conn = mysql.createConnection({
-    host: 'localhost',
-    port: '8889',
+    host: mysqlHost,
     user: mysqlUser,
     password: mysqlPass,
     database: mysqlDB,
@@ -70,7 +74,6 @@ rl.on('close', () => {
       path: '/database-pull.php?siteurl='+encodeURIComponent(siteurl),
       auth: 'vera:local46',
     }, function(response) {
-      console.log("unpacking database");
       fs.mkdirpSync(tmp);
       tarball = response.pipe(zlib.createUnzip()).on('error', errHandler("zip"));
       tarball.pipe(tar.extract(tmp)).on('finish', () => {
@@ -80,7 +83,7 @@ rl.on('close', () => {
           console.error("database incomplete");
           process.exit(1);
         }
-        console.log("loading database");
+        console.log("loading database from backup");
         fs.removeSync(uploads_dir);
         fs.removeSync(plugins_dir);
         fs.copySync(path.join(tmp, 'uploads'), uploads_dir);
