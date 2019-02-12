@@ -2,8 +2,8 @@
 body.home {
 	.entry-header {
 		.wp-post-image {
-			// taller titlecard
-    		height: 670px;
+			// shorter titlecard
+    		height: 500px;
     	}
     	.label {
     		margin-top: 80px;
@@ -145,12 +145,14 @@ section.shows {
 			.list-more {
 				padding: 32px 0;
 				background-color: $primary;
-				color: white;
 				font-family: BebasNeue;
 				font-size: 24px;
 				font-weight: normal;
 				line-height: 0.8;
 				letter-spacing: 1.5px;
+				a {
+					color: white;
+				}
 			}
         }
     }
@@ -160,38 +162,38 @@ section.classes {
     .header-classes {
         @extend %section-header;
     }
-    
-    .body-classes {
-        @extend %section-body;
 
-        .card {
-        	width: 472px;
-        	margin: 0 auto;
+	.card {
+		width: 472px;
+		margin: 0 auto;
 
-        	.card-image {
-        		width: 470px;
-        		height: 350px;
-        	}
+		.card-image {
+			width: 100%;
+			padding-bottom: 100%;
+			background-size: cover !important;
+		}
 
-        	.card-title {
-        		height: 100px;
-        		margin-bottom: 0;
-        		font-family: BebasNeue;
-				font-size: 34px;
-				text-align: left;
-				display: flex;
-				align-items: center;
-				padding-left: 40px;
-				margin-right: 100px;
+		.card-text-cover {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			color: white;
+			background: rgba(0, 0, 0, 0.7);
+			font-family: BebasNeue;
+			font-size: 34px;
+			height: 20%;
 
-				.icon-arrow {
-					width: 100px;
-					height: 100px;
-					padding: 30px;
-				}
-        	}
-        }
-    }
+			a {
+				font-size: 22px;
+				color: white;
+				text-decoration: underline;
+				text-decoration-color: $primary;
+				letter-spacing: 1.8px;
+				font-family: BebasNeue;
+			}
+		}
+	}
+
 }
 
 section.blog {

@@ -9755,7 +9755,7 @@ a.skip-link {
 
 /* Page-specific styling */
 body.home .entry-header .wp-post-image {
-  height: 670px; }
+  height: 500px; }
 
 body.home .entry-header .label {
   margin-top: 80px; }
@@ -9855,33 +9855,37 @@ section.shows .body-shows .shows-list {
   section.shows .body-shows .shows-list .list-more {
     padding: 32px 0;
     background-color: #D41C53;
-    color: white;
     font-family: BebasNeue;
     font-size: 24px;
     font-weight: normal;
     line-height: 0.8;
     letter-spacing: 1.5px; }
+    section.shows .body-shows .shows-list .list-more a {
+      color: white; }
 
-section.classes .body-classes .card {
+section.classes .card {
   width: 472px;
   margin: 0 auto; }
-  section.classes .body-classes .card .card-image {
-    width: 470px;
-    height: 350px; }
-  section.classes .body-classes .card .card-title {
-    height: 100px;
-    margin-bottom: 0;
+  section.classes .card .card-image {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover !important; }
+  section.classes .card .card-text-cover {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
     font-family: BebasNeue;
     font-size: 34px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    padding-left: 40px;
-    margin-right: 100px; }
-    section.classes .body-classes .card .card-title .icon-arrow {
-      width: 100px;
-      height: 100px;
-      padding: 30px; }
+    height: 20%; }
+    section.classes .card .card-text-cover a {
+      font-size: 22px;
+      color: white;
+      text-decoration: underline;
+      text-decoration-color: #D41C53;
+      letter-spacing: 1.8px;
+      font-family: BebasNeue; }
 
 section.blog {
   padding-top: 0px;
@@ -10618,11 +10622,11 @@ section.classes .header-classes, .centered, .entry-content section .header {
   section.classes .header-classes h3, .centered h3, .entry-content section .header h3 {
     font-size: 56px; }
 
-section.classes .body-classes, .entry-content section .body {
+.entry-content section .body {
   font-family: GothicA1;
   font-size: 24px;
   color: black; }
-  section.classes .body-classes p, .entry-content section .body p {
+  .entry-content section .body p {
     margin-bottom: 35px; }
 
 .entry-content section {
