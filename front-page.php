@@ -28,7 +28,7 @@ $shows = vera_shows_get_front_page();
                     <?php get_template_part('partial-templates/pageblurb'); ?>
 
 					<section class="shows">
-						<div class="row header no-gutters">
+						<div id="shows-header-text" class="row header m-0 py-3">
 							<div class="col-md-12">
 								<h2><b><?php the_field('concert_title_text'); ?></b></h2>
 							</div>
@@ -115,28 +115,8 @@ $shows = vera_shows_get_front_page();
 							<div class="col-md-1"></div>
 						</div>
 					</section>
-                    <section class="volunteer-today pb-5 pt-5">
-                        <svg class="top-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
-                            <polygon  points="0,0 50,0 50,50"></polygon>
-                        </svg>
-                        <svg class="bottom-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
-                            <polygon  points="50,50 0,50 0,0"></polygon>
-                        </svg>
-                        <div class="content-overlay"></div>
-                        <div class="row no-gutters pt-2">
-                            <div class="col-md-1"></div>
-                            <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable pt-md-4">
-                                <span class="label">Get Involved</span>
-                                <h2 class="banner-headline">Volunteer Today!</h2>
-                                <a href="/get-involved" class="more">Learn More</a>
-                            </div>
-                            <div class="col-md-5 d-none d-md-block">
-<!--                                TODO: make configurable -->
-                                <img class="pl-3 support-vera-graphic" style="max-height:400px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
-                            </div>
-                            <div class="col-md-1"></div>
-                        </div>
-                    </section>
+
+					<?php get_template_part('partial-templates/support-block'); ?>
 
 					<section class="blog">
 						<div class="row header no-gutters">

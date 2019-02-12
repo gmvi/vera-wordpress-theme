@@ -13,6 +13,13 @@ body.home {
 
 section.shows {
 
+	div#shows-header-text {
+		background: rgba(0, 0, 0, 0.7);
+		//background-color: black;
+		color: white;
+		border-bottom: 1px solid white;
+	}
+
     .body-shows {
 
         .featured-show {

@@ -9760,6 +9760,11 @@ body.home .entry-header .wp-post-image {
 body.home .entry-header .label {
   margin-top: 80px; }
 
+section.shows div#shows-header-text {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-bottom: 1px solid white; }
+
 section.shows .body-shows .featured-show {
   position: relative;
   background-color: rgba(0, 0, 0, 0.3);
