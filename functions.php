@@ -30,6 +30,26 @@ foreach ($includes as $filename) {
     include $filename;
 }
 
+
+// Modify posts page query to return only 9 at a time
+add_action( 'pre_get_posts', 'limit_posts_query' );
+
+function limit_posts_query( $query ) {
+	// the function to check if we are on the "posts page" is is_home()
+	if( is_home() && $query->is_main_query() ) {
+		$query->set('posts_per_page', '9');
+	}
+
+}
+
+//make the paginated buttons beautiful
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+	return 'class="btn bordered-button btn-outline-primary"';
+}
+
 // Remove things we don't want
 
 // Widgets? No por favor!

@@ -25,21 +25,15 @@
   text-transform: uppercase;
 }
 
-.blog-card {
-  div.label a {
-    color: white;
-  }
-}
-
 .card-picture {
   p.blog-overview-date {
     @extend %blog-overview-date;
   }
   h5 {
-    @extend %blog-overview-titles;
-    color: $primary;
     a {
+      @extend %blog-overview-titles;
       text-decoration: none !important;
+      color: $primary;
     }
   }
 
@@ -57,8 +51,11 @@
     color: white;
   }
   h5 {
-    @extend %blog-overview-titles;
-    color: white;
+    a {
+      @extend %blog-overview-titles;
+      color: white;
+      text-decoration: none !important;
+    }
   }
   a {
     @extend %blog-overview-learn-more;
@@ -90,4 +87,12 @@
   position: absolute;
   top: 8px;
   left: 16px;
+}
+
+div#blog-pagination {
+  width: 70%;
+  margin: 40px auto;
+  a {
+    font-size: 20px;
+  }
 }

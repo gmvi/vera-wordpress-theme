@@ -130,6 +130,12 @@ a.more:hover {
 	@extend %label-base;
     background-color: $primary;
     color: white;
+	a {
+		color: white;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .label-white {

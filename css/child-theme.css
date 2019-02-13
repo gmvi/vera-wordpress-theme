@@ -10262,7 +10262,7 @@ section#gallery-coa {
   min-height: 250px;
   object-fit: cover; }
 
-.card-picture h5, .card-pictureless h5 {
+.card-picture h5 a, .card-pictureless h5 a {
   font-family: BebasNeue;
   font-size: 26px !important; }
 
@@ -10279,13 +10279,9 @@ section#gallery-coa {
   font-size: 12px;
   text-transform: uppercase; }
 
-.blog-card div.label a {
-  color: white; }
-
-.card-picture h5 {
+.card-picture h5 a {
+  text-decoration: none  !important;
   color: #D41C53; }
-  .card-picture h5 a {
-    text-decoration: none  !important; }
 
 .card-picture a {
   color: #4A4A4A; }
@@ -10295,8 +10291,9 @@ section#gallery-coa {
   .card-pictureless p.blog-overview-date {
     margin-top: 3rem;
     color: white; }
-  .card-pictureless h5 {
-    color: white; }
+  .card-pictureless h5 a {
+    color: white;
+    text-decoration: none  !important; }
   .card-pictureless a {
     color: white; }
   .card-pictureless p.excerpt {
@@ -10315,6 +10312,12 @@ section#gallery-coa {
   position: absolute;
   top: 8px;
   left: 16px; }
+
+div#blog-pagination {
+  width: 70%;
+  margin: 40px auto; }
+  div#blog-pagination a {
+    font-size: 20px; }
 
 .single-blog-title {
   font-size: 4rem;
@@ -10494,6 +10497,10 @@ a.more:hover {
 .label {
   background-color: #D41C53;
   color: white; }
+  .label a {
+    color: white; }
+    .label a:hover {
+      text-decoration: none; }
 
 .label-white {
   background-color: white;
