@@ -52,14 +52,17 @@ $container = get_theme_mod( 'understrap_container_type' );
                         </div>
                     </div>
                 </section>
-                <section class="row no-gutters">
-                        <div class="col-md-6 p-4">
+                <section id="gallery-coa" class="row no-gutters">
+                        <div class="col-md-5 p-5">
                             <p class="label">Get Involved</p>
                             <h2 class="medium-header mb-1"><?php the_field('committee_block_header'); ?></h2>
                             <p><?php the_field('committee_block_description'); ?></p>
                             <a href="<?php the_field('committee_block_contact_url'); ?>" class="btn bordered-button btn-outline-primary">Contact the committee</a>
+
                         </div>
-                        <div class="col-md-6 p-4">
+                        <div class="col-md-1 d-none d-md-block vertical-line"></div>
+                        <div class="col-md-1 d-none d-md-block"></div>
+                        <div class="col-md-5 p-5">
                             <p class="label">Call For Artists</p>
                             <h2 class="medium-header mb-1"><?php the_field('cfa_block_header'); ?></h2>
                             <p><?php the_field('cfa_block_description'); ?></p>

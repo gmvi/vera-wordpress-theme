@@ -10227,6 +10227,13 @@ h1.large-header {
   padding: 0px !important;
   margin: 0px !important; }
 
+section#gallery-coa {
+  margin: 20px 0px; }
+  section#gallery-coa div.vertical-line {
+    border-right: 1px solid #9b9b9b;
+    opacity: 0.25;
+    margin: 30px 0px; }
+
 .gallery-banner {
   position: relative;
   height: 600px;
