@@ -68,7 +68,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 </section>
 
-	            <?php get_template_part('partial-templates/support-block'); ?>
+	            <?php
+	            $support_footer_color = '#d41c53';
+	            include( locate_template( 'partial-templates/support-block.php') );
+	            ?>
 
             </div>
         </main><!-- #main -->

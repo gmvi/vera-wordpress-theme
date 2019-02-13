@@ -116,7 +116,10 @@ $shows = vera_shows_get_front_page();
 						</div>
 					</section>
 
-					<?php get_template_part('partial-templates/support-block'); ?>
+					<?php
+                        $support_footer_color = 'white';
+					    include( locate_template( 'partial-templates/support-block.php') );
+					?>
 
 					<section class="blog">
 						<div class="row header no-gutters">

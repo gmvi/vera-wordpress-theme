@@ -1,10 +1,27 @@
 <!-- start of support block template -->
+<?php
 
+/**
+ * Configures pink diagonal support block, allows user to pass in optional color override
+ * (can be any color element recognized by css, such as 'white', or '#000000')
+ * for the block immediately following the pink diagonal.
+ *
+ * See page-gallery.php, program-landing-generic.php, or front-page.php for examples
+ *
+ * Usage:
+ * <?php
+ *  $support_footer_color = 'white';
+ *  include( locate_template( 'partial-templates/support-block.php') );
+ * ?>
+* */
+
+
+?>
 <section class="volunteer-today-landing pb-5 pt-5">
 	<svg class="top-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
 		<polygon  points="0,0 50,0 50,50"></polygon>
 	</svg>
-	<svg class="bottom-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
+	<svg class="bottom-cutout" style="fill: <?php echo $support_footer_color ?>" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
 		<polygon  points="50,50 0,50 0,0"></polygon>
 	</svg>
 	<div class="content-overlay"></div>

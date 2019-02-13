@@ -12,12 +12,14 @@ body.home {
 }
 
 section.shows {
+	padding-top: 40px !important;
 
 	div#shows-header-text {
-		background: rgba(0, 0, 0, 0.7);
+		//background: rgba(0, 0, 0, 0.6);
 		//background-color: black;
-		color: white;
-		border-bottom: 1px solid white;
+		//color: white;
+		border-top: 1px solid black;
+		//border-bottom: 1px solid white;
 	}
 
     .body-shows {
@@ -166,6 +168,8 @@ section.shows {
 }
 
 section.classes {
+	margin-bottom: 50px;
+
     .header-classes {
         @extend %section-header;
     }
