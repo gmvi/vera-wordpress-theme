@@ -1,12 +1,9 @@
 $container-padding: 0px !important;
 
 .current-gallery {
-  // todo ask marianne: how do we best make this snap to full screen or something on mobile? setting
-  // explicit pixel heights on sections feels unresponsive
   background: #ebeeef;
+
   img.current-gallery-image {
-    height: 100%;
-    max-height: 600px;
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -10205,8 +10205,6 @@ section.classes {
 .current-gallery {
   background: #ebeeef; }
   .current-gallery img.current-gallery-image {
-    height: 100%;
-    max-height: 600px;
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
