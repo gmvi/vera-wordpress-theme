@@ -90,8 +90,15 @@
 }
 
 div#blog-pagination {
-  width: 70%;
-  margin: 40px auto;
+  @include media-breakpoint-up(md) {
+    width: 70%;
+    margin: 40px auto;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 20px auto;
+  }
+
   a {
     font-size: 20px;
   }

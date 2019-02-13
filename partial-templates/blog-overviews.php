@@ -51,8 +51,8 @@
     </div>
 
     <div id="blog-pagination" class="row justify-content-between">
-        <div class="col-2"><?php previous_posts_link( '&#8592; Newer posts' ); ?></div>
-        <div class="col-2"><?php next_posts_link( 'Older posts &#8594;' ); ?></div>
+        <div class="col-md-2 text-center text-md-left"><?php previous_posts_link( '&#8592; Newer posts' ); ?></div>
+        <div class="col-md-2 text-center text-md-left"><?php next_posts_link( 'Older posts &#8594;' ); ?></div>
     </div>
 
     </div>
