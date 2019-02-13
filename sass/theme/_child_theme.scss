@@ -221,9 +221,9 @@ div.vera-bordered-social-icons {
     font-weight: normal;
 
 	.navbar-brand {
-	    height: 130px;
 	    padding-top: 15px;
 	    padding-bottom: 15px;
+		height: $navbar-brand-height;
 	}
 
 	.navbar-brand .img-fluid {
@@ -267,6 +267,21 @@ div.vera-bordered-social-icons {
 		color: black;
 		padding-left: .8rem;
 		padding-right: .8rem;
+	}
+}
+
+//extra div to make transition from header -> sticky header smoother
+div.nav-spacer {
+	position: relative;
+	height: $navbar-brand-height;
+	display: none;
+}
+
+div#wrapper-navbar.fixed-top nav.navbar {
+	background: rgba(255, 255, 255, 0.8);
+
+	.navbar-brand {
+		height: 5rem;
 	}
 }
 

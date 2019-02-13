@@ -3797,8 +3797,8 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: -2.75rem;
+  padding-bottom: -2.75rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -10556,9 +10556,9 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
   text-transform: uppercase;
   font-weight: normal; }
   .navbar .navbar-brand {
-    height: 130px;
     padding-top: 15px;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    height: 8rem; }
   .navbar .navbar-brand .img-fluid {
     height: 100%;
     width: auto; }
@@ -10584,6 +10584,16 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
     color: black;
     padding-left: .8rem;
     padding-right: .8rem; }
+
+div.nav-spacer {
+  position: relative;
+  height: 8rem;
+  display: none; }
+
+div#wrapper-navbar.fixed-top nav.navbar {
+  background: rgba(255, 255, 255, 0.8); }
+  div#wrapper-navbar.fixed-top nav.navbar .navbar-brand {
+    height: 5rem; }
 
 .header-nav .menu-item.current-menu-item a, .header-nav .menu-item.current-page-ancestor a {
   color: #D41C53 !important; }

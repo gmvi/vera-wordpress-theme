@@ -183,7 +183,8 @@ gulp.task('scripts', function() {
 
         // End - All BS4 stuff
 
-        basePaths.dev + 'js/skip-link-focus-fix.js'
+        basePaths.dev + 'js/skip-link-focus-fix.js',
+        basePaths.dev + 'js/sticky-header.js'
     ];
   gulp.src(scripts)
     .pipe(concat('child-theme.min.js'))
