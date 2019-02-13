@@ -10264,7 +10264,7 @@ section#gallery-coa {
 
 .card-picture h5, .card-pictureless h5 {
   font-family: BebasNeue;
-  font-size: 26px; }
+  font-size: 26px !important; }
 
 .card-picture a, .card-pictureless a {
   font-family: BebasNeue;
@@ -10279,8 +10279,13 @@ section#gallery-coa {
   font-size: 12px;
   text-transform: uppercase; }
 
+.blog-card div.label a {
+  color: white; }
+
 .card-picture h5 {
   color: #D41C53; }
+  .card-picture h5 a {
+    text-decoration: none  !important; }
 
 .card-picture a {
   color: #4A4A4A; }
@@ -10958,6 +10963,14 @@ div#wrapper-footer .site-footer {
     @media (max-width: 767.98px) {
       div#wrapper-footer .site-footer .footer-directions {
         margin-top: 1.5rem; } }
+
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -o-user-select: none;
+  -moz-user-select: none; }
 
 .stretched-link::after {
   position: absolute;

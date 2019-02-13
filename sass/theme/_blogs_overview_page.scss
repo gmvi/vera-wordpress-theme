@@ -7,7 +7,7 @@
 
 %blog-overview-titles {
   font-family: BebasNeue;
-  font-size: 26px;
+  font-size: 26px !important;
 }
 
 %blog-overview-learn-more {
@@ -25,6 +25,12 @@
   text-transform: uppercase;
 }
 
+.blog-card {
+  div.label a {
+    color: white;
+  }
+}
+
 .card-picture {
   p.blog-overview-date {
     @extend %blog-overview-date;
@@ -32,7 +38,11 @@
   h5 {
     @extend %blog-overview-titles;
     color: $primary;
+    a {
+      text-decoration: none !important;
+    }
   }
+
   a {
     @extend %blog-overview-learn-more;
     color: $darkgray;

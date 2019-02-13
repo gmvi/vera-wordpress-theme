@@ -14,23 +14,23 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
     <?php $cardclass = (has_post_thumbnail() ? 'card-picture': 'card-pictureless')?>
-    <div class="card border-0 <?php echo $cardclass ?> hoverable">
+    <div class="card border-0 <?php echo $cardclass ?> hoverable blog-card">
         <div class="top-left">
             <?php get_template_part('partial-templates/category-labels'); ?>
         </div>
         <?php if (has_post_thumbnail()): ?>
-            <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>">
+            <a href="<?= get_permalink() ?>"><img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>"></a>
         <?php endif ?>
         <div class="card-body d-flex flex-column">
-            <p class="blog-overview-date"><?php echo get_the_date(); ?></p>
-            <h5 class="card-title"><?php echo the_title();?></h5>
+            <p class="blog-overview-date unselectable"><?php echo get_the_date(); ?></p>
+            <h5 class="card-title"><a href="<?php echo get_permalink()?>"><?php echo the_title();?></a></h5>
             <?php
             if (!has_post_thumbnail()):
                 $short_excerpt = wp_trim_words(get_the_excerpt(), 10, '...');
                 echo "<p class=\"excerpt\">$short_excerpt</p>";
             endif;
             ?>
-            <a href="<?= get_permalink() ?>" class="stretched-link"></a>
+
             <div class="row no-gutters mt-auto">
                 <div class="col-md-6">
                     <a href="<?php echo get_permalink()?>">Learn More</a>

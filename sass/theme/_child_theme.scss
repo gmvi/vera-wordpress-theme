@@ -783,6 +783,18 @@ div#wrapper-footer {
 	}
 }
 
+//copy/pasta from https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
+.unselectable {
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-webkit-touch-callout: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+}
+
+
+// todo: why are we using this
 // todo: this is copied from a bootstrap PR that will be released w/ 4.3
 // remove when it is released!!!
 .stretched-link {
