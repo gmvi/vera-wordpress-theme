@@ -30,6 +30,7 @@ $shows = vera_shows_get_front_page();
 					<section class="shows">
 						<div id="shows-header-text" class="row header m-0 py-3">
 							<div class="col-md-12">
+                                <span class="label">Concerts</span>
 								<h2><b><?php the_field('concert_title_text'); ?></b></h2>
 							</div>
 						</div><!-- .header-concerts -->
@@ -93,25 +94,28 @@ $shows = vera_shows_get_front_page();
 						</div>
 						<div class="row body no-gutters">
 							<div class="col-md-1"></div>
-							<div class="col-md-5">
+
+							<div class="col-md-5 mb-4 mb-md-0">
 								<div class="card">
 									<div class="card-image" style="background: url('<?php the_field('classes_left_image'); ?>')"></div>
-                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-5">
+                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-md-5">
                                         <h2><?php the_field('classes_left_feature'); ?></h2>
                                         <a href="<?php the_field('classes_left_link'); ?>">Learn More</a>
                                     </div>
 								</div>
 							</div>
+
 							<div class="col-md-5">
 								<div class="card">
 									<div class="card-image" style="background: url('<?php the_field('classes_right_image'); ?>')">
                                     </div>
-                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-5">
+                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-md-5">
                                         <h2><?php the_field('classes_right_feature'); ?></h2>
                                         <a href="<?php the_field('classes_right_link'); ?>">Learn More</a>
                                     </div>
 								</div>
 							</div>
+
 							<div class="col-md-1"></div>
 						</div>
 					</section>

@@ -9762,8 +9762,6 @@ body.home .entry-header .label {
 
 section.shows {
   padding-top: 40px !important; }
-  section.shows div#shows-header-text {
-    border-top: 1px solid black; }
   section.shows .body-shows .featured-show {
     position: relative;
     background-color: rgba(0, 0, 0, 0.3);
@@ -9869,8 +9867,10 @@ section.shows {
 section.classes {
   margin-bottom: 50px; }
   section.classes .card {
-    width: 472px;
     margin: 0 auto; }
+    @media (min-width: 768px) {
+      section.classes .card {
+        width: 472px; } }
     section.classes .card .card-image {
       width: 100%;
       padding-bottom: 100%;
