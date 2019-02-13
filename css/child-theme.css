@@ -10585,9 +10585,12 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
     padding-left: .8rem;
     padding-right: .8rem; }
 
+.header-nav .menu-item.current-menu-item a, .header-nav .menu-item.current-page-ancestor a {
+  color: #D41C53 !important; }
+
 div.nav-spacer {
   position: relative;
-  height: 8rem;
+  height: 5rem;
   display: none; }
 
 div#wrapper-navbar.fixed-top nav.navbar {
@@ -10595,8 +10598,13 @@ div#wrapper-navbar.fixed-top nav.navbar {
   div#wrapper-navbar.fixed-top nav.navbar .navbar-brand {
     height: 5rem; }
 
-.header-nav .menu-item.current-menu-item a, .header-nav .menu-item.current-page-ancestor a {
-  color: #D41C53 !important; }
+section#centered-submenu.fixed-top {
+  top: 5rem !important; }
+
+div.submenu-spacer {
+  position: relative;
+  height: 50px;
+  display: none; }
 
 ul.menu {
   margin: 0;

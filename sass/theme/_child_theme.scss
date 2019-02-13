@@ -211,6 +211,8 @@ div.vera-bordered-social-icons {
 
 /* Navigation */
 
+$collapsed-nav-height: 5rem;
+
 .navbar {
     margin: 0;
     padding: 0 40px;
@@ -270,21 +272,6 @@ div.vera-bordered-social-icons {
 	}
 }
 
-//extra div to make transition from header -> sticky header smoother
-div.nav-spacer {
-	position: relative;
-	height: $navbar-brand-height;
-	display: none;
-}
-
-div#wrapper-navbar.fixed-top nav.navbar {
-	background: rgba(255, 255, 255, 0.8);
-
-	.navbar-brand {
-		height: 5rem;
-	}
-}
-
 .header-nav {
 	.menu-item.current-menu-item, .menu-item.current-page-ancestor {
 		a {
@@ -293,6 +280,39 @@ div#wrapper-navbar.fixed-top nav.navbar {
 	}
 }
 
+//extra div to make transition from header -> sticky header smoother
+div.nav-spacer {
+	position: relative;
+	//height: $navbar-brand-height;
+	height: $collapsed-nav-height;
+	display: none;
+}
+
+div#wrapper-navbar.fixed-top nav.navbar {
+	background: rgba(255, 255, 255, 0.8);
+
+	.navbar-brand {
+		height: $collapsed-nav-height;
+	}
+}
+
+//subnav stuff
+
+$submenu-height: 50px;
+
+section#centered-submenu {
+	&.fixed-top {
+		top: $collapsed-nav-height !important;
+	}
+}
+
+//extra div to make transition from header -> sticky header smoother
+div.submenu-spacer {
+	position: relative;
+	//height: $navbar-brand-height;
+	height: $submenu-height;
+	display: none;
+}
 
 ul.menu {
 	margin: 0;
@@ -302,7 +322,7 @@ ul.menu {
 %submenu {
 	justify-content: center;
 	text-align: center;
-	min-height: 50px;
+	min-height: $submenu-height;
 	align-content: center;
 	font-family: BebasNeue;
 	font-size: 18px;
