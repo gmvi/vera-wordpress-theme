@@ -25,7 +25,9 @@
         }
 
 
-        if (submenuOffset) {
+        //only make the subheader sticky if it exists and is not being
+        //used for blog posts page
+        if (submenuOffset &&  !$( "#centered-submenu" ).hasClass('blog-subheader')) {
             //submenu sticky header
             submenuScroll = $(window).scrollTop() + $("#wrapper-navbar").height() + $("#centered-submenu").height();
             if ( submenuScroll > submenuOffset.top){

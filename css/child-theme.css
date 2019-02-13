@@ -10260,9 +10260,9 @@ section#gallery-coa {
   min-height: 250px;
   object-fit: cover; }
 
-.card-picture h5 a, .card-pictureless h5 a {
+.card-picture h5, .card-pictureless h5 {
   font-family: BebasNeue;
-  font-size: 26px !important; }
+  font-size: 26px; }
 
 .card-picture a, .card-pictureless a {
   font-family: BebasNeue;
@@ -10277,8 +10277,7 @@ section#gallery-coa {
   font-size: 12px;
   text-transform: uppercase; }
 
-.card-picture h5 a {
-  text-decoration: none  !important;
+.card-picture h5 {
   color: #D41C53; }
 
 .card-picture a {
@@ -10289,9 +10288,8 @@ section#gallery-coa {
   .card-pictureless p.blog-overview-date {
     margin-top: 3rem;
     color: white; }
-  .card-pictureless h5 a {
-    color: white;
-    text-decoration: none  !important; }
+  .card-pictureless h5 {
+    color: white; }
   .card-pictureless a {
     color: white; }
   .card-pictureless p.excerpt {

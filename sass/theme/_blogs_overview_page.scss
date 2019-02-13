@@ -1,3 +1,4 @@
+
 .square {
   width: 100%;
   height: 20vw;
@@ -7,7 +8,7 @@
 
 %blog-overview-titles {
   font-family: BebasNeue;
-  font-size: 26px !important;
+  font-size: 26px;
 }
 
 %blog-overview-learn-more {
@@ -30,13 +31,9 @@
     @extend %blog-overview-date;
   }
   h5 {
-    a {
-      @extend %blog-overview-titles;
-      text-decoration: none !important;
-      color: $primary;
-    }
+    @extend %blog-overview-titles;
+    color: $primary;
   }
-
   a {
     @extend %blog-overview-learn-more;
     color: $darkgray;
@@ -51,11 +48,8 @@
     color: white;
   }
   h5 {
-    a {
-      @extend %blog-overview-titles;
-      color: white;
-      text-decoration: none !important;
-    }
+    @extend %blog-overview-titles;
+    color: white;
   }
   a {
     @extend %blog-overview-learn-more;
