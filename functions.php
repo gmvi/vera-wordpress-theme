@@ -64,8 +64,6 @@ function remove_menus() {
     remove_submenu_page( 'themes.php', 'widgets.php' );
 }
 
-add_action( 'admin_init', 'hide_editor' );
-
 function register_custom_menus() {
     register_nav_menu('gallery-menu',__( 'Gallery Menu' ));
 	register_nav_menu('footer-menu',__( 'Footer Menu' ));
