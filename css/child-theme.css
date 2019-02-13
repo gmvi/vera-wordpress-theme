@@ -9893,7 +9893,7 @@ section.classes {
         font-family: BebasNeue; }
 
 section.blog {
-  padding-top: 0px;
+  padding-top: 0px !important;
   color: black;
   margin-bottom: 100px; }
   section.blog .body {
