@@ -36,7 +36,7 @@ add_action( 'pre_get_posts', 'limit_posts_query' );
 
 function limit_posts_query( $query ) {
 	// the function to check if we are on the "posts page" is is_home()
-	if( is_home() && $query->is_main_query() ) {
+	if( (is_home() || is_category()) && $query->is_main_query() ) {
 		$query->set('posts_per_page', '9');
 	}
 
