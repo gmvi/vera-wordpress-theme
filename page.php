@@ -37,7 +37,6 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="row pt-4 pb-4 ml-1 no-gutters">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-9 pb-3 blog-contents">
-                                <p class="metadata">Posted on <?php the_date()?> by <a href="#"><?// FIXME: get_the_author_meta('user_url')?><?php echo get_the_author_meta('display_name') ?></a></p>
                                 <?php the_content()?>
                                 <hr class="pb-2"/>
                                 <p class="share-call mb-1">Share this story</p>
