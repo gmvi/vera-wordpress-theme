@@ -130,6 +130,12 @@ a.more:hover {
 	@extend %label-base;
     background-color: $primary;
     color: white;
+	a {
+		color: white;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .label-white {
@@ -211,6 +217,8 @@ div.vera-bordered-social-icons {
 
 /* Navigation */
 
+$collapsed-nav-height: 5rem;
+
 .navbar {
     margin: 0;
     padding: 0 40px;
@@ -221,9 +229,9 @@ div.vera-bordered-social-icons {
     font-weight: normal;
 
 	.navbar-brand {
-	    height: 130px;
 	    padding-top: 15px;
 	    padding-bottom: 15px;
+		height: $navbar-brand-height;
 	}
 
 	.navbar-brand .img-fluid {
@@ -278,6 +286,39 @@ div.vera-bordered-social-icons {
 	}
 }
 
+//extra div to make transition from header -> sticky header smoother
+div.nav-spacer {
+	position: relative;
+	//height: $navbar-brand-height;
+	height: $collapsed-nav-height;
+	display: none;
+}
+
+div#wrapper-navbar.fixed-top nav.navbar {
+	background: rgba(255, 255, 255, 0.8);
+
+	.navbar-brand {
+		height: $collapsed-nav-height;
+	}
+}
+
+//subnav stuff
+
+$submenu-height: 50px;
+
+section#centered-submenu {
+	&.fixed-top {
+		top: $collapsed-nav-height !important;
+	}
+}
+
+//extra div to make transition from header -> sticky header smoother
+div.submenu-spacer {
+	position: relative;
+	//height: $navbar-brand-height;
+	height: $submenu-height;
+	display: none;
+}
 
 ul.menu {
 	margin: 0;
@@ -287,7 +328,7 @@ ul.menu {
 %submenu {
 	justify-content: center;
 	text-align: center;
-	min-height: 50px;
+	min-height: $submenu-height;
 	align-content: center;
 	font-family: BebasNeue;
 	font-size: 18px;
@@ -748,6 +789,18 @@ div#wrapper-footer {
 	}
 }
 
+//copy/pasta from https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
+.unselectable {
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-webkit-touch-callout: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+}
+
+
+// todo: why are we using this
 // todo: this is copied from a bootstrap PR that will be released w/ 4.3
 // remove when it is released!!!
 .stretched-link {

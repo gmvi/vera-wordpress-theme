@@ -1,12 +1,9 @@
 $container-padding: 0px !important;
 
 .current-gallery {
-  // todo ask marianne: how do we best make this snap to full screen or something on mobile? setting
-  // explicit pixel heights on sections feels unresponsive
   background: #ebeeef;
+
   img.current-gallery-image {
-    height: 100%;
-    max-height: 600px;
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,6 +31,16 @@ h1.large-header {
 .smaller-margin-container {
   padding: $container-padding;
   margin: $container-padding;
+}
+
+section#gallery-coa {
+  margin: 20px 0px;
+
+  div.vertical-line {
+    border-right: 1px solid #9b9b9b;
+    opacity: 0.25;
+    margin: 30px 0px;
+  }
 }
 
 .gallery-banner {

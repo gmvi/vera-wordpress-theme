@@ -28,10 +28,10 @@ $shows = vera_shows_get_front_page();
                     <?php get_template_part('partial-templates/pageblurb'); ?>
 
 					<section class="shows">
-						<div class="row header no-gutters">
+						<div id="shows-header-text" class="row header m-0 py-3">
 							<div class="col-md-12">
-								<span class="label">Concerts</span>
-								<h2><b>On Stage</b></h2>
+                                <span class="label">Concerts</span>
+								<h2><b><?php the_field('concert_title_text'); ?></b></h2>
 							</div>
 						</div><!-- .header-concerts -->
 						<?php
@@ -80,7 +80,7 @@ $shows = vera_shows_get_front_page();
 											</li>
 										<? endforeach; ?>
 									</ul>
-									<div class="list-more">View All</div>
+                                    <div class="list-more"><a href="http://events.theveraproject.org/" target="_blank">View All</a></div>
 								</div>
 							</div><!-- .shows-block -->
 						</div><!-- .body-concerts -->
@@ -90,68 +90,53 @@ $shows = vera_shows_get_front_page();
 						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<span class="label">Classes</span>
-								<h2><b>In The Studio</b></h2>
+								<h2><b><?php the_field('classes_title_text'); ?></b></h2>
 							</div>
 						</div>
 						<div class="row body no-gutters">
 							<div class="col-md-1"></div>
-							<div class="col-md-5">
+
+							<div class="col-md-5 mb-4 mb-md-0">
 								<div class="card">
-									<div class="card-image"></div>
-									<a href class="card-title">
-										Silkscreen
-										<div class="icon-arrow"></div>
-									</a>
+									<div class="card-image" style="background: url('<?php the_field('classes_left_image'); ?>')"></div>
+                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-md-5">
+                                        <h2><?php the_field('classes_left_feature'); ?></h2>
+                                        <a href="<?php the_field('classes_left_link'); ?>">Learn More</a>
+                                    </div>
 								</div>
 							</div>
+
 							<div class="col-md-5">
 								<div class="card">
-									<div class="card-image"></div>
-									<a href class="card-title">
-										Audio & Stage
-										<div class="icon-arrow"></div>
-									</a>
+									<div class="card-image" style="background: url('<?php the_field('classes_right_image'); ?>')">
+                                    </div>
+                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-md-5">
+                                        <h2><?php the_field('classes_right_feature'); ?></h2>
+                                        <a href="<?php the_field('classes_right_link'); ?>">Learn More</a>
+                                    </div>
 								</div>
 							</div>
+
 							<div class="col-md-1"></div>
 						</div>
 					</section>
-                    <section class="volunteer-today pb-5 pt-5">
-<!--                        <h1>Header Content</h1>-->
-                        <svg class="top-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
-                            <polygon  points="0,0 50,0 50,50"></polygon>
-                        </svg>
-                        <svg class="bottom-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
-                            <polygon  points="50,50 0,50 0,0"></polygon>
-                        </svg>
-                        <div class="content-overlay"></div>
-                        <div class="row no-gutters pt-2">
-                            <div class="col-md-1"></div>
-                            <div class="col-sm-11 offset-sm-1 col-md-5 offset-md-0 text-left mobile-space clickable pt-md-4">
-                                <span class="label">Get Involved</span>
-                                <h2 class="banner-headline">Volunteer Today!</h2>
-<!--                                <div class="banner-headline text-sm-center text-md-left">Volunteer Today!</div>-->
-                                <a href="/get-involved" class="more">Learn More</a>
-                            </div>
-                            <div class="col-md-5 d-none d-md-block">
-<!--                                TODO: make configurable -->
-                                <img class="pl-3 support-vera-graphic" style="max-height:400px;" src="/wp-content/uploads/2019/01/audio_white_01.png" />
-                            </div>
-                            <div class="col-md-1"></div>
-                        </div>
-                    </section>
+
+					<?php
+                        $support_footer_color = 'white';
+					    include( locate_template( 'partial-templates/support-block.php') );
+					?>
 
 					<section class="blog">
 						<div class="row header no-gutters">
 							<div class="col-md-12">
 								<span class="label">News & Information</span>
-								<h2><b>On The Blog</b></h2>
+								<h2><b><?php the_field('blog_title_text'); ?></b></h2>
 							</div>
 						</div>
 <?php	query_posts( 'category_name=blog&posts_per_page=3' );
 		if ( !have_posts() ) : ?>
 							<div class="col-md-12">
-								<!-- TODO -->
+								<!-- TODO: no blog posts are available, need designs for this -->
 							</div>
 <?php	else :?>
         <div class="row justify-content-md-center pb-1 no-gutters">

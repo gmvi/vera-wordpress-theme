@@ -30,6 +30,26 @@ foreach ($includes as $filename) {
     include $filename;
 }
 
+
+// Modify posts page query to return only 9 at a time
+add_action( 'pre_get_posts', 'limit_posts_query' );
+
+function limit_posts_query( $query ) {
+	// the function to check if we are on the "posts page" is is_home()
+	if( (is_home() || is_category()) && $query->is_main_query() ) {
+		$query->set('posts_per_page', '9');
+	}
+
+}
+
+//make the paginated buttons beautiful
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+	return 'class="btn bordered-button btn-outline-primary"';
+}
+
 // Remove things we don't want
 
 // Widgets? No por favor!
@@ -43,17 +63,6 @@ add_action( 'admin_menu', 'remove_menus', 999 );
 function remove_menus() {
     remove_submenu_page( 'themes.php', 'widgets.php' );
 }
-
-add_action( 'admin_init', 'hide_editor' );
-
-//// hides editor for pages that don't need it
-//// to hide editor for more pages, add them as ors to line 57
-//function hide_editor() {
-//	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
-//	if ( ! isset( $post_id ) ) {
-//		return;
-//	}
-//}
 
 function register_custom_menus() {
     register_nav_menu('gallery-menu',__( 'Gallery Menu' ));

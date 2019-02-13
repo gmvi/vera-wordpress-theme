@@ -85,3 +85,4 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</nav><!-- .site-navigation -->
 
 		</div><!-- #wrapper-navbar end -->
+        <div class="nav-spacer"></div>

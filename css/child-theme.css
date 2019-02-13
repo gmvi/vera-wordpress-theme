@@ -3797,8 +3797,8 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: -2.75rem;
+  padding-bottom: -2.75rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -9755,136 +9755,145 @@ a.skip-link {
 
 /* Page-specific styling */
 body.home .entry-header .wp-post-image {
-  height: 670px; }
+  height: 500px; }
 
 body.home .entry-header .label {
   margin-top: 80px; }
 
-section.shows .body-shows .featured-show {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  text-align: left;
-  padding: 60px 70px;
-  height: 100%; }
-  section.shows .body-shows .featured-show .background-image {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%; }
-    section.shows .body-shows .featured-show .background-image img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover; }
-  section.shows .body-shows .featured-show header {
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 20px 0 25px; }
-    section.shows .body-shows .featured-show header .presented-by {
-      font-size: 12px; }
-    section.shows .body-shows .featured-show header .show-headline {
-      font-size: 56px;
-      font-family: BebasNeue;
-      line-height: 0.8;
-      padding-top: 4px; }
-    section.shows .body-shows .featured-show header .show-support {
-      font-size: 18px;
-      font-family: BebasNeue; }
-  section.shows .body-shows .featured-show .show-details {
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-family: GothicA1; }
-
-section.shows .body-shows .shows-list {
-  height: 100%; }
-  section.shows .body-shows .shows-list .list-title {
-    width: 100%;
-    height: 40px;
-    font-family: BebasNeue;
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    padding-top: 8px;
-    text-align: center;
-    background-color: black;
-    color: white; }
-  section.shows .body-shows .shows-list .list-body {
-    height: 100%;
-    margin: -40px 0 -83px;
-    padding: 40px 20px 103px;
-    text-align: left;
-    border-right: 1px solid darkgray; }
-    section.shows .body-shows .shows-list .list-body .list-item {
-      margin: 0;
-      padding: 29px 0;
-      list-style: none;
-      position: relative; }
-      section.shows .body-shows .shows-list .list-body .list-item .wrapper-left {
-        float: left;
-        margin-right: 80px; }
-      section.shows .body-shows .shows-list .list-body .list-item .wrapper-right {
-        width: 60px;
-        float: right;
-        position: absolute;
-        right: 0;
-        height: 100%;
-        margin-top: -30px;
-        display: flex;
-        align-items: center; }
-      section.shows .body-shows .shows-list .list-body .list-item .event-date {
-        font-family: GothicA1;
-        font-size: 12px;
-        font-weight: bold;
-        letter-spacing: 1.5px;
-        text-transform: uppercase; }
-      section.shows .body-shows .shows-list .list-body .list-item .event-title {
-        margin-top: 10px;
-        color: #D41C53;
-        font-family: BebasNeue;
-        font-size: 34px;
-        font-weight: normal;
-        line-height: 1;
-        letter-spacing: 1.5px; }
-      section.shows .body-shows .shows-list .list-body .list-item .event-icon {
-        width: 60px;
-        height: 60px;
-        float: right; }
-    section.shows .body-shows .shows-list .list-body .list-item:not(:last-child) {
-      border-bottom: 1px solid darkgray; }
-  section.shows .body-shows .shows-list .list-more {
-    padding: 32px 0;
-    background-color: #D41C53;
+section.shows {
+  padding-top: 40px !important; }
+  section.shows .body-shows .featured-show {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
-    font-family: BebasNeue;
-    font-size: 24px;
-    font-weight: normal;
-    line-height: 0.8;
-    letter-spacing: 1.5px; }
-
-section.classes .body-classes .card {
-  width: 472px;
-  margin: 0 auto; }
-  section.classes .body-classes .card .card-image {
-    width: 470px;
-    height: 350px; }
-  section.classes .body-classes .card .card-title {
-    height: 100px;
-    margin-bottom: 0;
-    font-family: BebasNeue;
-    font-size: 34px;
     text-align: left;
-    display: flex;
-    align-items: center;
-    padding-left: 40px;
-    margin-right: 100px; }
-    section.classes .body-classes .card .card-title .icon-arrow {
-      width: 100px;
-      height: 100px;
-      padding: 30px; }
+    padding: 60px 70px;
+    height: 100%; }
+    section.shows .body-shows .featured-show .background-image {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%; }
+      section.shows .body-shows .featured-show .background-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; }
+    section.shows .body-shows .featured-show header {
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 20px 0 25px; }
+      section.shows .body-shows .featured-show header .presented-by {
+        font-size: 12px; }
+      section.shows .body-shows .featured-show header .show-headline {
+        font-size: 56px;
+        font-family: BebasNeue;
+        line-height: 0.8;
+        padding-top: 4px; }
+      section.shows .body-shows .featured-show header .show-support {
+        font-size: 18px;
+        font-family: BebasNeue; }
+    section.shows .body-shows .featured-show .show-details {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-family: GothicA1; }
+  section.shows .body-shows .shows-list {
+    height: 100%; }
+    section.shows .body-shows .shows-list .list-title {
+      width: 100%;
+      height: 40px;
+      font-family: BebasNeue;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      padding-top: 8px;
+      text-align: center;
+      background-color: black;
+      color: white; }
+    section.shows .body-shows .shows-list .list-body {
+      height: 100%;
+      margin: -40px 0 -83px;
+      padding: 40px 20px 103px;
+      text-align: left;
+      border-right: 1px solid darkgray; }
+      section.shows .body-shows .shows-list .list-body .list-item {
+        margin: 0;
+        padding: 29px 0;
+        list-style: none;
+        position: relative; }
+        section.shows .body-shows .shows-list .list-body .list-item .wrapper-left {
+          float: left;
+          margin-right: 80px; }
+        section.shows .body-shows .shows-list .list-body .list-item .wrapper-right {
+          width: 60px;
+          float: right;
+          position: absolute;
+          right: 0;
+          height: 100%;
+          margin-top: -30px;
+          display: flex;
+          align-items: center; }
+        section.shows .body-shows .shows-list .list-body .list-item .event-date {
+          font-family: GothicA1;
+          font-size: 12px;
+          font-weight: bold;
+          letter-spacing: 1.5px;
+          text-transform: uppercase; }
+        section.shows .body-shows .shows-list .list-body .list-item .event-title {
+          margin-top: 10px;
+          color: #D41C53;
+          font-family: BebasNeue;
+          font-size: 34px;
+          font-weight: normal;
+          line-height: 1;
+          letter-spacing: 1.5px; }
+        section.shows .body-shows .shows-list .list-body .list-item .event-icon {
+          width: 60px;
+          height: 60px;
+          float: right; }
+      section.shows .body-shows .shows-list .list-body .list-item:not(:last-child) {
+        border-bottom: 1px solid darkgray; }
+    section.shows .body-shows .shows-list .list-more {
+      padding: 32px 0;
+      background-color: #D41C53;
+      font-family: BebasNeue;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 0.8;
+      letter-spacing: 1.5px; }
+      section.shows .body-shows .shows-list .list-more a {
+        color: white; }
+
+section.classes {
+  margin-bottom: 50px; }
+  section.classes .card {
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      section.classes .card {
+        width: 472px; } }
+    section.classes .card .card-image {
+      width: 100%;
+      padding-bottom: 100%;
+      background-size: cover !important; }
+    section.classes .card .card-text-cover {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      font-family: BebasNeue;
+      font-size: 34px;
+      height: 20%; }
+      section.classes .card .card-text-cover a {
+        font-size: 22px;
+        color: white;
+        text-decoration: underline;
+        text-decoration-color: #D41C53;
+        letter-spacing: 1.8px;
+        font-family: BebasNeue; }
 
 section.blog {
-  padding-top: 0px;
+  padding-top: 0px !important;
   color: black;
   margin-bottom: 100px; }
   section.blog .body {
@@ -10196,8 +10205,6 @@ section.classes {
 .current-gallery {
   background: #ebeeef; }
   .current-gallery img.current-gallery-image {
-    height: 100%;
-    max-height: 600px;
     object-fit: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10217,6 +10224,13 @@ h1.large-header {
 .smaller-margin-container {
   padding: 0px !important;
   margin: 0px !important; }
+
+section#gallery-coa {
+  margin: 20px 0px; }
+  section#gallery-coa div.vertical-line {
+    border-right: 1px solid #9b9b9b;
+    opacity: 0.25;
+    margin: 30px 0px; }
 
 .gallery-banner {
   position: relative;
@@ -10294,6 +10308,18 @@ h1.large-header {
   position: absolute;
   top: 8px;
   left: 16px; }
+
+@media (min-width: 768px) {
+  div#blog-pagination {
+    width: 70%;
+    margin: 40px auto; } }
+
+@media (max-width: 767.98px) {
+  div#blog-pagination {
+    margin: 20px auto; } }
+
+div#blog-pagination a {
+  font-size: 20px; }
 
 .single-blog-title {
   font-size: 4rem;
@@ -10473,6 +10499,10 @@ a.more:hover {
 .label {
   background-color: #D41C53;
   color: white; }
+  .label a {
+    color: white; }
+    .label a:hover {
+      text-decoration: none; }
 
 .label-white {
   background-color: white;
@@ -10540,9 +10570,9 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
   text-transform: uppercase;
   font-weight: normal; }
   .navbar .navbar-brand {
-    height: 130px;
     padding-top: 15px;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    height: 8rem; }
   .navbar .navbar-brand .img-fluid {
     height: 100%;
     width: auto; }
@@ -10571,6 +10601,24 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
 
 .header-nav .menu-item.current-menu-item a, .header-nav .menu-item.current-page-ancestor a {
   color: #D41C53 !important; }
+
+div.nav-spacer {
+  position: relative;
+  height: 5rem;
+  display: none; }
+
+div#wrapper-navbar.fixed-top nav.navbar {
+  background: rgba(255, 255, 255, 0.8); }
+  div#wrapper-navbar.fixed-top nav.navbar .navbar-brand {
+    height: 5rem; }
+
+section#centered-submenu.fixed-top {
+  top: 5rem !important; }
+
+div.submenu-spacer {
+  position: relative;
+  height: 50px;
+  display: none; }
 
 ul.menu {
   margin: 0;
@@ -10618,11 +10666,11 @@ section.classes .header-classes, .centered, .entry-content section .header {
   section.classes .header-classes h3, .centered h3, .entry-content section .header h3 {
     font-size: 56px; }
 
-section.classes .body-classes, .entry-content section .body {
+.entry-content section .body {
   font-family: GothicA1;
   font-size: 24px;
   color: black; }
-  section.classes .body-classes p, .entry-content section .body p {
+  .entry-content section .body p {
     margin-bottom: 35px; }
 
 .entry-content section {
@@ -10924,6 +10972,14 @@ div#wrapper-footer .site-footer {
     @media (max-width: 767.98px) {
       div#wrapper-footer .site-footer .footer-directions {
         margin-top: 1.5rem; } }
+
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -o-user-select: none;
+  -moz-user-select: none; }
 
 .stretched-link::after {
   position: absolute;
