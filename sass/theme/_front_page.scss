@@ -167,8 +167,14 @@ section.classes {
     }
 
 	.card {
-		@include media-breakpoint-up(md) {
-			width: 472px;
+		@include media-breakpoint-up(lg) {
+			width: 422px;
+		}
+		@include media-breakpoint-only(md) {
+			width: 350px;
+		}
+		@include media-breakpoint-between(sm,md) {
+			width: 300px;
 		}
 
 		margin: 0 auto;

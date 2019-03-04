@@ -9868,9 +9868,15 @@ section.classes {
   margin-bottom: 50px; }
   section.classes .card {
     margin: 0 auto; }
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       section.classes .card {
-        width: 472px; } }
+        width: 422px; } }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      section.classes .card {
+        width: 350px; } }
+    @media (min-width: 576px) and (max-width: 991.98px) {
+      section.classes .card {
+        width: 300px; } }
     section.classes .card .card-image {
       width: 100%;
       padding-bottom: 100%;
@@ -10099,7 +10105,6 @@ section.volunteer-committees {
   max-height: 720px;
   background-color: #ebeeef; }
   section.volunteer-committees img.volunteer-image {
-    height: 100%;
     object-fit: cover; }
   section.volunteer-committees div.row div#volunteer-content {
     display: flex;
@@ -10608,7 +10613,7 @@ div.nav-spacer {
   display: none; }
 
 div#wrapper-navbar.fixed-top nav.navbar {
-  background: rgba(255, 255, 255, 0.8); }
+  background: rgba(255, 255, 255, 0.85); }
   div#wrapper-navbar.fixed-top nav.navbar .navbar-brand {
     height: 5rem; }
 
