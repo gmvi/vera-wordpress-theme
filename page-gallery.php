@@ -35,7 +35,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <img class="current-gallery-image img-fluid" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" />
+                        <div class="current-gallery-container">
+                            <img class="current-gallery-image img-fluid" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" />
+                        </div>
                     </div>
 
                 </section>

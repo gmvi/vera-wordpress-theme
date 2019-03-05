@@ -2,9 +2,19 @@ $container-padding: 0px !important;
 
 .current-gallery {
   background: #ebeeef;
+  div.current-gallery-container {
+    @include media-breakpoint-between(sm,xl) {
+      height: 600px;
+    }
 
+    @include media-breakpoint-down(xs) {
+      height: 300px;
+    }
+  }
   img.current-gallery-image {
     object-fit: cover;
+    height:100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
