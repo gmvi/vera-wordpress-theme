@@ -99,7 +99,7 @@ $shows = vera_shows_get_front_page();
 							<div class="col-md-5 mb-4 mb-md-0">
 								<div class="card">
 									<div class="card-image" style="background: url('<?php the_field('classes_left_image'); ?>')"></div>
-                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-md-5">
+                                    <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-lg-5">
                                         <h2><?php the_field('classes_left_feature'); ?></h2>
                                         <a href="<?php the_field('classes_left_link'); ?>">Learn More</a>
                                     </div>
