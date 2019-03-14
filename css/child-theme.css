@@ -10355,10 +10355,30 @@ div#blog-pagination a {
   background-size: auto; }
 
 .blog-contents {
-  font-family: GothicA1; }
+  font-family: GothicA1;
+  color: black; }
   .blog-contents p.metadata {
     text-transform: uppercase;
     font-weight: bold; }
+  .blog-contents h1, .blog-contents h2, .blog-contents h3 {
+    text-transform: uppercase; }
+  .blog-contents h1 {
+    font-family: BebasNeue;
+    font-size: 72px !important;
+    text-align: center; }
+  .blog-contents h2 {
+    font-family: BebasNeueLight;
+    font-size: 42px;
+    text-align: center;
+    padding: 1rem 0; }
+    .blog-contents h2 strong {
+      font-family: BebasNeue;
+      color: #D41C53; }
+  .blog-contents h3 {
+    font-size: 15.5px;
+    padding: 5px 0; }
+  .blog-contents p {
+    font-size: 13px; }
 
 .recent-posts hr {
   height: 2px;
