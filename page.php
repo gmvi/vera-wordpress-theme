@@ -20,8 +20,27 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php the_post(); // This is a page template ?>
 
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-					<?php get_template_part('partial-templates/block-header'); ?>
                     <?php
+                    if (has_post_thumbnail( get_the_ID() )) { ?>
+                    <div class="row no-gutters">
+                        <div class="col-sm-6 p-0 mh-100" style="">
+                            <img class="h-100 single-blog-featured-image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>">
+                        </div>
+                        <div class="col-sm-6 p-0 mh-100 single-blog-featured-text">
+                            <div class="textured-blerg h-100 content-hero ">
+                                <div class="content-overlay"></div>
+                                <div class="d-flex align-content-center flex-wrap justify-content-center h-100">
+                                    <div>
+                                        <h2 class="single-blog-title text-white"><?php the_title()?></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php }
+                    else {
+                        get_template_part('partial-templates/block-header');
+                    }
                         global $post;
                         $wrapper_class_name = 'entry-header';
                         // if there is a menu that is identical to the post name, then use that
