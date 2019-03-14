@@ -27,6 +27,33 @@
     text-transform: uppercase;
     font-weight: bold;
   }
+  color: black;
+  h1, h2, h3 {
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: BebasNeue;
+    font-size: 72px !important;
+    text-align: center;
+  }
+  h2 {
+    font-family: BebasNeueLight;
+    font-size: 42px;
+    text-align: center;
+    padding: 1rem 0;
+
+    strong {
+      font-family: BebasNeue;
+      color: $primary;
+    }
+  }
+  h3 {
+    font-size: 15.5px;
+    padding: 5px 0;
+  }
+  p {
+    font-size: 13px;
+  }
 }
 
 .recent-posts {
