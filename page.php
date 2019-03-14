@@ -31,7 +31,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 <div class="content-overlay"></div>
                                 <div class="d-flex align-content-center flex-wrap justify-content-center h-100">
                                     <div>
-                                        <h2 class="single-blog-title text-white"><?php the_title()?></h2>
+                                        <h2 class="single-blog-title text-white mb-0"><?php the_title()?></h2>
                                     </div>
                                 </div>
                             </div>
