@@ -1,5 +1,6 @@
+$list-bg-color: #f6f6f6;
+
 div.list-template-page {
-  //TODO: make this page better on mobile
 
   @include media-breakpoint-up(md) {
     div.template-item {
@@ -12,8 +13,49 @@ div.list-template-page {
     }
   }
 
-  div.list-wrapper:nth-child(odd) {
-    background: #f6f6f6;
+  @include media-breakpoint-up(lg) {
+    div.list-wrapper:nth-child(odd) {
+      background: $list-bg-color;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    div.list-wrapper:nth-child(4n), div.list-wrapper:nth-child(4n + 1) {
+      background: $list-bg-color;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    div.square-wrapper .square-content p {
+      font-size: .9rem !important;
+    }
+
+    div.list-wrapper:nth-child(odd) {
+      background: $list-bg-color;
+    }
+
+    div#intro-text p {
+      font-size: 20px;
+    }
+  }
+
+
+
+  div.square-wrapper {
+    padding-bottom: 100%;
+    .square-content {
+      position: absolute;
+      height: 100%;
+      img {
+        width: 50%;
+      }
+      h2.large-header {
+        font-size: 40px;
+      }
+      p {
+        font-size: .8rem;
+      }
+    }
   }
 
 }
