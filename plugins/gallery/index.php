@@ -5,6 +5,8 @@ Plugin Name: The Vera Project Classes
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+define('GALLERY_TYPE', 'galleries');
+
 /*** Register gallery post type ***/
 add_action( 'init', 'vera_gallery_init' );
 
@@ -13,7 +15,7 @@ function vera_gallery_init() {
 
 		array(
 			'labels' => array(
-				'name' => __( 'Galleries' ),
+				'name' => __( GALLERY_TYPE ),
 				'singular_name' => __( 'Gallery' ),
 				'menu_name' => __( 'Gallery' ),
 				'add_new_item' => __( 'Add New Gallery' ),
@@ -27,7 +29,7 @@ function vera_gallery_init() {
 			'capability_type' => 'post',
 			'menu_icon' => 'dashicons-art',
 			'public' => true,
-			'supports' => array( 'thumbnail', 'title', 'editor', 'excerpt' ),
+			'supports' => array( 'thumbnail', 'title', 'editor' ),
 			'publicly_queryable' => true,
 			'has_archive' => true,
 			'show_ui' => true,
@@ -38,4 +40,4 @@ function vera_gallery_init() {
 
 }
 
-?>
+include 'util.php';
