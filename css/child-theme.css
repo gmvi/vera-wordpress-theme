@@ -10224,6 +10224,26 @@ section.classes {
     background-size: cover;
     position: relative; }
 
+.single-gallery-page .gallery-contents h1 {
+  text-align: justify !important; }
+
+.single-gallery-page .card .card-title {
+  font-family: BebasNeue;
+  font-size: 25px;
+  color: #D41C53; }
+
+.single-gallery-page .card img.card-img-top {
+  max-height: 200px;
+  object-fit: cover; }
+
+.single-gallery-page .card .card-footer {
+  padding: 30px; }
+  .single-gallery-page .card .card-footer div.vera-bordered-social-icons i {
+    margin-right: .6em; }
+
+.single-gallery-page .card .card-text {
+  font-size: 13px; }
+
 h2.medium-header {
   font-size: 48px;
   font-family: BebasNeue;

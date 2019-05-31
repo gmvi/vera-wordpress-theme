@@ -23,6 +23,40 @@ $container-padding: 0px !important;
 }
 
 
+.single-gallery-page {
+  .gallery-contents {
+    h1 {
+      text-align: justify !important;
+    }
+  }
+
+  .card {
+    .card-title {
+      font-family: BebasNeue;
+      font-size: 25px;
+      color: $primary;
+    }
+
+    img.card-img-top {
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .card-footer {
+      padding: 30px;
+
+
+      div.vera-bordered-social-icons i {
+        margin-right: .6em;
+      }
+    }
+
+    .card-text {
+      font-size: 13px;
+    }
+  }
+}
+
 // put this somewhere else
 h2.medium-header {
   font-size: 48px;

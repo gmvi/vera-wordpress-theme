@@ -17,7 +17,7 @@ $list_items = SCF::get( 'Items' );
         <div class="<?php echo esc_attr( $container ); ?> p-0 list-template-page">
             <main class="site-main" id="main" role="main">
 				<?php
-                get_template_part( 'partial-templates/block-header' );
+				get_template_part('partial-templates/block-header');
 
                 global $post;
 				$wrapper_class_name = 'entry-header';

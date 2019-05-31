@@ -6,9 +6,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 // returns current show, up next show, and all previous shows
 // for the gallery page
 
-// TODO: ask Jessica if gallery shows will overlap - will affect if we need to do multiple queries...
 function vera_gallery_get_overview() {
-
 
 	// get 1 current show that ends soonest
 	// get 1 upcoming show

@@ -7,6 +7,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 define('GALLERY_TYPE', 'galleries');
 
+
 /*** Register gallery post type ***/
 add_action( 'init', 'vera_gallery_init' );
 
@@ -37,7 +38,47 @@ function vera_gallery_init() {
 			'exclude_from_search' => false
 		)
 	);
-
 }
+
+// add Current Gallery and Up Next Gallery fields to row display
+add_filter( 'manage_galleries_posts_columns', 'vera_galleries_columns' );
+function vera_galleries_columns( $columns ) {
+	$columns['current_gallery'] = "Current Gallery";
+	$columns['up_next_gallery'] = "Up Next Gallery";
+	return $columns;
+}
+
+//configure fields to display properly in columns
+add_action( 'manage_galleries_posts_custom_column' , 'vera_galleries_column', 10, 2 );
+function vera_galleries_column( $column, $post_id ) {
+	switch ($column) {
+		case 'current_gallery':
+			$is_current_gallery = get_field('current_gallery', $post_id);
+			if ($is_current_gallery) {
+				echo '✔';
+			} else {
+				echo '✗';
+			}
+			break;
+		case 'up_next_gallery':
+			$up_next_gallery = get_field('up_next_gallery', $post_id);
+			if ($up_next_gallery) {
+				echo '✔';
+			} else {
+				echo '✗';
+			}
+			break;
+	}
+}
+
+//change the column width so up next and current isn't so huge
+add_action('admin_head', 'custom_gallery_column_width');
+function custom_gallery_column_width() {
+	echo '<style type="text/css">';
+	echo '.column-current_gallery { width:15% !important; overflow:hidden }';
+	echo '.column-up_next_gallery { width:15% !important; overflow:hidden }';
+	echo '</style>';
+}
+
 
 include 'util.php';

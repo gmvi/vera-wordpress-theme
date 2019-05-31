@@ -17,10 +17,12 @@
 
 if (has_post_thumbnail( get_the_ID() )) { ?>
 	<div class="row no-gutters">
-		<div class="col-sm-6 p-0 mh-100" style="">
+
+		<div class="col-sm-12 col-lg-6 p-0 mh-100">
 			<img class="h-100 single-blog-featured-image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>">
 		</div>
-		<div class="col-sm-6 py-5 p-sm-0 mh-100 single-blog-featured-text">
+
+		<div class="col-sm-12 col-lg-6 py-5 p-sm-0 mh-100 single-blog-featured-text">
 			<div class="h-100 content-hero">
 				<div class="content-overlay textured-blerg"></div>
 				<div class="d-flex align-content-center flex-wrap justify-content-center h-100 w-75 m-auto">
@@ -40,7 +42,6 @@ if (has_post_thumbnail( get_the_ID() )) { ?>
 						}
 
 						?>
-						<p></p>
 					</div>
 				</div>
 			</div>
