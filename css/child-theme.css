@@ -10435,8 +10435,33 @@ div#blog-pagination a {
       height: 100%;
       max-height: 400px; } }
 
-div.list-template-page div.list-wrapper:nth-child(odd) {
-  background: #f6f6f6; }
+@media (min-width: 992px) {
+  div.list-template-page div.list-wrapper:nth-child(odd) {
+    background: #f6f6f6; } }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  div.list-template-page div.list-wrapper:nth-child(4n), div.list-template-page div.list-wrapper:nth-child(4n + 1) {
+    background: #f6f6f6; } }
+
+@media (max-width: 767.98px) {
+  div.list-template-page div.square-wrapper .square-content p {
+    font-size: .9rem !important; }
+  div.list-template-page div.list-wrapper:nth-child(odd) {
+    background: #f6f6f6; }
+  div.list-template-page div#intro-text p {
+    font-size: 20px; } }
+
+div.list-template-page div.square-wrapper {
+  padding-bottom: 100%; }
+  div.list-template-page div.square-wrapper .square-content {
+    position: absolute;
+    height: 100%; }
+    div.list-template-page div.square-wrapper .square-content img {
+      width: 50%; }
+    div.list-template-page div.square-wrapper .square-content h2.large-header {
+      font-size: 40px; }
+    div.list-template-page div.square-wrapper .square-content p {
+      font-size: .8rem; }
 
 /* Fonts */
 @font-face {
