@@ -10,6 +10,7 @@
 @import "single_blog_page";
 @import "content_page";
 @import "list_template.scss";
+@import "calendar_customizations.scss";
 
 /* Fonts */
 
@@ -50,14 +51,49 @@ body {
     //border: 1px solid black;
 }
 
-.site h1, h2, h3, h4, h5, h6 {
-    // h tags are primarily for blind people and robots
-    // They can have header styling but it should be conditional
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    line-height: 1;
+.site {
+	h1, h2, h3, h4, h5, h6 {
+		// h tags are primarily for blind people and robots
+		// They can have header styling but it should be conditional
+		font-size: inherit;
+		font-weight: inherit;
+		margin: 0;
+		line-height: 1;
+	}
+	//todo: at end of V2 evaulate this thing's usefulness, take it out if it isn't.
+	// 	seems like we should be hooking into bootstrap's font sizes & typography, but that would take more evaluation
+	// 	https://getbootstrap.com/docs/4.0/content/typography/
+	h1 {
+		font-family: BebasNeue;
+		font-size: 72px;
+		@include media-breakpoint-only(md) {
+			font-size: 54px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 48px;
+		}
+	}
+	h2 {
+		font-family: BebasNeue;
+		font-size: 56px;
+		@include media-breakpoint-only(md) {
+			font-size: 48px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 36px;
+		}
+	}
+	h3 {
+		font-size: 48px;
+		@include media-breakpoint-only(md) {
+			font-size: 36px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 24px;
+		}
+	}
 }
+
 
 /* Uncatagorized */
 // TODO: catagorize these

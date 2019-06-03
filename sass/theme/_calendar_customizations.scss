@@ -1,0 +1,110 @@
+//month view
+
+div.my-calendar-header {
+  li.my-calendar-prev a, li.my-calendar-next a {
+    padding: 1px 0;
+    text-transform: uppercase;
+  }
+  li.my-calendar-prev {
+    float: left;
+  }
+  li.my-calendar-next {
+    float: right;
+  }
+}
+
+div.my-calendar-date-switcher {
+  form div label.maybe-hide {
+    display: none;
+  }
+}
+
+table.my-calendar-table {
+  border-collapse: separate;
+  border-spacing: 2px;
+  background-color: $darkergray;
+  caption.heading.my-calendar-month {
+    caption-side: top;
+    padding: 10px 10px 0;
+    margin: 0 !important;
+    background-color: $darkergray;
+    color: $primary;
+    font-size: 45px;
+    font-family: BebasNeue;
+    font-weight: 200;
+  }
+  thead th {
+    background: white !important;
+    //color: white !important;
+    //.day-heading, .weekend-heading {
+    //  color: white !important;
+    //}
+  }
+  td.nextmonth {
+    opacity: 1;
+    span, .calendar-event {
+      display: none;
+    }
+  }
+  tr.mc-row td {
+    height: 100px !important;
+    background-color: white;
+    padding: 0 !important;
+    .calendar-event  {
+      h3, h3 a {
+        background-color: $darkergray !important;
+        border-radius: 0;
+        color: white;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
+
+
+div.mc-time {
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-family: BebasNeue;
+  font-size: 16px;
+  .mc-active {
+    color: $darkergray;
+  }
+  > * {
+    padding: 4px 7px;
+  }
+}
+
+
+div.category-key {
+  h3 {
+    display: none;
+  }
+  ul {
+    :first-child {
+      margin: 2px 4px 2px 0px !important;
+    }
+    li {
+      display: inline;
+      margin: 2px 4px !important;
+    }
+    li.current a {
+      background: white !important;
+      color: $primary !important;
+    }
+    li a {
+      background: $primary !important;
+      color: white !important;
+      border: none !important;
+      margin: 2px;
+      padding: 2px 5px;
+      border-radius: 0 !important;
+      font-family: BebasNeue,sans-serif !important;
+      font-size: 18px;
+      letter-spacing: 1px;
+      span {
+        display: none !important;
+      }
+    }
+  }
+}
