@@ -5,12 +5,11 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // returns current show, up next show, and all previous shows
 // for the gallery page
-
 function vera_gallery_get_overview() {
 
-	// get 1 current show that ends soonest
-	// get 1 upcoming show
-	// get
+	// get gallery marked as "current gallery"
+	// get gallery marked as "up next"
+	// get all previous gallery shows
 	$query = new WP_Query(array(
 		'post_type' => GALLERY_TYPE,
 		'post_status' => 'published',

@@ -8,6 +8,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 define('GALLERY_TYPE', 'galleries');
 
 
+//TODO: make it so that you can edit up next and current gallery in quick edit (checkout commit c0b0ef5)
+
 /*** Register gallery post type ***/
 add_action( 'init', 'vera_gallery_init' );
 
@@ -38,6 +40,25 @@ function vera_gallery_init() {
 			'exclude_from_search' => false
 		)
 	);
+}
+
+// before all gallery queries, sort by ascending end date if orderby is omitted
+add_action( 'pre_get_posts', 'gallery_end_date_sort' );
+function gallery_end_date_sort($query) {
+
+	if ($query->get('post_type') == GALLERY_TYPE
+	    && $query->get('orderby') == ''
+	    && $query->get('meta_key') == '') {
+
+			if ($query->get('order') == '') {
+				$query->set('order', 'asc');
+			}
+
+			$query->set('orderby', 'meta_value_num');
+			$query->set('meta_key', 'gallery_end_date');
+
+			error_log('apparently sorting the gallery query');
+	}
 }
 
 // add Current Gallery and Up Next Gallery fields to row display
