@@ -10478,7 +10478,7 @@ div.my-calendar-date-switcher form div label.maybe-hide {
 
 table.my-calendar-table {
   border-collapse: separate;
-  border-spacing: 5px;
+  border-spacing: 2px;
   background-color: #252525; }
   table.my-calendar-table caption.heading.my-calendar-month {
     caption-side: top;
@@ -10491,6 +10491,10 @@ table.my-calendar-table {
     font-weight: 200; }
   table.my-calendar-table thead th {
     background: white !important; }
+  table.my-calendar-table td.nextmonth {
+    opacity: 1; }
+    table.my-calendar-table td.nextmonth span, table.my-calendar-table td.nextmonth .calendar-event {
+      display: none; }
   table.my-calendar-table tr.mc-row td {
     height: 100px !important;
     background-color: white;

@@ -21,7 +21,7 @@ div.my-calendar-date-switcher {
 
 table.my-calendar-table {
   border-collapse: separate;
-  border-spacing: 5px;
+  border-spacing: 2px;
   background-color: $darkergray;
   caption.heading.my-calendar-month {
     caption-side: top;
@@ -39,6 +39,12 @@ table.my-calendar-table {
     //.day-heading, .weekend-heading {
     //  color: white !important;
     //}
+  }
+  td.nextmonth {
+    opacity: 1;
+    span, .calendar-event {
+      display: none;
+    }
   }
   tr.mc-row td {
     height: 100px !important;
