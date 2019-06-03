@@ -15,13 +15,34 @@ div.my-calendar-header {
 
 div.my-calendar-date-switcher {
   form div label.maybe-hide {
-    display: none;
+    display: none !important;
   }
 }
 
+div.mc-main:not(.mini) table.my-calendar-table {
+  border-spacing: 2px;
+  tr.mc-row td {
+    height: 100px !important;
+  }
+}
+
+div.mc-main.mini table.my-calendar-table {
+  border-spacing: 1px;
+  tr.mc-row td {
+    height: 50px !important;
+    &.has-events {
+      background-color: $primary;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+
 table.my-calendar-table {
   border-collapse: separate;
-  border-spacing: 2px;
   background-color: $darkergray;
   caption.heading.my-calendar-month {
     caption-side: top;
@@ -47,7 +68,6 @@ table.my-calendar-table {
     }
   }
   tr.mc-row td {
-    height: 100px !important;
     background-color: white;
     padding: 0 !important;
     .calendar-event  {
