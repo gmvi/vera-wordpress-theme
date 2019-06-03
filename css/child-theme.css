@@ -10149,7 +10149,7 @@ section.classes {
       line-height: 1;
       letter-spacing: 1.5px;
       text-align: center;
-      color: #4A4A4A;
+      color: #343434;
       background-color: #EBEEEF; }
       @media screen and (max-width: 767px) {
         section.classes .list-header .filter-category {
@@ -10193,7 +10193,7 @@ section.classes {
       font-weight: bold;
       line-height: 1.5;
       letter-spacing: 1.5px;
-      color: #4A4A4A;
+      color: #343434;
       border: 2px solid #D41C53; }
       @media screen and (max-width: 767px) {
         section.classes .list-item .class-row .class-register {
@@ -10294,7 +10294,7 @@ section#gallery-coa {
   color: #D41C53; }
 
 .card-picture a {
-  color: #4A4A4A; }
+  color: #343434; }
 
 .card-pictureless {
   background-color: #252525; }
@@ -10310,7 +10310,7 @@ section#gallery-coa {
     color: #EBEEEF; }
 
 .blog-subheader .menu .menu-item a {
-  color: #4A4A4A;
+  color: #343434;
   background-color: #EBEEEF; }
 
 .blog-subheader .menu .menu-item.current-menu-item a {
@@ -10388,7 +10388,7 @@ div#blog-pagination a {
 .recent-posts h2 {
   font-family: BebasNeue;
   font-size: 24px;
-  color: #4A4A4A;
+  color: #343434;
   font-weight: lighter; }
 
 .recent-posts a {
@@ -10409,7 +10409,7 @@ div#blog-pagination a {
   font-family: BebasNeue;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #4A4A4A; }
+  color: #343434; }
 
 .content-hero {
   height: 400px;
@@ -10463,11 +10463,63 @@ div.list-template-page div.square-wrapper {
     div.list-template-page div.square-wrapper .square-content p {
       font-size: .8rem; }
 
+div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
+  padding: 1px 0;
+  text-transform: uppercase; }
+
+div.my-calendar-header li.my-calendar-prev {
+  float: left; }
+
+div.my-calendar-header li.my-calendar-next {
+  float: right; }
+
+div.my-calendar-date-switcher form div label.maybe-hide {
+  display: none; }
+
 table.my-calendar-table {
   border-collapse: separate;
-  border-spacing: 5px; }
+  border-spacing: 5px;
+  background-color: #252525; }
+  table.my-calendar-table caption.heading.my-calendar-month {
+    caption-side: top;
+    padding: 10px 10px 0;
+    margin: 0 !important;
+    background-color: #252525;
+    color: #D41C53;
+    font-size: 45px;
+    font-family: BebasNeue;
+    font-weight: 200; }
   table.my-calendar-table thead th {
-    background: #D41C53 !important; }
+    background: white !important; }
+  table.my-calendar-table tr.mc-row td {
+    height: 100px !important;
+    background-color: white;
+    padding: 0 !important; }
+    table.my-calendar-table tr.mc-row td .calendar-event h3, table.my-calendar-table tr.mc-row td .calendar-event h3 a {
+      background-color: #252525 !important;
+      border-radius: 0;
+      color: white;
+      margin-bottom: 2px; }
+
+div.mc-time {
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-family: BebasNeue;
+  font-size: 16px; }
+  div.mc-time .mc-active {
+    color: #252525; }
+  div.mc-time > * {
+    padding: 4px 7px; }
+
+div.category-key h3 {
+  display: none; }
+
+div.category-key ul :first-child {
+  margin: 2px 4px 2px 0px !important; }
+
+div.category-key ul li {
+  display: inline;
+  margin: 2px 4px !important; }
 
 div.category-key ul li.current a {
   background: white !important;
@@ -10478,6 +10530,7 @@ div.category-key ul li a {
   color: white !important;
   border: none !important;
   margin: 2px;
+  padding: 2px 5px;
   border-radius: 0 !important;
   font-family: BebasNeue,sans-serif !important;
   font-size: 18px;
@@ -10509,7 +10562,7 @@ html {
 body {
   max-width: 1440px;
   margin: 0 auto;
-  color: #4A4A4A;
+  color: #343434;
   background-color: #FFF;
   box-sizing: border-box; }
 
@@ -10530,7 +10583,7 @@ body {
       font-size: 48px; } }
 
 .site h2 {
-  font-family: BebasNeueLight;
+  font-family: BebasNeue;
   font-size: 56px; }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .site h2 {
@@ -10755,7 +10808,7 @@ ul.menu {
 .entry-header .menu {
   background-color: #96C0CE; }
   .entry-header .menu .menu-item a {
-    color: #4A4A4A; }
+    color: #343434; }
   .entry-header .menu .menu-item.current-menu-item a {
     color: white;
     font-weight: lighter; }
