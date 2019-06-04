@@ -80,3 +80,4 @@ function vera_remove_page_templates( $templates ) {
     return $templates;
 }
 add_filter( 'theme_page_templates', 'vera_remove_page_templates' );
+require_once('plugins/my-calendar/mc-custom-template.php');

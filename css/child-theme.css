@@ -10485,9 +10485,9 @@ div.mc-main.mini table.my-calendar-table {
   border-spacing: 1px; }
   div.mc-main.mini table.my-calendar-table tr.mc-row td {
     height: 50px !important; }
-    div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events {
+    div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events:not(.nextmonth) {
       background-color: #D41C53; }
-      div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events a {
+      div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events:not(.nextmonth) a {
         text-decoration: none;
         color: white; }
 
@@ -10535,7 +10535,7 @@ div.category-key ul :first-child {
   margin: 2px 4px 2px 0px !important; }
 
 div.category-key ul li {
-  display: inline;
+  display: inline-flex;
   margin: 2px 4px !important; }
 
 div.category-key ul li.current a {
