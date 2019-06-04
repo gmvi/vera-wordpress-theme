@@ -80,3 +80,13 @@ function vera_remove_page_templates( $templates ) {
     return $templates;
 }
 add_filter( 'theme_page_templates', 'vera_remove_page_templates' );
+
+// TODO: review - where to put useful things like this
+function pad_zeroes( $num ) {
+	if ( $num > 9 ) {
+		return $num;
+	}
+
+	return str_pad( $num, 2, '0', STR_PAD_LEFT );
+}
+

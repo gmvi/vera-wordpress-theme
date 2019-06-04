@@ -24,8 +24,6 @@ function vera_gallery_get_overview() {
 
 
 	if ($curr_gallery->have_posts()) {
-//		error_log('CURRRRR');
-//		error_log(print_r($curr_gallery->posts, true));
 		$gallery_overview['current'] = $curr_gallery->posts[0];
 	}
 
@@ -43,8 +41,6 @@ function vera_gallery_get_overview() {
 	));
 
 	if ($up_next_gallery->have_posts()) {
-//		error_log('up neeexxxtttt');
-//		error_log(print_r($up_next_gallery->posts, true));
 		$gallery_overview['up_next'] = $up_next_gallery->posts[0];
 	}
 
@@ -64,8 +60,6 @@ function vera_gallery_get_overview() {
 	));
 
 	if ($old_galleries->have_posts()) {
-//		error_log('all old galleries');
-//		error_log(print_r($old_galleries->posts, true));
 		$gallery_overview['past'] = $old_galleries->posts;
 	}
 
