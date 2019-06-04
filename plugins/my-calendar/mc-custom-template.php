@@ -41,27 +41,31 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
             $data['link'],
         );
         // Create your layout, and insert relevant values into it.
-        $body = vsprintf( '
-<div class="row">
-	<div class="span3">
-		%1$s
-	</div>
-	<div class="span6">
-	'.$header.'
-	<strong>%4$s</strong>
-		<div class="smallertext logistics">
-			<div class="row">
-				<div class="span3">
-					<h4>Location</h4>
-					%5$s
-					'.$phone2.'
-					%6$s
-				</div>
-			</div>
-			<p><a href="%8$s">More Information<span class="screen-reader-text"> about %3$s</span></a></p>
-		</div><!--end smallertext-->
-	</div>
-</div>', $details );
+        $body = '<div class="row mx-4">
+    <div class="col-md-8">' . $data['description'] . '</div>
+    <div class="col-md-4">' . $data['hcard'] . '</div>
+</div>';
+//        $body = vsprintf( '
+//<div class="row">
+//	<div class="span3">
+//		%1$s
+//	</div>
+//	<div class="span6">
+//	'.$header.'
+//	<strong>%4$s</strong>
+//		<div class="smallertext logistics">
+//			<div class="row">
+//				<div class="span3">
+//					<h4>Location</h4>
+//					%5$s
+//					'.$phone2.'
+//					%6$s
+//				</div>
+//			</div>
+//			<p><a href="%8$s">More Information<span class="screen-reader-text"> about %3$s</span></a></p>
+//		</div><!--end smallertext-->
+//	</div>
+//</div>', $details );
         return $body;
     }
     return $body;

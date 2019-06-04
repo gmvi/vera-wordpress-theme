@@ -10555,6 +10555,9 @@ div.category-key ul li a {
   div.category-key ul li a span {
     display: none !important; }
 
+div#mc_event .single-event .details {
+  border: 0; }
+
 /* Fonts */
 @font-face {
   font-family: BebasNeue;
