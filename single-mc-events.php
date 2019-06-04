@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template for wp-calendar events page
+ * Template for my-calendar events page
  * TODO: or FIXME? this one only works if you enable pretty permalinks!! which you should do!!
  * TODO: figure out designs for single event, implement here & using 'mc_custom_template' filter which is in `$(pwd)/plugins/my-calendar/mc-custom-template.php`
  */
