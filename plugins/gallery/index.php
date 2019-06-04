@@ -6,9 +6,8 @@ Plugin Name: The Vera Project Classes
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 define('GALLERY_TYPE', 'galleries');
-
-
-//TODO: make it so that you can edit up next and current gallery in quick edit (checkout commit c0b0ef5)
+define('CURR_GALLERY', 'current_gallery');
+define('UP_NEXT_GALLERY', 'up_next_gallery');
 
 /*** Register gallery post type ***/
 add_action( 'init', 'vera_gallery_init' );
@@ -42,51 +41,61 @@ function vera_gallery_init() {
 	);
 }
 
-// before all gallery queries, sort by ascending end date if orderby is omitted
-add_action( 'pre_get_posts', 'gallery_end_date_sort' );
-function gallery_end_date_sort($query) {
-
-	if ($query->get('post_type') == GALLERY_TYPE
-	    && $query->get('orderby') == ''
-	    && $query->get('meta_key') == '') {
-
-			if ($query->get('order') == '') {
-				$query->set('order', 'asc');
-			}
-
-			$query->set('orderby', 'meta_value_num');
-			$query->set('meta_key', 'gallery_end_date');
-
-			error_log('apparently sorting the gallery query');
-	}
+// add Current Gallery and Up Next Gallery fields to row display
+add_filter( 'manage_' . GALLERY_TYPE . '_posts_columns', 'vera_galleries_columns' );
+function vera_galleries_columns( $columns ) {
+	$columns[CURR_GALLERY] = __( 'Current Gallery' );
+	$columns[UP_NEXT_GALLERY] = __( 'Up Next Gallery' );
+	$columns['gallery_opening_datetime'] = "Gallery Opening Datetime";
+	$columns['gallery_end_date'] = "Gallery End Date";
+	unset($columns['date']);
+	return $columns;
 }
 
-// add Current Gallery and Up Next Gallery fields to row display
-add_filter( 'manage_galleries_posts_columns', 'vera_galleries_columns' );
-function vera_galleries_columns( $columns ) {
-	$columns['current_gallery'] = "Current Gallery";
-	$columns['up_next_gallery'] = "Up Next Gallery";
+//make current gallery + up next gallery date columns sortable
+add_filter( 'manage_edit-' . GALLERY_TYPE . '_sortable_columns', 'vera_galleries_sortable_columns' );
+function vera_galleries_sortable_columns( $columns )
+{
+	$columns['gallery_opening_datetime'] = 'gallery_opening_datetime';
+	$columns['gallery_end_date'] = 'gallery_end_date';
 	return $columns;
 }
 
 //configure fields to display properly in columns
-add_action( 'manage_galleries_posts_custom_column' , 'vera_galleries_column', 10, 2 );
+add_action( 'manage_' . GALLERY_TYPE . '_posts_custom_column' , 'vera_galleries_column', 10, 2 );
 function vera_galleries_column( $column, $post_id ) {
+	$curr_time = strtotime(current_time('Ymd'));
 	switch ($column) {
-		case 'current_gallery':
-			$is_current_gallery = get_field('current_gallery', $post_id);
+		case CURR_GALLERY:
+			$is_current_gallery = get_field(CURR_GALLERY, $post_id);
 			if ($is_current_gallery) {
 				echo '✔';
 			} else {
 				echo '✗';
 			}
 			break;
-		case 'up_next_gallery':
-			$up_next_gallery = get_field('up_next_gallery', $post_id);
+		case UP_NEXT_GALLERY:
+			$up_next_gallery = get_field(UP_NEXT_GALLERY, $post_id);
 			if ($up_next_gallery) {
 				echo '✔';
 			} else {
 				echo '✗';
+			}
+			break;
+		case 'gallery_opening_datetime':
+			$opening_time = get_field('gallery_opening_datetime', $post_id);
+			if (strtotime($opening_time) < $curr_time) {
+				echo "<strike>" . $opening_time . "</strike>";
+			} else {
+				echo "<b>" . $opening_time . "</b>";
+			}
+			break;
+		case 'gallery_end_date':
+			$ending_time = get_field('gallery_end_date', $post_id);
+			if (strtotime($ending_time) < $curr_time) {
+				echo "<strike>" . $ending_time . "</strike>";
+			} else {
+				echo "<b>" . $ending_time . "</b>";
 			}
 			break;
 	}
@@ -101,5 +110,131 @@ function custom_gallery_column_width() {
 	echo '</style>';
 }
 
+// default gallery sort is by ascending end date
+add_action( 'pre_get_posts', 'gallery_end_date_sort' );
+function gallery_end_date_sort($query) {
+	//todo: discuss - why doesn't everybody check if post_type is not set + equal to type and return if false? when does this method run
+
+	// in admin view, default sort by end date
+	if ( is_admin() && isset($query->query_vars['post_type'])
+	     && $query->query_vars['post_type'] == GALLERY_TYPE) {
+		$orderby = $query->get( 'orderby' );
+		$order = $query->get( 'order' );
+		if ( $orderby == '' && $order == '') { //default ordering for admin view is by end date
+			$meta_query = array(
+				'relation' => 'OR',
+				array(
+					'key' => 'gallery_end_date',
+					'compare' => 'NOT EXISTS', // if we don't check for this, galleries without end dates will not show up
+				),
+				array(
+					'key' => 'gallery_end_date',
+				),
+			);
+
+			$query->set( 'meta_query', $meta_query );
+			$query->set( 'orderby', 'meta_value' );
+		}
+
+		return $query;
+	}
+
+	if( isset($query->query_vars['post_type'])
+	    && $query->query_vars['post_type'] == GALLERY_TYPE
+	    && $query->get('orderby') == ''
+	    && $query->get('meta_key') == '') {
+
+		$query->set('orderby', 'meta_value');
+		$query->set('meta_key', 'gallery_end_date');
+		$query->set('order', 'DESC');
+	}
+
+	return $query;
+}
+
+function quick_edit_gallery($column_name, $post_type ) {
+	if ($post_type != GALLERY_TYPE)
+		return;
+
+	switch ($column_name) {
+		case CURR_GALLERY:
+			?>
+			<fieldset class="inline-edit-col-left">
+				<div class="inline-edit-col">
+				<label class="alignleft inline-edit-private">
+					<input type="checkbox"  name="<?php echo esc_attr( $column_name ); ?>">
+					<span class="checkbox-title">Current Gallery Show</span>
+				</label>
+				</div>
+			</fieldset>
+			<?php
+			break;
+		case UP_NEXT_GALLERY:
+			?>
+			<fieldset class="inline-edit-col-left">
+				<div class="inline-edit-col">
+					<label class="alignleft inline-edit-private">
+						<input type="checkbox"  name="<?php echo esc_attr( $column_name ); ?>">
+						<span class="checkbox-title">Up Next Gallery Show</span>
+					</label>
+				</div>
+			</fieldset>
+			<?php
+			break;
+		default;
+	}
+
+}
+
+add_action( 'quick_edit_custom_box', 'quick_edit_gallery', 10, 2 );
+
+//TODO: finish this after gallery page is complete
+//
+// https://wordpress.stackexchange.com/questions/139663/add-description-to-taxonomy-quick-edit
+function quick_edit_save_gallery($term_id ) {
+//	if ( isset( $_POST['parent'] ) ) {
+//		$tax = get_taxonomy( VA_LISTING_NEIGHBORHOOD );
+//		if (
+//			current_filter() === "edited_{" . VA_LISTING_NEIGHBORHOOD . "}"
+//			&& current_user_can( $tax->cap->edit_terms )
+//		) {
+//			$parent = filter_input( INPUT_POST, 'parent', FILTER_SANITIZE_STRING );
+//			// removing action to avoid recursion
+//			remove_action( current_filter(), __FUNCTION__ );
+//			wp_update_term( $term_id, VA_LISTING_NEIGHBORHOOD, array( 'parent' => $parent ) );
+//		}
+//	}
+}
+add_action( 'edited_' . GALLERY_TYPE, 'quick_edit_save_gallery', 10, 1);
+
+function quick_edit_gallery_javascript() {
+	$current_screen = get_current_screen();
+//	if ( $current_screen->id != 'edit-' . GALLERY_TYPE ||
+//	     $current_screen->taxonomy != VA_LISTING_NEIGHBORHOOD ) {
+//		return;
+//	}
+	// Ensure jQuery library is loaded
+	wp_enqueue_script( 'jquery' );
+	?>
+	<script type="text/javascript">
+        /*global jQuery*/
+        jQuery(function($) {
+            $('#the-list').on( 'click', 'a.editinline', function( e ) {
+                e.preventDefault();
+                var $tr = $(this).closest('tr');
+                var val = $tr.find('td.parent').text();
+                //parent-select
+                if (val !== 'N/A') {
+                    let option = `#parent-select option[value="${val}"]`;
+                    $(option).attr('selected', 'selected');
+                }
+            });
+        });
+	</script>
+	<?php
+}
+add_action( 'admin_print_footer_scripts-edit-tags.php', 'quick_edit_gallery_javascript' );
+
+//----- end adding two new fields to quick edit -----
 
 include 'util.php';

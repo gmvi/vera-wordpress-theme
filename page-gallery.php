@@ -9,6 +9,11 @@ get_header();
 // Get container type from Wordpress Customizer
 $container = get_theme_mod( 'understrap_container_type' );
 
+$gallery = vera_gallery_get_overview();
+
+error_log('just finished calling get overview function');
+error_log(print_r($current_and_next, true));
+
 ?>
 <div class="wrapper" id="index-wrapper">
 
@@ -26,17 +31,17 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="row align-items-center h-100 no-gutters">
                             <div class="col-9 mx-auto mt-3 mb-3">
                                 <p class="label">Current Show</p>
-                                <h2 class="medium-header mb-1"><?php the_field( 'current_gallery_header' ); ?></h2>
-                                <p><?php the_field('current_gallery_description'); ?></p>
-                                <p><b>Exhibit up until <?php the_field('current_gallery_end_date'); ?><br>
-                                        Opening: <?php the_field('current_gallery_opening_datetime'); ?></b></p>
-                                <a href="<?php the_field('current_gallery_link'); ?>" class=" btn bordered-button btn-outline-primary">Learn More</a>
+                                <h2 class="medium-header mb-1"><?php echo $gallery['current']->post_title; ?></h2>
+                                <p><?php the_field('description', $gallery['current']->ID); ?></p>
+                                <p><b>Exhibit up until <?php the_field('gallery_end_date', $gallery['current']->ID); ?><br>
+                                        Opening: <?php the_field('gallery_opening_datetime', $gallery['current']->ID); ?></b></p>
+                                <a href="<?php echo get_permalink($gallery['current']->ID); ?>" class=" btn bordered-button btn-outline-primary">Learn More</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="current-gallery-container">
-                            <img class="current-gallery-image img-fluid" src="<?php echo get_field( 'current_gallery_image' )['url'];?>" />
+                            <img class="current-gallery-image img-fluid" src="<?php echo get_the_post_thumbnail_url( $gallery['current']->ID ); ?>" />
                         </div>
                     </div>
 
