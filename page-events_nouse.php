@@ -6,7 +6,9 @@
  *   of the main default calendar page (what management settings' `main calendar page` field is set to, ie `theveraproject.org/events` or `theveraproject.org/mc-events`
  *   .
  *   i just confirmed that this is the case.... so that's really weird and just means the main default page for the calendar
- *   can't change, or when it is, this filename must be changed as well..
+ *   can't change, or when it is, this filename must be changed as well.. -_-
+ *
+ * TODO: figure out designs for single event, implement here & using 'mc_custom_template' filter which is in `$(pwd)/plugins/my-calendar/mc-custom-template.php`
  */
 
 get_header();
@@ -63,7 +65,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <div class="col-sm-9 pb-3 blog-contents">
                             <?php the_content()?>
                             <hr class="pb-2"/>
-                            <p class="share-call mb-1">Share this story</p>
+                            <p class="share-call mb-1">Share this storyasdf</p>
                             <?php get_template_part('partial-templates/share-post-icons') ?>
                         </div>
                     </div>
