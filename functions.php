@@ -35,8 +35,9 @@ foreach ($includes as $filename) {
 add_action( 'pre_get_posts', 'limit_posts_query' );
 
 function limit_posts_query( $query ) {
-	// the function to check if we are on the "posts page" is is_home()
-	if( (is_home() || is_category()) && $query->is_main_query() ) {
+	// checks if we are on the "posts page" or a gallery archive page, limits number of posts
+	if( ((is_home() || is_category()) && $query->is_main_query())
+	    || is_post_type_archive(GALLERY_TYPE))  {
 		$query->set('posts_per_page', '9');
 	}
 

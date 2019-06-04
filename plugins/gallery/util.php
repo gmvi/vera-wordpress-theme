@@ -16,7 +16,7 @@ function vera_gallery_get_overview() {
 		'posts_per_page' => 1,
 		'meta_query' => array(
 			array(
-				'key' => 'current_gallery',
+				'key' => CURR_GALLERY,
 				'value' => true
 			),
 		),
@@ -34,7 +34,7 @@ function vera_gallery_get_overview() {
 		'posts_per_page' => 1,
 		'meta_query' => array(
 			array(
-				'key' => 'up_next_gallery',
+				'key' => UP_NEXT_GALLERY,
 				'value' => true
 			),
 		),

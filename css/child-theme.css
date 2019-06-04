@@ -10392,7 +10392,7 @@ section#gallery-coa {
 
 .card-picture h5, .card-pictureless h5 {
   font-family: BebasNeue;
-  font-size: 26px; }
+  font-size: 26px !important; }
 
 .card-picture a, .card-pictureless a {
   font-family: BebasNeue;
