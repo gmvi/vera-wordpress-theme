@@ -12,7 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <form method="get" id="searchform" class="mr-lg-2" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 	<label class="sr-only" for="vera-search"><?php esc_html_e( 'Search', 'understrap' ); ?></label>
-
 	<div class="input-group">
 		<input class="field form-control hide-search-input" id="vera-search" name="s" type="text" value="<?php the_search_query(); ?>">
         <div class="input-group-append">

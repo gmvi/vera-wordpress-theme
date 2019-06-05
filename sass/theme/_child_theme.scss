@@ -9,8 +9,9 @@
 @import "blogs_overview_page";
 @import "single_blog_page";
 @import "content_page";
-@import "list_template.scss";
-@import "calendar_customizations.scss";
+@import "list_template";
+@import "calendar_customizations";
+@import "search";
 
 /* Fonts */
 
@@ -649,60 +650,6 @@ section.donate {
 		background-size:cover
 	}
 }
-
-/* Search */
-
-form#searchform {
-	@include media-breakpoint-down(md) {
-		margin-bottom: 10px;
-	}
-
-	div.input-group {
-		input.form-control {
-			border: 1px solid $primary;
-			border-right: none;
-			width: 130px;
-          	overflow: hidden;
-			transition: all .25s ease-in;
-			&:focus {
-				@extend .shadow-none;
-			}
-		}
-
-		@include media-breakpoint-up(lg) {
-			input.form-control.hide-search-input {
-				border: none;
-				width: 0px;
-				padding: 0px !important;
-			}
-
-			div.input-group-append {
-				button#searchsubmit.no-border {
-					border: none;
-				}
-			}
-		}
-
-		div.input-group-append {
-			button#searchsubmit {
-				border-left: none;
-				transition: all .25s ease-in;
-				&:hover {
-					background-color: white;
-					color: $primary;
-					opacity: 0.7;
-				}
-				&:focus, &:active {
-					@extend .shadow-none;
-				}
-				i {
-					color: black;
-				}
-			}
-		}
-	}
-}
-
 
 
 /* Buttons */

@@ -106,4 +106,47 @@ function pad_zeroes( $num ) {
 	return str_pad( $num, 2, '0', STR_PAD_LEFT );
 }
 
+if ( ! function_exists( 'understrap_pagination' ) ) :
+	function understrap_entry_footer() {
+		// only show category and tag text for posts.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'understrap' ) );
+			if ( $categories_list && understrap_categorized_blog() ) {
+				/* translators: %s: Categories of current post */
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %s', 'understrap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'understrap' ) );
+			if ( $tags_list ) {
+				/* translators: %s: Tags of current post */
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %s', 'understrap' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
+		}
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Leave a comment', 'understrap' ), esc_html__( '1 Comment', 'understrap' ), esc_html__( '% Comments', 'understrap' ) );
+			echo '</span>';
+		}
+	}
+endif;
+
+//customize understrap read more text
+if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
+	/**
+	 * Adds a custom read more link to all excerpts, manually or automatically generated
+	 *
+	 * @param string $post_excerpt Posts's excerpt.
+	 *
+	 * @return string
+	 */
+	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+		if ( ! is_admin() ) {
+			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More',
+					'understrap' ) . '</a></p>';
+		}
+		return $post_excerpt;
+	}
+}
+
 require_once('plugins/my-calendar/mc-custom-template.php');
