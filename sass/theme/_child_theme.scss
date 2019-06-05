@@ -657,6 +657,9 @@ form#searchform {
 		input.form-control {
 			border: 1px solid $primary;
 			border-right: none;
+			&:focus {
+				outline: none;
+			}
 		}
 
 		div.input-group-append {
@@ -666,6 +669,9 @@ form#searchform {
 					background-color: white;
 					color: $primary;
 					opacity: 0.7;
+				}
+				&:focus, &:active {
+					@extend .shadow-none;
 				}
 			}
 		}

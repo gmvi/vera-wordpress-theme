@@ -6066,7 +6066,7 @@ button.bg-dark:focus {
 .shadow-lg {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; }
 
-.shadow-none {
+.shadow-none, form#searchform div.input-group div.input-group-append button#searchsubmit:focus, form#searchform div.input-group div.input-group-append button#searchsubmit:active {
   box-shadow: none !important; }
 
 .w-25 {
@@ -11190,6 +11190,23 @@ form#searchform div.input-group .wpcf7 input[type=file], .wpcf7 form#searchform 
 form#searchform div.input-group .wpcf7 input[type=submit], .wpcf7 form#searchform div.input-group input[type=submit], form#searchform div.input-group .wpcf7 input.wpcf7-validation-errors, .wpcf7 form#searchform div.input-group input.wpcf7-validation-errors {
   border: 1px solid #D41C53;
   border-right: none; }
+  form#searchform div.input-group input.form-control:focus, form#searchform div.input-group .wpcf7 input:focus[type=text], .wpcf7 form#searchform div.input-group input:focus[type=text],
+  form#searchform div.input-group .wpcf7 input:focus[type=search], .wpcf7 form#searchform div.input-group input:focus[type=search],
+  form#searchform div.input-group .wpcf7 input:focus[type=url], .wpcf7 form#searchform div.input-group input:focus[type=url],
+  form#searchform div.input-group .wpcf7 input:focus[type=tel], .wpcf7 form#searchform div.input-group input:focus[type=tel],
+  form#searchform div.input-group .wpcf7 input:focus[type=number], .wpcf7 form#searchform div.input-group input:focus[type=number],
+  form#searchform div.input-group .wpcf7 input:focus[type=range], .wpcf7 form#searchform div.input-group input:focus[type=range],
+  form#searchform div.input-group .wpcf7 input:focus[type=date], .wpcf7 form#searchform div.input-group input:focus[type=date],
+  form#searchform div.input-group .wpcf7 input:focus[type=month], .wpcf7 form#searchform div.input-group input:focus[type=month],
+  form#searchform div.input-group .wpcf7 input:focus[type=week], .wpcf7 form#searchform div.input-group input:focus[type=week],
+  form#searchform div.input-group .wpcf7 input:focus[type=time], .wpcf7 form#searchform div.input-group input:focus[type=time],
+  form#searchform div.input-group .wpcf7 input:focus[type=datetime], .wpcf7 form#searchform div.input-group input:focus[type=datetime],
+  form#searchform div.input-group .wpcf7 input:focus[type=datetime-local], .wpcf7 form#searchform div.input-group input:focus[type=datetime-local],
+  form#searchform div.input-group .wpcf7 input:focus[type=color], .wpcf7 form#searchform div.input-group input:focus[type=color],
+  form#searchform div.input-group .wpcf7 input:focus[type=email], .wpcf7 form#searchform div.input-group input:focus[type=email],
+  form#searchform div.input-group .wpcf7 input:focus[type=file], .wpcf7 form#searchform div.input-group input:focus[type=file],
+  form#searchform div.input-group .wpcf7 input:focus[type=submit], .wpcf7 form#searchform div.input-group input:focus[type=submit], form#searchform div.input-group .wpcf7 input.wpcf7-validation-errors:focus, .wpcf7 form#searchform div.input-group input.wpcf7-validation-errors:focus {
+    outline: none; }
 
 form#searchform div.input-group div.input-group-append button#searchsubmit {
   border-left: none; }
