@@ -26,20 +26,46 @@ div.mc-main:not(.mini) table.my-calendar-table {
   }
 }
 
-div.mc-main.mini table.my-calendar-table {
-  border-spacing: 1px;
-  tr.mc-row td {
-    height: 50px !important;
-    &.has-events:not(.nextmonth) {
-      background-color: $primary;
-      a {
-        text-decoration: none;
-        color: white;
+div.mc-main.mini {
+  .event-title {
+    display: none;
+  }
+  .mini-event {
+    border: none;
+    .mini-event-detail a {
+      color: $primary !important;
+    }
+  }
+  .calendar-events {
+    background-color: white;
+    border: 2px solid $info;
+  }
+  .calendar-events, .calendar-event {
+    float: none;
+    width: 80% !important;
+    left: 10px !important;
+    @include media-breakpoint-down(sm) {
+      width: 90% !important;
+      left: 5px !important;
+    }
+  }
+  table.my-calendar-table {
+    border-spacing: 1px;
+
+    tr.mc-row td {
+      height: 50px !important;
+
+      &.has-events:not(.nextmonth) {
+        background-color: $primary;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
       }
     }
   }
 }
-
 
 table.my-calendar-table {
   border-collapse: separate;
@@ -133,4 +159,8 @@ div#mc_event {
   .single-event .details {
     border: 0;
   }
+}
+
+.mc-main .details {
+  border: 0;
 }

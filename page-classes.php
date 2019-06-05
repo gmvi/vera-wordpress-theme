@@ -33,6 +33,10 @@ function cat_active($cat) {
 	} else return "";
 }
 
+$args = array('category'=>'Classes,Screenprinting');
+$clazzes = mc_get_all_events($args);
+echo '<code style="font-size: 10px;"> ' . html_entity_decode(json_encode($clazzes)) . '</code>';
+
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">

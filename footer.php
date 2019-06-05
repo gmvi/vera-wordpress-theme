@@ -12,6 +12,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php get_sidebar( 'footerfull' ); ?>
 
 <div class="wrapper" id="wrapper-footer">
+    <?php  include( locate_template( 'partial-templates/embedded-calendar.php')); ?>
     <div class="col-sm-12 donate-footer">
         <?php $donate_link = '<a href="'.esc_url( home_url( '/' ) ).'donate/">Donate Today!</a>';?>
         <h1>Support Vera! <strong><?php echo $donate_link ?></strong></h1>
@@ -27,16 +28,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 $footer_nav = wp_get_nav_menu_items($menu_id);
 
-                $footer_nav_rows = array_chunk($footer_nav,2);
-                foreach ($footer_nav_rows as $footer_row):
-                    echo "<div class=\"row\">";
+                if ($footer_nav) {
+                    $footer_nav_rows = array_chunk($footer_nav,2);
+
+                    foreach ($footer_nav_rows as $footer_row):
+                        echo "<div class=\"row\">";
                         foreach ($footer_row as $footer_item):
                             echo "<div class=\"col-6\">";
-	                            echo "<div class=\"footer-link\">" . "<a href=" . $footer_item->url . ">" . $footer_item->title . "</a></div>";
-	                        echo "</div>";
+                            echo "<div class=\"footer-link\">" . "<a href=" . $footer_item->url . ">" . $footer_item->title . "</a></div>";
+                            echo "</div>";
                         endforeach;
-	                echo "</div>";
-                endforeach;
+                        echo "</div>";
+                    endforeach;
+                }
                 ?>
                 <div class="vera-bordered-social-icons pl-3 pt-5">
                     <a href="https://www.facebook.com/theveraproject" target="_blank"><i class="fa fa-facebook-f"></i></a>

@@ -686,6 +686,20 @@ div.centered-text p {
 	letter-spacing: normal;
 }
 
+/* Style for embedded calendar from My Calendar */
+
+.embedded-calendar {
+	background-color: black;
+	h2 {
+		font-family: BebasNeue;
+		text-transform: uppercase;
+		color: $primary;
+	}
+	table caption {
+		display: none;
+	}
+}
+
 /* Footer */
 
 $footer-height: 500px;
