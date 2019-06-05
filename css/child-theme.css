@@ -11257,7 +11257,7 @@ div.list-template-page div.square-wrapper {
       font-size: .8rem; }
 
 .mc-main .my-calendar-nav ul {
-  height: 2.95em;
+  height: 1em;
   margin: 0;
   padding: 0; }
 
@@ -11309,6 +11309,17 @@ div.list-template-page div.square-wrapper {
   text-decoration: none; }
   .mc-main h3 a :hover, .mc-main h3 a :focus {
     text-decoration: underline; }
+
+div.mc-main.list .side-caret {
+  -moz-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear; }
+
+div.mc-main.list .side-caret.down {
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
 
 div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
   padding: 1px 0;
@@ -11383,7 +11394,8 @@ table.my-calendar-table {
       background-color: #252525 !important;
       border-radius: 0;
       color: white;
-      margin-bottom: 2px; }
+      margin-bottom: 2px;
+      padding: 2px 0; }
 
 div.mc-time {
   margin: 10px 0;
@@ -11397,6 +11409,14 @@ div.mc-time {
 
 div.category-key h3 {
   display: none; }
+
+@media (min-width: 992px) {
+  div.category-key ul {
+    padding-top: 10px; } }
+
+@media (max-width: 991.98px) {
+  div.category-key ul {
+    text-align: center; } }
 
 div.category-key ul :first-child {
   margin: 2px 4px 2px 0px !important; }
@@ -11417,8 +11437,11 @@ div.category-key ul li a {
   padding: 2px 5px;
   border-radius: 0 !important;
   font-family: BebasNeue,sans-serif !important;
-  font-size: 18px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  font-size: 18px; }
+  @media (max-width: 767.98px) {
+    div.category-key ul li a {
+      font-size: 16px; } }
   div.category-key ul li a span {
     display: none !important; }
 

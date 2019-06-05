@@ -1,40 +1,7 @@
-
-//.mc-main .my-calendar-nav ul {
-//  height: 2.95em;
-//  margin: 0;
-//  padding: 0;
-//}
-//
-//.mini .my-calendar-nav ul {
-//  height: 2em !important;
-//}
-//
-//.mc-main .my-calendar-nav li {
-//  float: left;
-//  margin: 0 1px;
-//  padding: 0;
-//  list-style-type: none !important; /* It really is pretty important. */
-//}
-//
-//.mc-main .my-calendar-nav li:before {
-//  content: '';
-//}
-//
-//.mc-main .my-calendar-nav li a {
-//  display: block;
-//  text-align: center;
-//  padding: 1px 20px;
-//}
-//
-//.mini .my-calendar-nav li a {
-//  padding: 1px 3px !important;
-//  font-size: .7em;
-//}
-
 .mc-main {
   .my-calendar-nav {
     ul {
-      height: 2.95em;
+      height: 1em;
       margin: 0;
       padding: 0;
     }
@@ -97,7 +64,22 @@
     }
   }
 }
-//month view
+
+div.mc-main.list {
+
+  .side-caret {
+    -moz-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+  }
+
+  .side-caret.down {
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
 
 div.my-calendar-header {
   li.my-calendar-prev a, li.my-calendar-next a {
@@ -200,6 +182,7 @@ table.my-calendar-table {
         border-radius: 0;
         color: white;
         margin-bottom: 2px;
+        padding: 2px 0;
       }
     }
   }
@@ -225,6 +208,12 @@ div.category-key {
     display: none;
   }
   ul {
+    @include media-breakpoint-up(lg) {
+      padding-top: 10px;
+    }
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
     :first-child {
       margin: 2px 4px 2px 0px !important;
     }
@@ -244,8 +233,11 @@ div.category-key {
       padding: 2px 5px;
       border-radius: 0 !important;
       font-family: BebasNeue,sans-serif !important;
-      font-size: 18px;
       letter-spacing: 1px;
+      font-size: 18px;
+      @include media-breakpoint-down(sm) {
+        font-size: 16px;
+      }
       span {
         display: none !important;
       }
