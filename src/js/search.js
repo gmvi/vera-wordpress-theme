@@ -7,7 +7,6 @@
 
     var openSearch = false;
 
-    console.log('curr width is bigger than 992');
     $("button#searchsubmit").click(function (e) {
         //calculate width of window when submit is clicked
         var currWidth = Math.max(
