@@ -10591,11 +10591,46 @@ div.my-calendar-header li.my-calendar-next {
   float: right; }
 
 div.my-calendar-date-switcher form div label.maybe-hide {
+  display: none !important; }
+
+div.mc-main:not(.mini) table.my-calendar-table {
+  border-spacing: 2px; }
+  div.mc-main:not(.mini) table.my-calendar-table tr.mc-row td {
+    height: 100px !important; }
+
+div.mc-main.mini .event-title {
   display: none; }
+
+div.mc-main.mini .mini-event {
+  border: none; }
+  div.mc-main.mini .mini-event .mini-event-detail a {
+    color: #D41C53 !important; }
+
+div.mc-main.mini .calendar-events {
+  background-color: white;
+  border: 2px solid #17a2b8; }
+
+div.mc-main.mini .calendar-events, div.mc-main.mini .calendar-event {
+  float: none;
+  width: 80% !important;
+  left: 10px !important; }
+  @media (max-width: 767.98px) {
+    div.mc-main.mini .calendar-events, div.mc-main.mini .calendar-event {
+      width: 90% !important;
+      left: 5px !important; } }
+
+div.mc-main.mini table.my-calendar-table {
+  border-spacing: 1px; }
+  div.mc-main.mini table.my-calendar-table tr.mc-row td {
+    height: 50px !important; }
+    div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events:not(.nextmonth) {
+      background-color: #D41C53; }
+      div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events:not(.nextmonth) a {
+        text-decoration: none;
+        color: white; }
 
 table.my-calendar-table {
   border-collapse: separate;
-  border-spacing: 2px;
   background-color: #252525; }
   table.my-calendar-table caption.heading.my-calendar-month {
     caption-side: top;
@@ -10613,7 +10648,6 @@ table.my-calendar-table {
     table.my-calendar-table td.nextmonth span, table.my-calendar-table td.nextmonth .calendar-event {
       display: none; }
   table.my-calendar-table tr.mc-row td {
-    height: 100px !important;
     background-color: white;
     padding: 0 !important; }
     table.my-calendar-table tr.mc-row td .calendar-event h3, table.my-calendar-table tr.mc-row td .calendar-event h3 a {
@@ -10639,7 +10673,7 @@ div.category-key ul :first-child {
   margin: 2px 4px 2px 0px !important; }
 
 div.category-key ul li {
-  display: inline;
+  display: inline-flex;
   margin: 2px 4px !important; }
 
 div.category-key ul li.current a {
@@ -10658,6 +10692,12 @@ div.category-key ul li a {
   letter-spacing: 1px; }
   div.category-key ul li a span {
     display: none !important; }
+
+div#mc_event .single-event .details {
+  border: 0; }
+
+.mc-main .details {
+  border: 0; }
 
 /* Fonts */
 @font-face {
@@ -11154,6 +11194,16 @@ div.centered-text p {
   line-height: 1.5;
   text-align: center;
   letter-spacing: normal; }
+
+/* Style for embedded calendar from My Calendar */
+.embedded-calendar {
+  background-color: black; }
+  .embedded-calendar h2 {
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    color: #D41C53; }
+  .embedded-calendar table caption {
+    display: none; }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {

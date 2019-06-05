@@ -120,7 +120,6 @@ $shows = vera_shows_get_front_page();
 							<div class="col-md-1"></div>
 						</div>
 					</section>
-
 					<?php
                         $support_footer_color = 'white';
 					    include( locate_template( 'partial-templates/support-block.php') );

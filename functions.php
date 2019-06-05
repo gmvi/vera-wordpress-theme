@@ -90,3 +90,4 @@ function pad_zeroes( $num ) {
 	return str_pad( $num, 2, '0', STR_PAD_LEFT );
 }
 
+require_once('plugins/my-calendar/mc-custom-template.php');
