@@ -32,7 +32,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: GothicA1, Arial, Roboto, sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -56,7 +56,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: GothicA1, Arial, Roboto, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4852,7 +4852,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: GothicA1, Arial, Roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4937,7 +4937,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: GothicA1, Arial, Roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -10463,6 +10463,60 @@ div.list-template-page div.square-wrapper {
     div.list-template-page div.square-wrapper .square-content p {
       font-size: .8rem; }
 
+.mc-main .my-calendar-nav ul {
+  height: 2.95em;
+  margin: 0;
+  padding: 0; }
+
+.mc-main .my-calendar-nav li {
+  float: left;
+  margin: 0 1px;
+  padding: 0;
+  list-style-type: none !important; }
+  .mc-main .my-calendar-nav li:before {
+    content: ''; }
+  .mc-main .my-calendar-nav li a {
+    display: block;
+    text-align: center;
+    padding: 1px 20px; }
+
+.mc-main table, .mc-main.calendar {
+  width: 100% !important;
+  line-height: 1.2;
+  border-collapse: separate; }
+
+.mc-main td {
+  vertical-align: top;
+  text-align: left;
+  width: 13%;
+  height: 70px;
+  padding: 2px !important; }
+
+.mc-main ul {
+  list-style: none;
+  padding-inline-start: 0; }
+
+.mc-main th {
+  text-align: center;
+  padding: 5px 0 !important;
+  letter-spacing: 1px; }
+  .mc-main th abbr {
+    border-bottom: none; }
+
+.mc-main h3, .mc-main h3 a {
+  display: block;
+  border-radius: 2px;
+  font-size: 10px;
+  margin: 3px 0;
+  padding: 0;
+  width: 100%;
+  clear: none; }
+
+.mc-main h3 a {
+  text-decoration: none; }
+  .mc-main h3 a :hover, .mc-main h3 a :focus {
+    text-decoration: underline; }
+
 div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
   padding: 1px 0;
   text-transform: uppercase; }
@@ -10513,7 +10567,6 @@ div.mc-main.mini table.my-calendar-table {
         color: white; }
 
 table.my-calendar-table {
-  border-collapse: separate;
   background-color: #252525; }
   table.my-calendar-table caption.heading.my-calendar-month {
     caption-side: top;
