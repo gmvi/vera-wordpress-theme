@@ -12,14 +12,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 // Grab steps from custom fields plugin
 $getting_involved_steps = SCF::get( 'Steps' );
 
-function pad_zeroes( $num ) {
-	if ( $num > 9 ) {
-		return $num;
-	}
-
-	return str_pad( $num, 2, '0', STR_PAD_LEFT );
-}
-
 ?>
 
 <div class="wrapper" id="index-wrapper">
