@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: The Vera Project Classes
+Plugin Name: The Vera Project Gallery
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
@@ -162,7 +162,7 @@ function quick_edit_gallery($column_name, $post_type ) {
 			<fieldset class="inline-edit-col-left">
 				<div class="inline-edit-col">
 				<label class="alignleft inline-edit-private">
-					<input type="checkbox"  name="<?php echo esc_attr( $column_name ); ?>">
+					<input class="curr_gallery_check" type="checkbox"  name="<?php echo esc_attr( $column_name ); ?>">
 					<span class="checkbox-title">Current Gallery Show</span>
 				</label>
 				</div>
@@ -174,7 +174,7 @@ function quick_edit_gallery($column_name, $post_type ) {
 			<fieldset class="inline-edit-col-left">
 				<div class="inline-edit-col">
 					<label class="alignleft inline-edit-private">
-						<input type="checkbox"  name="<?php echo esc_attr( $column_name ); ?>">
+						<input class="up_next_gallery_check" type="checkbox"  name="<?php echo esc_attr( $column_name ); ?>">
 						<span class="checkbox-title">Up Next Gallery Show</span>
 					</label>
 				</div>
@@ -188,52 +188,89 @@ function quick_edit_gallery($column_name, $post_type ) {
 
 add_action( 'quick_edit_custom_box', 'quick_edit_gallery', 10, 2 );
 
-//TODO: finish this after gallery page is complete
-//
-// https://wordpress.stackexchange.com/questions/139663/add-description-to-taxonomy-quick-edit
-function quick_edit_save_gallery($term_id ) {
-//	if ( isset( $_POST['parent'] ) ) {
-//		$tax = get_taxonomy( VA_LISTING_NEIGHBORHOOD );
-//		if (
-//			current_filter() === "edited_{" . VA_LISTING_NEIGHBORHOOD . "}"
-//			&& current_user_can( $tax->cap->edit_terms )
-//		) {
-//			$parent = filter_input( INPUT_POST, 'parent', FILTER_SANITIZE_STRING );
-//			// removing action to avoid recursion
-//			remove_action( current_filter(), __FUNCTION__ );
-//			wp_update_term( $term_id, VA_LISTING_NEIGHBORHOOD, array( 'parent' => $parent ) );
-//		}
-//	}
+
+function quick_edit_save_gallery($post_id, $post ) {
+    error_log('inside of quick edit save gallery');
+	// if called by autosave, then bail here
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+		return;
+
+	// if this "post" post type?
+	if ( $post->post_type != GALLERY_TYPE )
+		return;
+
+	// does this user have permissions?
+	if ( ! current_user_can( 'edit_post', $post_id ) )
+		return;
+
+	if ( isset( $_POST[CURR_GALLERY] ) ) {
+		update_field(CURR_GALLERY, $_POST[CURR_GALLERY], $post_id);
+		error_log('saving curr gallery value');
+    } else if ( isset( $_POST[UP_NEXT_GALLERY] ) ) {
+		update_field(UP_NEXT_GALLERY, $_POST[UP_NEXT_GALLERY], $post_id);
+		error_log('saving next gallery value');
+	}
 }
-add_action( 'edited_' . GALLERY_TYPE, 'quick_edit_save_gallery', 10, 1);
+add_action( 'edited_' . GALLERY_TYPE, 'quick_edit_save_gallery', 10, 2);
+
 
 function quick_edit_gallery_javascript() {
 	$current_screen = get_current_screen();
-//	if ( $current_screen->id != 'edit-' . GALLERY_TYPE ||
-//	     $current_screen->taxonomy != VA_LISTING_NEIGHBORHOOD ) {
-//		return;
-//	}
+
+	if ( GALLERY_TYPE != $current_screen->post_type ) {
+		return;
+	}
+
+	error_log('passed the first check in quick edit load');
 	// Ensure jQuery library is loaded
 	wp_enqueue_script( 'jquery' );
 	?>
 	<script type="text/javascript">
-        /*global jQuery*/
-        jQuery(function($) {
-            $('#the-list').on( 'click', 'a.editinline', function( e ) {
-                e.preventDefault();
-                var $tr = $(this).closest('tr');
-                var val = $tr.find('td.parent').text();
-                //parent-select
-                if (val !== 'N/A') {
-                    let option = `#parent-select option[value="${val}"]`;
-                    $(option).attr('selected', 'selected');
-                }
-            });
-        });
+
+        function check_gallery ( curr, next ) {
+            console.log('inside of check current', curr, next);
+            inlineEditPost.revert();
+            jQuery( '.curr_gallery_check' ).attr( 'checked', 0 == curr ? true : false );
+            jQuery( '.up_next_gallery_check' ).attr( 'checked', 0 == next ? true : false);
+        }
+
 	</script>
 	<?php
 }
-add_action( 'admin_print_footer_scripts-edit-tags.php', 'quick_edit_gallery_javascript' );
+add_action( 'admin_footer', 'quick_edit_gallery_javascript' );
+
+
+add_filter( 'post_row_actions', 'expand_quick_edit_link', 10, 2 );
+
+/**
+ * Pass up next and current gallery values to their appropriate javascript functions
+ *
+ * @param array $actions
+ * @param array $post
+ *
+ * @return array
+ */
+function expand_quick_edit_link( $actions, $post ) {
+	global $current_screen;
+
+	if ( GALLERY_TYPE != $current_screen->post_type ) {
+		return $actions;
+	}
+
+	$curr_gallery_data = get_field(CURR_GALLERY, $post->ID);
+	$next_gallery_data = get_field(UP_NEXT_GALLERY, $post->ID);
+
+	$curr_gallery_data = empty( $curr_gallery_data ) ? 0 : 1;
+	$next_gallery_data = empty( $next_gallery_data ) ? 0 : 1;
+
+	$actions['inline hide-if-no-js']    = '<a href="#" class="editinline" title="';
+	$actions['inline hide-if-no-js']    .= esc_attr( 'Edit this item inline' ) . '"';
+	$actions['inline hide-if-no-js']    .= " onclick=\"check_gallery('{$curr_gallery_data}, {$next_gallery_data}')\" >";
+	$actions['inline hide-if-no-js']    .= 'Quick Edit';
+	$actions['inline hide-if-no-js']    .= '</a>';
+
+	return $actions;
+}
 
 //----- end adding two new fields to quick edit -----
 

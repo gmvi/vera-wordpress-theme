@@ -30,7 +30,6 @@ foreach ($includes as $filename) {
     include $filename;
 }
 
-
 // Modify posts page query to return only 9 at a time
 add_action( 'pre_get_posts', 'limit_posts_query' );
 
