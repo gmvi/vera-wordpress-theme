@@ -42,6 +42,20 @@ function limit_posts_query( $query ) {
 
 }
 
+//add search box to where we want in menu
+function add_search_box_to_menu( $items, $args ) {
+	error_log('inside of add search box to menu');
+	error_log(print_r($args, true));
+
+	if ( $args->theme_location === 'primary' ) {
+		return $items . get_search_form();
+	}
+
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_search_box_to_menu', 10, 2 );
+
+
 //make the paginated buttons beautiful
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');

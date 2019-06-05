@@ -65,6 +65,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<!-- The WordPress Menu goes here -->
 					<?php 
 						$donate_btn = '<a href="'.esc_url( home_url( '/' ) ).'/donate/" class="donate">Donate</a>';
+//						$search_bar = get_search_form();
+
 					  wp_nav_menu(
 							array(
 								'theme_location'  => 'primary',
@@ -74,7 +76,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-								'items_wrap'			=> '<ul id="%1$s" class="%2$s">%3$s'.$donate_btn.'</ul>'
+								'items_wrap'			=> '<ul id="%1$s" class="%2$s">%3$s' . $donate_btn . '</ul>'
 							)
 					); ?>
 
