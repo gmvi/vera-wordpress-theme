@@ -1,3 +1,102 @@
+
+//.mc-main .my-calendar-nav ul {
+//  height: 2.95em;
+//  margin: 0;
+//  padding: 0;
+//}
+//
+//.mini .my-calendar-nav ul {
+//  height: 2em !important;
+//}
+//
+//.mc-main .my-calendar-nav li {
+//  float: left;
+//  margin: 0 1px;
+//  padding: 0;
+//  list-style-type: none !important; /* It really is pretty important. */
+//}
+//
+//.mc-main .my-calendar-nav li:before {
+//  content: '';
+//}
+//
+//.mc-main .my-calendar-nav li a {
+//  display: block;
+//  text-align: center;
+//  padding: 1px 20px;
+//}
+//
+//.mini .my-calendar-nav li a {
+//  padding: 1px 3px !important;
+//  font-size: .7em;
+//}
+
+.mc-main {
+  .my-calendar-nav {
+    ul {
+      height: 2.95em;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      float: left;
+      margin: 0 1px;
+      padding: 0;
+      list-style-type: none !important;
+      &:before {
+        content: '';
+      }
+      a {
+        display: block;
+        text-align: center;
+        padding: 1px 20px;
+      }
+    }
+  }
+  table, &.calendar {
+    width: 100% !important;
+    line-height: 1.2;
+    border-collapse: separate;
+  }
+
+  td {
+    vertical-align: top;
+    text-align: left;
+    width: 13%;
+    height: 70px;
+    padding: 2px !important;
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  th {
+    text-align: center;
+    padding: 5px 0 !important;
+    letter-spacing: 1px;
+    abbr {
+      border-bottom: none;
+    }
+
+  }
+  h3, h3 a {
+    display: block;
+    border-radius: 2px;
+    font-size: 10px;
+    margin: 3px 0;
+    padding: 0;
+    width: 100%;
+    clear: none;
+  }
+  h3 a {
+    text-decoration: none;
+    :hover, :focus {
+      text-decoration: underline;
+    }
+  }
+}
 //month view
 
 div.my-calendar-header {
@@ -68,7 +167,6 @@ div.mc-main.mini {
 }
 
 table.my-calendar-table {
-  border-collapse: separate;
   background-color: $darkergray;
   caption.heading.my-calendar-month {
     caption-side: top;
