@@ -41,7 +41,7 @@ function cat_active($cat) {
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 
 		<main class="site-main" id="main" role="main">
 
