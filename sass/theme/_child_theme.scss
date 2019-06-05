@@ -654,6 +654,26 @@ section.donate {
 
 /* Search */
 
+form#searchform {
+	div.input-group {
+		input.form-control {
+			border: 1px solid $primary;
+			border-right: none;
+		}
+
+		div.input-group-append {
+			button#searchsubmit {
+				border-left: none;
+				&:hover {
+					background-color: white;
+					color: $primary;
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}
+
 
 
 /* Buttons */

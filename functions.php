@@ -44,14 +44,21 @@ function limit_posts_query( $query ) {
 
 //add search box to where we want in menu
 function add_search_box_to_menu( $items, $args ) {
-	error_log('inside of add search box to menu');
-	error_log(print_r($args, true));
+	ob_start();
+	get_search_form();
+	$searchform = ob_get_contents();
+	ob_end_clean();
 
-	if ( $args->theme_location === 'primary' ) {
-		return $items . get_search_form();
-	}
-
+	$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item">' . $searchform . '</li>';
 	return $items;
+
+
+//	if ( $args->theme_location === 'primary' ) {
+//		$items .= get_search_form();
+//		return $items;
+//	}
+//
+//	return $items;
 }
 add_filter( 'wp_nav_menu_items', 'add_search_box_to_menu', 10, 2 );
 
@@ -73,6 +80,7 @@ function disable_all_widgets( $sidebars_widgets )
    return array( false ); 
 }
 add_action( 'admin_menu', 'remove_menus', 999 );
+
 // 999 above forces high priority, otherwise remove_submenu_page won't work
 function remove_menus() {
     remove_submenu_page( 'themes.php', 'widgets.php' );
