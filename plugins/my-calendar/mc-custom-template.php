@@ -59,7 +59,7 @@ EOT;
       <div class="card-body">
         <h3 class="card-title">' . $data['title'] . '</h3>
         <p class="card-text">' . $excerpt . '</p>
-        <a href="#" class="btn btn-primary">Button</a>
+        <a href="'. $data['details_link'] .'" class="btn btn-primary">Button</a>
       </div>
     </div>
 </div>';
