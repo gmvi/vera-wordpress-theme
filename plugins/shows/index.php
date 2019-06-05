@@ -59,6 +59,7 @@ function vera_shows_columns( $columns ) {
   $columns['date'] = "Edit Date";
   return $columns;
 }
+
 add_action( 'manage_shows_posts_custom_column' , 'vera_shows_column', 10, 2 );
 function vera_shows_column( $column, $post_id ) {
   $past = get_post_meta($post_id, 'date', true) < current_time('Ymd');

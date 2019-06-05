@@ -30,13 +30,13 @@ foreach ($includes as $filename) {
     include $filename;
 }
 
-
 // Modify posts page query to return only 9 at a time
 add_action( 'pre_get_posts', 'limit_posts_query' );
 
 function limit_posts_query( $query ) {
-	// the function to check if we are on the "posts page" is is_home()
-	if( (is_home() || is_category()) && $query->is_main_query() ) {
+	// checks if we are on the "posts page" or a gallery archive page, limits number of posts
+	if( ((is_home() || is_category()) && $query->is_main_query())
+	    || is_post_type_archive(GALLERY_TYPE))  {
 		$query->set('posts_per_page', '9');
 	}
 
@@ -102,4 +102,14 @@ function vera_remove_page_templates( $templates ) {
     return $templates;
 }
 add_filter( 'theme_page_templates', 'vera_remove_page_templates' );
+
+// TODO: review - where to put useful things like this
+function pad_zeroes( $num ) {
+	if ( $num > 9 ) {
+		return $num;
+	}
+
+	return str_pad( $num, 2, '0', STR_PAD_LEFT );
+}
+
 require_once('plugins/my-calendar/mc-custom-template.php');

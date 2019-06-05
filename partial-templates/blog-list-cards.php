@@ -22,7 +22,20 @@
             <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>">
 		<?php endif ?>
         <div class="card-body d-flex flex-column">
-            <p class="blog-overview-date"><?php echo get_the_date(); ?></p>
+            <p class="blog-overview-date">
+                <?php
+
+                if ( is_post_type_archive(GALLERY_TYPE) ) {
+	                $opening_date = get_field('gallery_opening_datetime');
+	                $formatted_opening_date = DateTime::createFromFormat('F j, Y h:i a', $opening_date);
+
+	                echo $formatted_opening_date->format('F j') . ' - ' . get_field('gallery_end_date');
+                } else {
+	                echo get_the_date();
+                }
+
+                ?>
+            </p>
             <h5 class="card-title"><?php echo the_title();?></h5>
 			<?php
 			if (!has_post_thumbnail()):
@@ -38,7 +51,7 @@
             </div>
         </div>
     </div>
-	<?php if($count % $numOfCols == 0) echo '</div><div class="card-deck">'; ?>
+	<?php if($count % $numOfCols == 0) echo '</div><div class="card-deck pb-2">'; ?>
 <?php endwhile; ?>
 <?php else : ?>
     <div class="col-sm-6 mx-auto text-center">
