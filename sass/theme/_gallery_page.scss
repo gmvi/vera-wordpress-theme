@@ -173,6 +173,12 @@ section#past-gallery {
     }
   }
 
+  .artist {
+    @include media-breakpoint-up(md) {
+      width: 18rem;
+    }
+  }
+
   .card {
     .card-title {
       font-family: BebasNeue;
@@ -187,7 +193,6 @@ section#past-gallery {
 
     .card-footer {
       padding: 30px;
-
 
       div.vera-bordered-social-icons i {
         margin-right: .6em;

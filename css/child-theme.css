@@ -11051,6 +11051,10 @@ section#past-gallery {
 .single-gallery-page .gallery-contents h1 {
   text-align: justify !important; }
 
+@media (min-width: 768px) {
+  .single-gallery-page .artist {
+    width: 18rem; } }
+
 .single-gallery-page .card .card-title {
   font-family: BebasNeue;
   font-size: 25px;
