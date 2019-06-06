@@ -1,0 +1,201 @@
+[
+    {
+        "key": "group_5c4f3b4e3bc86",
+        "title": "Gallery Page",
+        "fields": [
+            {
+                "key": "field_5c4f3c0b38f21",
+                "label": "Committee Block Header",
+                "name": "committee_block_header",
+                "type": "text",
+                "instructions": "Header for \"get involved\" block that describes the Vera Art Gallery Committee",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Join The Gallery",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c4f3c3338f22",
+                "label": "Committee Block Description",
+                "name": "committee_block_description",
+                "type": "text",
+                "instructions": "Description of the Vera Art Gallery Committee",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "The Ver(a)rt Gallery Committee meets once a month to decide on issues affecting the gallery. New people are encouraged to attend. We provide opportunities to participate at a lot of levels. <br\/><br\/> We almost always meet on the second Tuesday of the month at 6:00 -8 pm in the Ver(a)rt Gallery space.",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c4f3c4b38f23",
+                "label": "Committee Block Contact Url",
+                "name": "committee_block_contact_url",
+                "type": "text",
+                "instructions": "url for contact committee page",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "\/contact-gallery-committee",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c4f3c6338f24",
+                "label": "CFA Block Header",
+                "name": "cfa_block_header",
+                "type": "text",
+                "instructions": "Call For Artists header",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Show Your Art",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c4f3c7538f25",
+                "label": "CFA Block Description",
+                "name": "cfa_block_description",
+                "type": "text",
+                "instructions": "Call For Artists Description",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "You know you want to!",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c4f3c8c38f26",
+                "label": "Support Gallery Graphic",
+                "name": "support_gallery_graphic",
+                "type": "image",
+                "instructions": "Graphic that goes next to the donate button",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5c4f3cb138f27",
+                "label": "CFA Block Submit URL",
+                "name": "cfa_block_submit_url",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "\/cfa-submit",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5cf687154f984",
+                "label": "Former Gallery Title",
+                "name": "former_gallery_title",
+                "type": "text",
+                "instructions": "Title to display over previous gallery shows",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Formerly At The Gallery",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5cf687404f985",
+                "label": "Former Gallery Text",
+                "name": "former_gallery_text",
+                "type": "textarea",
+                "instructions": "Text introducing previous gallery shows",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": 4,
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "33"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]
