@@ -107,6 +107,28 @@ body {
 /* Uncatagorized */
 // TODO: catagorize these
 
+div.square-wrapper {
+	padding-bottom: 100%;
+	.square-content {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		img {
+			width: 50%;
+		}
+		h2.large-header {
+			font-size: 40px;
+		}
+		p {
+			font-size: .8rem;
+
+			@include media-breakpoint-down(sm) {
+				font-size: .9rem !important;
+			}
+		}
+	}
+}
+
 .wrapper {
     padding: 0;
     position: relative;
