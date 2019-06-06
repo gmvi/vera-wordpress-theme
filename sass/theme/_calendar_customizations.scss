@@ -72,9 +72,9 @@ when My Calendar is drawing out the events.
 div.mc-main.list {
 
   .side-caret {
-    -moz-transition: all 0.25s linear;
-    -webkit-transition: all 0.25s linear;
-    transition: all 0.25s linear;
+    -moz-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
   }
 
   .side-caret.down {
@@ -234,7 +234,7 @@ div.mc-time {
 }
 
 
-div.category-key {
+div.category-key, div.location-key {
   h3 {
     display: none;
   }

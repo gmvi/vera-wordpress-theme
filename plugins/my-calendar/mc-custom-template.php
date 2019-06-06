@@ -39,6 +39,13 @@ function create_single_event_view($data, $event) {
 EOT;
 }
 
+//$inner_heading = apply_filters( 'mc_heading_inner_title', $wrap . $image . trim( $event_title ) . $balance, $event_title, $event );
+add_filter( 'mc_heading_inner_title', 'add_event_location_hidden', 10, 3);
+function add_event_location_hidden($body, $event_title, $event) {
+    $body .= '<span class="HIDDEN-CATEGORY" style="display:none;">' . $event->event_label . '</span>';
+    return $body;
+}
+
 /**
  * This plug-in demonstrates adding a custom template in PHP.
  *
@@ -58,6 +65,9 @@ EOT;
 add_filter( 'mc_custom_template', 'my_custom_calendar', 10, 7);
 function my_custom_calendar( $body = false, $data, $event, $type, $process_date, $time, $template ) {
 //    error_log("event is " . json_encode($event), 0 );
+//    $hidden_event_category = '<span class="HIDDEN-CATEGORY" style="display:none;">' . $event['event_label'] . '</span>';
+    // todo: add in hidden field w/ all the `event_label`s, use jquery to aggregate them all and create a locations select field
+    //   like the categories select
     error_log('type is ' . json_encode($type), 0);
     switch ($type) {
         case 'single':
@@ -74,6 +84,7 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
         <p class="card-text">' . $excerpt . '</p>
       </div>
     </div>
+    <span class="HIDDEN-CATEGORY" style="display:none;">' . $event['event_label'] . '</span>
 </div>';
             break;
         case 'mini':
