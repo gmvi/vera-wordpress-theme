@@ -58,13 +58,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 							the_custom_logo();
 						} ?><!-- end custom logo -->
 
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="	navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
 					<!-- The WordPress Menu goes here -->
 					<?php 
-						$donate_btn = '<a href="'.esc_url( home_url( '/' ) ).'/donate/" class="donate">Donate</a>';
+						$donate_btn = '<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a href="'.esc_url( home_url( '/' ) ).'/donate/" class="donate">Donate</a></li>';
+
 					  wp_nav_menu(
 							array(
 								'theme_location'  => 'primary',
@@ -74,7 +75,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-								'items_wrap'			=> '<ul id="%1$s" class="%2$s">%3$s'.$donate_btn.'</ul>'
+								'items_wrap'			=> '<ul id="%1$s" class="%2$s">%3$s' . $donate_btn . '</ul>'
 							)
 					); ?>
 

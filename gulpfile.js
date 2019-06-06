@@ -185,7 +185,8 @@ gulp.task('scripts', function() {
 
         basePaths.dev + 'js/skip-link-focus-fix.js',
         basePaths.dev + 'js/sticky-header.js',
-        basePaths.dev + 'js/past-gallery.js'
+        basePaths.dev + 'js/past-gallery.js',
+        basePaths.dev + 'js/search.js'
     ];
   gulp.src(scripts)
     .pipe(concat('child-theme.min.js'))

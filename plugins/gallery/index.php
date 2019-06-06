@@ -191,6 +191,7 @@ add_action( 'quick_edit_custom_box', 'quick_edit_gallery', 10, 2 );
 
 function quick_edit_save_gallery($post_id, $post ) {
     error_log('inside of quick edit save gallery');
+    error_log(print_r($post, true));
 	// if called by autosave, then bail here
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
@@ -226,19 +227,15 @@ function quick_edit_gallery_javascript() {
 	wp_enqueue_script( 'jquery' );
 	?>
 	<script type="text/javascript">
-
         function check_gallery ( curr, next ) {
-            console.log('inside of check current', curr, next);
             inlineEditPost.revert();
-            jQuery( '.curr_gallery_check' ).attr( 'checked', 0 == curr ? true : false );
-            jQuery( '.up_next_gallery_check' ).attr( 'checked', 0 == next ? true : false);
+            jQuery( '.curr_gallery_check' ).attr( 'checked', 0 == curr ? false : true );
+            jQuery( '.up_next_gallery_check' ).attr( 'checked', 0 == next ? false : true);
         }
-
 	</script>
 	<?php
 }
 add_action( 'admin_footer', 'quick_edit_gallery_javascript' );
-
 
 add_filter( 'post_row_actions', 'expand_quick_edit_link', 10, 2 );
 
@@ -265,7 +262,7 @@ function expand_quick_edit_link( $actions, $post ) {
 
 	$actions['inline hide-if-no-js']    = '<a href="#" class="editinline" title="';
 	$actions['inline hide-if-no-js']    .= esc_attr( 'Edit this item inline' ) . '"';
-	$actions['inline hide-if-no-js']    .= " onclick=\"check_gallery('{$curr_gallery_data}, {$next_gallery_data}')\" >";
+	$actions['inline hide-if-no-js']    .= " onclick=\"check_gallery('{$curr_gallery_data}', '{$next_gallery_data}')\" >";
 	$actions['inline hide-if-no-js']    .= 'Quick Edit';
 	$actions['inline hide-if-no-js']    .= '</a>';
 
