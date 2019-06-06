@@ -10811,9 +10811,21 @@ section.volunteer-hero {
   color: white; }
 
 section.classes {
+  padding-top: 20px !important;
   padding-bottom: 100px; }
-  section.classes .list-header, section.classes .list-item {
-    border-bottom: 3px solid #EBEEEF; }
+  section.classes .square-wrapper {
+    border: 1px solid #EBEEEF; }
+  section.classes .class-title {
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    color: #D41C53;
+    font-family: BebasNeue;
+    font-size: 35px;
+    line-height: 1;
+    letter-spacing: 1.5px; }
+    section.classes .class-title:hover {
+      opacity: 0.6; }
   section.classes .list-header {
     padding-bottom: 30px; }
     section.classes .list-header .filter-category {
@@ -10829,7 +10841,8 @@ section.classes {
       background-color: #EBEEEF; }
       @media screen and (max-width: 767px) {
         section.classes .list-header .filter-category {
-          font-size: 14px !important; } }
+          font-size: 20px !important;
+          margin-right: 5px !important; } }
     section.classes .list-header .filter-category.active {
       color: white;
       background-color: #D41C53; }
@@ -10841,18 +10854,6 @@ section.classes {
     section.classes .list-item a:hover {
       text-decoration: underline;
       cursor: pointer; }
-    section.classes .list-item .class-title {
-      display: inline-block;
-      color: #D41C53;
-      font-family: BebasNeue;
-      font-size: 34px;
-      font-weight: bold;
-      line-height: 1;
-      letter-spacing: 1.5px;
-      max-width: 500px; }
-      @media screen and (max-width: 767px) {
-        section.classes .list-item .class-title {
-          font-size: 24px !important; } }
     section.classes .list-item .class-row .class-info {
       text-align: center;
       font-family: GothicA1;
@@ -11237,24 +11238,10 @@ div#blog-pagination a {
     background: #f6f6f6; } }
 
 @media (max-width: 767.98px) {
-  div.list-template-page div.square-wrapper .square-content p {
-    font-size: .9rem !important; }
   div.list-template-page div.list-wrapper:nth-child(odd) {
     background: #f6f6f6; }
   div.list-template-page div#intro-text p {
     font-size: 20px; } }
-
-div.list-template-page div.square-wrapper {
-  padding-bottom: 100%; }
-  div.list-template-page div.square-wrapper .square-content {
-    position: absolute;
-    height: 100%; }
-    div.list-template-page div.square-wrapper .square-content img {
-      width: 50%; }
-    div.list-template-page div.square-wrapper .square-content h2.large-header {
-      font-size: 40px; }
-    div.list-template-page div.square-wrapper .square-content p {
-      font-size: .8rem; }
 
 .mc-main .my-calendar-nav ul {
   height: 1em;
@@ -11515,6 +11502,22 @@ body {
       font-size: 24px; } }
 
 /* Uncatagorized */
+div.square-wrapper {
+  padding-bottom: 100%; }
+  div.square-wrapper .square-content {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+    div.square-wrapper .square-content img {
+      width: 50%; }
+    div.square-wrapper .square-content h2.large-header {
+      font-size: 40px; }
+    div.square-wrapper .square-content p {
+      font-size: .8rem; }
+      @media (max-width: 767.98px) {
+        div.square-wrapper .square-content p {
+          font-size: .9rem !important; } }
+
 .wrapper {
   padding: 0;
   position: relative; }

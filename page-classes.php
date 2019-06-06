@@ -6,36 +6,38 @@
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
-
-$class_cats = get_terms([
-	'taxonomy' => 'class_cat',
-	'hide_empty' => true,
-]);
-
+$classes_category = 'Classes';
 $class_cat_param = get_query_var("class_cat");
 
-$args = [
-	'post_type' => 'classes',
-	'post_status' => 'publish',
-	'numberposts' => 20
-];
-if (!empty($class_cat_param)) $args['tax_query'] = [[
-	'taxonomy' => 'class_cat',
-	'field' => 'slug',
-	'terms' => $class_cat_param,
-]];
-$classes = get_posts($args);
-
+//called to check if category is active
 function cat_active($cat) {
+    error_log('inside of cat active');
+    error_log(print_r($cat, true));
+
 	global $class_cat_param;
+	error_log(print_r($class_cat_param, true));
 	if ($cat == $class_cat_param) {
 		return " active";
 	} else return "";
 }
 
-//$args = array('category'=>'Classes,Screenprinting');
-//$clazzes = mc_get_all_events($args);
-//echo '<code style="font-size: 10px;"> ' . html_entity_decode(json_encode($clazzes)) . '</code>';
+if (!empty($class_cat_param)) {
+    switch ($class_cat_param) {
+        case 'screenprint':
+            $classes_category = 'Screenprint';
+            break;
+        case 'audio':
+	        $classes_category = 'Audio Stage';
+	        break;
+    }
+}
+
+$args = array('category'=>$classes_category);
+error_log('arg being used is');
+error_log(print_r($args, true));
+$clazzes = mc_get_all_events($args);
+error_log('other classes');
+//error_log(print_r($clazzes, true));
 
 ?>
 
@@ -50,8 +52,6 @@ function cat_active($cat) {
 				<?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
 
 				<div  class="entry-content">
-					<a name="content"></a>
-
 					<section class="info text-center">
 						<div class="row header no-gutters">
 							<div class="col-md-12">
@@ -67,57 +67,27 @@ function cat_active($cat) {
 					</section><!-- .info -->
 
 					<section class="classes">
-						<div class="row body no-gutters">
-							<div class="col-md-1"></div>
-							<div class="col-md-10 list-header">
+						<div class="row body">
+							<div class="list-header m-auto">
 								<a class="filter-category<?= cat_active(""); ?>" href="./">All</a>
-								<?php foreach ($class_cats as $class_cat): ?>
-									<a class="filter-category<?= cat_active($class_cat->slug); ?>" href="?class_cat=<?= $class_cat->slug ?>#content"><?= $class_cat->name ?></a>
-								<?php endforeach; ?>
+                                <a class="filter-category<?= cat_active("screenprint"); ?>" href="?class_cat=screenprint">Screenprint</a>
+                                <a class="filter-category<?= cat_active("audio"); ?>" href="?class_cat=audio">Audio & Stage</a>
 							</div>
 						</div>
-						<?php foreach ($classes as $class):
-							$icon = vera_get_class_cat($class->ID);
-							$is_private = SCF::get("private_class", $class->ID);
-							$next = vera_get_class_next($class->ID); 
-						?>
+                        <div class="container">
 							<div class="row body class no-gutters">
-								<div class="col-md-1"></div>
-								<div class="col-md-10 list-item">
-                                    <div class="row no-gutters w-100 class-row ">
-                                        <!-- not setting breakpoints here, just using col so it is always one row. font size will be truncated based on media query -->
-                                        <div class="col-sm-1 my-auto d-none d-sm-block"><span class="icon icon-<?= $icon ?> my-auto"></span></div>
-                                        <!-- class title-->
-                                        <div class="col-6 col-sm-6 class-title my-auto"><a data-toggle="modal" data-target="#modal-<?= $class->ID ?>"><?= $class->post_title ?></a></div>
-                                        <!-- class date-->
-                                        <div class="col-3 col-sm-2 my-auto text-center">
-                                            <?php if (!$is_private): ?>
-                                                <span class="class-info"><?= $next['date'] ?></span>
-                                            <?php endif; ?>
-                                        </div>
-                                        <!-- class time-->
-                                        <div class="col-3 col-sm-1 my-auto text-center">
-                                            <?php if (!$is_private): ?>
-                                                <span class="class-info"><?= $next['time'] ?></span>
-                                            <?php endif; ?>
-                                        </div>
-                                         <!--class register / learn more-->
-                                        <div class="col-sm-2 my-auto mr-auto d-none d-sm-block">
-                                            <?php if (!$is_private): ?>
-                                                <?php if($next['link']): ?>
-                                                    <a target="_blank" href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
-                                                <?php else: ?>
-                                                    <a class="btn bordered-button btn-outline-primary pull-right my-auto disabled" aria-disabled="true">Register</a>
-                                                <?php endif; ?>
-                                            <?php else : ?>
-                                                <a data-toggle="modal" data-target="#modal-<?= $class->ID ?>" href class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Private</a>
-                                            <?php endif; ?>
+                            <?php foreach ($clazzes as $class):
+                                ?>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="square-wrapper">
+                                        <div class="square-content p-4 class-title d-flex flex-column justify-content-center align-content-center">
+                                            <a data-toggle="modal" data-target="#modal-<?= $class->event_id ?>"><?= $class->event_title?></a>
                                         </div>
                                     </div>
-
-								</div>
+                                </div>
+                            <?php endforeach; ?>
 							</div>
-						<?php endforeach; ?>
+                        </div>
 					</section>
 
 				</div><!-- .entry-content -->
@@ -133,20 +103,20 @@ function cat_active($cat) {
 <?php get_footer(); ?>
 
 <div class=modals>
-	<?php foreach ($classes as $class):
-        $is_private = SCF::get("private_class", $class->ID);
-		$next = vera_get_class_next($class->ID); ?>
-		<div class="modal fade" id="modal-<?= $class->ID ?>" tabindex="-1" role="dialog" aria-hidden="true">
+	<?php foreach ($clazzes as $class): ?>
+		<div class="modal fade" id="modal-<?= $class->event_id ?>" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<span class="modal-title"><?= $class->post_title ?></span>
+						<span class="modal-title"><?= $class->event_title ?></span>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="modal-body"><?= wpautop( $class->post_content ) ?></div>
-                    <?php if (!$is_private): ?>
+					<div class="modal-body"><?= wpautop( $class->event_desc ) ?></div>
+                    <?php if (!$is_private):
+                        //TODO: if event has link, show register button
+                        ?>
 						<div class="modal-footer">
                             <?php if($next['link']) {
                                 $extraclass = '';

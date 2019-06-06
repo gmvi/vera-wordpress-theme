@@ -1,4 +1,5 @@
 section.classes {
+	padding-top: 20px !important;
 	padding-bottom: 100px;
 
 	.list-header, .list-item {
@@ -6,7 +7,29 @@ section.classes {
 		//padding-left: 0px;
 		//margin-right: 15px;
 		//padding-right: 0px;
-		border-bottom: 3px solid $lightgray;
+		//border-bottom: 3px solid $lightgray;
+	}
+
+	.square-wrapper {
+		border: 1px solid $lightgray;
+	}
+
+	.class-title {
+		//@media screen and (max-width: 767px) {
+		//	font-size: 24px !important;
+		//}
+		&:hover {
+			opacity: 0.6;
+		}
+		cursor: pointer;
+		text-align: center;
+		display: inline-block;
+		color: $primary;
+		font-family: BebasNeue;
+		font-size: 35px;
+		line-height: 1;
+		letter-spacing: 1.5px;
+		//padding-right: 100px;
 	}
 
 	.list-header {
@@ -14,7 +37,8 @@ section.classes {
 
 		.filter-category {
 			@media screen and (max-width: 767px) {
-				font-size: 14px !important;
+				font-size: 20px !important;
+				margin-right: 5px !important;
 			}
 
 			height: 24px;
@@ -43,21 +67,6 @@ section.classes {
 		a:hover {
 			text-decoration: underline;
 			cursor: pointer;
-		}
-
-		.class-title {
-			@media screen and (max-width: 767px) {
-				font-size: 24px !important;
-			}
-			display: inline-block;
-			color: $primary;
-			font-family: BebasNeue;
-			font-size: 34px;
-			font-weight: bold;
-			line-height: 1;
-			letter-spacing: 1.5px;
-			max-width: 500px;
-			//padding-right: 100px;
 		}
 
 		.class-row {

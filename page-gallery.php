@@ -22,8 +22,6 @@ $gallery = vera_gallery_get_overview();
 
             <?php get_template_part('partial-templates/pageblurb'); ?>
             <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
-
-
                 <section class="row no-gutters current-gallery">
                     <div class="col-sm-6">
                         <div class="row align-items-center h-100 no-gutters">

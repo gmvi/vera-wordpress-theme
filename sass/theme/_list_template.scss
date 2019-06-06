@@ -1,7 +1,6 @@
 $list-bg-color: #f6f6f6;
 
 div.list-template-page {
-
   @include media-breakpoint-up(md) {
     div.template-item {
       max-height: 450px;
@@ -26,10 +25,6 @@ div.list-template-page {
   }
 
   @include media-breakpoint-down(sm) {
-    div.square-wrapper .square-content p {
-      font-size: .9rem !important;
-    }
-
     div.list-wrapper:nth-child(odd) {
       background: $list-bg-color;
     }
@@ -38,25 +33,6 @@ div.list-template-page {
       font-size: 20px;
     }
   }
-
-
-
-  div.square-wrapper {
-    padding-bottom: 100%;
-    .square-content {
-      position: absolute;
-      height: 100%;
-      img {
-        width: 50%;
-      }
-      h2.large-header {
-        font-size: 40px;
-      }
-      p {
-        font-size: .8rem;
-      }
-    }
-  }
-
 }
+
 
