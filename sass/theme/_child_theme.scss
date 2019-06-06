@@ -9,7 +9,9 @@
 @import "blogs_overview_page";
 @import "single_blog_page";
 @import "content_page";
-@import "list_template.scss";
+@import "list_template";
+@import "calendar_customizations";
+@import "search";
 
 /* Fonts */
 
@@ -50,17 +52,82 @@ body {
     //border: 1px solid black;
 }
 
-.site h1, h2, h3, h4, h5, h6 {
-    // h tags are primarily for blind people and robots
-    // They can have header styling but it should be conditional
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    line-height: 1;
+.color-dark-gray {
+	color: $darkgray;
 }
+
+.site {
+	h1, h2, h3, h4, h5, h6 {
+		// h tags are primarily for blind people and robots
+		// They can have header styling but it should be conditional
+		font-size: inherit;
+		font-weight: inherit;
+		margin: 0;
+		line-height: 1;
+	}
+	//todo: at end of V2 evaulate this thing's usefulness, take it out if it isn't.
+	// 	seems like we should be hooking into bootstrap's font sizes & typography, but that would take more evaluation
+	// 	https://getbootstrap.com/docs/4.0/content/typography/
+	h1 {
+		font-family: BebasNeue;
+		font-size: 72px;
+		@include media-breakpoint-only(md) {
+			font-size: 54px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 48px;
+		}
+	}
+	h2 {
+		font-family: BebasNeue;
+		font-size: 56px;
+		@include media-breakpoint-only(md) {
+			font-size: 42px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 36px;
+		}
+	}
+	h3 {
+		font-size: 48px;
+		@include media-breakpoint-only(md) {
+			font-size: 36px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 24px;
+		}
+	}
+	h4 {
+		font-family: BebasNeue;
+		font-size: 30px;
+	}
+}
+
 
 /* Uncatagorized */
 // TODO: catagorize these
+
+div.square-wrapper {
+	padding-bottom: 100%;
+	.square-content {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		img {
+			width: 50%;
+		}
+		h2.large-header {
+			font-size: 40px;
+		}
+		p {
+			font-size: .8rem;
+
+			@include media-breakpoint-down(sm) {
+				font-size: .9rem !important;
+			}
+		}
+	}
+}
 
 .wrapper {
     padding: 0;
@@ -258,16 +325,16 @@ $collapsed-nav-height: 5rem;
 		}
 	}
 
-	.navbar-nav .donate {
-	    margin-left: 30px;
-	}
-
 	.nav-item {
 	    display: flex;
 	    justify-content: center;
 	    flex-direction: column;
 	    text-align: right;
 
+		@include media-breakpoint-down(md) {
+			flex-direction: row;
+			justify-content: flex-end;
+		}
 	}
 
 	.nav-item > .nav-link {
@@ -371,7 +438,7 @@ ul.menu {
     text-transform: uppercase;
     letter-spacing: 1.8px;
     margin-bottom: 40px;
-    h1 { font-size: 96px; }
+    h1 {font-size: 96px; }
     h2 { font-size: 72px; }
     h3 { font-size: 56px; }
 }
@@ -612,10 +679,7 @@ section.donate {
 		object-fit: cover;
 		background-size:cover
 	}
-
-
 }
-
 
 
 /* Buttons */
@@ -648,6 +712,20 @@ div.centered-text p {
 	line-height: 1.5;
 	text-align: center;
 	letter-spacing: normal;
+}
+
+/* Style for embedded calendar from My Calendar */
+
+.embedded-calendar {
+	background-color: black;
+	h2 {
+		font-family: BebasNeue;
+		text-transform: uppercase;
+		color: $primary;
+	}
+	table caption {
+		display: none;
+	}
 }
 
 /* Footer */

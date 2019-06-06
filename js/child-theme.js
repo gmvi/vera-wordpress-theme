@@ -4021,3 +4021,104 @@
     }
 
 } )( jQuery );
+
+/**
+ * Handles pagination through past gallery shows
+ *
+ */
+
+( function( $ ) {
+    var currentItem = 0;
+    var galleryItems = $( ".past-gallery-item" );
+    var totalItems = galleryItems.length;
+
+    loadItem();
+
+    $( "button#prev-gallery-item" ).click(function() {
+        if (currentItem === 0)
+            return;
+
+        currentItem -= 1;
+        loadItem('prev');
+    });
+
+    $( "button#next-gallery-item" ).click(function() {
+        if (currentItem === totalItems - 1)
+            return;
+
+        currentItem += 1;
+        loadItem('next');
+    });
+
+    function loadItem(direction) {
+        var displayIndex = currentItem + 1;
+        var optionalPad = '';
+        if (displayIndex < 10) {
+            optionalPad = '0';
+        }
+
+        $ ( "span.gallery-index" ).text(optionalPad + displayIndex);
+
+        if (currentItem === 0) {
+            $( "button#prev-gallery-item" ).prop("disabled", true);
+            $( "button#next-gallery-item" ).prop("disabled", false);
+        } else if (currentItem === totalItems - 1) {
+            $( "button#prev-gallery-item" ).prop("disabled", false);
+            $( "button#next-gallery-item" ).prop("disabled", true);
+        } else {
+            $( "button#prev-gallery-item" ).prop("disabled", false);
+            $( "button#next-gallery-item" ).prop("disabled", false);
+        }
+
+        if (direction === 'next') {
+            galleryItems.eq(currentItem - 1).removeClass("d-block").addClass("d-none");
+        } else if (direction === 'prev') {
+            galleryItems.eq(currentItem + 1).removeClass("d-block").addClass("d-none");
+        }
+
+        galleryItems.eq(currentItem).removeClass("d-none").addClass("d-block");
+    }
+
+} )( jQuery );
+
+/**
+ * Handles search behavior in nav (initially collapsed, then expand on click)
+ *
+ * */
+
+(function ($) {
+
+    var openSearch = false;
+
+    $("button#searchsubmit").click(function (e) {
+        //calculate width of window when submit is clicked
+        var currWidth = Math.max(
+            document.documentElement.clientWidth,
+            window.innerWidth || 0
+        ) //grab width, and only do collapse/uncollapse on windows at large size or bigger
+
+        var inputVal = $("input#vera-search").val().trim();
+
+        //this 992 value comes from bootstrap grig lg size
+        if (currWidth > 992) {
+            if (!openSearch) { //input is collapsed
+                console.log('open search');
+                e.preventDefault();
+                $("input#vera-search").removeClass("hide-search-input");
+                $("button#searchsubmit").removeClass("no-border");
+                openSearch = true;
+            } else if (inputVal.length === 0) { //input is open but no search
+                e.preventDefault();
+                $("input#vera-search").addClass("hide-search-input");
+                $("button#searchsubmit").addClass("no-border");
+                openSearch = false;
+            } else {
+                $("form#searchform").submit();
+            }
+        } else {
+            $("form#searchform").submit();
+        }
+
+    });
+
+})(jQuery);
