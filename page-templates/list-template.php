@@ -9,8 +9,6 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
 $list_items = get_field('items');
-
-
 ?>
 
     <div class="wrapper" id="full-width-page-wrapper">
@@ -31,7 +29,7 @@ $list_items = get_field('items');
 
                     <div class="container mb-5">
                         <div class="row">
-					            <?php foreach ( $list_items as $i => $item ) { ?>
+					            <?php foreach ( $list_items as $item ) { ?>
                                     <div class="col-sm-12 col-md-6 col-lg-4 list-wrapper px-0">
                                         <div class="square-wrapper">
                                             <div class="square-content d-flex flex-column justify-content-center align-items-center text-center px-3">
