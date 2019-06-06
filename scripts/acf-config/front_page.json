@@ -216,7 +216,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -240,7 +240,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -259,7 +259,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -292,7 +292,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -316,7 +316,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -335,7 +335,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -368,7 +368,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -392,7 +392,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -411,7 +411,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "33",
                                     "class": "",
                                     "id": ""
                                 },
@@ -456,6 +456,25 @@
                         "placeholder": ""
                     }
                 ]
+            },
+            {
+                "key": "field_5cf99a799e4e5",
+                "label": "Blog Title Text",
+                "name": "blog_title_text",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
             }
         ],
         "location": [
