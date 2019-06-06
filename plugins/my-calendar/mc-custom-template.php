@@ -20,12 +20,20 @@ function create_single_event_view($data, $event) {
 <div class="row mx-4">
     <div class="col-md-9 order-2 order-md-1">$description</div>
     <div class="col-md-3 order-1 order-md-2 text-md-right">
-        <div>$date</div>
-        <div>$timeslot</div>
-        <hr class="ml-4 d-none d-md-block"/>
-        <div>$address</div>
-        $recurs_div
-        $link_html
+        <div class="row mb-4">
+            <div class="col-6 col-md-12">
+                <div>$date</div>
+                <div>$timeslot</div>
+                $recurs_div
+                <div class="text-left text-md-right">
+                    $link_html
+                </div>
+            </div>
+            <hr class="ml-4 d-none d-md-block w-100"/>
+            <div class="col-6 col-md-12">
+                <div>$address</div>
+            </div>
+        </div>
     </div>
 </div>
 EOT;
@@ -101,7 +109,7 @@ function log_filter($something0, $something1, $something2) {
 
 add_filter( 'mc_list_js', 'custom_list_js' );
 function custom_list_js( $url ) {
-    return get_stylesheet_directory_uri() . '/js/mc-customize-list-view.js';
+    return get_stylesheet_directory_uri() . '/js/my-calendar/events-view.js';
 }
 
 //get_stylesheet_directory_uri()

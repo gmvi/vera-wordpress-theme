@@ -1,27 +1,31 @@
+/**
+Lots of custom styles directly targeting elements because we don't have control over all the classes set
+when My Calendar is drawing out the events.
+ */
 .mc-main {
   .my-calendar-nav {
     ul {
+      @extend .m-0;
+      @extend .p-0;
       height: 1em;
-      margin: 0;
-      padding: 0;
     }
     li {
+      @extend .p-0;
       float: left;
       margin: 0 1px;
-      padding: 0;
       list-style-type: none !important;
       &:before {
         content: '';
       }
       a {
+        @extend .text-center;
         display: block;
-        text-align: center;
         padding: 1px 20px;
       }
     }
   }
   table, &.calendar {
-    width: 100% !important;
+    @extend .w-100;
     line-height: 1.2;
     border-collapse: separate;
   }
@@ -85,6 +89,10 @@ div.my-calendar-header {
   li.my-calendar-prev a, li.my-calendar-next a {
     padding: 1px 0;
     text-transform: uppercase;
+    font-size: 24px;
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
+    }
   }
   li.my-calendar-prev {
     float: left;
@@ -95,8 +103,28 @@ div.my-calendar-header {
 }
 
 div.my-calendar-date-switcher {
-  form div label.maybe-hide {
-    display: none !important;
+  form {
+    div label.maybe-hide {
+      display: none !important;
+    }
+    select.form-control {
+      border-radius: 0;
+      -webkit-appearance: none;
+      border-color: $primary;
+      font-family: BebasNeue;
+      letter-spacing: 1px;
+      font-size: 18px;
+
+    }
+    input[type="submit"] {
+      @extend .btn;
+      @extend .btn-outline-primary;
+      border-radius: 0px;
+      font-family: BebasNeue;
+      font-size: 18px;
+      letter-spacing: 1px;
+      padding: .365rem .75rem;
+    }
   }
 }
 
@@ -151,31 +179,31 @@ div.mc-main.mini {
 table.my-calendar-table {
   background-color: $darkergray;
   caption.heading.my-calendar-month {
+    @extend .m-0;
+    @extend .text-primary;
     caption-side: top;
     padding: 10px 10px 0;
-    margin: 0 !important;
     background-color: $darkergray;
-    color: $primary;
     font-size: 45px;
-    font-family: BebasNeue;
+    font-family: BebasNeue, Arial, sans-serif;
     font-weight: 200;
   }
   thead th {
     background: white !important;
-    //color: white !important;
-    //.day-heading, .weekend-heading {
-    //  color: white !important;
-    //}
+    abbr {
+      @extend .text-decoration-none;
+      @extend .text-uppercase;
+    }
   }
   td.nextmonth {
     opacity: 1;
     span, .calendar-event {
-      display: none;
+      @extend .d-none;
     }
   }
   tr.mc-row td {
-    background-color: white;
-    padding: 0 !important;
+    @extend .bg-white;
+    @extend .p-0;
     .calendar-event  {
       h3, h3 a {
         background-color: $darkergray !important;
@@ -183,6 +211,9 @@ table.my-calendar-table {
         color: white;
         margin-bottom: 2px;
         padding: 2px 0;
+        font-family: BebasNeue, GothicA1, Arial;
+        font-size: 14px;
+        letter-spacing: 0.5px;
       }
     }
   }
@@ -221,16 +252,17 @@ div.category-key {
       display: inline-flex;
       margin: 2px 4px !important;
     }
+
     li.current a {
-      background: white !important;
-      color: $primary !important;
+      @extend .bg-primary;
+      @extend .text-white;
     }
     li a {
-      background: $primary !important;
-      color: white !important;
+      background-color: $lightgray;
+      color: $darkgray;
       border: none !important;
       margin: 2px;
-      padding: 2px 5px;
+      padding: 3px 10px;
       border-radius: 0 !important;
       font-family: BebasNeue,sans-serif !important;
       letter-spacing: 1px;
