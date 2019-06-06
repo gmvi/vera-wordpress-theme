@@ -102,20 +102,34 @@ div.my-calendar-header {
   }
 }
 
+//$('div.my-calendar-date-switcher form').addClass('form-inline');
+//                $('div.my-calendar-date-switcher form div select').addClass('form-control');
+
+
+
+
 div.my-calendar-date-switcher {
   form {
     div label.maybe-hide {
       display: none !important;
     }
-    select.form-control {
-      border-radius: 0;
-      -webkit-appearance: none;
-      border-color: $primary;
-      font-family: BebasNeue;
-      letter-spacing: 1px;
-      font-size: 18px;
-
+    div {
+      select {
+        @extend .bg-white;
+        padding: 5px 6px 7px;
+        color: $primary;
+        border-radius: 0;
+        -webkit-appearance: none;
+        border-color: $primary;
+        font-family: BebasNeue;
+        letter-spacing: 1px;
+        font-size: 18px;
+      }
     }
+    //select.form-control {
+    //
+    //
+    //}
     input[type="submit"] {
       @extend .btn;
       @extend .btn-outline-primary;
@@ -233,6 +247,11 @@ div.mc-time {
   }
 }
 
+button.mc-text-button {
+  @extend .btn;
+  @extend .btn-outline-primary;
+  @extend .my-2;
+}
 
 div.category-key, div.location-key {
   h3 {

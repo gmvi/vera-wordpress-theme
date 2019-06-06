@@ -39,7 +39,6 @@ function create_single_event_view($data, $event) {
 EOT;
 }
 
-//$inner_heading = apply_filters( 'mc_heading_inner_title', $wrap . $image . trim( $event_title ) . $balance, $event_title, $event );
 add_filter( 'mc_heading_inner_title', 'add_event_location_hidden', 10, 3);
 function add_event_location_hidden($body, $event_title, $event) {
     $body .= '<span class="HIDDEN-CATEGORY" style="display:none;">' . $event->event_label . '</span>';
@@ -61,7 +60,6 @@ function add_event_location_hidden($body, $event_title, $event) {
  *
  * @return string
  */
-
 add_filter( 'mc_custom_template', 'my_custom_calendar', 10, 7);
 function my_custom_calendar( $body = false, $data, $event, $type, $process_date, $time, $template ) {
 //    error_log("event is " . json_encode($event), 0 );
@@ -100,22 +98,14 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
 
 add_filter( 'mc_jumpbox', 'meow', 10, 1);
 function meow($date_switcher) {
-//    error_log('wtf' . $date_switcher, 0);
     return $date_switcher;
-//    return '<div class="form-control">' . $date_switcher . '</div>';
 }
 
-//$inner_heading = apply_filters( 'mc_heading_inner_title', $wrap . $image . trim( $event_title ) . $balance, $event_title, $event );
+
 add_filter('mc_heading_inner_title', 'log_filter', 10, 3);
 function log_filter($something0, $something1, $something2) {
-//    error_log('this may work???' . $something0 . ' ' . $something1, 0);
-//    error_log(json_encode($something2), 0);
     return $something0;
 }
-//$hlevel     = apply_filters( 'mc_heading_level_list', 'h3', $type, $time, $template );
-//				$list_title = "<$hlevel class='event-title summary' id='mc_$event->occur_id-title'>$image" . $event_title . "</$hlevel>\n";
-
-//function set_list_heading
 
 add_filter( 'mc_list_js', 'custom_list_js' );
 function custom_list_js( $url ) {
