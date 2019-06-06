@@ -36,10 +36,10 @@ $container = get_theme_mod( 'understrap_container_type' );
                 ?>
                 <div id="content" class="entry-content">
                     <div class="row pt-4 pb-4 ml-1 no-gutters">
-                        <div class="col-sm-12 px-3 pb-3 blog-contents">
+                        <div class="col-sm-12 px-3 px-xl-5 mx-xl-3 pb-3 blog-contents">
                             <?php the_content()?>
                             <hr class="pb-2"/>
-                            <p class="share-call mb-1">Share this story</p>
+                            <p class="share-call mb-1">Share these events</p>
                             <?php get_template_part('partial-templates/share-post-icons') ?>
                         </div>
                     </div>

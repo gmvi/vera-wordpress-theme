@@ -100,7 +100,7 @@ $shows = vera_shows_get_front_page();
 								<div class="card">
 									<div class="card-image" style="background: url('<?php the_field('classes_left_image'); ?>')"></div>
                                     <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-lg-5">
-                                        <h2><?php the_field('classes_left_feature'); ?></h2>
+                                        <h4><?php the_field('classes_left_feature'); ?></h4>
                                         <a href="<?php the_field('classes_left_link'); ?>">Learn More</a>
                                     </div>
 								</div>
@@ -111,7 +111,7 @@ $shows = vera_shows_get_front_page();
 									<div class="card-image" style="background: url('<?php the_field('classes_right_image'); ?>')">
                                     </div>
                                     <div class="card-text-cover d-flex justify-content-between align-items-center px-3 px-lg-5">
-                                        <h2><?php the_field('classes_right_feature'); ?></h2>
+                                        <h4><?php the_field('classes_right_feature'); ?></h4>
                                         <a href="<?php the_field('classes_right_link'); ?>">Learn More</a>
                                     </div>
 								</div>
@@ -120,6 +120,55 @@ $shows = vera_shows_get_front_page();
 							<div class="col-md-1"></div>
 						</div>
 					</section>
+
+                    <section class="block">
+                        <?php $block_section = get_field('on_the_block'); ?>
+                        <div class="row header no-gutters">
+                            <div class="col-md-12">
+                                <?php
+
+                                if ($block_section['label']) {
+                                    echo "<span class=\"label\">" . $block_section['label'] . "</span>";
+                                }
+
+                                ?>
+                                <h2><b><?php echo $block_section['header']; ?></b></h2>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-md-center pb-1 no-gutters">
+                            <div class="col-sm-11">
+                                <div class="card-deck pb-2">
+			                        <?php
+			                        $block_image_url = $block_section['left_feature']['feature_image'];
+			                        $block_title     = $block_section['left_feature']['feature_title'];
+			                        $block_link      = $block_section['left_feature']['feature_link'];
+
+			                        include( locate_template( 'partial-templates/on-the-block-block.php' ) );
+
+			                        $block_image_url = $block_section['center_feature']['feature_image'];
+			                        $block_title     = $block_section['center_feature']['feature_title'];
+			                        $block_link      = $block_section['center_feature']['feature_link'];
+
+			                        include( locate_template( 'partial-templates/on-the-block-block.php' ) );
+
+			                        $block_image_url = $block_section['right_feature']['feature_image'];
+			                        $block_title     = $block_section['right_feature']['feature_title'];
+			                        $block_link      = $block_section['right_feature']['feature_link'];
+
+			                        include( locate_template( 'partial-templates/on-the-block-block.php' ) );
+			                        ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row no-gutters">
+                            <div class="col-md-12">
+                                <a href="<?php echo $block_section['link_url']; ?>" class="btn bordered-button btn-outline-primary"><?php echo $block_section['link_label']; ?></a>
+                            </div>
+                        </div>
+                    </section><!-- .section-blog -->
+
 					<?php
                         $support_footer_color = 'white';
 					    include( locate_template( 'partial-templates/support-block.php') );
