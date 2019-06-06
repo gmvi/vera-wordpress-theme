@@ -17,6 +17,7 @@ function cat_active($cat) {
 	} else return "";
 }
 
+// this needs to match explicitly with the categories created for My Calendar
 if (!empty($class_cat_param)) {
     switch ($class_cat_param) {
         case 'screenprint':
@@ -29,8 +30,7 @@ if (!empty($class_cat_param)) {
 }
 
 $args = array('category'=>$classes_category);
-$clazzes = mc_get_all_events($args);
-
+$classes = mc_get_all_events($args);
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -68,7 +68,7 @@ $clazzes = mc_get_all_events($args);
 						</div>
                         <div class="container">
 							<div class="row body class no-gutters">
-                            <?php foreach ($clazzes as $class):
+                            <?php foreach ($classes as $class):
                                 ?>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="square-wrapper">
@@ -95,7 +95,7 @@ $clazzes = mc_get_all_events($args);
 <?php get_footer(); ?>
 
 <div class=modals>
-	<?php foreach ($clazzes as $class): ?>
+	<?php foreach ($classes as $class): ?>
 		<div class="modal fade" id="modal-<?= $class->event_id ?>" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -106,16 +106,15 @@ $clazzes = mc_get_all_events($args);
 						</button>
 					</div>
 					<div class="modal-body"><?= wpautop( $class->event_desc ) ?></div>
-                    <?php if (!$is_private):
-                        //TODO: if event has link, show register button
+                    <?php
+
+
+                    if ( strlen(trim($class->event_link)) > 0 ):
                         ?>
 						<div class="modal-footer">
-                            <?php if($next['link']) {
-                                $extraclass = '';
-                            } else {
-                                $extraclass = ' disabled';
-                            }?>
-                            <a href="<?= $next['link'] ?>" class="btn bordered-button btn-outline-primary btn-override pull-right my-auto <?= $extraclass ?>">Register</a>
+                            <a href="<?= $class->event_link ?>"
+                               target="_blank"
+                               class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
 						</div>
 					<?php endif; ?>
 				</div>
