@@ -3,7 +3,7 @@
     //todo: call out this function in documentation!
     $(function () {
         // list modifications
-        if ( $( '.mc-main.list' ).val() ) {
+        if ( typeof($( '.mc-main.list' ).val()) !== 'undefined' ) {
             console.log("we're showing a list!");
             // add toggle indicator to all days with events
             var caret = '<i class="fa fa-angle-down side-caret p-2"></i>';
