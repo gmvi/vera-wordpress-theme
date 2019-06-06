@@ -42,7 +42,7 @@
     text-align: center;
     padding: 1rem 0;
 
-    strong {
+    b, strong {
       font-family: BebasNeue;
       color: $primary;
     }
@@ -51,7 +51,7 @@
     font-size: 15.5px;
     padding: 5px 0;
   }
-  p {
+  p, ul > li {
     font-size: 13px;
   }
 }
@@ -81,8 +81,8 @@
 }
 
 .textured-blerg {
-  background-image: url(../img/tvp-halftone-top-left-gray.png);
-  opacity: 100%;
+  background-image: url('../img/top-texture.png')!important;
+  opacity: .2 !important;
 }
 
 .share-call {

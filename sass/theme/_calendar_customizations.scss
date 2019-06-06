@@ -1,0 +1,307 @@
+/**
+Lots of custom styles directly targeting elements because we don't have control over all the classes set
+when My Calendar is drawing out the events.
+ */
+.mc-main {
+  .my-calendar-nav {
+    ul {
+      @extend .m-0;
+      @extend .p-0;
+      height: 1em;
+    }
+    li {
+      @extend .p-0;
+      float: left;
+      margin: 0 1px;
+      list-style-type: none !important;
+      &:before {
+        content: '';
+      }
+      a {
+        @extend .text-center;
+        display: block;
+        padding: 1px 20px;
+      }
+    }
+  }
+  table, &.calendar {
+    @extend .w-100;
+    line-height: 1.2;
+    border-collapse: separate;
+  }
+
+  td {
+    vertical-align: top;
+    text-align: left;
+    width: 13%;
+    height: 70px;
+    padding: 2px !important;
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  th {
+    text-align: center;
+    padding: 5px 0 !important;
+    letter-spacing: 1px;
+    abbr {
+      border-bottom: none;
+    }
+
+  }
+  h3, h3 a {
+    display: block;
+    border-radius: 2px;
+    font-size: 10px;
+    margin: 3px 0;
+    padding: 0;
+    width: 100%;
+    clear: none;
+  }
+  h3 a {
+    text-decoration: none;
+    :hover, :focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+div.mc-main.list {
+
+  .side-caret {
+    -moz-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+  }
+
+  .side-caret.down {
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+
+div.my-calendar-header {
+  li.my-calendar-prev a, li.my-calendar-next a {
+    padding: 1px 0;
+    text-transform: uppercase;
+    font-size: 24px;
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
+    }
+  }
+  li.my-calendar-prev {
+    float: left;
+  }
+  li.my-calendar-next {
+    float: right;
+  }
+}
+
+//$('div.my-calendar-date-switcher form').addClass('form-inline');
+//                $('div.my-calendar-date-switcher form div select').addClass('form-control');
+
+
+
+
+div.my-calendar-date-switcher {
+  form {
+    div label.maybe-hide {
+      display: none !important;
+    }
+    div {
+      select {
+        @extend .bg-white;
+        padding: 5px 6px 7px;
+        color: $primary;
+        border-radius: 0;
+        -webkit-appearance: none;
+        border-color: $primary;
+        font-family: BebasNeue;
+        letter-spacing: 1px;
+        font-size: 18px;
+      }
+    }
+    //select.form-control {
+    //
+    //
+    //}
+    input[type="submit"] {
+      @extend .btn;
+      @extend .btn-outline-primary;
+      border-radius: 0px;
+      font-family: BebasNeue;
+      font-size: 18px;
+      letter-spacing: 1px;
+      padding: .365rem .75rem;
+    }
+  }
+}
+
+div.mc-main:not(.mini) table.my-calendar-table {
+  border-spacing: 2px;
+  tr.mc-row td {
+    height: 100px !important;
+  }
+}
+
+div.mc-main.mini {
+  .event-title {
+    display: none;
+  }
+  .mini-event {
+    border: none;
+    .mini-event-detail a {
+      color: $primary !important;
+    }
+  }
+  .calendar-events {
+    background-color: white;
+    border: 2px solid $info;
+  }
+  .calendar-events, .calendar-event {
+    float: none;
+    width: 80% !important;
+    left: 10px !important;
+    @include media-breakpoint-down(sm) {
+      width: 90% !important;
+      left: 5px !important;
+    }
+  }
+  table.my-calendar-table {
+    border-spacing: 1px;
+
+    tr.mc-row td {
+      height: 50px !important;
+
+      &.has-events:not(.nextmonth) {
+        background-color: $primary;
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+table.my-calendar-table {
+  background-color: $darkergray;
+  caption.heading.my-calendar-month {
+    @extend .m-0;
+    @extend .text-primary;
+    caption-side: top;
+    padding: 10px 10px 0;
+    background-color: $darkergray;
+    font-size: 45px;
+    font-family: BebasNeue, Arial, sans-serif;
+    font-weight: 200;
+  }
+  thead th {
+    background: white !important;
+    abbr {
+      @extend .text-decoration-none;
+      @extend .text-uppercase;
+    }
+  }
+  td.nextmonth {
+    opacity: 1;
+    span, .calendar-event {
+      @extend .d-none;
+    }
+  }
+  tr.mc-row td {
+    @extend .bg-white;
+    @extend .p-0;
+    .calendar-event  {
+      h3, h3 a {
+        background-color: $darkergray !important;
+        border-radius: 0;
+        color: white;
+        margin-bottom: 2px;
+        padding: 2px 0;
+        font-family: BebasNeue, GothicA1, Arial;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+
+div.mc-time {
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-family: BebasNeue;
+  font-size: 16px;
+  .mc-active {
+    color: $darkergray;
+  }
+  > * {
+    padding: 4px 7px;
+  }
+}
+
+button.mc-text-button {
+  @extend .btn;
+  @extend .btn-outline-primary;
+  @extend .my-2;
+}
+
+div.category-key, div.location-key {
+  h3 {
+    display: none;
+  }
+  ul {
+    @include media-breakpoint-up(lg) {
+      padding-top: 10px;
+    }
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+    :first-child {
+      margin: 2px 4px 2px 0px !important;
+    }
+    li {
+      display: inline-flex;
+      margin: 2px 4px !important;
+    }
+
+    li.current a {
+      @extend .bg-primary;
+      @extend .text-white;
+    }
+    li a {
+      background-color: $lightgray;
+      color: $darkgray;
+      border: none !important;
+      margin: 2px;
+      padding: 3px 10px;
+      border-radius: 0 !important;
+      font-family: BebasNeue,sans-serif !important;
+      letter-spacing: 1px;
+      font-size: 18px;
+      @include media-breakpoint-down(sm) {
+        font-size: 16px;
+      }
+      span {
+        display: none !important;
+      }
+    }
+  }
+}
+
+div#mc_event {
+  .single-event .details {
+    border: 0;
+  }
+}
+
+.mc-main .details {
+  border: 0;
+}

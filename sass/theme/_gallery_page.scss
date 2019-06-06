@@ -22,6 +22,189 @@ $container-padding: 0px !important;
   }
 }
 
+section#up-next-gallery {
+  background: black;
+  height: 200px;
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 80px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-left: 40px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  //TODO: mobile + tablet friendliness needed
+
+  p.label {
+    margin-bottom: 15px;
+  }
+
+  div:first-child {
+    z-index: 50;
+  }
+
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image : url('../img/header-texture.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+
+  h2.medium-header a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  div#up-next-times {
+    @include media-breakpoint-down(sm) {
+      margin-top: 15px;
+    }
+
+    p {
+      font-family: BebasNeue;
+      font-size: 20px;
+      letter-spacing: 1.5px;
+
+
+      @include media-breakpoint-down(md) {
+        width: 80% !important;
+      }
+
+      &:first-child {
+        border-top: 2px solid $primary;
+      }
+
+    }
+  }
+}
+
+section#past-gallery {
+  padding: 70px 0px;
+
+  div.past-gallery-item {
+
+    div.past-gallery-img {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include media-breakpoint-down(sm) {
+        padding: 0px;
+      }
+
+      div.square-past-gallery {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        margin: auto;
+
+        @include media-breakpoint-only(md) {
+          width: 300px;
+          height: 300px;
+        }
+
+        div {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+
+    }
+
+    div.past-gallery-info {
+      h3 {
+        font-family: BebasNeue;
+        letter-spacing: 1.5px;
+        color: $primary;
+        font-size: 30px;
+      }
+
+      div.past-gallery-nav button {
+        border-radius: 0px;
+        margin-right: 5px;
+        height: 35px;
+        width: 35px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      div.past-gallery-index {
+        font-family: BebasNeue;
+        letter-spacing: 1.5px;
+        color: $primary;
+      }
+    }
+
+  }
+}
+
+.single-gallery-page {
+  .gallery-contents {
+    padding: 0 30px 30px 0px;
+    h1 {
+      text-align: justify !important;
+    }
+  }
+
+  .artist {
+    @include media-breakpoint-up(md) {
+      max-width: 18rem;
+    }
+  }
+
+  .card {
+    .card-title {
+      font-family: BebasNeue;
+      font-size: 25px;
+      color: $primary;
+    }
+
+    img.card-img-top {
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .card-footer {
+      padding: 30px;
+
+      div.vera-bordered-social-icons i {
+        margin-right: .6em;
+      }
+    }
+
+    .card-text {
+      font-size: 13px;
+    }
+  }
+}
 
 // put this somewhere else
 h2.medium-header {

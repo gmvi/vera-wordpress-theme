@@ -1,6 +1,6 @@
-div.list-template-page {
-  //TODO: make this page better on mobile
+$list-bg-color: #f6f6f6;
 
+div.list-template-page {
   @include media-breakpoint-up(md) {
     div.template-item {
       max-height: 450px;
@@ -12,9 +12,27 @@ div.list-template-page {
     }
   }
 
-  div.list-wrapper:nth-child(odd) {
-    background: #f6f6f6;
+  @include media-breakpoint-up(lg) {
+    div.list-wrapper:nth-child(odd) {
+      background: $list-bg-color;
+    }
   }
 
+  @include media-breakpoint-only(md) {
+    div.list-wrapper:nth-child(4n), div.list-wrapper:nth-child(4n + 1) {
+      background: $list-bg-color;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    div.list-wrapper:nth-child(odd) {
+      background: $list-bg-color;
+    }
+
+    div#intro-text p {
+      font-size: 20px;
+    }
+  }
 }
+
 

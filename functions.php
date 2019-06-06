@@ -30,17 +30,33 @@ foreach ($includes as $filename) {
     include $filename;
 }
 
-
 // Modify posts page query to return only 9 at a time
 add_action( 'pre_get_posts', 'limit_posts_query' );
 
 function limit_posts_query( $query ) {
-	// the function to check if we are on the "posts page" is is_home()
-	if( (is_home() || is_category()) && $query->is_main_query() ) {
+	// checks if we are on the "posts page" or a gallery archive page, limits number of posts
+	if( ((is_home() || is_category()) && $query->is_main_query())
+	    || is_post_type_archive(GALLERY_TYPE))  {
 		$query->set('posts_per_page', '9');
 	}
 
 }
+
+//add search box to where we want in menu
+function add_search_box_to_menu( $items, $args ) {
+	if ( $args->theme_location === 'primary' ) { //only add for primary menu
+		ob_start();
+		get_search_form();
+		$searchform = ob_get_contents();
+		ob_end_clean();
+
+		$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item">' . $searchform . '</li>';
+		return $items;
+	}
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_search_box_to_menu', 10, 2 );
+
 
 //make the paginated buttons beautiful
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
@@ -59,6 +75,7 @@ function disable_all_widgets( $sidebars_widgets )
    return array( false ); 
 }
 add_action( 'admin_menu', 'remove_menus', 999 );
+
 // 999 above forces high priority, otherwise remove_submenu_page won't work
 function remove_menus() {
     remove_submenu_page( 'themes.php', 'widgets.php' );
@@ -80,3 +97,57 @@ function vera_remove_page_templates( $templates ) {
     return $templates;
 }
 add_filter( 'theme_page_templates', 'vera_remove_page_templates' );
+
+// TODO: review - where to put useful things like this
+function pad_zeroes( $num ) {
+	if ( $num > 9 ) {
+		return $num;
+	}
+
+	return str_pad( $num, 2, '0', STR_PAD_LEFT );
+}
+
+if ( ! function_exists( 'understrap_pagination' ) ) :
+	function understrap_entry_footer() {
+		// only show category and tag text for posts.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'understrap' ) );
+			if ( $categories_list && understrap_categorized_blog() ) {
+				/* translators: %s: Categories of current post */
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %s', 'understrap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'understrap' ) );
+			if ( $tags_list ) {
+				/* translators: %s: Tags of current post */
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %s', 'understrap' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
+		}
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Leave a comment', 'understrap' ), esc_html__( '1 Comment', 'understrap' ), esc_html__( '% Comments', 'understrap' ) );
+			echo '</span>';
+		}
+	}
+endif;
+
+//customize understrap read more text
+if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
+	/**
+	 * Adds a custom read more link to all excerpts, manually or automatically generated
+	 *
+	 * @param string $post_excerpt Posts's excerpt.
+	 *
+	 * @return string
+	 */
+	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+		if ( ! is_admin() ) {
+			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More',
+					'understrap' ) . '</a></p>';
+		}
+		return $post_excerpt;
+	}
+}
+
+require_once('plugins/my-calendar/mc-custom-template.php');
