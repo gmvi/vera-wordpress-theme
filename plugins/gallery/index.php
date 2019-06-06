@@ -202,20 +202,23 @@ function quick_edit_save_gallery($post_id, $post ) {
 	if ( ! current_user_can( 'edit_post', $post_id ) )
 		return;
 
-	$curr_gallery_field = false;
-	$next_gallery_field = false;
+	//this checks to only perform this save if we are in quickedit mode
+	if ($_POST['action'] === 'inline-save') {
+		$curr_gallery_field = false;
+		$next_gallery_field = false;
 
-	if ( isset( $_POST[CURR_GALLERY] ) ) {
-	    $curr_gallery_field = true;
+		if ( isset( $_POST[CURR_GALLERY] ) ) {
+			$curr_gallery_field = true;
+		}
+
+		update_field(CURR_GALLERY, $curr_gallery_field, $post_id);
+
+		if ( isset( $_POST[UP_NEXT_GALLERY] ) ) {
+			$next_gallery_field = true;
+		}
+
+		update_field(UP_NEXT_GALLERY, $next_gallery_field, $post_id);
     }
-
-	update_field(CURR_GALLERY, $curr_gallery_field, $post_id);
-
-	if ( isset( $_POST[UP_NEXT_GALLERY] ) ) {
-		$next_gallery_field = true;
-	}
-
-    update_field(UP_NEXT_GALLERY, $next_gallery_field, $post_id);
 }
 add_action( 'save_post', 'quick_edit_save_gallery', 10, 2);
 
