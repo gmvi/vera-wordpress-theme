@@ -11,11 +11,7 @@ $class_cat_param = get_query_var("class_cat");
 
 //called to check if category is active
 function cat_active($cat) {
-    error_log('inside of cat active');
-    error_log(print_r($cat, true));
-
 	global $class_cat_param;
-	error_log(print_r($class_cat_param, true));
 	if ($cat == $class_cat_param) {
 		return " active";
 	} else return "";
@@ -33,11 +29,7 @@ if (!empty($class_cat_param)) {
 }
 
 $args = array('category'=>$classes_category);
-error_log('arg being used is');
-error_log(print_r($args, true));
 $clazzes = mc_get_all_events($args);
-error_log('other classes');
-//error_log(print_r($clazzes, true));
 
 ?>
 
