@@ -26,10 +26,18 @@ section.classes {
 		display: inline-block;
 		color: $primary;
 		font-family: BebasNeue;
-		font-size: 35px;
+		font-size: 40px;
 		line-height: 1;
 		letter-spacing: 1.5px;
 		//padding-right: 100px;
+		padding: 30px;
+		word-wrap: break-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;
+		h4 {
+			color: $darkgray;
+		}
 	}
 
 	.list-header {

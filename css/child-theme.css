@@ -10872,11 +10872,18 @@ section.classes {
     display: inline-block;
     color: #D41C53;
     font-family: BebasNeue;
-    font-size: 35px;
+    font-size: 40px;
     line-height: 1;
-    letter-spacing: 1.5px; }
+    letter-spacing: 1.5px;
+    padding: 30px;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto; }
     section.classes .class-title:hover {
       opacity: 0.6; }
+    section.classes .class-title h4 {
+      color: #343434; }
   section.classes .list-header {
     padding-bottom: 30px; }
     section.classes .list-header .filter-category {

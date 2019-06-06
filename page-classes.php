@@ -28,11 +28,12 @@ if (!empty($class_cat_param)) {
 	        break;
     }
 }
-//$args = array('category'=>'Gallery Opening');
-//$clazzes = mc_get_all_events($args);
-//echo '<code style="font-size: 10px;"> ' . html_entity_decode(json_encode($clazzes)) . '</code>';
 
-$args = array('category'=>$classes_category);
+$args = array(
+	'before'   => 1,
+	'today'    => 'yes',
+	'category' => $classes_category
+);
 $classes = mc_get_all_events($args);
 ?>
 
@@ -72,11 +73,19 @@ $classes = mc_get_all_events($args);
                         <div class="container">
 							<div class="row body class no-gutters">
                             <?php foreach ($classes as $class):
+	                            $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
                                 ?>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="square-wrapper">
-                                        <div class="square-content p-4 class-title d-flex flex-column justify-content-center align-content-center">
-                                            <a data-toggle="modal" data-target="#modal-<?= $class->event_id ?>"><?= $class->event_title?></a>
+                                        <div class="square-content class-title d-flex flex-column justify-content-between align-content-center">
+                                            <a data-toggle="modal" data-target="#modal-<?= $class->event_id ?>">
+                                                <?= $class->event_title?>
+                                            </a>
+                                            <?php
+                                            if (trim($subheader) !== '') {
+                                                echo "<h4>" . nl2br($subheader) . "</h4>";
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>

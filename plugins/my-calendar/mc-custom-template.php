@@ -123,4 +123,6 @@ function custom_list_js( $url ) {
     return get_stylesheet_directory_uri() . '/js/my-calendar/events-view.js';
 }
 
+include 'mc-custom-fields.php';
+
 //get_stylesheet_directory_uri()
