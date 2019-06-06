@@ -5558,10 +5558,10 @@ a.close.disabled {
 .align-text-top {
   vertical-align: text-top !important; }
 
-.bg-primary, div.category-key ul li.current a {
+.bg-primary, div.category-key ul li.current a, div.location-key ul li.current a {
   background-color: #D41C53 !important; }
 
-a.bg-primary:hover, div.category-key ul li.current a:hover, a.bg-primary:focus, div.category-key ul li.current a:focus,
+a.bg-primary:hover, div.category-key ul li.current a:hover, div.location-key ul li.current a:hover, a.bg-primary:focus, div.category-key ul li.current a:focus, div.location-key ul li.current a:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
   background-color: #a71641 !important; }
@@ -7883,7 +7883,7 @@ button.bg-dark:focus {
 .font-italic {
   font-style: italic !important; }
 
-.text-white, div.category-key ul li.current a {
+.text-white, div.category-key ul li.current a, div.location-key ul li.current a {
   color: #fff !important; }
 
 .text-primary, table.my-calendar-table caption.heading.my-calendar-month {
@@ -11361,9 +11361,9 @@ when My Calendar is drawing out the events.
     text-decoration: underline; }
 
 div.mc-main.list .side-caret {
-  -moz-transition: all 0.25s linear;
-  -webkit-transition: all 0.25s linear;
-  transition: all 0.25s linear; }
+  -moz-transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
 
 div.mc-main.list .side-caret.down {
   -ms-transform: rotate(-90deg);
@@ -11473,25 +11473,25 @@ div.mc-time {
   div.mc-time > * {
     padding: 4px 7px; }
 
-div.category-key h3 {
+div.category-key h3, div.location-key h3 {
   display: none; }
 
 @media (min-width: 992px) {
-  div.category-key ul {
+  div.category-key ul, div.location-key ul {
     padding-top: 10px; } }
 
 @media (max-width: 991.98px) {
-  div.category-key ul {
+  div.category-key ul, div.location-key ul {
     text-align: center; } }
 
-div.category-key ul :first-child {
+div.category-key ul :first-child, div.location-key ul :first-child {
   margin: 2px 4px 2px 0px !important; }
 
-div.category-key ul li {
+div.category-key ul li, div.location-key ul li {
   display: inline-flex;
   margin: 2px 4px !important; }
 
-div.category-key ul li a {
+div.category-key ul li a, div.location-key ul li a {
   background-color: #EBEEEF;
   color: #343434;
   border: none !important;
@@ -11502,9 +11502,9 @@ div.category-key ul li a {
   letter-spacing: 1px;
   font-size: 18px; }
   @media (max-width: 767.98px) {
-    div.category-key ul li a {
+    div.category-key ul li a, div.location-key ul li a {
       font-size: 16px; } }
-  div.category-key ul li a span {
+  div.category-key ul li a span, div.location-key ul li a span {
     display: none !important; }
 
 div#mc_event .single-event .details {
