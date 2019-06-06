@@ -68,7 +68,6 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
 //    $hidden_event_category = '<span class="HIDDEN-CATEGORY" style="display:none;">' . $event['event_label'] . '</span>';
     // todo: add in hidden field w/ all the `event_label`s, use jquery to aggregate them all and create a locations select field
     //   like the categories select
-    error_log('type is ' . json_encode($type), 0);
     switch ($type) {
         case 'single':
             $body = create_single_event_view($data, $event);
@@ -84,7 +83,7 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
         <p class="card-text">' . $excerpt . '</p>
       </div>
     </div>
-    <span class="HIDDEN-CATEGORY" style="display:none;">' . $event['event_label'] . '</span>
+    <span class="HIDDEN-CATEGORY" style="display:none;">' . $event->event_label . '</span>
 </div>';
             break;
         case 'mini':

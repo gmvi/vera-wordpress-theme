@@ -32,8 +32,15 @@
                 // All views.
                 $( '#' + ref ).attr('tabindex', '-1').focus();
                 // Your Custom ajax load changes if needed.
-                window.location.hash = url.search ? url.search : '';
-                $(document).trigger( "reloadCustomElems" );
+
+                // set the hash of the window so that createLocationFilterList in ./events-view knows what locations to
+                //  set as 'current'
+                if ( $( '.mc-main.calendar' ).length ) {
+                    window.location.hash = url.search ? url.search : '';
+                    $(document).trigger( "grid-custom:reload" );
+                } else if ( $( '.mc-main.list' ).length ) {
+                    $(document).trigger( "list-custom:reload" );
+                }
             });
         });
     });
