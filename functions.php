@@ -53,6 +53,7 @@ function add_search_box_to_menu( $items, $args ) {
 		$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item">' . $searchform . '</li>';
 		return $items;
 	}
+	return $items;
 }
 add_filter( 'wp_nav_menu_items', 'add_search_box_to_menu', 10, 2 );
 

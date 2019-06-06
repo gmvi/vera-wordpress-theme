@@ -190,8 +190,6 @@ add_action( 'quick_edit_custom_box', 'quick_edit_gallery', 10, 2 );
 
 
 function quick_edit_save_gallery($post_id, $post ) {
-    error_log('inside of quick edit save gallery');
-    error_log(print_r($post, true));
 	// if called by autosave, then bail here
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
@@ -204,15 +202,22 @@ function quick_edit_save_gallery($post_id, $post ) {
 	if ( ! current_user_can( 'edit_post', $post_id ) )
 		return;
 
+	$curr_gallery_field = false;
+	$next_gallery_field = false;
+
 	if ( isset( $_POST[CURR_GALLERY] ) ) {
-		update_field(CURR_GALLERY, $_POST[CURR_GALLERY], $post_id);
-		error_log('saving curr gallery value');
-    } else if ( isset( $_POST[UP_NEXT_GALLERY] ) ) {
-		update_field(UP_NEXT_GALLERY, $_POST[UP_NEXT_GALLERY], $post_id);
-		error_log('saving next gallery value');
+	    $curr_gallery_field = true;
+    }
+
+	update_field(CURR_GALLERY, $curr_gallery_field, $post_id);
+
+	if ( isset( $_POST[UP_NEXT_GALLERY] ) ) {
+		$next_gallery_field = true;
 	}
+
+    update_field(UP_NEXT_GALLERY, $next_gallery_field, $post_id);
 }
-add_action( 'edited_' . GALLERY_TYPE, 'quick_edit_save_gallery', 10, 2);
+add_action( 'save_post', 'quick_edit_save_gallery', 10, 2);
 
 
 function quick_edit_gallery_javascript() {
@@ -222,7 +227,6 @@ function quick_edit_gallery_javascript() {
 		return;
 	}
 
-	error_log('passed the first check in quick edit load');
 	// Ensure jQuery library is loaded
 	wp_enqueue_script( 'jquery' );
 	?>
@@ -256,7 +260,6 @@ function expand_quick_edit_link( $actions, $post ) {
 
 	$curr_gallery_data = get_field(CURR_GALLERY, $post->ID);
 	$next_gallery_data = get_field(UP_NEXT_GALLERY, $post->ID);
-
 	$curr_gallery_data = empty( $curr_gallery_data ) ? 0 : 1;
 	$next_gallery_data = empty( $next_gallery_data ) ? 0 : 1;
 
