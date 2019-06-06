@@ -2060,7 +2060,7 @@ textarea.form-control,
       margin-bottom: 0; } }
 
 .btn,
-.wpcf7 input[type=submit] {
+.wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"] {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -2076,17 +2076,17 @@ textarea.form-control,
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
     .btn,
-    .wpcf7 input[type=submit] {
+    .wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"] {
       transition: none; } }
-  .btn:hover, .wpcf7 input:hover[type=submit] {
+  .btn:hover, .wpcf7 input:hover[type=submit], div.my-calendar-date-switcher form input:hover[type="submit"] {
     color: #212529;
     text-decoration: none; }
   .btn:focus,
-  .wpcf7 input:focus[type=submit], .btn.focus, .wpcf7 input.focus[type=submit] {
+  .wpcf7 input:focus[type=submit], div.my-calendar-date-switcher form input:focus[type="submit"], .btn.focus, .wpcf7 input.focus[type=submit], div.my-calendar-date-switcher form input.focus[type="submit"] {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(212, 28, 83, 0.25); }
-  .btn.disabled, .wpcf7 input.disabled[type=submit], .btn:disabled,
-  .wpcf7 input:disabled[type=submit] {
+  .btn.disabled, .wpcf7 input.disabled[type=submit], div.my-calendar-date-switcher form input.disabled[type="submit"], .btn:disabled,
+  .wpcf7 input:disabled[type=submit], div.my-calendar-date-switcher form input:disabled[type="submit"] {
     opacity: 0.65; }
 
 a.btn.disabled,
@@ -2278,29 +2278,31 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
 
 .btn-outline-primary,
-.wpcf7 input[type=submit] {
+.wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"] {
   color: #D41C53;
   border-color: #D41C53; }
-  .btn-outline-primary:hover, .wpcf7 input:hover[type=submit] {
+  .btn-outline-primary:hover, .wpcf7 input:hover[type=submit], div.my-calendar-date-switcher form input:hover[type="submit"] {
     color: #fff;
     background-color: #D41C53;
     border-color: #D41C53; }
   .btn-outline-primary:focus,
-  .wpcf7 input:focus[type=submit], .btn-outline-primary.focus, .wpcf7 input.focus[type=submit] {
+  .wpcf7 input:focus[type=submit], div.my-calendar-date-switcher form input:focus[type="submit"], .btn-outline-primary.focus, .wpcf7 input.focus[type=submit], div.my-calendar-date-switcher form input.focus[type="submit"] {
     box-shadow: 0 0 0 0.2rem rgba(212, 28, 83, 0.5); }
-  .btn-outline-primary.disabled, .wpcf7 input.disabled[type=submit], .btn-outline-primary:disabled,
-  .wpcf7 input:disabled[type=submit] {
+  .btn-outline-primary.disabled, .wpcf7 input.disabled[type=submit], div.my-calendar-date-switcher form input.disabled[type="submit"], .btn-outline-primary:disabled,
+  .wpcf7 input:disabled[type=submit], div.my-calendar-date-switcher form input:disabled[type="submit"] {
     color: #D41C53;
     background-color: transparent; }
-  .btn-outline-primary:not(:disabled):not(.disabled):active, .wpcf7 input:not(:disabled):not(.disabled):active[type=submit], .btn-outline-primary:not(:disabled):not(.disabled).active, .wpcf7 input:not(:disabled):not(.disabled).active[type=submit],
+  .btn-outline-primary:not(:disabled):not(.disabled):active, .wpcf7 input:not(:disabled):not(.disabled):active[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled):active[type="submit"], .btn-outline-primary:not(:disabled):not(.disabled).active, .wpcf7 input:not(:disabled):not(.disabled).active[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled).active[type="submit"],
   .show > .btn-outline-primary.dropdown-toggle,
-  .wpcf7 .show > input.dropdown-toggle[type=submit] {
+  .wpcf7 .show > input.dropdown-toggle[type=submit],
+  div.my-calendar-date-switcher form .show > input.dropdown-toggle[type="submit"] {
     color: #fff;
     background-color: #D41C53;
     border-color: #D41C53; }
-    .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .wpcf7 input:not(:disabled):not(.disabled):active:focus[type=submit], .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .wpcf7 input:not(:disabled):not(.disabled).active:focus[type=submit],
+    .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .wpcf7 input:not(:disabled):not(.disabled):active:focus[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled):active:focus[type="submit"], .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .wpcf7 input:not(:disabled):not(.disabled).active:focus[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled).active:focus[type="submit"],
     .show > .btn-outline-primary.dropdown-toggle:focus,
-    .wpcf7 .show > input.dropdown-toggle:focus[type=submit] {
+    .wpcf7 .show > input.dropdown-toggle:focus[type=submit],
+    div.my-calendar-date-switcher form .show > input.dropdown-toggle:focus[type="submit"] {
       box-shadow: 0 0 0 0.2rem rgba(212, 28, 83, 0.5); }
 
 .btn-outline-secondary {
@@ -2465,14 +2467,14 @@ fieldset:disabled a.btn {
     pointer-events: none; }
 
 .btn-lg, .btn-group-lg > .btn,
-.wpcf7 .btn-group-lg > input[type=submit] {
+.wpcf7 .btn-group-lg > input[type=submit], div.my-calendar-date-switcher form .btn-group-lg > input[type="submit"] {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
 .btn-sm, .btn-group-sm > .btn,
-.wpcf7 .btn-group-sm > input[type=submit] {
+.wpcf7 .btn-group-sm > input[type=submit], div.my-calendar-date-switcher form .btn-group-sm > input[type="submit"] {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2717,23 +2719,28 @@ input[type="button"].btn-block {
   display: inline-flex;
   vertical-align: middle; }
   .btn-group > .btn,
-  .wpcf7 .btn-group > input[type=submit],
+  .wpcf7 .btn-group > input[type=submit], div.my-calendar-date-switcher form .btn-group > input[type="submit"],
   .btn-group-vertical > .btn,
-  .wpcf7 .btn-group-vertical > input[type=submit] {
+  .wpcf7 .btn-group-vertical > input[type=submit],
+  div.my-calendar-date-switcher form .btn-group-vertical > input[type="submit"] {
     position: relative;
     flex: 1 1 auto; }
-    .btn-group > .btn:hover, .wpcf7 .btn-group > input:hover[type=submit],
+    .btn-group > .btn:hover, .wpcf7 .btn-group > input:hover[type=submit], div.my-calendar-date-switcher form .btn-group > input:hover[type="submit"],
     .btn-group-vertical > .btn:hover,
-    .wpcf7 .btn-group-vertical > input:hover[type=submit] {
+    .wpcf7 .btn-group-vertical > input:hover[type=submit],
+    div.my-calendar-date-switcher form .btn-group-vertical > input:hover[type="submit"] {
       z-index: 1; }
     .btn-group > .btn:focus,
-    .wpcf7 .btn-group > input:focus[type=submit], .btn-group > .btn:active, .wpcf7 .btn-group > input:active[type=submit], .btn-group > .btn.active, .wpcf7 .btn-group > input.active[type=submit],
+    .wpcf7 .btn-group > input:focus[type=submit], div.my-calendar-date-switcher form .btn-group > input:focus[type="submit"], .btn-group > .btn:active, .wpcf7 .btn-group > input:active[type=submit], div.my-calendar-date-switcher form .btn-group > input:active[type="submit"], .btn-group > .btn.active, .wpcf7 .btn-group > input.active[type=submit], div.my-calendar-date-switcher form .btn-group > input.active[type="submit"],
     .btn-group-vertical > .btn:focus,
     .wpcf7 .btn-group-vertical > input:focus[type=submit],
+    div.my-calendar-date-switcher form .btn-group-vertical > input:focus[type="submit"],
     .btn-group-vertical > .btn:active,
     .wpcf7 .btn-group-vertical > input:active[type=submit],
+    div.my-calendar-date-switcher form .btn-group-vertical > input:active[type="submit"],
     .btn-group-vertical > .btn.active,
-    .wpcf7 .btn-group-vertical > input.active[type=submit] {
+    .wpcf7 .btn-group-vertical > input.active[type=submit],
+    div.my-calendar-date-switcher form .btn-group-vertical > input.active[type="submit"] {
       z-index: 1; }
 
 .btn-toolbar {
@@ -2743,19 +2750,21 @@ input[type="button"].btn-block {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit],
+.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:first-child)[type="submit"],
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group > input:not(:last-child):not(.dropdown-toggle)[type=submit],
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group > input:not(:last-child):not(.dropdown-toggle)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:last-child):not(.dropdown-toggle)[type="submit"],
 .btn-group > .btn-group:not(:last-child) > .btn,
-.wpcf7 .btn-group > .btn-group:not(:last-child) > input[type=submit] {
+.wpcf7 .btn-group > .btn-group:not(:last-child) > input[type=submit],
+div.my-calendar-date-switcher form .btn-group > .btn-group:not(:last-child) > input[type="submit"] {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit],
+.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:first-child)[type="submit"],
 .btn-group > .btn-group:not(:first-child) > .btn,
-.wpcf7 .btn-group > .btn-group:not(:first-child) > input[type=submit] {
+.wpcf7 .btn-group > .btn-group:not(:first-child) > input[type=submit],
+div.my-calendar-date-switcher form .btn-group > .btn-group:not(:first-child) > input[type="submit"] {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2769,11 +2778,11 @@ input[type="button"].btn-block {
   .dropleft .dropdown-toggle-split::before {
     margin-right: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-sm > input[type=submit] + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-sm > input[type=submit] + .dropdown-toggle-split, div.my-calendar-date-switcher form .btn-group-sm > input[type="submit"] + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-lg > input[type=submit] + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-lg > input[type=submit] + .dropdown-toggle-split, div.my-calendar-date-switcher form .btn-group-lg > input[type="submit"] + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2784,34 +2793,41 @@ input[type="button"].btn-block {
   
   .btn-group-vertical > .btn,
   .wpcf7 .btn-group-vertical > input[type=submit],
+  div.my-calendar-date-switcher form .btn-group-vertical > input[type="submit"],
   .btn-group-vertical > .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit],
+  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:first-child)[type="submit"],
   .btn-group-vertical > .btn-group:not(:first-child) {
     margin-top: -1px; }
-  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group-vertical > input:not(:last-child):not(.dropdown-toggle)[type=submit],
+  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group-vertical > input:not(:last-child):not(.dropdown-toggle)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:last-child):not(.dropdown-toggle)[type="submit"],
   .btn-group-vertical > .btn-group:not(:last-child) > .btn,
-  .wpcf7 .btn-group-vertical > .btn-group:not(:last-child) > input[type=submit] {
+  .wpcf7 .btn-group-vertical > .btn-group:not(:last-child) > input[type=submit],
+  div.my-calendar-date-switcher form .btn-group-vertical > .btn-group:not(:last-child) > input[type="submit"] {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit],
+  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:first-child)[type="submit"],
   .btn-group-vertical > .btn-group:not(:first-child) > .btn,
-  .wpcf7 .btn-group-vertical > .btn-group:not(:first-child) > input[type=submit] {
+  .wpcf7 .btn-group-vertical > .btn-group:not(:first-child) > input[type=submit],
+  div.my-calendar-date-switcher form .btn-group-vertical > .btn-group:not(:first-child) > input[type="submit"] {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
 .btn-group-toggle > .btn,
-.wpcf7 .btn-group-toggle > input[type=submit],
+.wpcf7 .btn-group-toggle > input[type=submit], div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"],
 .btn-group-toggle > .btn-group > .btn,
-.wpcf7 .btn-group-toggle > .btn-group > input[type=submit] {
+.wpcf7 .btn-group-toggle > .btn-group > input[type=submit],
+div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="submit"] {
   margin-bottom: 0; }
-  .btn-group-toggle > .btn input[type="radio"], .wpcf7 .btn-group-toggle > input[type=submit] input[type="radio"],
+  .btn-group-toggle > .btn input[type="radio"], .wpcf7 .btn-group-toggle > input[type=submit] input[type="radio"], div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"] input[type="radio"],
   .btn-group-toggle > .btn input[type="checkbox"],
   .wpcf7 .btn-group-toggle > input[type=submit] input[type="checkbox"],
+  div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"] input[type="checkbox"],
   .btn-group-toggle > .btn-group > .btn input[type="radio"],
   .wpcf7 .btn-group-toggle > .btn-group > input[type=submit] input[type="radio"],
+  div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="submit"] input[type="radio"],
   .btn-group-toggle > .btn-group > .btn input[type="checkbox"],
-  .wpcf7 .btn-group-toggle > .btn-group > input[type=submit] input[type="checkbox"] {
+  .wpcf7 .btn-group-toggle > .btn-group > input[type=submit] input[type="checkbox"],
+  div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="submit"] input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none; }
@@ -3374,42 +3390,69 @@ input[type="button"].btn-block {
 .input-group-append {
   display: flex; }
   .input-group-prepend .btn,
-  .input-group-prepend .wpcf7 input[type=submit], .wpcf7 .input-group-prepend input[type=submit],
+  .input-group-prepend .wpcf7 input[type=submit], .wpcf7 .input-group-prepend input[type=submit], .input-group-prepend div.my-calendar-date-switcher form input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input[type="submit"],
   .input-group-append .btn,
   .input-group-append .wpcf7 input[type=submit],
-  .wpcf7 .input-group-append input[type=submit] {
+  .wpcf7 .input-group-append input[type=submit],
+  .input-group-append div.my-calendar-date-switcher form input[type="submit"],
+  div.my-calendar-date-switcher form .input-group-append input[type="submit"] {
     position: relative;
     z-index: 2; }
     .input-group-prepend .btn:focus,
-    .input-group-prepend .wpcf7 input:focus[type=submit], .wpcf7 .input-group-prepend input:focus[type=submit],
+    .input-group-prepend .wpcf7 input:focus[type=submit], .wpcf7 .input-group-prepend input:focus[type=submit], .input-group-prepend div.my-calendar-date-switcher form input:focus[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input:focus[type="submit"],
     .input-group-append .btn:focus,
     .input-group-append .wpcf7 input:focus[type=submit],
-    .wpcf7 .input-group-append input:focus[type=submit] {
+    .wpcf7 .input-group-append input:focus[type=submit],
+    .input-group-append div.my-calendar-date-switcher form input:focus[type="submit"],
+    div.my-calendar-date-switcher form .input-group-append input:focus[type="submit"] {
       z-index: 3; }
-  .input-group-prepend .btn + .btn, .input-group-prepend .wpcf7 input[type=submit] + .btn, .wpcf7 .input-group-prepend input[type=submit] + .btn,
+  .input-group-prepend .btn + .btn, .input-group-prepend .wpcf7 input[type=submit] + .btn, .wpcf7 .input-group-prepend input[type=submit] + .btn, .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + .btn, div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + .btn,
   .input-group-prepend .wpcf7 .btn + input[type=submit], .wpcf7 .input-group-prepend .btn + input[type=submit],
   .input-group-prepend .wpcf7 input[type=submit] + input[type=submit], .wpcf7 .input-group-prepend input[type=submit] + input[type=submit],
+  .input-group-prepend div.my-calendar-date-switcher form .wpcf7 input[type="submit"] + input[type=submit], .wpcf7 .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + input[type=submit], div.my-calendar-date-switcher form .input-group-prepend .wpcf7 input[type="submit"] + input[type=submit], .wpcf7 div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + input[type=submit], .input-group-prepend div.my-calendar-date-switcher form .btn + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend .btn + input[type="submit"], .input-group-prepend .wpcf7 div.my-calendar-date-switcher form input[type=submit] + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend .wpcf7 input[type=submit] + input[type="submit"], .wpcf7 .input-group-prepend div.my-calendar-date-switcher form input[type=submit] + input[type="submit"], div.my-calendar-date-switcher form .wpcf7 .input-group-prepend input[type=submit] + input[type="submit"], .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + input[type="submit"],
   .input-group-prepend .btn + .input-group-text,
   .input-group-prepend .wpcf7 input[type=submit] + .input-group-text,
   .wpcf7 .input-group-prepend input[type=submit] + .input-group-text,
+  .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + .input-group-text,
+  div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + .input-group-text,
   .input-group-prepend .input-group-text + .input-group-text,
   .input-group-prepend .input-group-text + .btn,
   .input-group-prepend .wpcf7 .input-group-text + input[type=submit],
   .wpcf7 .input-group-prepend .input-group-text + input[type=submit],
+  .input-group-prepend div.my-calendar-date-switcher form .input-group-text + input[type="submit"],
+  div.my-calendar-date-switcher form .input-group-prepend .input-group-text + input[type="submit"],
   .input-group-append .btn + .btn,
   .input-group-append .wpcf7 input[type=submit] + .btn,
   .wpcf7 .input-group-append input[type=submit] + .btn,
+  .input-group-append div.my-calendar-date-switcher form input[type="submit"] + .btn,
+  div.my-calendar-date-switcher form .input-group-append input[type="submit"] + .btn,
   .input-group-append .wpcf7 .btn + input[type=submit],
   .wpcf7 .input-group-append .btn + input[type=submit],
   .input-group-append .wpcf7 input[type=submit] + input[type=submit],
   .wpcf7 .input-group-append input[type=submit] + input[type=submit],
+  .input-group-append div.my-calendar-date-switcher form .wpcf7 input[type="submit"] + input[type=submit],
+  .wpcf7 .input-group-append div.my-calendar-date-switcher form input[type="submit"] + input[type=submit],
+  div.my-calendar-date-switcher form .input-group-append .wpcf7 input[type="submit"] + input[type=submit],
+  .wpcf7 div.my-calendar-date-switcher form .input-group-append input[type="submit"] + input[type=submit],
+  .input-group-append div.my-calendar-date-switcher form .btn + input[type="submit"],
+  div.my-calendar-date-switcher form .input-group-append .btn + input[type="submit"],
+  .input-group-append .wpcf7 div.my-calendar-date-switcher form input[type=submit] + input[type="submit"],
+  div.my-calendar-date-switcher form .input-group-append .wpcf7 input[type=submit] + input[type="submit"],
+  .wpcf7 .input-group-append div.my-calendar-date-switcher form input[type=submit] + input[type="submit"],
+  div.my-calendar-date-switcher form .wpcf7 .input-group-append input[type=submit] + input[type="submit"],
+  .input-group-append div.my-calendar-date-switcher form input[type="submit"] + input[type="submit"],
+  div.my-calendar-date-switcher form .input-group-append input[type="submit"] + input[type="submit"],
   .input-group-append .btn + .input-group-text,
   .input-group-append .wpcf7 input[type=submit] + .input-group-text,
   .wpcf7 .input-group-append input[type=submit] + .input-group-text,
+  .input-group-append div.my-calendar-date-switcher form input[type="submit"] + .input-group-text,
+  div.my-calendar-date-switcher form .input-group-append input[type="submit"] + .input-group-text,
   .input-group-append .input-group-text + .input-group-text,
   .input-group-append .input-group-text + .btn,
   .input-group-append .wpcf7 .input-group-text + input[type=submit],
-  .wpcf7 .input-group-append .input-group-text + input[type=submit] {
+  .wpcf7 .input-group-append .input-group-text + input[type=submit],
+  .input-group-append div.my-calendar-date-switcher form .input-group-text + input[type="submit"],
+  div.my-calendar-date-switcher form .input-group-append .input-group-text + input[type="submit"] {
     margin-left: -1px; }
 
 .input-group-prepend {
@@ -3480,8 +3523,10 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
 .wpcf7 .input-group-lg > .input-group-prepend > input[type=submit],
+div.my-calendar-date-switcher form .input-group-lg > .input-group-prepend > input[type="submit"],
 .input-group-lg > .input-group-append > .btn,
-.wpcf7 .input-group-lg > .input-group-append > input[type=submit] {
+.wpcf7 .input-group-lg > .input-group-append > input[type=submit],
+div.my-calendar-date-switcher form .input-group-lg > .input-group-append > input[type="submit"] {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -3531,8 +3576,10 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
 .wpcf7 .input-group-sm > .input-group-prepend > input[type=submit],
+div.my-calendar-date-switcher form .input-group-sm > .input-group-prepend > input[type="submit"],
 .input-group-sm > .input-group-append > .btn,
-.wpcf7 .input-group-sm > .input-group-append > input[type=submit] {
+.wpcf7 .input-group-sm > .input-group-append > input[type=submit],
+div.my-calendar-date-switcher form .input-group-sm > .input-group-append > input[type="submit"] {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -3543,25 +3590,29 @@ input[type="button"].btn-block {
   padding-right: 1.75rem; }
 
 .input-group > .input-group-prepend > .btn,
-.wpcf7 .input-group > .input-group-prepend > input[type=submit],
+.wpcf7 .input-group > .input-group-prepend > input[type=submit], div.my-calendar-date-switcher form .input-group > .input-group-prepend > input[type="submit"],
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
 .wpcf7 .input-group > .input-group-append:not(:last-child) > input[type=submit],
+div.my-calendar-date-switcher form .input-group > .input-group-append:not(:last-child) > input[type="submit"],
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .wpcf7 .input-group > .input-group-append:last-child > input:not(:last-child):not(.dropdown-toggle)[type=submit],
+div.my-calendar-date-switcher form .input-group > .input-group-append:last-child > input:not(:last-child):not(.dropdown-toggle)[type="submit"],
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
 .input-group > .input-group-append > .btn,
-.wpcf7 .input-group > .input-group-append > input[type=submit],
+.wpcf7 .input-group > .input-group-append > input[type=submit], div.my-calendar-date-switcher form .input-group > .input-group-append > input[type="submit"],
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
 .wpcf7 .input-group > .input-group-prepend:not(:first-child) > input[type=submit],
+div.my-calendar-date-switcher form .input-group > .input-group-prepend:not(:first-child) > input[type="submit"],
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
 .wpcf7 .input-group > .input-group-prepend:first-child > input:not(:first-child)[type=submit],
+div.my-calendar-date-switcher form .input-group > .input-group-prepend:first-child > input:not(:first-child)[type="submit"],
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -4496,7 +4547,7 @@ input[type="button"].btn-block {
   .badge:empty {
     display: none; }
 
-.btn .badge, .wpcf7 input[type=submit] .badge {
+.btn .badge, .wpcf7 input[type=submit] .badge, div.my-calendar-date-switcher form input[type="submit"] .badge {
   position: relative;
   top: -1px; }
 
@@ -5507,10 +5558,10 @@ a.close.disabled {
 .align-text-top {
   vertical-align: text-top !important; }
 
-.bg-primary {
+.bg-primary, div.category-key ul li.current a, div.location-key ul li.current a {
   background-color: #D41C53 !important; }
 
-a.bg-primary:hover, a.bg-primary:focus,
+a.bg-primary:hover, div.category-key ul li.current a:hover, div.location-key ul li.current a:hover, a.bg-primary:focus, div.category-key ul li.current a:focus, div.location-key ul li.current a:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
   background-color: #a71641 !important; }
@@ -5571,7 +5622,7 @@ button.bg-dark:hover,
 button.bg-dark:focus {
   background-color: #1d2124 !important; }
 
-.bg-white {
+.bg-white, table.my-calendar-table tr.mc-row td {
   background-color: #fff !important; }
 
 .bg-transparent {
@@ -5673,7 +5724,7 @@ button.bg-dark:focus {
   clear: both;
   content: ""; }
 
-.d-none {
+.d-none, table.my-calendar-table td.nextmonth span, table.my-calendar-table td.nextmonth .calendar-event {
   display: none !important; }
 
 .d-inline {
@@ -6337,7 +6388,7 @@ button.bg-dark:focus {
 .w-75 {
   width: 75% !important; }
 
-.w-100 {
+.w-100, .mc-main table, .mc-main.calendar {
   width: 100% !important; }
 
 .w-auto {
@@ -6387,7 +6438,7 @@ button.bg-dark:focus {
   content: "";
   background-color: rgba(0, 0, 0, 0); }
 
-.m-0 {
+.m-0, .mc-main .my-calendar-nav ul, table.my-calendar-table caption.heading.my-calendar-month {
   margin: 0 !important; }
 
 .mt-0,
@@ -6501,7 +6552,7 @@ button.bg-dark:focus {
 .mx-5 {
   margin-left: 3rem !important; }
 
-.p-0 {
+.p-0, .mc-main .my-calendar-nav ul, .mc-main .my-calendar-nav li, table.my-calendar-table tr.mc-row td {
   padding: 0 !important; }
 
 .pt-0,
@@ -7770,7 +7821,7 @@ button.bg-dark:focus {
 .text-right {
   text-align: right !important; }
 
-.text-center {
+.text-center, .mc-main .my-calendar-nav li a {
   text-align: center !important; }
 
 @media (min-width: 576px) {
@@ -7808,7 +7859,7 @@ button.bg-dark:focus {
 .text-lowercase {
   text-transform: lowercase !important; }
 
-.text-uppercase {
+.text-uppercase, table.my-calendar-table thead th abbr {
   text-transform: uppercase !important; }
 
 .text-capitalize {
@@ -7832,10 +7883,10 @@ button.bg-dark:focus {
 .font-italic {
   font-style: italic !important; }
 
-.text-white {
+.text-white, div.category-key ul li.current a, div.location-key ul li.current a {
   color: #fff !important; }
 
-.text-primary {
+.text-primary, table.my-calendar-table caption.heading.my-calendar-month {
   color: #D41C53 !important; }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -7902,7 +7953,7 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: transparent;
   border: 0; }
 
-.text-decoration-none {
+.text-decoration-none, table.my-calendar-table thead th abbr {
   text-decoration: none !important; }
 
 .text-break {
@@ -10998,8 +11049,14 @@ section#past-gallery {
     letter-spacing: 1.5px;
     color: #D41C53; }
 
-.single-gallery-page .gallery-contents h1 {
-  text-align: justify !important; }
+.single-gallery-page .gallery-contents {
+  padding: 0 30px 30px 0px; }
+  .single-gallery-page .gallery-contents h1 {
+    text-align: justify !important; }
+
+@media (min-width: 768px) {
+  .single-gallery-page .artist {
+    max-width: 18rem; } }
 
 .single-gallery-page .card .card-title {
   font-family: BebasNeue;
@@ -11171,7 +11228,7 @@ div#blog-pagination a {
   .blog-contents h3 {
     font-size: 15.5px;
     padding: 5px 0; }
-  .blog-contents p {
+  .blog-contents p, .blog-contents ul > li {
     font-size: 13px; }
 
 .recent-posts hr {
@@ -11243,25 +11300,24 @@ div#blog-pagination a {
   div.list-template-page div#intro-text p {
     font-size: 20px; } }
 
+/**
+Lots of custom styles directly targeting elements because we don't have control over all the classes set
+when My Calendar is drawing out the events.
+ */
 .mc-main .my-calendar-nav ul {
-  height: 1em;
-  margin: 0;
-  padding: 0; }
+  height: 1em; }
 
 .mc-main .my-calendar-nav li {
   float: left;
   margin: 0 1px;
-  padding: 0;
   list-style-type: none !important; }
   .mc-main .my-calendar-nav li:before {
     content: ''; }
   .mc-main .my-calendar-nav li a {
     display: block;
-    text-align: center;
     padding: 1px 20px; }
 
 .mc-main table, .mc-main.calendar {
-  width: 100% !important;
   line-height: 1.2;
   border-collapse: separate; }
 
@@ -11298,9 +11354,9 @@ div#blog-pagination a {
     text-decoration: underline; }
 
 div.mc-main.list .side-caret {
-  -moz-transition: all 0.25s linear;
-  -webkit-transition: all 0.25s linear;
-  transition: all 0.25s linear; }
+  -moz-transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
 
 div.mc-main.list .side-caret.down {
   -ms-transform: rotate(-90deg);
@@ -11310,7 +11366,11 @@ div.mc-main.list .side-caret.down {
 
 div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
   padding: 1px 0;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 24px; }
+  @media (max-width: 767.98px) {
+    div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
+      font-size: 16px; } }
 
 div.my-calendar-header li.my-calendar-prev {
   float: left; }
@@ -11320,6 +11380,22 @@ div.my-calendar-header li.my-calendar-next {
 
 div.my-calendar-date-switcher form div label.maybe-hide {
   display: none !important; }
+
+div.my-calendar-date-switcher form select.form-control,
+div.my-calendar-date-switcher form .wpcf7 select, .wpcf7 div.my-calendar-date-switcher form select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  border-color: #D41C53;
+  font-family: BebasNeue;
+  letter-spacing: 1px;
+  font-size: 18px; }
+
+div.my-calendar-date-switcher form input[type="submit"] {
+  border-radius: 0px;
+  font-family: BebasNeue;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: .365rem .75rem; }
 
 div.mc-main:not(.mini) table.my-calendar-table {
   border-spacing: 2px; }
@@ -11362,27 +11438,23 @@ table.my-calendar-table {
   table.my-calendar-table caption.heading.my-calendar-month {
     caption-side: top;
     padding: 10px 10px 0;
-    margin: 0 !important;
     background-color: #252525;
-    color: #D41C53;
     font-size: 45px;
-    font-family: BebasNeue;
+    font-family: BebasNeue, Arial, sans-serif;
     font-weight: 200; }
   table.my-calendar-table thead th {
     background: white !important; }
   table.my-calendar-table td.nextmonth {
     opacity: 1; }
-    table.my-calendar-table td.nextmonth span, table.my-calendar-table td.nextmonth .calendar-event {
-      display: none; }
-  table.my-calendar-table tr.mc-row td {
-    background-color: white;
-    padding: 0 !important; }
-    table.my-calendar-table tr.mc-row td .calendar-event h3, table.my-calendar-table tr.mc-row td .calendar-event h3 a {
-      background-color: #252525 !important;
-      border-radius: 0;
-      color: white;
-      margin-bottom: 2px;
-      padding: 2px 0; }
+  table.my-calendar-table tr.mc-row td .calendar-event h3, table.my-calendar-table tr.mc-row td .calendar-event h3 a {
+    background-color: #252525 !important;
+    border-radius: 0;
+    color: white;
+    margin-bottom: 2px;
+    padding: 2px 0;
+    font-family: BebasNeue, GothicA1, Arial;
+    font-size: 14px;
+    letter-spacing: 0.5px; }
 
 div.mc-time {
   margin: 10px 0;
@@ -11394,42 +11466,38 @@ div.mc-time {
   div.mc-time > * {
     padding: 4px 7px; }
 
-div.category-key h3 {
+div.category-key h3, div.location-key h3 {
   display: none; }
 
 @media (min-width: 992px) {
-  div.category-key ul {
+  div.category-key ul, div.location-key ul {
     padding-top: 10px; } }
 
 @media (max-width: 991.98px) {
-  div.category-key ul {
+  div.category-key ul, div.location-key ul {
     text-align: center; } }
 
-div.category-key ul :first-child {
+div.category-key ul :first-child, div.location-key ul :first-child {
   margin: 2px 4px 2px 0px !important; }
 
-div.category-key ul li {
+div.category-key ul li, div.location-key ul li {
   display: inline-flex;
   margin: 2px 4px !important; }
 
-div.category-key ul li.current a {
-  background: white !important;
-  color: #D41C53 !important; }
-
-div.category-key ul li a {
-  background: #D41C53 !important;
-  color: white !important;
+div.category-key ul li a, div.location-key ul li a {
+  background-color: #EBEEEF;
+  color: #343434;
   border: none !important;
   margin: 2px;
-  padding: 2px 5px;
+  padding: 3px 10px;
   border-radius: 0 !important;
   font-family: BebasNeue,sans-serif !important;
   letter-spacing: 1px;
   font-size: 18px; }
   @media (max-width: 767.98px) {
-    div.category-key ul li a {
+    div.category-key ul li a, div.location-key ul li a {
       font-size: 16px; } }
-  div.category-key ul li a span {
+  div.category-key ul li a span, div.location-key ul li a span {
     display: none !important; }
 
 div#mc_event .single-event .details {
@@ -11466,6 +11534,9 @@ body {
   background-color: #FFF;
   box-sizing: border-box; }
 
+.color-dark-gray {
+  color: #343434; }
+
 .site h1, .site h2, .site h3, .site h4, .site h5, .site h6 {
   font-size: inherit;
   font-weight: inherit;
@@ -11487,7 +11558,7 @@ body {
   font-size: 56px; }
   @media (min-width: 768px) and (max-width: 991.98px) {
     .site h2 {
-      font-size: 48px; } }
+      font-size: 42px; } }
   @media (max-width: 767.98px) {
     .site h2 {
       font-size: 36px; } }
@@ -11500,6 +11571,10 @@ body {
   @media (max-width: 767.98px) {
     .site h3 {
       font-size: 24px; } }
+
+.site h4 {
+  font-family: BebasNeue;
+  font-size: 30px; }
 
 /* Uncatagorized */
 div.square-wrapper {
@@ -11537,7 +11612,7 @@ div.square-wrapper {
   align-items: center;
   justify-content: center; }
 
-.text-center {
+.text-center, .mc-main .my-calendar-nav li a {
   text-align: center; }
 
 a.donate {

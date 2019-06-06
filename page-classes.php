@@ -28,6 +28,9 @@ if (!empty($class_cat_param)) {
 	        break;
     }
 }
+//$args = array('category'=>'Gallery Opening');
+//$clazzes = mc_get_all_events($args);
+//echo '<code style="font-size: 10px;"> ' . html_entity_decode(json_encode($clazzes)) . '</code>';
 
 $args = array('category'=>$classes_category);
 $classes = mc_get_all_events($args);

@@ -20,15 +20,30 @@ function create_single_event_view($data, $event) {
 <div class="row mx-4">
     <div class="col-md-9 order-2 order-md-1">$description</div>
     <div class="col-md-3 order-1 order-md-2 text-md-right">
-        <div>$date</div>
-        <div>$timeslot</div>
-        <hr class="ml-4 d-none d-md-block"/>
-        <div>$address</div>
-        $recurs_div
-        $link_html
+        <div class="row mb-4">
+            <div class="col-6 col-md-12">
+                <div>$date</div>
+                <div>$timeslot</div>
+                $recurs_div
+                <div class="text-left text-md-right">
+                    $link_html
+                </div>
+            </div>
+            <hr class="ml-4 d-none d-md-block w-100"/>
+            <div class="col-6 col-md-12">
+                <div>$address</div>
+            </div>
+        </div>
     </div>
 </div>
 EOT;
+}
+
+//$inner_heading = apply_filters( 'mc_heading_inner_title', $wrap . $image . trim( $event_title ) . $balance, $event_title, $event );
+add_filter( 'mc_heading_inner_title', 'add_event_location_hidden', 10, 3);
+function add_event_location_hidden($body, $event_title, $event) {
+    $body .= '<span class="HIDDEN-CATEGORY" style="display:none;">' . $event->event_label . '</span>';
+    return $body;
 }
 
 /**
@@ -50,6 +65,9 @@ EOT;
 add_filter( 'mc_custom_template', 'my_custom_calendar', 10, 7);
 function my_custom_calendar( $body = false, $data, $event, $type, $process_date, $time, $template ) {
 //    error_log("event is " . json_encode($event), 0 );
+//    $hidden_event_category = '<span class="HIDDEN-CATEGORY" style="display:none;">' . $event['event_label'] . '</span>';
+    // todo: add in hidden field w/ all the `event_label`s, use jquery to aggregate them all and create a locations select field
+    //   like the categories select
     error_log('type is ' . json_encode($type), 0);
     switch ($type) {
         case 'single':
@@ -66,6 +84,7 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
         <p class="card-text">' . $excerpt . '</p>
       </div>
     </div>
+    <span class="HIDDEN-CATEGORY" style="display:none;">' . $event['event_label'] . '</span>
 </div>';
             break;
         case 'mini':
@@ -101,7 +120,7 @@ function log_filter($something0, $something1, $something2) {
 
 add_filter( 'mc_list_js', 'custom_list_js' );
 function custom_list_js( $url ) {
-    return get_stylesheet_directory_uri() . '/js/mc-customize-list-view.js';
+    return get_stylesheet_directory_uri() . '/js/my-calendar/events-view.js';
 }
 
 //get_stylesheet_directory_uri()
