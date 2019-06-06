@@ -9,8 +9,9 @@
 @import "blogs_overview_page";
 @import "single_blog_page";
 @import "content_page";
-@import "list_template.scss";
-@import "calendar_customizations.scss";
+@import "list_template";
+@import "calendar_customizations";
+@import "search";
 
 /* Fonts */
 
@@ -324,16 +325,16 @@ $collapsed-nav-height: 5rem;
 		}
 	}
 
-	.navbar-nav .donate {
-	    margin-left: 30px;
-	}
-
 	.nav-item {
 	    display: flex;
 	    justify-content: center;
 	    flex-direction: column;
 	    text-align: right;
 
+		@include media-breakpoint-down(md) {
+			flex-direction: row;
+			justify-content: flex-end;
+		}
 	}
 
 	.nav-item > .nav-link {
@@ -679,7 +680,6 @@ section.donate {
 		background-size:cover
 	}
 }
-
 
 
 /* Buttons */
