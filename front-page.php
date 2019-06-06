@@ -122,12 +122,7 @@ $shows = vera_shows_get_front_page();
 					</section>
 
                     <section class="block">
-                        <?php
-
-                        $block_section = get_field('on_the_block');
-                        error_log(print_r($block_section, true));
-                        ?>
-
+                        <?php $block_section = get_field('on_the_block'); ?>
                         <div class="row header no-gutters">
                             <div class="col-md-12">
                                 <?php

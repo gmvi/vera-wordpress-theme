@@ -33,7 +33,7 @@ $gallery = vera_gallery_get_overview();
                                 <p><?php the_field('description', $gallery['current']->ID); ?></p>
                                 <p><b>Exhibit up until <?php the_field('gallery_end_date', $gallery['current']->ID); ?><br>
                                         Opening: <?php the_field('gallery_opening_datetime', $gallery['current']->ID); ?></b></p>
-                                <a href="<?php echo get_permalink($gallery['current']->ID); ?>" class=" btn bordered-button btn-outline-primary">Learn More</a>
+                                <a href="<?= get_permalink($gallery['current']->ID); ?>" class=" btn bordered-button btn-outline-primary">Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ $gallery = vera_gallery_get_overview();
                     <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-start">
                         <p class="label">Up Next</p>
                         <h2 class="medium-header mb-1">
-                            <a href="<?php echo get_permalink($gallery['up_next']->ID); ?>">
+                            <a href="<?= get_permalink($gallery['up_next']->ID); ?>">
                             <?php echo $gallery['up_next']->post_title; ?>
                             </a>
                         </h2>
@@ -82,23 +82,25 @@ $gallery = vera_gallery_get_overview();
                         $gallery_img_url = get_the_post_thumbnail_url( $past_gallery->ID );
                         $gallery_title = $past_gallery->post_title;
                         $gallery_desc = get_field('description', $past_gallery->ID );
+                        $gallery_link =  get_permalink( $past_gallery->ID );
 
-                        ?>
+	                    ?>
 
                         <div class="container past-gallery-item d-none">
                             <div class="row">
                                 <div class="col-md-6 past-gallery-img">
-                                    <div class="square-past-gallery">
-                                        <div style="background-image: url(<?php echo $gallery_img_url; ?>)">
+                                    <a href="<?= $gallery_link ?>">
+                                        <div class="square-past-gallery">
+                                            <div style="background-image: url(<?= $gallery_img_url; ?>)">
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
 
                                 <div class="col-md-5 py-5 past-gallery-info d-flex flex-column justify-content-between">
-
                                     <div>
-                                        <h3><?php echo $gallery_title; ?></h3>
-                                        <p class="mt-3"><?php echo $gallery_desc; ?></p>
+                                        <h3><?= $gallery_title; ?></h3>
+                                        <p class="mt-3"><?= $gallery_desc; ?></p>
                                     </div>
 
                                     <div>
@@ -138,6 +140,7 @@ $gallery = vera_gallery_get_overview();
                         </div>
                     </div>
                 </section>
+
                 <section id="gallery-coa" class="row no-gutters">
                         <div class="col-md-5 p-5">
                             <p class="label">Get Involved</p>

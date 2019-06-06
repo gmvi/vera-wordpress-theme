@@ -11221,7 +11221,7 @@ div#blog-pagination a {
   .blog-contents h3 {
     font-size: 15.5px;
     padding: 5px 0; }
-  .blog-contents p {
+  .blog-contents p, .blog-contents ul > li {
     font-size: 13px; }
 
 .recent-posts hr {
@@ -11541,6 +11541,9 @@ body {
   background-color: #FFF;
   box-sizing: border-box; }
 
+.color-dark-gray {
+  color: #343434; }
+
 .site h1, .site h2, .site h3, .site h4, .site h5, .site h6 {
   font-size: inherit;
   font-weight: inherit;
@@ -11575,6 +11578,10 @@ body {
   @media (max-width: 767.98px) {
     .site h3 {
       font-size: 24px; } }
+
+.site h4 {
+  font-family: BebasNeue;
+  font-size: 30px; }
 
 /* Uncatagorized */
 .wrapper {
