@@ -123,4 +123,9 @@ function custom_list_js( $url ) {
     return get_stylesheet_directory_uri() . '/js/my-calendar/events-view.js';
 }
 
+
+add_filter( 'mc_ajax_js', 'custom_ajax_js' );
+function custom_ajax_js( $url ) {
+    return get_stylesheet_directory_uri() . '/js/my-calendar/ajax-cal.js';
+}
 //get_stylesheet_directory_uri()

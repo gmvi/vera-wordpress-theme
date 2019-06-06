@@ -2,6 +2,17 @@
     'use strict';
     //todo: call out this function in documentation!
     $(function () {
+        function getUniqueEventLocations() {
+            var allEventLocations = $('span.HIDDEN-CATEGORY');
+            var flags = [], uniqueEventLocations = [], l = allEventLocations.length, i;
+            for ( i = 0; i < l; i++ ) {
+                if ( flags[allEventLocations[i].textContent] ) continue;
+                flags[ allEventLocations[i].textContent ] = true;
+                uniqueEventLocations.push( allEventLocations[i].textContent );
+            }
+            return uniqueEventLocations;
+
+        }
         //var a = [ 1, 5, 1, 6, 4, 5, 2, 5, 4, 3, 1, 2, 6, 6, 3, 3, 2, 4 ];
         //
         // var unique = a.filter(function(itm, i, a) {
@@ -11,14 +22,6 @@
         // console.log(unique);
         //fixme: if we can figure out why es6 isn't working and fix that, we could nust use the new Set object
         //var newSet = [...new Set(hiddens.map(function(x){return x.textContent}))]
-        var allEventLocations = $('span.HIDDEN-CATEGORY');
-        var flags = [], uniqueEventLocations = [], l = allEventLocations.length, i;
-        for ( i = 0; i < l; i++ ) {
-            if ( flags[allEventLocations[i].textContent] ) continue;
-            flags[ allEventLocations[i].textContent ] = true;
-            uniqueEventLocations.push( allEventLocations[i].textContent );
-        }
-
         // list modifications
         if ( typeof($( '.mc-main.list' ).val()) !== 'undefined' ) {
             console.log("we're showing a list!");
@@ -56,37 +59,39 @@
                     }
                 });
         } else if ( $( '.mc-main.calendar' ) ) {
-            // set date switcher to user bootstrap classes
-            $('div.my-calendar-date-switcher form').addClass('form-inline');
-            $('div.my-calendar-date-switcher form div select').addClass('form-control');
-            if ( uniqueEventLocations.length > 0 ) {
-                var urlParams = new URLSearchParams(window.location.search);
-                $('<div class="location-key"><ul></ul></div>').insertAfter( $('div.category-key') );
-                var listParent = $('div.location-key ul');
-                uniqueEventLocations.forEach(function(loc, index) {
-                    var encodedLoc = encodeURIComponent(loc);
-                    // todo: review -- link right now actually triggers a refresh of the page, while categories (classes, etc) doesn't
-                    //   make behavior uniform
-                    var link = $('<a></a>').attr('href', '?ltype=name&loc=' + encodedLoc).addClass('').text(loc);
-                    var listElem = $('<li></li>').addClass(urlParams.has('loc') ? 'current' : '').append(link);
-                    listParent.append(listElem);
-                });
-                // only add 'All Locations' link if a specific location is selected
-                if ( urlParams.has('loc') ) {
-                    listParent.append( $( '<li></li>' ).append($('<a></a>').attr('href', window.location.pathname).text('All Locations')) );
-                }
-                console.log('path', window.location.pathname, 'window', window.location.search)
-            }
-            // var locationsLinks = $('<div class="location-key"></div>');
-            // var $listParent = $locationsLinks.children('ul')[0];
-            // uniqueEventLocations.forEach(function(loc, index) {
-            //     var encodedLoc = encodeURIComponent(loc);
-            //     var $url = $('<li><a href="?ltype=name&loc=' + encodedLoc + '" class="mcajax">' + loc + '</a></li>');
-            //     console.log("url", $url);
-            //     $listParent.append($url)
-            // });
-            // console.log(listParent);
-            // var submitBtn = $('div.my-calendar-date-switcher form div input[type="submit"]');
+            $(document).on('reloadCustomElems',  function( event ) {
+                console.log("triggering custom elems!");
+                var uniqueEventLocations = getUniqueEventLocations();
+                // set date switcher to user bootstrap classes
+                $('div.my-calendar-date-switcher form').addClass('form-inline');
+                $('div.my-calendar-date-switcher form div select').addClass('form-control');
+                // if ( uniqueEventLocations.length > 0 ) {
+                    var urlParams = new URLSearchParams(window.location.hash.slice(1));
+                    $('<div class="location-key"><ul></ul></div>').insertAfter( $('div.category-key') );
+                    var listParent = $('div.location-key ul');
+
+                    uniqueEventLocations.forEach(function(loc, index) {
+                        var encodedLoc = encodeURIComponent(loc);
+                        // todo: review -- link right now actually triggers a refresh of the page, while categories (classes, etc) doesn't
+                        //   make behavior uniform
+                        var newUrlParams = new URLSearchParams('?ltype=name&loc=' + encodedLoc);
+                        // add old url query args that aren't related to the location
+                        urlParams.forEach(function(value, key) {
+                           if (!newUrlParams.has(key)) { newUrlParams.set(key, value) }
+                        });
+                        var link = $('<a></a>').attr('href', window.location.origin + window.location.pathname + '?' + newUrlParams.toString()).addClass('mcajax').text(loc);
+                        var listElem = $('<li></li>').addClass(urlParams.has('loc') ? 'current' : '').append(link);
+                        listParent.append(listElem);
+                    });
+                    // only add 'All Locations' link if a specific location is selected
+                    // if ( urlParams.has('loc') ) {
+                    //     listParent.append( $( '<li></li>' ).append($('<a></a>').attr('href', window.location.pathname).text('All Locations')) );
+                    // }
+                    listParent.append( $( '<li></li>' ).append($('<a></a>').addClass('mcajax').attr('href', window.location.origin + window.location.pathname).text('All Locations')) );
+                    // console.log('path', window.location.pathname, 'window', window.location.search)
+                // }
+            });
+            $(document).trigger( "reloadCustomElems" );
         }
     });
 }(jQuery));
