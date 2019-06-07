@@ -9,7 +9,6 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
 $list_items = get_field('list_template_items');
-echo "<pre>" . print_r($list_items, true) . "</pre>";
 ?>
 
     <div class="wrapper" id="full-width-page-wrapper">
