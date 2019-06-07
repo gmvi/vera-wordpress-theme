@@ -6,6 +6,7 @@ form#searchform {
   }
 
   div.input-group {
+    flex-wrap: nowrap; 
     input.form-control {
       border: 1px solid $primary;
       border-right: none;

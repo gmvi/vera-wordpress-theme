@@ -2060,7 +2060,7 @@ textarea.form-control,
       margin-bottom: 0; } }
 
 .btn,
-.wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"], button.mc-text-button {
+.wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"], button.mc-text-button, div.mc-format a {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -2076,21 +2076,23 @@ textarea.form-control,
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
     .btn,
-    .wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"], button.mc-text-button {
+    .wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"], button.mc-text-button, div.mc-format a {
       transition: none; } }
-  .btn:hover, .wpcf7 input:hover[type=submit], div.my-calendar-date-switcher form input:hover[type="submit"], button.mc-text-button:hover {
+  .btn:hover, .wpcf7 input:hover[type=submit], div.my-calendar-date-switcher form input:hover[type="submit"], button.mc-text-button:hover, div.mc-format a:hover {
     color: #212529;
     text-decoration: none; }
   .btn:focus,
-  .wpcf7 input:focus[type=submit], div.my-calendar-date-switcher form input:focus[type="submit"], button.mc-text-button:focus, .btn.focus, .wpcf7 input.focus[type=submit], div.my-calendar-date-switcher form input.focus[type="submit"], button.focus.mc-text-button {
+  .wpcf7 input:focus[type=submit], div.my-calendar-date-switcher form input:focus[type="submit"], button.mc-text-button:focus, div.mc-format a:focus, .btn.focus, .wpcf7 input.focus[type=submit], div.my-calendar-date-switcher form input.focus[type="submit"], button.focus.mc-text-button, div.mc-format a.focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(212, 28, 83, 0.25); }
-  .btn.disabled, .wpcf7 input.disabled[type=submit], div.my-calendar-date-switcher form input.disabled[type="submit"], button.disabled.mc-text-button, .btn:disabled,
-  .wpcf7 input:disabled[type=submit], div.my-calendar-date-switcher form input:disabled[type="submit"], button.mc-text-button:disabled {
+  .btn.disabled, .wpcf7 input.disabled[type=submit], div.my-calendar-date-switcher form input.disabled[type="submit"], button.disabled.mc-text-button, div.mc-format a.disabled, .btn:disabled,
+  .wpcf7 input:disabled[type=submit], div.my-calendar-date-switcher form input:disabled[type="submit"], button.mc-text-button:disabled, div.mc-format a:disabled {
     opacity: 0.65; }
 
-a.btn.disabled,
-fieldset:disabled a.btn {
+a.btn.disabled, div.mc-format a.disabled,
+fieldset:disabled a.btn,
+fieldset:disabled div.mc-format a,
+div.mc-format fieldset:disabled a {
   pointer-events: none; }
 
 .btn-primary {
@@ -2278,33 +2280,35 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
 
 .btn-outline-primary,
-.wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"], button.mc-text-button {
+.wpcf7 input[type=submit], div.my-calendar-date-switcher form input[type="submit"], button.mc-text-button, div.mc-format a {
   color: #D41C53;
   border-color: #D41C53; }
-  .btn-outline-primary:hover, .wpcf7 input:hover[type=submit], div.my-calendar-date-switcher form input:hover[type="submit"], button.mc-text-button:hover {
+  .btn-outline-primary:hover, .wpcf7 input:hover[type=submit], div.my-calendar-date-switcher form input:hover[type="submit"], button.mc-text-button:hover, div.mc-format a:hover {
     color: #fff;
     background-color: #D41C53;
     border-color: #D41C53; }
   .btn-outline-primary:focus,
-  .wpcf7 input:focus[type=submit], div.my-calendar-date-switcher form input:focus[type="submit"], button.mc-text-button:focus, .btn-outline-primary.focus, .wpcf7 input.focus[type=submit], div.my-calendar-date-switcher form input.focus[type="submit"], button.focus.mc-text-button {
+  .wpcf7 input:focus[type=submit], div.my-calendar-date-switcher form input:focus[type="submit"], button.mc-text-button:focus, div.mc-format a:focus, .btn-outline-primary.focus, .wpcf7 input.focus[type=submit], div.my-calendar-date-switcher form input.focus[type="submit"], button.focus.mc-text-button, div.mc-format a.focus {
     box-shadow: 0 0 0 0.2rem rgba(212, 28, 83, 0.5); }
-  .btn-outline-primary.disabled, .wpcf7 input.disabled[type=submit], div.my-calendar-date-switcher form input.disabled[type="submit"], button.disabled.mc-text-button, .btn-outline-primary:disabled,
-  .wpcf7 input:disabled[type=submit], div.my-calendar-date-switcher form input:disabled[type="submit"], button.mc-text-button:disabled {
+  .btn-outline-primary.disabled, .wpcf7 input.disabled[type=submit], div.my-calendar-date-switcher form input.disabled[type="submit"], button.disabled.mc-text-button, div.mc-format a.disabled, .btn-outline-primary:disabled,
+  .wpcf7 input:disabled[type=submit], div.my-calendar-date-switcher form input:disabled[type="submit"], button.mc-text-button:disabled, div.mc-format a:disabled {
     color: #D41C53;
     background-color: transparent; }
-  .btn-outline-primary:not(:disabled):not(.disabled):active, .wpcf7 input:not(:disabled):not(.disabled):active[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled):active[type="submit"], button.mc-text-button:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .wpcf7 input:not(:disabled):not(.disabled).active[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled).active[type="submit"], button.mc-text-button:not(:disabled):not(.disabled).active,
+  .btn-outline-primary:not(:disabled):not(.disabled):active, .wpcf7 input:not(:disabled):not(.disabled):active[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled):active[type="submit"], button.mc-text-button:not(:disabled):not(.disabled):active, div.mc-format a:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .wpcf7 input:not(:disabled):not(.disabled).active[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled).active[type="submit"], button.mc-text-button:not(:disabled):not(.disabled).active, div.mc-format a:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle,
   .wpcf7 .show > input.dropdown-toggle[type=submit],
   div.my-calendar-date-switcher form .show > input.dropdown-toggle[type="submit"],
-  .show > button.dropdown-toggle.mc-text-button {
+  .show > button.dropdown-toggle.mc-text-button,
+  div.mc-format .show > a.dropdown-toggle {
     color: #fff;
     background-color: #D41C53;
     border-color: #D41C53; }
-    .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .wpcf7 input:not(:disabled):not(.disabled):active:focus[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled):active:focus[type="submit"], button.mc-text-button:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .wpcf7 input:not(:disabled):not(.disabled).active:focus[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled).active:focus[type="submit"], button.mc-text-button:not(:disabled):not(.disabled).active:focus,
+    .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .wpcf7 input:not(:disabled):not(.disabled):active:focus[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled):active:focus[type="submit"], button.mc-text-button:not(:disabled):not(.disabled):active:focus, div.mc-format a:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .wpcf7 input:not(:disabled):not(.disabled).active:focus[type=submit], div.my-calendar-date-switcher form input:not(:disabled):not(.disabled).active:focus[type="submit"], button.mc-text-button:not(:disabled):not(.disabled).active:focus, div.mc-format a:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-primary.dropdown-toggle:focus,
     .wpcf7 .show > input.dropdown-toggle:focus[type=submit],
     div.my-calendar-date-switcher form .show > input.dropdown-toggle:focus[type="submit"],
-    .show > button.dropdown-toggle.mc-text-button:focus {
+    .show > button.dropdown-toggle.mc-text-button:focus,
+    div.mc-format .show > a.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(212, 28, 83, 0.5); }
 
 .btn-outline-secondary {
@@ -2469,14 +2473,14 @@ fieldset:disabled a.btn {
     pointer-events: none; }
 
 .btn-lg, .btn-group-lg > .btn,
-.wpcf7 .btn-group-lg > input[type=submit], div.my-calendar-date-switcher form .btn-group-lg > input[type="submit"], .btn-group-lg > button.mc-text-button {
+.wpcf7 .btn-group-lg > input[type=submit], div.my-calendar-date-switcher form .btn-group-lg > input[type="submit"], .btn-group-lg > button.mc-text-button, div.mc-format .btn-group-lg > a {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
 .btn-sm, .btn-group-sm > .btn,
-.wpcf7 .btn-group-sm > input[type=submit], div.my-calendar-date-switcher form .btn-group-sm > input[type="submit"], .btn-group-sm > button.mc-text-button {
+.wpcf7 .btn-group-sm > input[type=submit], div.my-calendar-date-switcher form .btn-group-sm > input[type="submit"], .btn-group-sm > button.mc-text-button, div.mc-format .btn-group-sm > a, div.mc-format a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2721,33 +2725,38 @@ input[type="button"].btn-block {
   display: inline-flex;
   vertical-align: middle; }
   .btn-group > .btn,
-  .wpcf7 .btn-group > input[type=submit], div.my-calendar-date-switcher form .btn-group > input[type="submit"], .btn-group > button.mc-text-button,
+  .wpcf7 .btn-group > input[type=submit], div.my-calendar-date-switcher form .btn-group > input[type="submit"], .btn-group > button.mc-text-button, div.mc-format .btn-group > a,
   .btn-group-vertical > .btn,
   .wpcf7 .btn-group-vertical > input[type=submit],
   div.my-calendar-date-switcher form .btn-group-vertical > input[type="submit"],
-  .btn-group-vertical > button.mc-text-button {
+  .btn-group-vertical > button.mc-text-button,
+  div.mc-format .btn-group-vertical > a {
     position: relative;
     flex: 1 1 auto; }
-    .btn-group > .btn:hover, .wpcf7 .btn-group > input:hover[type=submit], div.my-calendar-date-switcher form .btn-group > input:hover[type="submit"], .btn-group > button.mc-text-button:hover,
+    .btn-group > .btn:hover, .wpcf7 .btn-group > input:hover[type=submit], div.my-calendar-date-switcher form .btn-group > input:hover[type="submit"], .btn-group > button.mc-text-button:hover, div.mc-format .btn-group > a:hover,
     .btn-group-vertical > .btn:hover,
     .wpcf7 .btn-group-vertical > input:hover[type=submit],
     div.my-calendar-date-switcher form .btn-group-vertical > input:hover[type="submit"],
-    .btn-group-vertical > button.mc-text-button:hover {
+    .btn-group-vertical > button.mc-text-button:hover,
+    div.mc-format .btn-group-vertical > a:hover {
       z-index: 1; }
     .btn-group > .btn:focus,
-    .wpcf7 .btn-group > input:focus[type=submit], div.my-calendar-date-switcher form .btn-group > input:focus[type="submit"], .btn-group > button.mc-text-button:focus, .btn-group > .btn:active, .wpcf7 .btn-group > input:active[type=submit], div.my-calendar-date-switcher form .btn-group > input:active[type="submit"], .btn-group > button.mc-text-button:active, .btn-group > .btn.active, .wpcf7 .btn-group > input.active[type=submit], div.my-calendar-date-switcher form .btn-group > input.active[type="submit"], .btn-group > button.active.mc-text-button,
+    .wpcf7 .btn-group > input:focus[type=submit], div.my-calendar-date-switcher form .btn-group > input:focus[type="submit"], .btn-group > button.mc-text-button:focus, div.mc-format .btn-group > a:focus, .btn-group > .btn:active, .wpcf7 .btn-group > input:active[type=submit], div.my-calendar-date-switcher form .btn-group > input:active[type="submit"], .btn-group > button.mc-text-button:active, div.mc-format .btn-group > a:active, .btn-group > .btn.active, .wpcf7 .btn-group > input.active[type=submit], div.my-calendar-date-switcher form .btn-group > input.active[type="submit"], .btn-group > button.active.mc-text-button, div.mc-format .btn-group > a.active,
     .btn-group-vertical > .btn:focus,
     .wpcf7 .btn-group-vertical > input:focus[type=submit],
     div.my-calendar-date-switcher form .btn-group-vertical > input:focus[type="submit"],
     .btn-group-vertical > button.mc-text-button:focus,
+    div.mc-format .btn-group-vertical > a:focus,
     .btn-group-vertical > .btn:active,
     .wpcf7 .btn-group-vertical > input:active[type=submit],
     div.my-calendar-date-switcher form .btn-group-vertical > input:active[type="submit"],
     .btn-group-vertical > button.mc-text-button:active,
+    div.mc-format .btn-group-vertical > a:active,
     .btn-group-vertical > .btn.active,
     .wpcf7 .btn-group-vertical > input.active[type=submit],
     div.my-calendar-date-switcher form .btn-group-vertical > input.active[type="submit"],
-    .btn-group-vertical > button.active.mc-text-button {
+    .btn-group-vertical > button.active.mc-text-button,
+    div.mc-format .btn-group-vertical > a.active {
       z-index: 1; }
 
 .btn-toolbar {
@@ -2757,23 +2766,25 @@ input[type="button"].btn-block {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:first-child)[type="submit"], .btn-group > button.mc-text-button:not(:first-child),
+.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:first-child)[type="submit"], .btn-group > button.mc-text-button:not(:first-child), div.mc-format .btn-group > a:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group > input:not(:last-child):not(.dropdown-toggle)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:last-child):not(.dropdown-toggle)[type="submit"], .btn-group > button.mc-text-button:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group > input:not(:last-child):not(.dropdown-toggle)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:last-child):not(.dropdown-toggle)[type="submit"], .btn-group > button.mc-text-button:not(:last-child):not(.dropdown-toggle), div.mc-format .btn-group > a:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 .wpcf7 .btn-group > .btn-group:not(:last-child) > input[type=submit],
 div.my-calendar-date-switcher form .btn-group > .btn-group:not(:last-child) > input[type="submit"],
-.btn-group > .btn-group:not(:last-child) > button.mc-text-button {
+.btn-group > .btn-group:not(:last-child) > button.mc-text-button,
+div.mc-format .btn-group > .btn-group:not(:last-child) > a {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:first-child)[type="submit"], .btn-group > button.mc-text-button:not(:first-child),
+.btn-group > .btn:not(:first-child), .wpcf7 .btn-group > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group > input:not(:first-child)[type="submit"], .btn-group > button.mc-text-button:not(:first-child), div.mc-format .btn-group > a:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn,
 .wpcf7 .btn-group > .btn-group:not(:first-child) > input[type=submit],
 div.my-calendar-date-switcher form .btn-group > .btn-group:not(:first-child) > input[type="submit"],
-.btn-group > .btn-group:not(:first-child) > button.mc-text-button {
+.btn-group > .btn-group:not(:first-child) > button.mc-text-button,
+div.mc-format .btn-group > .btn-group:not(:first-child) > a {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2787,11 +2798,11 @@ div.my-calendar-date-switcher form .btn-group > .btn-group:not(:first-child) > i
   .dropleft .dropdown-toggle-split::before {
     margin-right: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-sm > input[type=submit] + .dropdown-toggle-split, div.my-calendar-date-switcher form .btn-group-sm > input[type="submit"] + .dropdown-toggle-split, .btn-group-sm > button.mc-text-button + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-sm > input[type=submit] + .dropdown-toggle-split, div.my-calendar-date-switcher form .btn-group-sm > input[type="submit"] + .dropdown-toggle-split, .btn-group-sm > button.mc-text-button + .dropdown-toggle-split, div.mc-format .btn-group-sm > a + .dropdown-toggle-split, div.mc-format a + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-lg > input[type=submit] + .dropdown-toggle-split, div.my-calendar-date-switcher form .btn-group-lg > input[type="submit"] + .dropdown-toggle-split, .btn-group-lg > button.mc-text-button + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .wpcf7 .btn-group-lg > input[type=submit] + .dropdown-toggle-split, div.my-calendar-date-switcher form .btn-group-lg > input[type="submit"] + .dropdown-toggle-split, .btn-group-lg > button.mc-text-button + .dropdown-toggle-split, div.mc-format .btn-group-lg > a + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2804,46 +2815,53 @@ div.my-calendar-date-switcher form .btn-group > .btn-group:not(:first-child) > i
   .wpcf7 .btn-group-vertical > input[type=submit],
   div.my-calendar-date-switcher form .btn-group-vertical > input[type="submit"],
   .btn-group-vertical > button.mc-text-button,
+  div.mc-format .btn-group-vertical > a,
   .btn-group-vertical > .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:first-child)[type="submit"], .btn-group-vertical > button.mc-text-button:not(:first-child),
+  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:first-child)[type="submit"], .btn-group-vertical > button.mc-text-button:not(:first-child), div.mc-format .btn-group-vertical > a:not(:first-child),
   .btn-group-vertical > .btn-group:not(:first-child) {
     margin-top: -1px; }
-  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group-vertical > input:not(:last-child):not(.dropdown-toggle)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:last-child):not(.dropdown-toggle)[type="submit"], .btn-group-vertical > button.mc-text-button:not(:last-child):not(.dropdown-toggle),
+  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .wpcf7 .btn-group-vertical > input:not(:last-child):not(.dropdown-toggle)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:last-child):not(.dropdown-toggle)[type="submit"], .btn-group-vertical > button.mc-text-button:not(:last-child):not(.dropdown-toggle), div.mc-format .btn-group-vertical > a:not(:last-child):not(.dropdown-toggle),
   .btn-group-vertical > .btn-group:not(:last-child) > .btn,
   .wpcf7 .btn-group-vertical > .btn-group:not(:last-child) > input[type=submit],
   div.my-calendar-date-switcher form .btn-group-vertical > .btn-group:not(:last-child) > input[type="submit"],
-  .btn-group-vertical > .btn-group:not(:last-child) > button.mc-text-button {
+  .btn-group-vertical > .btn-group:not(:last-child) > button.mc-text-button,
+  div.mc-format .btn-group-vertical > .btn-group:not(:last-child) > a {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:first-child)[type="submit"], .btn-group-vertical > button.mc-text-button:not(:first-child),
+  .btn-group-vertical > .btn:not(:first-child), .wpcf7 .btn-group-vertical > input:not(:first-child)[type=submit], div.my-calendar-date-switcher form .btn-group-vertical > input:not(:first-child)[type="submit"], .btn-group-vertical > button.mc-text-button:not(:first-child), div.mc-format .btn-group-vertical > a:not(:first-child),
   .btn-group-vertical > .btn-group:not(:first-child) > .btn,
   .wpcf7 .btn-group-vertical > .btn-group:not(:first-child) > input[type=submit],
   div.my-calendar-date-switcher form .btn-group-vertical > .btn-group:not(:first-child) > input[type="submit"],
-  .btn-group-vertical > .btn-group:not(:first-child) > button.mc-text-button {
+  .btn-group-vertical > .btn-group:not(:first-child) > button.mc-text-button,
+  div.mc-format .btn-group-vertical > .btn-group:not(:first-child) > a {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
 .btn-group-toggle > .btn,
-.wpcf7 .btn-group-toggle > input[type=submit], div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"], .btn-group-toggle > button.mc-text-button,
+.wpcf7 .btn-group-toggle > input[type=submit], div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"], .btn-group-toggle > button.mc-text-button, div.mc-format .btn-group-toggle > a,
 .btn-group-toggle > .btn-group > .btn,
 .wpcf7 .btn-group-toggle > .btn-group > input[type=submit],
 div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="submit"],
-.btn-group-toggle > .btn-group > button.mc-text-button {
+.btn-group-toggle > .btn-group > button.mc-text-button,
+div.mc-format .btn-group-toggle > .btn-group > a {
   margin-bottom: 0; }
-  .btn-group-toggle > .btn input[type="radio"], .wpcf7 .btn-group-toggle > input[type=submit] input[type="radio"], div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"] input[type="radio"], .btn-group-toggle > button.mc-text-button input[type="radio"],
+  .btn-group-toggle > .btn input[type="radio"], .wpcf7 .btn-group-toggle > input[type=submit] input[type="radio"], div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"] input[type="radio"], .btn-group-toggle > button.mc-text-button input[type="radio"], div.mc-format .btn-group-toggle > a input[type="radio"],
   .btn-group-toggle > .btn input[type="checkbox"],
   .wpcf7 .btn-group-toggle > input[type=submit] input[type="checkbox"],
   div.my-calendar-date-switcher form .btn-group-toggle > input[type="submit"] input[type="checkbox"],
   .btn-group-toggle > button.mc-text-button input[type="checkbox"],
+  div.mc-format .btn-group-toggle > a input[type="checkbox"],
   .btn-group-toggle > .btn-group > .btn input[type="radio"],
   .wpcf7 .btn-group-toggle > .btn-group > input[type=submit] input[type="radio"],
   div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="submit"] input[type="radio"],
   .btn-group-toggle > .btn-group > button.mc-text-button input[type="radio"],
+  div.mc-format .btn-group-toggle > .btn-group > a input[type="radio"],
   .btn-group-toggle > .btn-group > .btn input[type="checkbox"],
   .wpcf7 .btn-group-toggle > .btn-group > input[type=submit] input[type="checkbox"],
   div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="submit"] input[type="checkbox"],
-  .btn-group-toggle > .btn-group > button.mc-text-button input[type="checkbox"] {
+  .btn-group-toggle > .btn-group > button.mc-text-button input[type="checkbox"],
+  div.mc-format .btn-group-toggle > .btn-group > a input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none; }
@@ -3406,35 +3424,42 @@ div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="
 .input-group-append {
   display: flex; }
   .input-group-prepend .btn,
-  .input-group-prepend .wpcf7 input[type=submit], .wpcf7 .input-group-prepend input[type=submit], .input-group-prepend div.my-calendar-date-switcher form input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input[type="submit"], .input-group-prepend button.mc-text-button,
+  .input-group-prepend .wpcf7 input[type=submit], .wpcf7 .input-group-prepend input[type=submit], .input-group-prepend div.my-calendar-date-switcher form input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input[type="submit"], .input-group-prepend button.mc-text-button, .input-group-prepend div.mc-format a, div.mc-format .input-group-prepend a,
   .input-group-append .btn,
   .input-group-append .wpcf7 input[type=submit],
   .wpcf7 .input-group-append input[type=submit],
   .input-group-append div.my-calendar-date-switcher form input[type="submit"],
   div.my-calendar-date-switcher form .input-group-append input[type="submit"],
-  .input-group-append button.mc-text-button {
+  .input-group-append button.mc-text-button,
+  .input-group-append div.mc-format a,
+  div.mc-format .input-group-append a {
     position: relative;
     z-index: 2; }
     .input-group-prepend .btn:focus,
-    .input-group-prepend .wpcf7 input:focus[type=submit], .wpcf7 .input-group-prepend input:focus[type=submit], .input-group-prepend div.my-calendar-date-switcher form input:focus[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input:focus[type="submit"], .input-group-prepend button.mc-text-button:focus,
+    .input-group-prepend .wpcf7 input:focus[type=submit], .wpcf7 .input-group-prepend input:focus[type=submit], .input-group-prepend div.my-calendar-date-switcher form input:focus[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input:focus[type="submit"], .input-group-prepend button.mc-text-button:focus, .input-group-prepend div.mc-format a:focus, div.mc-format .input-group-prepend a:focus,
     .input-group-append .btn:focus,
     .input-group-append .wpcf7 input:focus[type=submit],
     .wpcf7 .input-group-append input:focus[type=submit],
     .input-group-append div.my-calendar-date-switcher form input:focus[type="submit"],
     div.my-calendar-date-switcher form .input-group-append input:focus[type="submit"],
-    .input-group-append button.mc-text-button:focus {
+    .input-group-append button.mc-text-button:focus,
+    .input-group-append div.mc-format a:focus,
+    div.mc-format .input-group-append a:focus {
       z-index: 3; }
-  .input-group-prepend .btn + .btn, .input-group-prepend .wpcf7 input[type=submit] + .btn, .wpcf7 .input-group-prepend input[type=submit] + .btn, .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + .btn, div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + .btn, .input-group-prepend button.mc-text-button + .btn,
+  .input-group-prepend .btn + .btn, .input-group-prepend .wpcf7 input[type=submit] + .btn, .wpcf7 .input-group-prepend input[type=submit] + .btn, .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + .btn, div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + .btn, .input-group-prepend button.mc-text-button + .btn, .input-group-prepend div.mc-format a + .btn, div.mc-format .input-group-prepend a + .btn,
   .input-group-prepend .wpcf7 .btn + input[type=submit], .wpcf7 .input-group-prepend .btn + input[type=submit],
   .input-group-prepend .wpcf7 input[type=submit] + input[type=submit], .wpcf7 .input-group-prepend input[type=submit] + input[type=submit],
   .input-group-prepend div.my-calendar-date-switcher form .wpcf7 input[type="submit"] + input[type=submit], .wpcf7 .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + input[type=submit], div.my-calendar-date-switcher form .input-group-prepend .wpcf7 input[type="submit"] + input[type=submit], .wpcf7 div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + input[type=submit],
-  .input-group-prepend .wpcf7 button.mc-text-button + input[type=submit], .wpcf7 .input-group-prepend button.mc-text-button + input[type=submit], .input-group-prepend div.my-calendar-date-switcher form .btn + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend .btn + input[type="submit"], .input-group-prepend .wpcf7 div.my-calendar-date-switcher form input[type=submit] + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend .wpcf7 input[type=submit] + input[type="submit"], .wpcf7 .input-group-prepend div.my-calendar-date-switcher form input[type=submit] + input[type="submit"], div.my-calendar-date-switcher form .wpcf7 .input-group-prepend input[type=submit] + input[type="submit"], .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + input[type="submit"], .input-group-prepend div.my-calendar-date-switcher form button.mc-text-button + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend button.mc-text-button + input[type="submit"], .input-group-prepend .btn + button.mc-text-button, .input-group-prepend .wpcf7 input[type=submit] + button.mc-text-button, .wpcf7 .input-group-prepend input[type=submit] + button.mc-text-button, .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + button.mc-text-button, div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + button.mc-text-button, .input-group-prepend button.mc-text-button + button.mc-text-button,
+  .input-group-prepend .wpcf7 button.mc-text-button + input[type=submit], .wpcf7 .input-group-prepend button.mc-text-button + input[type=submit],
+  .input-group-prepend div.mc-format .wpcf7 a + input[type=submit], .wpcf7 .input-group-prepend div.mc-format a + input[type=submit], div.mc-format .input-group-prepend .wpcf7 a + input[type=submit], .wpcf7 div.mc-format .input-group-prepend a + input[type=submit], .input-group-prepend div.my-calendar-date-switcher form .btn + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend .btn + input[type="submit"], .input-group-prepend .wpcf7 div.my-calendar-date-switcher form input[type=submit] + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend .wpcf7 input[type=submit] + input[type="submit"], .wpcf7 .input-group-prepend div.my-calendar-date-switcher form input[type=submit] + input[type="submit"], div.my-calendar-date-switcher form .wpcf7 .input-group-prepend input[type=submit] + input[type="submit"], .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + input[type="submit"], .input-group-prepend div.my-calendar-date-switcher form button.mc-text-button + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend button.mc-text-button + input[type="submit"], .input-group-prepend div.mc-format div.my-calendar-date-switcher form a + input[type="submit"], div.my-calendar-date-switcher form .input-group-prepend div.mc-format a + input[type="submit"], div.mc-format .input-group-prepend div.my-calendar-date-switcher form a + input[type="submit"], div.my-calendar-date-switcher form div.mc-format .input-group-prepend a + input[type="submit"], .input-group-prepend .btn + button.mc-text-button, .input-group-prepend .wpcf7 input[type=submit] + button.mc-text-button, .wpcf7 .input-group-prepend input[type=submit] + button.mc-text-button, .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + button.mc-text-button, div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + button.mc-text-button, .input-group-prepend button.mc-text-button + button.mc-text-button, .input-group-prepend div.mc-format a + button.mc-text-button, div.mc-format .input-group-prepend a + button.mc-text-button, .input-group-prepend div.mc-format .btn + a, div.mc-format .input-group-prepend .btn + a, .input-group-prepend .wpcf7 div.mc-format input[type=submit] + a, div.mc-format .input-group-prepend .wpcf7 input[type=submit] + a, .wpcf7 .input-group-prepend div.mc-format input[type=submit] + a, div.mc-format .wpcf7 .input-group-prepend input[type=submit] + a, .input-group-prepend div.my-calendar-date-switcher form div.mc-format input[type="submit"] + a, div.mc-format .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + a, div.my-calendar-date-switcher form .input-group-prepend div.mc-format input[type="submit"] + a, div.mc-format div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + a, .input-group-prepend div.mc-format button.mc-text-button + a, div.mc-format .input-group-prepend button.mc-text-button + a, .input-group-prepend div.mc-format a + a, div.mc-format .input-group-prepend a + a,
   .input-group-prepend .btn + .input-group-text,
   .input-group-prepend .wpcf7 input[type=submit] + .input-group-text,
   .wpcf7 .input-group-prepend input[type=submit] + .input-group-text,
   .input-group-prepend div.my-calendar-date-switcher form input[type="submit"] + .input-group-text,
   div.my-calendar-date-switcher form .input-group-prepend input[type="submit"] + .input-group-text,
   .input-group-prepend button.mc-text-button + .input-group-text,
+  .input-group-prepend div.mc-format a + .input-group-text,
+  div.mc-format .input-group-prepend a + .input-group-text,
   .input-group-prepend .input-group-text + .input-group-text,
   .input-group-prepend .input-group-text + .btn,
   .input-group-prepend .wpcf7 .input-group-text + input[type=submit],
@@ -3442,12 +3467,16 @@ div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="
   .input-group-prepend div.my-calendar-date-switcher form .input-group-text + input[type="submit"],
   div.my-calendar-date-switcher form .input-group-prepend .input-group-text + input[type="submit"],
   .input-group-prepend .input-group-text + button.mc-text-button,
+  .input-group-prepend div.mc-format .input-group-text + a,
+  div.mc-format .input-group-prepend .input-group-text + a,
   .input-group-append .btn + .btn,
   .input-group-append .wpcf7 input[type=submit] + .btn,
   .wpcf7 .input-group-append input[type=submit] + .btn,
   .input-group-append div.my-calendar-date-switcher form input[type="submit"] + .btn,
   div.my-calendar-date-switcher form .input-group-append input[type="submit"] + .btn,
   .input-group-append button.mc-text-button + .btn,
+  .input-group-append div.mc-format a + .btn,
+  div.mc-format .input-group-append a + .btn,
   .input-group-append .wpcf7 .btn + input[type=submit],
   .wpcf7 .input-group-append .btn + input[type=submit],
   .input-group-append .wpcf7 input[type=submit] + input[type=submit],
@@ -3458,6 +3487,10 @@ div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="
   .wpcf7 div.my-calendar-date-switcher form .input-group-append input[type="submit"] + input[type=submit],
   .input-group-append .wpcf7 button.mc-text-button + input[type=submit],
   .wpcf7 .input-group-append button.mc-text-button + input[type=submit],
+  .input-group-append div.mc-format .wpcf7 a + input[type=submit],
+  .wpcf7 .input-group-append div.mc-format a + input[type=submit],
+  div.mc-format .input-group-append .wpcf7 a + input[type=submit],
+  .wpcf7 div.mc-format .input-group-append a + input[type=submit],
   .input-group-append div.my-calendar-date-switcher form .btn + input[type="submit"],
   div.my-calendar-date-switcher form .input-group-append .btn + input[type="submit"],
   .input-group-append .wpcf7 div.my-calendar-date-switcher form input[type=submit] + input[type="submit"],
@@ -3468,25 +3501,49 @@ div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="
   div.my-calendar-date-switcher form .input-group-append input[type="submit"] + input[type="submit"],
   .input-group-append div.my-calendar-date-switcher form button.mc-text-button + input[type="submit"],
   div.my-calendar-date-switcher form .input-group-append button.mc-text-button + input[type="submit"],
+  .input-group-append div.mc-format div.my-calendar-date-switcher form a + input[type="submit"],
+  div.my-calendar-date-switcher form .input-group-append div.mc-format a + input[type="submit"],
+  div.mc-format .input-group-append div.my-calendar-date-switcher form a + input[type="submit"],
+  div.my-calendar-date-switcher form div.mc-format .input-group-append a + input[type="submit"],
   .input-group-append .btn + button.mc-text-button,
   .input-group-append .wpcf7 input[type=submit] + button.mc-text-button,
   .wpcf7 .input-group-append input[type=submit] + button.mc-text-button,
   .input-group-append div.my-calendar-date-switcher form input[type="submit"] + button.mc-text-button,
   div.my-calendar-date-switcher form .input-group-append input[type="submit"] + button.mc-text-button,
   .input-group-append button.mc-text-button + button.mc-text-button,
+  .input-group-append div.mc-format a + button.mc-text-button,
+  div.mc-format .input-group-append a + button.mc-text-button,
+  .input-group-append div.mc-format .btn + a,
+  div.mc-format .input-group-append .btn + a,
+  .input-group-append .wpcf7 div.mc-format input[type=submit] + a,
+  div.mc-format .input-group-append .wpcf7 input[type=submit] + a,
+  .wpcf7 .input-group-append div.mc-format input[type=submit] + a,
+  div.mc-format .wpcf7 .input-group-append input[type=submit] + a,
+  .input-group-append div.my-calendar-date-switcher form div.mc-format input[type="submit"] + a,
+  div.mc-format .input-group-append div.my-calendar-date-switcher form input[type="submit"] + a,
+  div.my-calendar-date-switcher form .input-group-append div.mc-format input[type="submit"] + a,
+  div.mc-format div.my-calendar-date-switcher form .input-group-append input[type="submit"] + a,
+  .input-group-append div.mc-format button.mc-text-button + a,
+  div.mc-format .input-group-append button.mc-text-button + a,
+  .input-group-append div.mc-format a + a,
+  div.mc-format .input-group-append a + a,
   .input-group-append .btn + .input-group-text,
   .input-group-append .wpcf7 input[type=submit] + .input-group-text,
   .wpcf7 .input-group-append input[type=submit] + .input-group-text,
   .input-group-append div.my-calendar-date-switcher form input[type="submit"] + .input-group-text,
   div.my-calendar-date-switcher form .input-group-append input[type="submit"] + .input-group-text,
   .input-group-append button.mc-text-button + .input-group-text,
+  .input-group-append div.mc-format a + .input-group-text,
+  div.mc-format .input-group-append a + .input-group-text,
   .input-group-append .input-group-text + .input-group-text,
   .input-group-append .input-group-text + .btn,
   .input-group-append .wpcf7 .input-group-text + input[type=submit],
   .wpcf7 .input-group-append .input-group-text + input[type=submit],
   .input-group-append div.my-calendar-date-switcher form .input-group-text + input[type="submit"],
   div.my-calendar-date-switcher form .input-group-append .input-group-text + input[type="submit"],
-  .input-group-append .input-group-text + button.mc-text-button {
+  .input-group-append .input-group-text + button.mc-text-button,
+  .input-group-append div.mc-format .input-group-text + a,
+  div.mc-format .input-group-append .input-group-text + a {
     margin-left: -1px; }
 
 .input-group-prepend {
@@ -3559,10 +3616,12 @@ div.my-calendar-date-switcher form .btn-group-toggle > .btn-group > input[type="
 .wpcf7 .input-group-lg > .input-group-prepend > input[type=submit],
 div.my-calendar-date-switcher form .input-group-lg > .input-group-prepend > input[type="submit"],
 .input-group-lg > .input-group-prepend > button.mc-text-button,
+div.mc-format .input-group-lg > .input-group-prepend > a,
 .input-group-lg > .input-group-append > .btn,
 .wpcf7 .input-group-lg > .input-group-append > input[type=submit],
 div.my-calendar-date-switcher form .input-group-lg > .input-group-append > input[type="submit"],
-.input-group-lg > .input-group-append > button.mc-text-button {
+.input-group-lg > .input-group-append > button.mc-text-button,
+div.mc-format .input-group-lg > .input-group-append > a {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -3614,10 +3673,12 @@ div.my-calendar-date-switcher form .input-group-lg > .input-group-append > input
 .wpcf7 .input-group-sm > .input-group-prepend > input[type=submit],
 div.my-calendar-date-switcher form .input-group-sm > .input-group-prepend > input[type="submit"],
 .input-group-sm > .input-group-prepend > button.mc-text-button,
+div.mc-format .input-group-sm > .input-group-prepend > a,
 .input-group-sm > .input-group-append > .btn,
 .wpcf7 .input-group-sm > .input-group-append > input[type=submit],
 div.my-calendar-date-switcher form .input-group-sm > .input-group-append > input[type="submit"],
-.input-group-sm > .input-group-append > button.mc-text-button {
+.input-group-sm > .input-group-append > button.mc-text-button,
+div.mc-format .input-group-sm > .input-group-append > a {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -3628,33 +3689,37 @@ div.my-calendar-date-switcher form .input-group-sm > .input-group-append > input
   padding-right: 1.75rem; }
 
 .input-group > .input-group-prepend > .btn,
-.wpcf7 .input-group > .input-group-prepend > input[type=submit], div.my-calendar-date-switcher form .input-group > .input-group-prepend > input[type="submit"], .input-group > .input-group-prepend > button.mc-text-button,
+.wpcf7 .input-group > .input-group-prepend > input[type=submit], div.my-calendar-date-switcher form .input-group > .input-group-prepend > input[type="submit"], .input-group > .input-group-prepend > button.mc-text-button, div.mc-format .input-group > .input-group-prepend > a,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
 .wpcf7 .input-group > .input-group-append:not(:last-child) > input[type=submit],
 div.my-calendar-date-switcher form .input-group > .input-group-append:not(:last-child) > input[type="submit"],
 .input-group > .input-group-append:not(:last-child) > button.mc-text-button,
+div.mc-format .input-group > .input-group-append:not(:last-child) > a,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .wpcf7 .input-group > .input-group-append:last-child > input:not(:last-child):not(.dropdown-toggle)[type=submit],
 div.my-calendar-date-switcher form .input-group > .input-group-append:last-child > input:not(:last-child):not(.dropdown-toggle)[type="submit"],
 .input-group > .input-group-append:last-child > button.mc-text-button:not(:last-child):not(.dropdown-toggle),
+div.mc-format .input-group > .input-group-append:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
 .input-group > .input-group-append > .btn,
-.wpcf7 .input-group > .input-group-append > input[type=submit], div.my-calendar-date-switcher form .input-group > .input-group-append > input[type="submit"], .input-group > .input-group-append > button.mc-text-button,
+.wpcf7 .input-group > .input-group-append > input[type=submit], div.my-calendar-date-switcher form .input-group > .input-group-append > input[type="submit"], .input-group > .input-group-append > button.mc-text-button, div.mc-format .input-group > .input-group-append > a,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
 .wpcf7 .input-group > .input-group-prepend:not(:first-child) > input[type=submit],
 div.my-calendar-date-switcher form .input-group > .input-group-prepend:not(:first-child) > input[type="submit"],
 .input-group > .input-group-prepend:not(:first-child) > button.mc-text-button,
+div.mc-format .input-group > .input-group-prepend:not(:first-child) > a,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
 .wpcf7 .input-group > .input-group-prepend:first-child > input:not(:first-child)[type=submit],
 div.my-calendar-date-switcher form .input-group > .input-group-prepend:first-child > input:not(:first-child)[type="submit"],
 .input-group > .input-group-prepend:first-child > button.mc-text-button:not(:first-child),
+div.mc-format .input-group > .input-group-prepend:first-child > a:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -4589,7 +4654,7 @@ div.my-calendar-date-switcher form .input-group > .input-group-prepend:first-chi
   .badge:empty {
     display: none; }
 
-.btn .badge, .wpcf7 input[type=submit] .badge, div.my-calendar-date-switcher form input[type="submit"] .badge, button.mc-text-button .badge {
+.btn .badge, .wpcf7 input[type=submit] .badge, div.my-calendar-date-switcher form input[type="submit"] .badge, button.mc-text-button .badge, div.mc-format a .badge {
   position: relative;
   top: -1px; }
 
@@ -5758,7 +5823,7 @@ button.bg-dark:focus {
 .rounded-pill {
   border-radius: 50rem !important; }
 
-.rounded-0 {
+.rounded-0, button.mc-text-button {
   border-radius: 0 !important; }
 
 .clearfix::after {
@@ -11559,6 +11624,18 @@ div.mc-time {
   div.mc-time > * {
     padding: 4px 7px; }
 
+button.mc-text-button {
+  font-family: BebasNeue;
+  font-size: 18px;
+  letter-spacing: 1px; }
+
+div.mc-format a {
+  border-radius: 0;
+  font-family: BebasNeue;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 10px; }
+
 div.category-key h3, div.location-key h3 {
   display: none; }
 
@@ -11603,60 +11680,60 @@ div#mc_event .single-event .details {
   form#searchform {
     margin-bottom: 10px; } }
 
-form#searchform div.input-group input.form-control, form#searchform div.input-group .wpcf7 input[type=text], .wpcf7 form#searchform div.input-group input[type=text],
-form#searchform div.input-group .wpcf7 input[type=search], .wpcf7 form#searchform div.input-group input[type=search],
-form#searchform div.input-group .wpcf7 input[type=url], .wpcf7 form#searchform div.input-group input[type=url],
-form#searchform div.input-group .wpcf7 input[type=tel], .wpcf7 form#searchform div.input-group input[type=tel],
-form#searchform div.input-group .wpcf7 input[type=number], .wpcf7 form#searchform div.input-group input[type=number],
-form#searchform div.input-group .wpcf7 input[type=range], .wpcf7 form#searchform div.input-group input[type=range],
-form#searchform div.input-group .wpcf7 input[type=date], .wpcf7 form#searchform div.input-group input[type=date],
-form#searchform div.input-group .wpcf7 input[type=month], .wpcf7 form#searchform div.input-group input[type=month],
-form#searchform div.input-group .wpcf7 input[type=week], .wpcf7 form#searchform div.input-group input[type=week],
-form#searchform div.input-group .wpcf7 input[type=time], .wpcf7 form#searchform div.input-group input[type=time],
-form#searchform div.input-group .wpcf7 input[type=datetime], .wpcf7 form#searchform div.input-group input[type=datetime],
-form#searchform div.input-group .wpcf7 input[type=datetime-local], .wpcf7 form#searchform div.input-group input[type=datetime-local],
-form#searchform div.input-group .wpcf7 input[type=color], .wpcf7 form#searchform div.input-group input[type=color],
-form#searchform div.input-group .wpcf7 input[type=email], .wpcf7 form#searchform div.input-group input[type=email],
-form#searchform div.input-group .wpcf7 input[type=file], .wpcf7 form#searchform div.input-group input[type=file],
-form#searchform div.input-group .wpcf7 input[type=submit], .wpcf7 form#searchform div.input-group input[type=submit], form#searchform div.input-group .wpcf7 input.wpcf7-validation-errors, .wpcf7 form#searchform div.input-group input.wpcf7-validation-errors {
-  border: 1px solid #D41C53;
-  border-right: none;
-  width: 130px;
-  overflow: hidden;
-  transition: all .25s ease-in; }
-
-@media (min-width: 992px) {
-  form#searchform div.input-group input.form-control.hide-search-input, form#searchform div.input-group .wpcf7 input.hide-search-input[type=text], .wpcf7 form#searchform div.input-group input.hide-search-input[type=text],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=search], .wpcf7 form#searchform div.input-group input.hide-search-input[type=search],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=url], .wpcf7 form#searchform div.input-group input.hide-search-input[type=url],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=tel], .wpcf7 form#searchform div.input-group input.hide-search-input[type=tel],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=number], .wpcf7 form#searchform div.input-group input.hide-search-input[type=number],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=range], .wpcf7 form#searchform div.input-group input.hide-search-input[type=range],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=date], .wpcf7 form#searchform div.input-group input.hide-search-input[type=date],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=month], .wpcf7 form#searchform div.input-group input.hide-search-input[type=month],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=week], .wpcf7 form#searchform div.input-group input.hide-search-input[type=week],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=time], .wpcf7 form#searchform div.input-group input.hide-search-input[type=time],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=datetime], .wpcf7 form#searchform div.input-group input.hide-search-input[type=datetime],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=datetime-local], .wpcf7 form#searchform div.input-group input.hide-search-input[type=datetime-local],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=color], .wpcf7 form#searchform div.input-group input.hide-search-input[type=color],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=email], .wpcf7 form#searchform div.input-group input.hide-search-input[type=email],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=file], .wpcf7 form#searchform div.input-group input.hide-search-input[type=file],
-  form#searchform div.input-group .wpcf7 input.hide-search-input[type=submit], .wpcf7 form#searchform div.input-group input.hide-search-input[type=submit], form#searchform div.input-group .wpcf7 input.hide-search-input.wpcf7-validation-errors, .wpcf7 form#searchform div.input-group input.hide-search-input.wpcf7-validation-errors {
-    border: none;
-    width: 0px;
-    padding: 0px !important; }
-  form#searchform div.input-group div.input-group-append button#searchsubmit.no-border {
-    border: none; } }
-
-form#searchform div.input-group div.input-group-append button#searchsubmit {
-  border-left: none;
-  transition: all .25s ease-in; }
-  form#searchform div.input-group div.input-group-append button#searchsubmit:hover {
-    background-color: white;
-    color: #D41C53;
-    opacity: 0.7; }
-  form#searchform div.input-group div.input-group-append button#searchsubmit i {
-    color: black; }
+form#searchform div.input-group {
+  flex-wrap: nowrap; }
+  form#searchform div.input-group input.form-control, form#searchform div.input-group .wpcf7 input[type=text], .wpcf7 form#searchform div.input-group input[type=text],
+  form#searchform div.input-group .wpcf7 input[type=search], .wpcf7 form#searchform div.input-group input[type=search],
+  form#searchform div.input-group .wpcf7 input[type=url], .wpcf7 form#searchform div.input-group input[type=url],
+  form#searchform div.input-group .wpcf7 input[type=tel], .wpcf7 form#searchform div.input-group input[type=tel],
+  form#searchform div.input-group .wpcf7 input[type=number], .wpcf7 form#searchform div.input-group input[type=number],
+  form#searchform div.input-group .wpcf7 input[type=range], .wpcf7 form#searchform div.input-group input[type=range],
+  form#searchform div.input-group .wpcf7 input[type=date], .wpcf7 form#searchform div.input-group input[type=date],
+  form#searchform div.input-group .wpcf7 input[type=month], .wpcf7 form#searchform div.input-group input[type=month],
+  form#searchform div.input-group .wpcf7 input[type=week], .wpcf7 form#searchform div.input-group input[type=week],
+  form#searchform div.input-group .wpcf7 input[type=time], .wpcf7 form#searchform div.input-group input[type=time],
+  form#searchform div.input-group .wpcf7 input[type=datetime], .wpcf7 form#searchform div.input-group input[type=datetime],
+  form#searchform div.input-group .wpcf7 input[type=datetime-local], .wpcf7 form#searchform div.input-group input[type=datetime-local],
+  form#searchform div.input-group .wpcf7 input[type=color], .wpcf7 form#searchform div.input-group input[type=color],
+  form#searchform div.input-group .wpcf7 input[type=email], .wpcf7 form#searchform div.input-group input[type=email],
+  form#searchform div.input-group .wpcf7 input[type=file], .wpcf7 form#searchform div.input-group input[type=file],
+  form#searchform div.input-group .wpcf7 input[type=submit], .wpcf7 form#searchform div.input-group input[type=submit], form#searchform div.input-group .wpcf7 input.wpcf7-validation-errors, .wpcf7 form#searchform div.input-group input.wpcf7-validation-errors {
+    border: 1px solid #D41C53;
+    border-right: none;
+    width: 130px;
+    overflow: hidden;
+    transition: all .25s ease-in; }
+  @media (min-width: 992px) {
+    form#searchform div.input-group input.form-control.hide-search-input, form#searchform div.input-group .wpcf7 input.hide-search-input[type=text], .wpcf7 form#searchform div.input-group input.hide-search-input[type=text],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=search], .wpcf7 form#searchform div.input-group input.hide-search-input[type=search],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=url], .wpcf7 form#searchform div.input-group input.hide-search-input[type=url],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=tel], .wpcf7 form#searchform div.input-group input.hide-search-input[type=tel],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=number], .wpcf7 form#searchform div.input-group input.hide-search-input[type=number],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=range], .wpcf7 form#searchform div.input-group input.hide-search-input[type=range],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=date], .wpcf7 form#searchform div.input-group input.hide-search-input[type=date],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=month], .wpcf7 form#searchform div.input-group input.hide-search-input[type=month],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=week], .wpcf7 form#searchform div.input-group input.hide-search-input[type=week],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=time], .wpcf7 form#searchform div.input-group input.hide-search-input[type=time],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=datetime], .wpcf7 form#searchform div.input-group input.hide-search-input[type=datetime],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=datetime-local], .wpcf7 form#searchform div.input-group input.hide-search-input[type=datetime-local],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=color], .wpcf7 form#searchform div.input-group input.hide-search-input[type=color],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=email], .wpcf7 form#searchform div.input-group input.hide-search-input[type=email],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=file], .wpcf7 form#searchform div.input-group input.hide-search-input[type=file],
+    form#searchform div.input-group .wpcf7 input.hide-search-input[type=submit], .wpcf7 form#searchform div.input-group input.hide-search-input[type=submit], form#searchform div.input-group .wpcf7 input.hide-search-input.wpcf7-validation-errors, .wpcf7 form#searchform div.input-group input.hide-search-input.wpcf7-validation-errors {
+      border: none;
+      width: 0px;
+      padding: 0px !important; }
+    form#searchform div.input-group div.input-group-append button#searchsubmit.no-border {
+      border: none; } }
+  form#searchform div.input-group div.input-group-append button#searchsubmit {
+    border-left: none;
+    transition: all .25s ease-in; }
+    form#searchform div.input-group div.input-group-append button#searchsubmit:hover {
+      background-color: white;
+      color: #D41C53;
+      opacity: 0.7; }
+    form#searchform div.input-group div.input-group-append button#searchsubmit i {
+      color: black; }
 
 div#search-wrapper article {
   margin-top: 10px;

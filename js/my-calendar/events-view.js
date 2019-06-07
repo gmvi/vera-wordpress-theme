@@ -61,7 +61,7 @@
             var eventButton = $('li.mc-events strong.event-date button');
             // add toggle indicator to all days with events
             if ( !eventButton.children('.side-caret').length  ) {
-                var caret = '<i class="fa fa-angle-down side-caret p-2"></i>';
+                var caret = '<i class="fa fa-angle-down side-caret p-2 font-weight-bold"></i>';
                 $('li.mc-events strong.event-date button').append(caret);
             }
             // show all events except the previous days
