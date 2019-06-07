@@ -39,7 +39,7 @@ $args = array(
 $classes = mc_get_all_events($args);
 $grouped_classes = array();
 
-//iterate over all glasses, and group them accordingly based on if event_group_id field is set
+//iterate over all glasses, and group them accordingly based on title
 foreach ($classes as $class) {
 	//grab a subheader if it exists
 	$subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
@@ -47,38 +47,33 @@ foreach ($classes as $class) {
 		$class->custom_subheader = $subheader;
 	}
 
-    if ($class->event_group_id == 0) { //this means event is not grouped
+    if (!isset($grouped_classes[$class->event_title])) {
+        $event_times = array();
+
+        $event_schedule = new stdClass();
+        $event_schedule->link = $class->event_link;
+
+        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
+        $event_schedule->time_end = calendar_date_parse($class->occur_end);
+
+        array_push($event_times, $event_schedule);
+
+        $class->event_times = $event_times;
         $grouped_classes[$class->event_title] = $class;
     } else {
+        $repeating_event = $grouped_classes[$class->event_title];
 
-	    if (!isset($grouped_classes[$class->event_title])) {
-            $event_times = array();
+        $event_schedule = new stdClass();
+        $event_schedule->link = $class->event_link;
+        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
+        $event_schedule->time_end = calendar_date_parse($class->occur_end);
 
-	        $event_schedule = new stdClass();
-	        $event_schedule->link = $class->event_link;
-
-	        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
-	        $event_schedule->time_end = calendar_date_parse($class->occur_end);
-
-            array_push($event_times, $event_schedule);
-
-            $class->event_times = $event_times;
-	        $grouped_classes[$class->event_title] = $class;
-        } else {
-            $repeating_event = $grouped_classes[$class->event_title];
-
-	        $event_schedule = new stdClass();
-	        $event_schedule->link = $class->event_link;
-	        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
-	        $event_schedule->time_end = calendar_date_parse($class->occur_end);
-
-	        //copy over subheader into repeating event if it exists
-	        if (isset($class->custom_subheader)) {
-                $repeating_event->custom_subheader = $class->custom_subheader;
-            }
-
-	        array_push($repeating_event->event_times, $event_schedule);
+        //copy over subheader into repeating event if it exists
+        if (isset($class->custom_subheader)) {
+            $repeating_event->custom_subheader = $class->custom_subheader;
         }
+
+        array_push($repeating_event->event_times, $event_schedule);
     }
 }
 
