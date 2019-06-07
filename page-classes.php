@@ -86,8 +86,6 @@ foreach ($classes as $class) {
     }
 }
 
-error_log(print_r($grouped_classes, true));
-
 //takes in date in my calendar format, and converts to Date object
 function calendar_date_parse($my_calendar_date) {
 	return DateTime::createFromFormat('Y-m-d H:i:s', $my_calendar_date);
