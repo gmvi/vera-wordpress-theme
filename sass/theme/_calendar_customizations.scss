@@ -3,6 +3,19 @@ Lots of custom styles directly targeting elements because we don't have control 
 when My Calendar is drawing out the events.
  */
 .mc-main {
+  .side-caret {
+    -moz-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+  }
+
+  .side-caret.down {
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+
   .my-calendar-nav {
     ul {
       @extend .m-0;
@@ -66,22 +79,6 @@ when My Calendar is drawing out the events.
     :hover, :focus {
       text-decoration: underline;
     }
-  }
-}
-
-div.mc-main.list {
-
-  .side-caret {
-    -moz-transition: all 0.15s linear;
-    -webkit-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-  }
-
-  .side-caret.down {
-    -ms-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
   }
 }
 

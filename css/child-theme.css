@@ -11375,6 +11375,17 @@ div#blog-pagination a {
 Lots of custom styles directly targeting elements because we don't have control over all the classes set
 when My Calendar is drawing out the events.
  */
+.mc-main .side-caret {
+  -moz-transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
+
+.mc-main .side-caret.down {
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
 .mc-main .my-calendar-nav ul {
   height: 1em; }
 
@@ -11423,17 +11434,6 @@ when My Calendar is drawing out the events.
   text-decoration: none; }
   .mc-main h3 a :hover, .mc-main h3 a :focus {
     text-decoration: underline; }
-
-div.mc-main.list .side-caret {
-  -moz-transition: all 0.15s linear;
-  -webkit-transition: all 0.15s linear;
-  transition: all 0.15s linear; }
-
-div.mc-main.list .side-caret.down {
-  -ms-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg); }
 
 div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
   padding: 1px 0;
