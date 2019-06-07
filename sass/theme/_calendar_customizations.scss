@@ -267,6 +267,22 @@ button.mc-text-button {
   @extend .btn;
   @extend .btn-outline-primary;
   @extend .my-2;
+  @extend .rounded-0;
+  font-family: BebasNeue;
+  font-size: 18px;
+  letter-spacing: 1px;
+
+}
+// format 'View as List|Grid' link
+div.mc-format {
+  a {
+    @extend .btn, .btn-sm, .btn-outline-primary;
+    border-radius: 0;
+    font-family: BebasNeue;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
 }
 
 div.category-key, div.location-key {
