@@ -74,7 +74,7 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
             $num_words = 65;
             $excerpt   = wp_trim_words( $data['description'], $num_words );
             $body = '<div class="row">
-    <div class="list-event-card card w-100 mx-3 mb-2">
+    <div class="list-event-card card w-100 mx-3 mb-2 rounded-0">
       <div class="card-body">
         <a href="'. $data['details_link'] .'" class="stretched-link"><h3 class="card-title my-1">' . $data['title'] . '</h3></a>
         <h4 class="card-subtitle mb-3">' . $data['timerange'] . '</h4>
