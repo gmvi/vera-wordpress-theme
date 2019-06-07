@@ -18,8 +18,9 @@
                 // functions to execute when new view loads.
                 // List view.
                 if ( typeof( mclist ) !== "undefined" && mclist == 'true' ) {
-                    $('li.mc-events').children().not('.event-date').hide();
-                    $('li.current-day').children().show();
+                    // $('li.mc-events').children().not('.event-date').hide();
+                    // $('li.current-day').children().show();
+                    $(document).trigger("list-custom:load-list-expansions");
                 }
                 // Grid view.
                 if ( typeof( mcgrid ) !== "undefined" && mcgrid == 'true' ) {

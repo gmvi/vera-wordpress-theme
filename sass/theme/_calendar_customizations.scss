@@ -150,6 +150,11 @@ div.mc-main:not(.mini) table.my-calendar-table {
 }
 
 div.mc-main.mini {
+  .day-with-date span, .mc-main.mini .day-with-date a {
+    font-size: .9em;
+    padding: 1px;
+    text-align: center;
+  }
   .event-title {
     display: none;
   }
@@ -162,6 +167,13 @@ div.mc-main.mini {
     .mini-event-detail a {
       color: $primary !important;
     }
+  }
+  .details .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px;
+    float: right;
   }
   .calendar-events {
     background-color: white;
