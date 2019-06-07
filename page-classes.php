@@ -7,7 +7,8 @@
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 $classes_category = 'Classes';
-$class_cat_param = get_query_var("class_cat");
+
+$class_cat_param = get_query_var('class_cat');
 
 //called to check if category is active
 function cat_active($cat) {
@@ -38,16 +39,18 @@ $args = array(
 $classes = mc_get_all_events($args);
 $grouped_classes = array();
 
+//iterate over all glasses, and group them accordingly based on if event_group_id field is set
 foreach ($classes as $class) {
+	//grab a subheader if it exists
+	$subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
+	if (trim($subheader) !== '') {
+		$class->custom_subheader = $subheader;
+	}
+
     if ($class->event_group_id == 0) { //this means event is not grouped
         $grouped_classes[$class->event_title] = $class;
-
-	    //grab a subheader if it exists
-	    $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
-	    if (trim($subheader) !== '') {
-		    $class->custom_subheader = $subheader;
-	    }
     } else {
+
 	    if (!isset($grouped_classes[$class->event_title])) {
             $event_times = array();
 
@@ -60,12 +63,6 @@ foreach ($classes as $class) {
             array_push($event_times, $event_schedule);
 
             $class->event_times = $event_times;
-	        //grab a subheader if it exists
-            $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
-            if (trim($subheader) !== '') {
-                $class->custom_subheader = $subheader;
-            }
-
 	        $grouped_classes[$class->event_title] = $class;
         } else {
             $repeating_event = $grouped_classes[$class->event_title];
@@ -75,11 +72,10 @@ foreach ($classes as $class) {
 	        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
 	        $event_schedule->time_end = calendar_date_parse($class->occur_end);
 
-	        //grab a subheader if it exists
-	        $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
-	        if (trim($subheader) !== '') {
-		        $class->custom_subheader = $subheader;
-	        }
+	        //copy over subheader into repeating event if it exists
+	        if (isset($class->custom_subheader)) {
+                $repeating_event->custom_subheader = $class->custom_subheader;
+            }
 
 	        array_push($repeating_event->event_times, $event_schedule);
         }
@@ -175,6 +171,11 @@ function calendar_date_parse($my_calendar_date) {
                     <?php
                     if (isset($class->event_times)) {
                         foreach($class->event_times as $event_time) {
+
+                            //if event is in the past, skip
+                            $current_time = new DateTime();
+                            if ($current_time > $event_time->time_end) { continue; }
+
                             ?>
                             <div class="modal-footer">
                                 <div class="row w-100 mx-0 d-flex align-items-center">

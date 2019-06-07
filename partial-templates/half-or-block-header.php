@@ -43,7 +43,7 @@ if (has_post_thumbnail( get_the_ID() )) { ?>
         </div>
 
 		<div class="col-sm-12 col-md-6 p-0 mh-100">
-			<img class="h-100 single-blog-featured-image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>">
+			<img class="h-100 single-blog-featured-image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'large')?>">
 		</div>
 	</div>
 <?php }

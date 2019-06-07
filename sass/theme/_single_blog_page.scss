@@ -23,19 +23,23 @@
 
 .blog-contents {
   font-family: GothicA1;
+
   p.metadata {
     text-transform: uppercase;
     font-weight: bold;
   }
   color: black;
+
   h1, h2, h3 {
     text-transform: uppercase;
   }
+
   h1 {
     font-family: BebasNeue;
     font-size: 72px !important;
     text-align: center;
   }
+
   h2 {
     font-family: BebasNeueLight;
     font-size: 42px;
@@ -47,10 +51,12 @@
       color: $primary;
     }
   }
+
   h3 {
-    font-size: 15.5px;
+    font-size: 25px !important;
     padding: 5px 0;
   }
+
   p, ul > li {
     font-size: 13px;
   }

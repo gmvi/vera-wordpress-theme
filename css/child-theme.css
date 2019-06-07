@@ -11122,7 +11122,7 @@ section#past-gallery {
 
 .single-gallery-page .gallery-contents {
   padding: 0 30px 30px 0px; }
-  .single-gallery-page .gallery-contents h1 {
+  .single-gallery-page .gallery-contents h1, .single-gallery-page .gallery-contents h2, .single-gallery-page .gallery-contents h3 {
     text-align: justify !important; }
 
 @media (min-width: 768px) {
@@ -11297,7 +11297,7 @@ div#blog-pagination a {
       font-family: BebasNeue;
       color: #D41C53; }
   .blog-contents h3 {
-    font-size: 15.5px;
+    font-size: 25px !important;
     padding: 5px 0; }
   .blog-contents p, .blog-contents ul > li {
     font-size: 13px; }
