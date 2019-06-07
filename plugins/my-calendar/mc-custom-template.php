@@ -117,10 +117,10 @@ function custom_ajax_js( $url ) {
     return get_stylesheet_directory_uri() . '/js/my-calendar/ajax-cal.js';
 }
 
-//add_filter( 'mc_mini_js', 'custom_mini_js' );
-//function custom_mini_js( $url ) {
-//    return get_stylesheet_directory_uri() . '/js/my-calendar/mini-cal.js';
-//}
+add_filter( 'mc_mini_js', 'custom_mini_js' );
+function custom_mini_js( $url ) {
+    return get_stylesheet_directory_uri() . '/js/my-calendar/mini-cal.js';
+}
 
 
 include 'mc-custom-fields.php';
