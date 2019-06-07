@@ -40,9 +40,15 @@
             });
             // only add 'All Locations' link if a specific location is selected to mimic native my calendar behavior
             if ( urlParams.has('loc') ) {
+                var allEventsURL = new URL(window.location.origin + window.location.pathname);
+                urlParams.forEach(function(value, key) {
+                    if (key !== 'ltype' && key !== 'loc') {
+                        allEventsURL.searchParams.append(key, value)
+                    }
+                });
                 // todo: the text for the all locations button could be a field somewhere
                 listParent.append( $( '<li></li>' )
-                    .append( $('<a></a>').addClass('mcajax').attr('href', window.location.origin + window.location.pathname).text('All Locations')) );
+                    .append( $('<a></a>').addClass('mcajax').attr('href', allEventsURL.toString()).text('All Locations')) );
             }
         }
 
@@ -52,9 +58,12 @@
             // build location filter links
             var uniqueEventLocations = getUniqueEventLocations();
             createLocationFilterList(uniqueEventLocations);
+            var eventButton = $('li.mc-events strong.event-date button');
             // add toggle indicator to all days with events
-            var caret = '<i class="fa fa-angle-down side-caret p-2"></i>';
-            $('li.mc-events strong.event-date button').append(caret);
+            if ( !eventButton.children('.side-caret').length  ) {
+                var caret = '<i class="fa fa-angle-down side-caret p-2"></i>';
+                $('li.mc-events strong.event-date button').append(caret);
+            }
             // show all events except the previous days
             $('li.mc-events').children().show();
             var pastDays = $('li.past-date');
