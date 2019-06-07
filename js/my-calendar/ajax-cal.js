@@ -20,6 +20,7 @@
                 if ( typeof( mclist ) !== "undefined" && mclist == 'true' ) {
                     // $('li.mc-events').children().not('.event-date').hide();
                     // $('li.current-day').children().show();
+                    $(document).trigger( "list-custom:reload" );
                     $(document).trigger("list-custom:load-list-expansions");
                 }
                 // Grid view.

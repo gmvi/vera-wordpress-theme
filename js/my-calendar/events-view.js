@@ -47,7 +47,7 @@
                 $('.category-key').insertBefore('ul.mc-list');
                 // build location filter links
                 var uniqueEventLocations = getUniqueEventLocations();
-                createLocationFilterList(uniqueEventLocations)
+                createLocationFilterList(uniqueEventLocations);
                 // add toggle indicator to all days with events
                 var caret = '<i class="fa fa-angle-down side-caret p-2"></i>';
                 $('li.mc-events strong.event-date button').append(caret);
