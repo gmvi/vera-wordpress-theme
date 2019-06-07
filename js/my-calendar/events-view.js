@@ -15,6 +15,8 @@
         }
 
         function createLocationFilterList(uniqueEventLocations) {
+            // delete any old location key
+            $('div.location-key').remove();
             // with grid view, we are using the hash attribute for the search string instead of search string
             //   so that the page doesn't trigger a reload
             var searchStr = window.location.search ? window.location.search : window.location.hash.slice(1);
