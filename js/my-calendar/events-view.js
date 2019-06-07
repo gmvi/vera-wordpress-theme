@@ -59,27 +59,31 @@
 
             });
             $(document).trigger( "list-custom:reload" );
-            $(document).on('click', '.my-calendar-nav ul li a', function(e) {
-                $('li.mc-events').children().show();
+            $(document).on("list-custom:load-list-expansions", function(event) {
+                console.log("you've triggered load-list-expansions");
+                $(document).on('click', '.my-calendar-nav ul li a', function(e) {
+                    $('li.mc-events').children().show();
+                });
+                // expand all events for clicked day
+                $(document).on( 'click', '.event-date button',
+                    function (e) {
+                        e.preventDefault();
+                        $( this ).closest( '.mc-events' ).find( '.vevent' ).toggle();
+                        if ( $( this ).is( 'i.side-caret' ) ) {
+                            $( this ).toggleClass( 'down' );
+                        } else {
+                            $( this ).find( 'i.side-caret' ).toggleClass('down');
+                        }
+                        var visible = $(this).closest( '.mc-events' ).find('.vevent').is(':visible');
+                        if ( visible ) {
+                            $(this).attr('aria-expanded', 'true');
+                        } else {
+                            $(this).attr('aria-expanded', 'false');
+                        }
+                    }
+                );
             });
-            // expand all events for clicked day
-            $(document).on( 'click', '.event-date button',
-                function (e) {
-                    e.preventDefault();
-                    $( this ).closest( '.mc-events' ).find( '.vevent' ).toggle();
-                    if ( $( this ).is( 'i.side-caret' ) ) {
-                        $( this ).toggleClass( 'down' );
-                    } else {
-                        $( this ).find( 'i.side-caret' ).toggleClass('down');
-                    }
-                    var visible = $(this).closest( '.mc-events' ).find('.vevent').is(':visible');
-                    if ( visible ) {
-                        $(this).attr('aria-expanded', 'true');
-                    } else {
-                        $(this).attr('aria-expanded', 'false');
-                    }
-                }
-            );
+            $(document).trigger("list-custom:load-list-expansions");
 
         } else if ( $( '.mc-main.calendar' ).length ) {
             $(document).on('grid-custom:reload',  function( event ) {
