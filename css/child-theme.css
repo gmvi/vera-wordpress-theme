@@ -10926,7 +10926,6 @@ section.classes {
   section.classes .square-wrapper {
     border: 1px solid #EBEEEF; }
   section.classes .class-title {
-    cursor: pointer;
     text-align: center;
     display: inline-block;
     color: #D41C53;
@@ -10941,6 +10940,8 @@ section.classes {
     hyphens: auto; }
     section.classes .class-title:hover {
       opacity: 0.6; }
+    section.classes .class-title a {
+      cursor: pointer; }
     section.classes .class-title h4 {
       color: #343434; }
   section.classes .list-header {
