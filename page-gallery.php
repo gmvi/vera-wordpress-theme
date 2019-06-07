@@ -37,7 +37,7 @@ $gallery = vera_gallery_get_overview();
                     </div>
                     <div class="col-sm-6">
                         <div class="current-gallery-container">
-                            <img class="current-gallery-image img-fluid" src="<?php echo get_the_post_thumbnail_url( $gallery['current']->ID ); ?>" />
+                            <img class="current-gallery-image img-fluid" src="<?php echo get_the_post_thumbnail_url( $gallery['current']->ID, 'medium_large' ); ?>" />
                         </div>
                     </div>
                 </section>
@@ -77,7 +77,7 @@ $gallery = vera_gallery_get_overview();
 
                     foreach ($gallery['past'] as $past_gallery) {
 
-                        $gallery_img_url = get_the_post_thumbnail_url( $past_gallery->ID );
+                        $gallery_img_url = get_the_post_thumbnail_url( $past_gallery->ID, 'medium_large' );
                         $gallery_title = $past_gallery->post_title;
                         $gallery_desc = get_field('description', $past_gallery->ID );
                         $gallery_link =  get_permalink( $past_gallery->ID );
