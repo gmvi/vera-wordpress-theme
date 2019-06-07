@@ -41,15 +41,16 @@ $grouped_classes = array();
 
 //iterate over all glasses, and group them accordingly based on if event_group_id field is set
 foreach ($classes as $class) {
+	//grab a subheader if it exists
+	$subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
+	if (trim($subheader) !== '') {
+		$class->custom_subheader = $subheader;
+	}
+
     if ($class->event_group_id == 0) { //this means event is not grouped
         $grouped_classes[$class->event_title] = $class;
-
-	    //grab a subheader if it exists
-	    $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
-	    if (trim($subheader) !== '') {
-		    $class->custom_subheader = $subheader;
-	    }
     } else {
+
 	    if (!isset($grouped_classes[$class->event_title])) {
             $event_times = array();
 
@@ -62,12 +63,6 @@ foreach ($classes as $class) {
             array_push($event_times, $event_schedule);
 
             $class->event_times = $event_times;
-	        //grab a subheader if it exists
-            $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
-            if (trim($subheader) !== '') {
-                $class->custom_subheader = $subheader;
-            }
-
 	        $grouped_classes[$class->event_title] = $class;
         } else {
             $repeating_event = $grouped_classes[$class->event_title];
@@ -77,11 +72,10 @@ foreach ($classes as $class) {
 	        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
 	        $event_schedule->time_end = calendar_date_parse($class->occur_end);
 
-	        //grab a subheader if it exists
-	        $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
-	        if (trim($subheader) !== '') {
-		        $class->custom_subheader = $subheader;
-	        }
+	        //copy over subheader into repeating event if it exists
+	        if (isset($class->custom_subheader)) {
+                $repeating_event->custom_subheader = $class->custom_subheader;
+            }
 
 	        array_push($repeating_event->event_times, $event_schedule);
         }
