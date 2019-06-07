@@ -153,6 +153,9 @@ div.mc-main.mini {
   .event-title {
     display: none;
   }
+  .mc-date.trigger {
+    height: 100%;
+  }
   .mini-event {
     border: none;
     .mini-event-detail a {
@@ -182,7 +185,7 @@ div.mc-main.mini {
       height: 50px !important;
 
       &.has-events:not(.nextmonth) {
-        background-color: $primary;
+        background-color: $primary !important;
 
         a {
           text-decoration: none;
