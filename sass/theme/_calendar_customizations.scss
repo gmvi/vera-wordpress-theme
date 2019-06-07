@@ -164,9 +164,12 @@ div.mc-main.mini {
     border: 2px solid $info;
   }
   .calendar-events, .calendar-event {
+    position: absolute;
     float: none;
-    width: 80% !important;
-    left: 10px !important;
+    width: 80%;
+    left: 10px;
+    z-index: 3;
+    padding: 5px;
     @include media-breakpoint-down(sm) {
       width: 90% !important;
       left: 5px !important;
@@ -216,8 +219,8 @@ table.my-calendar-table {
     }
   }
   tr.mc-row td {
-    @extend .bg-white;
     @extend .p-0;
+    background-color: white;
     .calendar-event  {
       h3, h3 a {
         background-color: $darkergray !important;
