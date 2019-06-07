@@ -7,7 +7,8 @@
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 $classes_category = 'Classes';
-$class_cat_param = get_query_var("class_cat");
+
+$class_cat_param = get_query_var('class_cat');
 
 //called to check if category is active
 function cat_active($cat) {
@@ -39,6 +40,7 @@ $classes = mc_get_all_events($args);
 $grouped_classes = array();
 
 foreach ($classes as $class) {
+
     if ($class->event_group_id == 0) { //this means event is not grouped
         $grouped_classes[$class->event_title] = $class;
 

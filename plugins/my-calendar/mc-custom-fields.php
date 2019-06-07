@@ -14,7 +14,7 @@ add_filter( 'mc_event_details', 'event_subheader', 10, 4 );
 function event_subheader( $form, $has_data, $event, $context ) {
 	if ( $has_data ) {
 		$post_id = $event->event_post;
-		/* Any custom fields are saved as custom post meta */
+		/* Custom fields are stored as custom post meta */
 		$subheader = esc_attr( get_post_meta( $post_id, '_mc_event_subheader', true ) );
 	} else {
 		$subheader = '';

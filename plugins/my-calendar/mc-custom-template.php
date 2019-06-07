@@ -117,6 +117,13 @@ function custom_ajax_js( $url ) {
     return get_stylesheet_directory_uri() . '/js/my-calendar/ajax-cal.js';
 }
 
+//registers the class_cat query var
+add_filter('query_vars', 'add_class_cat');
+function add_class_cat($public_query_vars) {
+	$public_query_vars[] = 'class_cat';
+	return $public_query_vars;
+}
+
 //add_filter( 'mc_mini_js', 'custom_mini_js' );
 //function custom_mini_js( $url ) {
 //    return get_stylesheet_directory_uri() . '/js/my-calendar/mini-cal.js';
