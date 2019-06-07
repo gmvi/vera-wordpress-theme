@@ -124,7 +124,7 @@ function calendar_date_parse($my_calendar_date) {
                                     <div class="square-wrapper">
                                         <div class="square-content class-title d-flex flex-column justify-content-between align-content-center">
                                             <a data-toggle="modal" data-target="#modal-<?= $class->event_id ?>">
-                                                <?= $class->event_title?>
+                                                <?= stripslashes($class->event_title) ?>
                                             </a>
                                             <?php
                                             if (trim($class->custom_subheader) !== '') {
@@ -157,12 +157,12 @@ function calendar_date_parse($my_calendar_date) {
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<span class="modal-title"><?= $class->event_title ?></span>
+						<span class="modal-title"><?= stripslashes($class->event_title) ?></span>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="modal-body"><?= wpautop( $class->event_desc ) ?></div>
+					<div class="modal-body"><?= wpautop( stripslashes($class->event_desc) ) ?></div>
                     <?php
                     if (isset($class->event_times)) {
                         foreach($class->event_times as $event_time) {
