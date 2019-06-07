@@ -5664,7 +5664,7 @@ button.bg-dark:hover,
 button.bg-dark:focus {
   background-color: #1d2124 !important; }
 
-.bg-white, div.my-calendar-date-switcher form div select, table.my-calendar-table tr.mc-row td {
+.bg-white, div.my-calendar-date-switcher form div select {
   background-color: #fff !important; }
 
 .bg-transparent {
@@ -11482,9 +11482,12 @@ div.mc-main.mini .calendar-events {
   border: 2px solid #17a2b8; }
 
 div.mc-main.mini .calendar-events, div.mc-main.mini .calendar-event {
+  position: absolute;
   float: none;
-  width: 80% !important;
-  left: 10px !important; }
+  width: 80%;
+  left: 10px;
+  z-index: 3;
+  padding: 5px; }
   @media (max-width: 767.98px) {
     div.mc-main.mini .calendar-events, div.mc-main.mini .calendar-event {
       width: 90% !important;
@@ -11513,15 +11516,17 @@ table.my-calendar-table {
     background: white !important; }
   table.my-calendar-table td.nextmonth {
     opacity: 1; }
-  table.my-calendar-table tr.mc-row td .calendar-event h3, table.my-calendar-table tr.mc-row td .calendar-event h3 a {
-    background-color: #252525 !important;
-    border-radius: 0;
-    color: white;
-    margin-bottom: 2px;
-    padding: 2px 0;
-    font-family: BebasNeue, GothicA1, Arial;
-    font-size: 14px;
-    letter-spacing: 0.5px; }
+  table.my-calendar-table tr.mc-row td {
+    background-color: white; }
+    table.my-calendar-table tr.mc-row td .calendar-event h3, table.my-calendar-table tr.mc-row td .calendar-event h3 a {
+      background-color: #252525 !important;
+      border-radius: 0;
+      color: white;
+      margin-bottom: 2px;
+      padding: 2px 0;
+      font-family: BebasNeue, GothicA1, Arial;
+      font-size: 14px;
+      letter-spacing: 0.5px; }
 
 div.mc-time {
   margin: 10px 0;
