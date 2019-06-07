@@ -1,0 +1,139 @@
+[
+    {
+        "key": "group_5c64837f37018",
+        "title": "Support Block",
+        "fields": [
+            {
+                "key": "field_5c50a7d776f69",
+                "label": "Support Vera Text",
+                "name": "support_vera_text",
+                "type": "text",
+                "instructions": "The text for call to action near donate button. e.g. \"Support Audio & Stage\"",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c50a82076f6a",
+                "label": "Support Vera Graphic",
+                "name": "support_vera_graphic",
+                "type": "image",
+                "instructions": "Graphic near call to action \/ donate button.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5c50ea3cc0b01",
+                "label": "Support Vera Label",
+                "name": "support_vera_label",
+                "type": "text",
+                "instructions": "Small label flag that goes above the Call to Action text",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Support Vera",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c50eadfc0b02",
+                "label": "Support Vera Link Name",
+                "name": "support_vera_link_text",
+                "type": "text",
+                "instructions": "Text that will go in the button for Support Vera banner",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Donate Today",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5c50eb24c0b03",
+                "label": "Support Vera Link URL",
+                "name": "support_vera_link_url",
+                "type": "text",
+                "instructions": "Actual url for link of support vera button",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-templates\/program-landing-generic.php"
+                }
+            ],
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "33"
+                }
+            ],
+            [
+                {
+                    "param": "page_type",
+                    "operator": "==",
+                    "value": "front_page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]
