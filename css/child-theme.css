@@ -11472,6 +11472,9 @@ div.mc-main:not(.mini) table.my-calendar-table {
 div.mc-main.mini .event-title {
   display: none; }
 
+div.mc-main.mini .mc-date.trigger {
+  height: 100%; }
+
 div.mc-main.mini .mini-event {
   border: none; }
   div.mc-main.mini .mini-event .mini-event-detail a {
@@ -11498,7 +11501,7 @@ div.mc-main.mini table.my-calendar-table {
   div.mc-main.mini table.my-calendar-table tr.mc-row td {
     height: 50px !important; }
     div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events:not(.nextmonth) {
-      background-color: #D41C53; }
+      background-color: #D41C53 !important; }
       div.mc-main.mini table.my-calendar-table tr.mc-row td.has-events:not(.nextmonth) a {
         text-decoration: none;
         color: white; }
