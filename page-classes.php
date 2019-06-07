@@ -177,18 +177,16 @@ function calendar_date_parse($my_calendar_date) {
                     <?php
                     if (isset($class->event_times)) {
                         foreach($class->event_times as $event_time) {
-                            error_log('event times');
-                            error_log(print_r($event_time, true));
                             ?>
                             <div class="modal-footer">
                                 <div class="row w-100 mx-0 d-flex align-items-center">
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-2 text-right time-label">
                                         <h4><?= $event_time->time_start->format('l'); ?></h4>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-3 text-right time-label">
                                         <h4 class="text-primary font-weight-bold"><?= $event_time->time_start->format('F j'); ?></h4>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 text-right time-label">
                                         <?php
                                         $start_time = $event_time->time_start->format('g:ia');
                                         $end_time = $event_time->time_end->format('g:ia');
@@ -200,7 +198,7 @@ function calendar_date_parse($my_calendar_date) {
                                         }
                                         ?>
                                     </div>
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-3">
                                         <a href="<?= $event_time->link; ?>"
                                            target="_blank"
                                            class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>

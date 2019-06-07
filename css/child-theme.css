@@ -11002,6 +11002,10 @@ section.classes {
 .modal .modal-dialog {
   max-width: 800px; }
 
+@media (max-width: 767.98px) {
+  .modal .modal-footer div.time-label {
+    margin-bottom: 5px; } }
+
 .current-gallery {
   background: #ebeeef; }
   @media (min-width: 576px) {
