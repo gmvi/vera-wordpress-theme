@@ -7,7 +7,8 @@
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 $classes_category = 'Classes';
-$class_cat_param = get_query_var("class_cat");
+
+$class_cat_param = get_query_var('class_cat');
 
 //called to check if category is active
 function cat_active($cat) {
@@ -34,7 +35,52 @@ $args = array(
 	'today'    => 'yes',
 	'category' => $classes_category
 );
+
 $classes = mc_get_all_events($args);
+$grouped_classes = array();
+
+//iterate over all glasses, and group them accordingly based on title
+foreach ($classes as $class) {
+	//grab a subheader if it exists
+	$subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
+	if (trim($subheader) !== '') {
+		$class->custom_subheader = $subheader;
+	}
+
+    if (!isset($grouped_classes[$class->event_title])) {
+        $event_times = array();
+
+        $event_schedule = new stdClass();
+        $event_schedule->link = $class->event_link;
+
+        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
+        $event_schedule->time_end = calendar_date_parse($class->occur_end);
+
+        array_push($event_times, $event_schedule);
+
+        $class->event_times = $event_times;
+        $grouped_classes[$class->event_title] = $class;
+    } else {
+        $repeating_event = $grouped_classes[$class->event_title];
+
+        $event_schedule = new stdClass();
+        $event_schedule->link = $class->event_link;
+        $event_schedule->time_start = calendar_date_parse($class->occur_begin);
+        $event_schedule->time_end = calendar_date_parse($class->occur_end);
+
+        //copy over subheader into repeating event if it exists
+        if (isset($class->custom_subheader)) {
+            $repeating_event->custom_subheader = $class->custom_subheader;
+        }
+
+        array_push($repeating_event->event_times, $event_schedule);
+    }
+}
+
+//takes in date in my calendar format, and converts to Date object
+function calendar_date_parse($my_calendar_date) {
+	return DateTime::createFromFormat('Y-m-d H:i:s', $my_calendar_date);
+}
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -72,8 +118,7 @@ $classes = mc_get_all_events($args);
 						</div>
                         <div class="container">
 							<div class="row body class no-gutters">
-                            <?php foreach ($classes as $class):
-	                            $subheader = get_post_meta( $class->event_post, '_mc_event_subheader', true );
+                            <?php foreach ($grouped_classes as $class):
                                 ?>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="square-wrapper">
@@ -82,8 +127,8 @@ $classes = mc_get_all_events($args);
                                                 <?= $class->event_title?>
                                             </a>
                                             <?php
-                                            if (trim($subheader) !== '') {
-                                                echo "<h4>" . nl2br($subheader) . "</h4>";
+                                            if (trim($class->custom_subheader) !== '') {
+                                                echo "<h4>" . nl2br($class->custom_subheader) . "</h4>";
                                             }
                                             ?>
                                         </div>
@@ -107,7 +152,7 @@ $classes = mc_get_all_events($args);
 <?php get_footer(); ?>
 
 <div class=modals>
-	<?php foreach ($classes as $class): ?>
+	<?php foreach ($grouped_classes as $class): ?>
 		<div class="modal fade" id="modal-<?= $class->event_id ?>" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -119,16 +164,53 @@ $classes = mc_get_all_events($args);
 					</div>
 					<div class="modal-body"><?= wpautop( $class->event_desc ) ?></div>
                     <?php
+                    if (isset($class->event_times)) {
+                        foreach($class->event_times as $event_time) {
 
+                            //if event is in the past, skip
+                            $current_time = new DateTime();
+                            if ($current_time > $event_time->time_end) { continue; }
 
-                    if ( strlen(trim($class->event_link)) > 0 ):
-                        ?>
-						<div class="modal-footer">
+                            ?>
+                            <div class="modal-footer">
+                                <div class="row w-100 mx-0 d-flex align-items-center">
+                                    <div class="col-sm-2 text-right time-label">
+                                        <h4><?= $event_time->time_start->format('l'); ?></h4>
+                                    </div>
+                                    <div class="col-sm-3 text-right time-label">
+                                        <h4 class="text-primary font-weight-bold"><?= $event_time->time_start->format('F j'); ?></h4>
+                                    </div>
+                                    <div class="col-sm-4 text-right time-label">
+                                        <?php
+                                        $start_time = $event_time->time_start->format('g:ia');
+                                        $end_time = $event_time->time_end->format('g:ia');
+
+                                        if ($start_time == '12:00am' && $end_time == '11:59pm') {
+                                            echo "<h4>All Day</h4>";
+                                        } else {
+                                            echo "<h4>" . $start_time . "-" . $end_time . "</h4>";
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <a href="<?= $event_time->link; ?>"
+                                           target="_blank"
+                                           class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    } else if ( strlen(trim($class->event_link)) > 0 ) {
+	                    ?>
+                        <div class="modal-footer">
                             <a href="<?= $class->event_link ?>"
                                target="_blank"
                                class="btn bordered-button btn-outline-primary btn-override pull-right my-auto">Register</a>
-						</div>
-					<?php endif; ?>
+                        </div>
+                    <?php
+                    }
+                    ?>
 				</div>
 			</div>
 		</div>

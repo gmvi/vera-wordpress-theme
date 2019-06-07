@@ -14,7 +14,7 @@ add_filter( 'mc_event_details', 'event_subheader', 10, 4 );
 function event_subheader( $form, $has_data, $event, $context ) {
 	if ( $has_data ) {
 		$post_id = $event->event_post;
-		/* Any custom fields are saved as custom post meta */
+		/* Custom fields are stored as custom post meta */
 		$subheader = esc_attr( get_post_meta( $post_id, '_mc_event_subheader', true ) );
 	} else {
 		$subheader = '';
@@ -35,8 +35,6 @@ function event_subheader( $form, $has_data, $event, $context ) {
  **/
 add_action( 'mc_update_event_post', 'my_event_subheader_save', 10, 4 );
 function my_event_subheader_save( $post_id, $post, $data, $event_id ) {
-	if (trim($post['event_subheader']) !== '') {
-		$subheader = $post['event_subheader'];
-		update_post_meta( $post_id, '_mc_event_subheader', $subheader );
-	}
+	$subheader = trim($post['event_subheader']);
+	update_post_meta( $post_id, '_mc_event_subheader', $subheader );
 }

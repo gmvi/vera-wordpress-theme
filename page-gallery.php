@@ -25,7 +25,7 @@ $gallery = vera_gallery_get_overview();
                 <section class="row no-gutters current-gallery">
                     <div class="col-sm-6">
                         <div class="row align-items-center h-100 no-gutters">
-                            <div class="col-9 mx-auto mt-3 mb-3">
+                            <div class="col-9 mx-auto my-5">
                                 <p class="label">Current Show</p>
                                 <h2 class="medium-header mb-1"><?php echo $gallery['current']->post_title; ?></h2>
                                 <p><?php the_field('description', $gallery['current']->ID); ?></p>
@@ -37,7 +37,7 @@ $gallery = vera_gallery_get_overview();
                     </div>
                     <div class="col-sm-6">
                         <div class="current-gallery-container">
-                            <img class="current-gallery-image img-fluid" src="<?php echo get_the_post_thumbnail_url( $gallery['current']->ID ); ?>" />
+                            <img class="current-gallery-image img-fluid" src="<?php echo get_the_post_thumbnail_url( $gallery['current']->ID, 'medium_large' ); ?>" />
                         </div>
                     </div>
                 </section>
@@ -77,7 +77,7 @@ $gallery = vera_gallery_get_overview();
 
                     foreach ($gallery['past'] as $past_gallery) {
 
-                        $gallery_img_url = get_the_post_thumbnail_url( $past_gallery->ID );
+                        $gallery_img_url = get_the_post_thumbnail_url( $past_gallery->ID, 'medium_large' );
                         $gallery_title = $past_gallery->post_title;
                         $gallery_desc = get_field('description', $past_gallery->ID );
                         $gallery_link =  get_permalink( $past_gallery->ID );
@@ -130,7 +130,7 @@ $gallery = vera_gallery_get_overview();
                         <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                     </div>
                     <div class="col-md-6">
-                        <div class="row no-gutters h-100 align-items-center text-center">
+                        <div class="row no-gutters h-100 align-items-center text-center mb-5">
                             <div class="col-md-12">
                                 <p class="quote-text"><?php the_field('quote_text'); ?></p>
                                 <span class="author"><?php the_field('quote_author'); ?></span>

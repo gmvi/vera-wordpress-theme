@@ -61,7 +61,7 @@ $program_types = SCF::get( 'Program Types' );
                                     <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="row h-100 align-items-center text-center no-gutters">
+                                    <div class="row h-100 align-items-center text-center no-gutters mb-5">
                                         <div class="col-md-12">
                                             <p class="quote-text pr-1"><?php the_field('quote_text'); ?></p>
                                             <span class="author"><?php the_field('quote_author'); ?></span>

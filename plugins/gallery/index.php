@@ -69,17 +69,17 @@ function vera_galleries_column( $column, $post_id ) {
 		case CURR_GALLERY:
 			$is_current_gallery = get_field(CURR_GALLERY, $post_id);
 			if ($is_current_gallery) {
-				echo '✔';
+				echo "<div class='hidden curr-gallery-post-" . $post_id . "'>check</div>" . '&#10004;';
 			} else {
-				echo '✗';
+				echo "<div class='hidden curr-gallery-post-" . $post_id . "'>nocheck</div>" . '&#10005;';
 			}
 			break;
 		case UP_NEXT_GALLERY:
 			$up_next_gallery = get_field(UP_NEXT_GALLERY, $post_id);
 			if ($up_next_gallery) {
-				echo '✔';
+				echo "<div class='hidden next-gallery-post-" . $post_id . "'>check</div>" . '&#10004;';
 			} else {
-				echo '✗';
+				echo "<div class='hidden next-gallery-post-" . $post_id . "'>nocheck</div>" . '&#10005;';
 			}
 			break;
 		case 'gallery_opening_datetime':
@@ -218,10 +218,10 @@ function quick_edit_save_gallery($post_id, $post ) {
 		}
 
 		update_field(UP_NEXT_GALLERY, $next_gallery_field, $post_id);
+
     }
 }
 add_action( 'save_post', 'quick_edit_save_gallery', 10, 2);
-
 
 function quick_edit_gallery_javascript() {
 	$current_screen = get_current_screen();
@@ -234,46 +234,22 @@ function quick_edit_gallery_javascript() {
 	wp_enqueue_script( 'jquery' );
 	?>
 	<script type="text/javascript">
-        function check_gallery ( curr, next ) {
+        //attach event to quick edit click that checks for hidden field in column and update checkbox
+        jQuery( 'tbody#the-list' ).on( 'click', '.editinline', function() {
+            //revert Quick Edit menu so that it refreshes properly
             inlineEditPost.revert();
-            jQuery( '.curr_gallery_check' ).attr( 'checked', 0 == curr ? false : true );
-            jQuery( '.up_next_gallery_check' ).attr( 'checked', 0 == next ? false : true);
-        }
+
+            var postId = jQuery( this ).parents( 'tr' ).attr( 'id' );
+            var currVal = jQuery( 'div.curr-gallery-' + postId ).text();
+            var nextVal = jQuery( 'div.next-gallery-' + postId ).text();
+
+            jQuery( '.curr_gallery_check' ).attr( 'checked', currVal === 'nocheck' ? false : true );
+            jQuery( '.up_next_gallery_check' ).attr( 'checked', nextVal === 'nocheck' ? false : true);
+        });
 	</script>
 	<?php
 }
 add_action( 'admin_footer', 'quick_edit_gallery_javascript' );
-
-add_filter( 'post_row_actions', 'expand_quick_edit_link', 10, 2 );
-
-/**
- * Pass up next and current gallery values to their appropriate javascript functions
- *
- * @param array $actions
- * @param array $post
- *
- * @return array
- */
-function expand_quick_edit_link( $actions, $post ) {
-	global $current_screen;
-
-	if ( GALLERY_TYPE != $current_screen->post_type ) {
-		return $actions;
-	}
-
-	$curr_gallery_data = get_field(CURR_GALLERY, $post->ID);
-	$next_gallery_data = get_field(UP_NEXT_GALLERY, $post->ID);
-	$curr_gallery_data = empty( $curr_gallery_data ) ? 0 : 1;
-	$next_gallery_data = empty( $next_gallery_data ) ? 0 : 1;
-
-	$actions['inline hide-if-no-js']    = '<a href="#" class="editinline" title="';
-	$actions['inline hide-if-no-js']    .= esc_attr( 'Edit this item inline' ) . '"';
-	$actions['inline hide-if-no-js']    .= " onclick=\"check_gallery('{$curr_gallery_data}', '{$next_gallery_data}')\" >";
-	$actions['inline hide-if-no-js']    .= 'Quick Edit';
-	$actions['inline hide-if-no-js']    .= '</a>';
-
-	return $actions;
-}
 
 //----- end adding two new fields to quick edit -----
 
