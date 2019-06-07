@@ -220,4 +220,3 @@ function calendar_date_parse($my_calendar_date) {
 		</div>
 	<?php endforeach; ?>
 </div>
-<?= "<pre>" . print_r($grouped_classes, true) . "</pre>" ?>
