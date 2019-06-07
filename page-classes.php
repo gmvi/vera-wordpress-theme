@@ -39,8 +39,8 @@ $args = array(
 $classes = mc_get_all_events($args);
 $grouped_classes = array();
 
+//iterate over all glasses, and group them accordingly based on if event_group_id field is set
 foreach ($classes as $class) {
-
     if ($class->event_group_id == 0) { //this means event is not grouped
         $grouped_classes[$class->event_title] = $class;
 
@@ -177,6 +177,11 @@ function calendar_date_parse($my_calendar_date) {
                     <?php
                     if (isset($class->event_times)) {
                         foreach($class->event_times as $event_time) {
+
+                            //if event is in the past, skip
+                            $current_time = new DateTime();
+                            if ($current_time > $event_time->time_end) { continue; }
+
                             ?>
                             <div class="modal-footer">
                                 <div class="row w-100 mx-0 d-flex align-items-center">
