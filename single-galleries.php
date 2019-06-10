@@ -44,9 +44,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                                     <h1 class="card-title mb-2"><?php echo $artist['title']; ?></h1>
                                     <p class="card-text mt-2"><?php echo $artist['bio']; ?></p>
                                     <div class="artist-social vera-bordered-social-icons">
-					                    <?php if (!empty($artist['social'])) {
+					                    <?php if (!empty($artist['social_details'])) {
 					                        echo "<pre>" . print_r($artist, true) . "</pre>";
-						                    foreach($artist['social'] as $social) {
+						                    foreach($artist['social_details'] as $social) {
 							                    echo "<a href=\"" . $social['link'] . "\" target=\"_blank\">";
 
 							                    switch ($social['type']) {
