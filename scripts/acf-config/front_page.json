@@ -4,11 +4,11 @@
         "title": "Front Page",
         "fields": [
             {
-                "key": "field_5b8e170503e1e",
-                "label": "Custom Title Text",
-                "name": "title",
+                "key": "field_5cfda725773cf",
+                "label": "Concert Title Text",
+                "name": "concert_title_text",
                 "type": "text",
-                "instructions": "",
+                "instructions": "Title text for the concerts section",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -20,7 +20,25 @@
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
-                "formatting": "html",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5cfda6c3773ce",
+                "label": "Classes Title Text",
+                "name": "classes_title_text",
+                "type": "text",
+                "instructions": "Header text for the classes block",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
                 "maxlength": ""
             },
             {
@@ -36,7 +54,7 @@
                     "class": "",
                     "id": ""
                 },
-                "return_format": "url",
+                "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
                 "min_width": "",
@@ -94,7 +112,7 @@
                     "class": "",
                     "id": ""
                 },
-                "return_format": "url",
+                "return_format": "array",
                 "preview_size": "thumbnail",
                 "library": "all",
                 "min_width": "",
