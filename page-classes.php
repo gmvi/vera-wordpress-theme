@@ -68,11 +68,27 @@ foreach ($classes as $class) {
         $event_schedule->time_start = calendar_date_parse($class->occur_begin);
         $event_schedule->time_end = calendar_date_parse($class->occur_end);
 
-        //copy over subheader into repeating event if it exists
-        if (isset($class->custom_subheader)) {
-            $repeating_event->custom_subheader = $class->custom_subheader;
+	    //get and compare modified time for repeating events
+	    $curr_modified_time = get_post_modified_time('U', false, $class->event_post);
+	    $class->modified_time = $curr_modified_time;
+
+	    if (!isset($repeating_event->modified_time)) {
+		    $prev_modified_time = get_post_modified_time('U', false, $repeating_event->event_post);
+		    $repeating_event->modified_time = $prev_modified_time;
         }
 
+        //if repeating event has a more recently updated description + subheader, update
+        if ($class->modified_time > $repeating_event->modified_time) {
+
+	        //copy over subheader into repeating event if it exists
+	        if (isset($class->custom_subheader)) {
+		        $repeating_event->custom_subheader = $class->custom_subheader;
+	        }
+
+	        //copy over description + last updated time
+            $repeating_event->event_desc = $class->event_desc;
+            $repeating_event->modified_time = $class->modified_time;
+        }
         array_push($repeating_event->event_times, $event_schedule);
     }
 }

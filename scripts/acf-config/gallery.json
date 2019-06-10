@@ -189,8 +189,8 @@
                     },
                     {
                         "key": "field_5cef1d92ea04f",
-                        "label": "Social",
-                        "name": "social",
+                        "label": "Social Details",
+                        "name": "social_details",
                         "type": "repeater",
                         "instructions": "",
                         "required": 0,
@@ -207,7 +207,7 @@
                         "button_label": "",
                         "sub_fields": [
                             {
-                                "key": "field_5cef1da9ea050",
+                                "key": "field_5cfdba7a515cf",
                                 "label": "Type",
                                 "name": "type",
                                 "type": "select",
@@ -233,7 +233,7 @@
                                 "placeholder": ""
                             },
                             {
-                                "key": "field_5cef1ddeea051",
+                                "key": "field_5cfdba9c515d0",
                                 "label": "Link",
                                 "name": "link",
                                 "type": "url",
