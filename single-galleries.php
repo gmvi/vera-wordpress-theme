@@ -44,10 +44,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                                     <h1 class="card-title mb-2"><?php echo $artist['title']; ?></h1>
                                     <p class="card-text mt-2"><?php echo $artist['bio']; ?></p>
                                     <div class="artist-social vera-bordered-social-icons">
-					                    <?php if (!empty($artist['social'])) {
-						                    foreach($artist['social'] as $social) {
+					                    <?php if (!empty($artist['social_details'])) {
+						                    foreach($artist['social_details'] as $social) {
 							                    echo "<a href=\"" . $social['link'] . "\" target=\"_blank\">";
-
 							                    switch ($social['type']) {
 								                    case 'Facebook':
 									                    echo "<i class=\"fa fa-facebook-f text-primary\"></i>";
