@@ -11452,7 +11452,7 @@ when My Calendar is drawing out the events.
   transform: rotate(-90deg); }
 
 .mc-main .my-calendar-nav ul {
-  height: 1em; }
+  height: 2em; }
 
 .mc-main .my-calendar-nav li {
   float: left;
@@ -11500,18 +11500,18 @@ when My Calendar is drawing out the events.
   .mc-main h3 a :hover, .mc-main h3 a :focus {
     text-decoration: underline; }
 
-div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
+div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a, div.my-calendar-footer li.my-calendar-prev a, div.my-calendar-footer li.my-calendar-next a {
   padding: 1px 0;
   text-transform: uppercase;
   font-size: 24px; }
   @media (max-width: 767.98px) {
-    div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a {
+    div.my-calendar-header li.my-calendar-prev a, div.my-calendar-header li.my-calendar-next a, div.my-calendar-footer li.my-calendar-prev a, div.my-calendar-footer li.my-calendar-next a {
       font-size: 16px; } }
 
-div.my-calendar-header li.my-calendar-prev {
+div.my-calendar-header li.my-calendar-prev, div.my-calendar-footer li.my-calendar-prev {
   float: left; }
 
-div.my-calendar-header li.my-calendar-next {
+div.my-calendar-header li.my-calendar-next, div.my-calendar-footer li.my-calendar-next {
   float: right; }
 
 div.my-calendar-date-switcher form div label.maybe-hide {

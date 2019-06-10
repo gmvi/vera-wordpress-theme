@@ -20,7 +20,7 @@ when My Calendar is drawing out the events.
     ul {
       @extend .m-0;
       @extend .p-0;
-      height: 1em;
+      height: 2em;
     }
     li {
       @extend .p-0;
@@ -82,7 +82,7 @@ when My Calendar is drawing out the events.
   }
 }
 
-div.my-calendar-header {
+div.my-calendar-header, div.my-calendar-footer {
   li.my-calendar-prev a, li.my-calendar-next a {
     padding: 1px 0;
     text-transform: uppercase;
