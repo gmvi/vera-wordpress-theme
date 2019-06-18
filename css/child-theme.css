@@ -5729,7 +5729,7 @@ button.bg-dark:hover,
 button.bg-dark:focus {
   background-color: #1d2124 !important; }
 
-.bg-white, div.my-calendar-date-switcher form div select {
+.bg-white, div.my-calendar-date-switcher form div select, button.mc-text-button:hover, button.mc-text-button:active {
   background-color: #fff !important; }
 
 .bg-transparent {
@@ -11627,7 +11627,11 @@ div.mc-time {
 button.mc-text-button {
   font-family: BebasNeue;
   font-size: 18px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  box-shadow: none !important; }
+  button.mc-text-button:hover, button.mc-text-button:active {
+    color: #D41C53 !important;
+    outline: 0; }
 
 div.mc-format a {
   border-radius: 0;

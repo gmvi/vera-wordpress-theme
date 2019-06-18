@@ -124,6 +124,11 @@ function add_class_cat($public_query_vars) {
 	return $public_query_vars;
 }
 
+add_filter('mc_event_exclude_from_search', 'dont_exclude_events_in_search');
+function dont_exclude_events_in_search( $bool ) {
+    return false;
+}
+
 //add_filter( 'mc_mini_js', 'custom_mini_js' );
 //function custom_mini_js( $url ) {
 //    return get_stylesheet_directory_uri() . '/js/my-calendar/mini-cal.js';
