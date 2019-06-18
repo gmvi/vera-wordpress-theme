@@ -134,5 +134,14 @@ function dont_exclude_events_in_search( $bool ) {
 //    return get_stylesheet_directory_uri() . '/js/my-calendar/mini-cal.js';
 //}
 
+//mc_customize_details_link
+add_filter('mc_customize_details_link', 'possibly_link_to_eventbrite', 10, 2);
+function possibly_link_to_eventbrite($details_link, $event) {
+    $use_direct_link = get_post_meta( $event->event_post, '_mc_event_link_to_detailurl', true );
+    if ($use_direct_link == true) {
+        return $event->event_link;
+    }
+    return $details_link;
+}
 
 include 'mc-custom-fields.php';
