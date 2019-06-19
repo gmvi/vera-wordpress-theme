@@ -8,6 +8,9 @@
  *
  * See page-gallery.php, program-landing-generic.php, or front-page.php for examples
  *
+ * use $no_bottom_cutout to remove the svg bottom section. this will also reduce the padding on the bottom of the div
+ *
+ *
  * Usage:
  * <?php
  *  $support_footer_color = 'white';
@@ -17,13 +20,15 @@
 
 
 ?>
-<section class="volunteer-today-landing pb-5 pt-5">
+<section class="volunteer-today-landing pt-5 <?= $no_bottom_cutout ? '' : 'pb-5' ?>">
 	<svg class="top-cutout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
 		<polygon  points="0,0 50,0 50,50"></polygon>
 	</svg>
+    <?php if (!$no_bottom_cutout): ?>
 	<svg class="bottom-cutout" style="fill: <?php echo $support_footer_color ?>" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
 		<polygon  points="50,50 0,50 0,0"></polygon>
 	</svg>
+    <?php endif; ?>
 	<div class="content-overlay"></div>
 	<div class="row no-gutters pt-3">
 		<div class="col-md-1"></div>
