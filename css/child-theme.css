@@ -12066,8 +12066,7 @@ ul.menu {
 section.classes .header-classes, .centered, .entry-content section .header {
   font-family: BebasNeue;
   text-transform: uppercase;
-  letter-spacing: 1.8px;
-  margin-bottom: 40px; }
+  letter-spacing: 1.8px; }
   section.classes .header-classes h1, .centered h1, .entry-content section .header h1 {
     font-size: 96px; }
   section.classes .header-classes h2, .centered h2, .entry-content section .header h2 {
@@ -12083,7 +12082,7 @@ section.classes .header-classes, .centered, .entry-content section .header {
     margin-bottom: 35px; }
 
 .entry-content section {
-  padding: 90px 0 0px; }
+  padding: 40px 0 0px; }
 
 /* Styling that affects multiple pages */
 #content {
@@ -12093,7 +12092,7 @@ section.blurb {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 4rem; }
+  padding-top: 1.5rem; }
   section.blurb div.container div#blurb-header p {
     font-family: BebasNeueLight;
     text-align: center;
@@ -12323,9 +12322,9 @@ div#wrapper-footer .site-footer {
   @media (min-width: 768px) {
     div#wrapper-footer .site-footer {
       padding: 0px 120px;
-      height: 500px; }
+      height: 400px; }
       div#wrapper-footer .site-footer div.footer-overlay {
-        max-height: 500px; } }
+        max-height: 400px; } }
   @media (max-width: 767.98px) {
     div#wrapper-footer .site-footer {
       padding-top: 30px; } }

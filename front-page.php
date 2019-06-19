@@ -28,7 +28,7 @@ $shows = vera_shows_get_front_page();
                     <?php get_template_part('partial-templates/pageblurb'); ?>
 
 					<section class="shows">
-						<div id="shows-header-text" class="row header m-0 py-3">
+						<div id="shows-header-text" class="row header m-0">
 							<div class="col-md-12">
                                 <span class="label">Concerts</span>
 								<h2><b><?php the_field('concert_title_text'); ?></b></h2>
