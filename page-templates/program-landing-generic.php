@@ -52,8 +52,10 @@ $program_types = SCF::get( 'Program Types' );
 						<?php } ?>
 						</section>
 
-						<?php get_template_part('partial-templates/support-block'); ?>
-
+                    <?php
+                        if (!get_field('quote_text')) { $no_bottom_cutout = true; }
+					    include( locate_template( 'partial-templates/support-block.php') );
+                        if (get_field('quote_text')): ?>
 						<section class="quote pt-0">
 							<div class="background"></div>
                             <div class="row h-100 vera-quote no-gutters">
@@ -70,8 +72,7 @@ $program_types = SCF::get( 'Program Types' );
                                 </div>
                             </div>
 						</section>
-
-						<?php
+						<?php endif;
 						//wp_link_pages( array(
 						//	'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
 						//	'after'  => '</div>',
