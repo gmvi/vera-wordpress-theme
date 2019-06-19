@@ -12017,7 +12017,7 @@ div.nav-spacer {
   display: none; }
 
 div#wrapper-navbar.fixed-top nav.navbar {
-  background: rgba(255, 255, 255, 0.85); }
+  background: white; }
   div#wrapper-navbar.fixed-top nav.navbar .navbar-brand {
     height: 5rem; }
 
