@@ -266,12 +266,18 @@ div.mc-time {
 button.mc-text-button {
   @extend .btn;
   @extend .btn-outline-primary;
+  @extend .bordered-button;
   @extend .my-2;
   @extend .rounded-0;
   font-family: BebasNeue;
   font-size: 18px;
   letter-spacing: 1px;
-
+  box-shadow: none !important;
+  &:hover,&:active {
+    @extend .bg-white;
+    color: $primary !important;
+    outline: 0;
+  }
 }
 // format 'View as List|Grid' link
 div.mc-format {

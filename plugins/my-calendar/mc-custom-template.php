@@ -124,10 +124,25 @@ function add_class_cat($public_query_vars) {
 	return $public_query_vars;
 }
 
+add_filter('mc_event_exclude_from_search', 'dont_exclude_events_in_search');
+function dont_exclude_events_in_search( $bool ) {
+    return false;
+}
+
 //add_filter( 'mc_mini_js', 'custom_mini_js' );
 //function custom_mini_js( $url ) {
 //    return get_stylesheet_directory_uri() . '/js/my-calendar/mini-cal.js';
 //}
 
+//possibly link to the direct event_link property instead of the details link that will route into a wordpress page.
+// allows for linking directly to eventbrite, etc
+add_filter('mc_customize_details_link', 'possibly_link_to_eventlink', 10, 2);
+function possibly_link_to_eventlink($details_link, $event) {
+    $use_direct_link = get_post_meta( $event->event_post, '_mc_event_links_to_eventlink', true );
+    if ($use_direct_link == true) {
+        return $event->event_link;
+    }
+    return $details_link;
+}
 
 include 'mc-custom-fields.php';

@@ -124,7 +124,7 @@ $gallery = vera_gallery_get_overview();
                     ?>
 
                 </section>
-
+                <?php if (get_field('quote_text')): ?>
                 <section class="row h-100 vera-quote accent-background no-gutters">
                     <div class="col-md-6 mx-auto p-5 textured">
                         <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
@@ -138,7 +138,7 @@ $gallery = vera_gallery_get_overview();
                         </div>
                     </div>
                 </section>
-
+                <?php endif; ?>
                 <section id="gallery-coa" class="row no-gutters">
                         <div class="col-md-5 p-5">
                             <p class="label">Get Involved</p>
