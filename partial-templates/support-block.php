@@ -11,6 +11,7 @@
  * use $no_bottom_cutout to remove the svg bottom section. this will also reduce the padding on the bottom of the div
  *
  * if the acf field `support_vera_text` is empty, this section will not render! because there is no data!
+ *  a small buffer div will be returned instead
  *
  * Usage:
  * <?php
@@ -44,6 +45,6 @@ if (get_field('support_vera_text')):
 		<div class="col-md-1"></div>
 	</div>
 </section>
-<?php else: ?>
-<div class="py-3"></div>
-<?php endif; ?>
+<?php else:
+    echo '<div class="py-3"></div>';
+endif; ?>

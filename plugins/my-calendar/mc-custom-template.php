@@ -101,12 +101,6 @@ function meow($date_switcher) {
     return $date_switcher;
 }
 
-
-add_filter('mc_heading_inner_title', 'log_filter', 10, 3);
-function log_filter($something0, $something1, $something2) {
-    return $something0;
-}
-
 add_filter( 'mc_list_js', 'custom_list_js' );
 function custom_list_js( $url ) {
     return get_stylesheet_directory_uri() . '/js/my-calendar/events-view.js';
@@ -144,5 +138,3 @@ function possibly_link_to_eventlink($details_link, $event) {
     }
     return $details_link;
 }
-
-include 'mc-custom-fields.php';

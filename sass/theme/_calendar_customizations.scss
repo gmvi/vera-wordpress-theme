@@ -235,12 +235,10 @@ table.my-calendar-table {
     @extend .p-0;
     background-color: white;
     .calendar-event  {
-      h3, h3 a {
-        background-color: $darkergray !important;
+      h3.event-title.summary, h3.event-title.summary a.url.summary {
         border-radius: 0;
-        color: white;
         margin-bottom: 2px;
-        padding: 2px 0;
+        padding: 2px;
         font-family: BebasNeue, GothicA1, Arial;
         font-size: 14px;
         letter-spacing: 0.5px;

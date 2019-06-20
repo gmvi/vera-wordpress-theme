@@ -11604,12 +11604,10 @@ table.my-calendar-table {
     opacity: 1; }
   table.my-calendar-table tr.mc-row td {
     background-color: white; }
-    table.my-calendar-table tr.mc-row td .calendar-event h3, table.my-calendar-table tr.mc-row td .calendar-event h3 a {
-      background-color: #252525 !important;
+    table.my-calendar-table tr.mc-row td .calendar-event h3.event-title.summary, table.my-calendar-table tr.mc-row td .calendar-event h3.event-title.summary a.url.summary {
       border-radius: 0;
-      color: white;
       margin-bottom: 2px;
-      padding: 2px 0;
+      padding: 2px 0 2px 2px;
       font-family: BebasNeue, GothicA1, Arial;
       font-size: 14px;
       letter-spacing: 0.5px; }
