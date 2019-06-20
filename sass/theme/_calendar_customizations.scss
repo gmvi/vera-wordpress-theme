@@ -281,11 +281,11 @@ button.mc-text-button {
 div.mc-format {
   a {
     @extend .btn, .btn-sm, .btn-outline-primary;
+    @extend .my-1;
     border-radius: 0;
     font-family: BebasNeue;
     font-size: 18px;
     letter-spacing: 1px;
-    margin-bottom: 10px;
   }
 }
 
@@ -294,6 +294,7 @@ div.category-key, div.location-key {
     display: none;
   }
   ul {
+    margin-bottom: 0;
     @include media-breakpoint-up(lg) {
       padding-top: 10px;
     }
