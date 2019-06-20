@@ -8,6 +8,9 @@
 
 /**
  * Publically written head styles & scripts
+ *
+ * **largely copied from my-calendar's head function (my_calendar_head() in my-calendar-core.php),
+ *      just removing some option checks that were causing it not to render in a custom style**
  */
 function mc_categories_styles() {
     global $wpdb, $wp_query;
@@ -41,7 +44,9 @@ function mc_categories_styles() {
             if ( 'font' == get_option( 'mc_apply_color' ) || 'background' == get_option( 'mc_apply_color' ) ) {
                 // always an anchor as of 1.11.0, apply also to title.
                 $category_styles .= "\n.mc-main .$class .event-title, .mc-main .$class .event-title a { $type: $color; $inv }";
-//                $category_styles .= "\n.mc-main .$class .event-title a:hover, .mc-main .$class .event-title a:focus { $type: $hcolor;}";
+                // todo -- review: not sure if they want this...
+                // apply same styles to category labels
+                $category_styles .="\n.category-key ul li.cat_" . strtolower($category->category_name) . " a { $type: $color; $inv }";
             }
         }
     }
