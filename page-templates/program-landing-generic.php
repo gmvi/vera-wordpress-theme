@@ -57,7 +57,11 @@ $program_types = SCF::get( 'Program Types' );
 					    include( locate_template( 'partial-templates/support-block.php') );
                         if (get_field('quote_text')): ?>
 						<section class="quote pt-0">
-							<div class="background"></div>
+                            <?php
+                            // if there is no "support vera" block, then don't show the background because it will bleed into the classes section before it
+                            if (get_field('support_vera_text')) {
+                                echo '<div class="background"></div>';
+                            }?>
                             <div class="row h-100 vera-quote no-gutters">
                                 <div class="col-md-6 mx-auto p-5 textured">
                                     <img class="rounded-circle p-3" src="<?php echo get_field( 'featured_quote_image' )['url'];?>" />
