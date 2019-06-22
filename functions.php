@@ -149,5 +149,3 @@ if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
 		return $post_excerpt;
 	}
 }
-
-require_once('plugins/my-calendar/mc-custom-template.php');

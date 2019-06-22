@@ -362,7 +362,7 @@ div.nav-spacer {
 }
 
 div#wrapper-navbar.fixed-top nav.navbar {
-	background: rgba(255, 255, 255, 0.85);
+	background: rgba(255, 255, 255, 1);
 
 	.navbar-brand {
 		height: $collapsed-nav-height;
@@ -437,7 +437,6 @@ ul.menu {
     font-family: BebasNeue;
     text-transform: uppercase;
     letter-spacing: 1.8px;
-    margin-bottom: 40px;
     h1 {font-size: 96px; }
     h2 { font-size: 72px; }
     h3 { font-size: 56px; }
@@ -453,7 +452,7 @@ ul.menu {
 }
 
 .entry-content section {
-    padding: 90px 0 0px;
+    padding: 40px 0 0px;
 
     .header {
     	@extend %section-header;
@@ -474,7 +473,7 @@ section.blurb {
 	max-width: $max-width;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 4rem;
+	padding-top: 1.5rem;
 	div.container {
 		div#blurb-header {
 			p {
@@ -730,7 +729,7 @@ div.centered-text p {
 
 /* Footer */
 
-$footer-height: 500px;
+$footer-height: 400px;
 
 div#wrapper-footer {
 
