@@ -9,6 +9,42 @@ get_header();
 // Get container type from Wordpress Customizer
 $container = get_theme_mod( 'understrap_container_type' );
 $shows = vera_shows_get_front_page();
+
+$show_args = array (
+        'before'    => 1,
+        'today'    => 'yes',
+        'category'  => 'Shows'
+);
+
+$event_shows = mc_get_all_events($show_args);
+$featured_show;
+
+//find featured show if it exists
+foreach ($event_shows as $show_key => $show) {
+	$feature_show = get_post_meta( $show->event_post, '_mc_event_is_featured_show', true );
+    $presenter =  get_post_meta( $show->event_post, '_mc_event_show_presenter', true );
+	$support =  get_post_meta( $show->event_post, '_mc_event_show_support', true );
+	$price =  get_post_meta( $show->event_post, '_mc_event_show_price', true );
+
+	$show->presenter = $presenter;
+	$show->support = $support;
+	$show->price = $price;
+	if ($feature_show) {
+	    $featured_show = $show;
+	    $featured_show->label = 'Featured Show';
+	    //if we found featured show then store and remove
+	    unset($event_shows[$show_key]);
+    }
+}
+
+//if there is no featured show then choose soonest upcoming
+if (!$featured_show) {
+    $featured_show = $event_shows[0];
+	$featured_show->label = 'Next Show';
+	unset($event_shows[0]);
+}
+
+error_log(print_r($featured_show, true));
 ?>
 
 <div class="wrapper" id="index-wrapper">
@@ -41,22 +77,20 @@ $shows = vera_shows_get_front_page();
 						<div class="row no-gutters body-shows">
 							<div class="col-md-7">
 								<div class="featured-show">
-									<div class="background-image"><img src="<?= $info['image'] ?>"></div>
-									<span class="label"><?= $info['label'] ?></span>
+									<div class="background-image"><img src="<?= $featured_show->event_image ?>"></div>
+									<span class="label"><?= $featured_show->label ?></span>
 									<header>
-										<div class="presented-by"><?= $info['presenter'] ?></div>
-										<div class="show-headline"><?= $info['title'] ?></div>
-										<? if ($info['support']): ?>
-											<div class="show-support">with <?= $info['support'] ?></div>
-										<? endif; ?>
+										<div class="presented-by"><?= $featured_show->presenter ?></div>
+										<div class="show-headline"><?= $featured_show->event_title ?></div>
+                                        <div class="show-support"><?= $featured_show->support ?></div>
 									</header>
 									<div class="show-details">
 										<?= $info['date']; ?><br>
-										<i class="fa fa-map-marker"></i> <?= $info['venue'] ?><br>
-										<?= $info['price'] ?><br>
+										<i class="fa fa-map-marker"></i> <?= $featured_show->event_label ?><br>
+										<?= $featured_show->price ?><br>
 										<?= $info['time'] ?>
 									</div>
-									<a class="more" href=<?= $info['link'] ?> >Tickets</a>
+									<a class="more" target="_blank" href=<?= $featured_show->event_link ?> >Tickets</a>
 								</div>
 							</div>
 							<div class="col-md-5">
@@ -66,6 +100,8 @@ $shows = vera_shows_get_front_page();
 									<ul class="list-body">
 										<?  foreach ($shows as $show):
 											$info = vera_shows_get_list_info($show);
+										    error_log('other info');
+											error_log(print_r($info, true));
 										?>
 											<li class="list-item clearfix">
 												<div class="wrapper-left">
