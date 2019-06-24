@@ -63,7 +63,7 @@ get_header();
                                     <hr/>
                                     <ul style="list-style-type:none;" class="pl-0">
                                         <?php
-                                        $args = array( 'numberposts' => '5' );
+                                        $args = array( 'numberposts' => '5', 'post_status' => 'publish' );
                                         $recent_posts = wp_get_recent_posts($args);
                                         $lastElement = end($recent_posts);
                                         foreach( $recent_posts as $recent ){ ?>
