@@ -225,8 +225,22 @@ left padding is 100px
 	margin-right: 0.4em;
 }
 
-div.vera-bordered-social-icons {
 
+
+//need to set explicit icon padding to make them 37x37
+$social-icons: (
+	'facebook-f' : .6em .81em,
+	'instagram': .6em .69em,
+	'twitter': .6em .64em,
+	'globe': .6em .67em,
+	'spotify': .6em .67em,
+	'soundcloud': .6em .46em,
+	'bandcamp': .6em,
+	'youtube-play': .6em,
+	'snapchat': .6em .67em
+);
+
+div.vera-bordered-social-icons {
 	@include media-breakpoint-down(sm) {
 		text-align: center;
 	}
@@ -235,21 +249,14 @@ div.vera-bordered-social-icons {
 		color: white;
 	}
 
-	i[class^="fa fa-facebook-f"] {
+	i[class^="fa fa-"] {
 		@extend %vera-bordered-social;
-		padding: .6em .8em;
 	}
-	i[class^="fa fa-twitter"] {
-		@extend %vera-bordered-social;
-		padding: .6em .64em;
-	}
-	i[class^="fa fa-instagram"] {
-		@extend %vera-bordered-social;
-		padding: .6em .64em;
-	}
-	i[class^="fa fa-youtube-play"] {
-		@extend %vera-bordered-social;
-		padding: .6em .55em;
+
+	@each $social, $padding in $social-icons {
+		i[class^="fa fa-#{$social}"] {
+			padding: $padding;
+		}
 	}
 }
 

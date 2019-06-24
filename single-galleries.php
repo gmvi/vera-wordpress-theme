@@ -57,6 +57,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 								                    case 'Twitter':
 									                    echo "<i class=\"fa fa-twitter text-primary\"></i>";
 									                    break;
+								                    case 'Website':
+									                    echo "<i class=\"fa fa-globe text-primary\"></i>";
+									                    break;
+								                    case 'Spotify':
+									                    echo "<i class=\"fa fa-spotify text-primary\"></i>";
+									                    break;
+								                    case 'Soundcloud':
+									                    echo "<i class=\"fa fa-soundcloud text-primary\"></i>";
+									                    break;
+								                    case 'Bandcamp':
+									                    echo "<i class=\"fa fa-bandcamp text-primary\"></i>";
+									                    break;
+								                    case 'Youtube':
+									                    echo "<i class=\"fa fa-youtube-play text-primary\"></i>";
+									                    break;
+								                    case 'Snapchat':
+									                    echo "<i class=\"fa fa-snapchat text-primary\"></i>";
+									                    break;
 							                    }
 
 							                    echo "</a>";
