@@ -460,7 +460,8 @@ ul.menu {
 }
 
 .entry-content section {
-    padding: 40px 0 0px;
+    //padding: 40px 0 0px;
+	padding: 30px 0 0px;
 
 	a.bordered-button {
 		margin-top: 0px;
@@ -468,7 +469,7 @@ ul.menu {
 
 	//on mobile, increase spacing between sections
 	@include media-breakpoint-down(sm) {
-		margin: 50px 0px;
+		margin: 40px 0px;
 	}
 
     .header {

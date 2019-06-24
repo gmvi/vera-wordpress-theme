@@ -10613,109 +10613,108 @@ body.home .entry-header .wp-post-image {
 body.home .entry-header .label {
   margin-top: 80px; }
 
-section.shows {
-  padding-top: 40px !important; }
-  section.shows .body-shows .featured-show {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    text-align: left;
-    padding: 60px 70px;
-    height: 100%; }
-    section.shows .body-shows .featured-show .background-image {
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
+section.shows .body-shows .featured-show {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: left;
+  padding: 60px 70px;
+  height: 100%; }
+  section.shows .body-shows .featured-show .background-image {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }
+    section.shows .body-shows .featured-show .background-image img {
       height: 100%;
-      width: 100%; }
-      section.shows .body-shows .featured-show .background-image img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover; }
-    section.shows .body-shows .featured-show header {
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin: 20px 0 25px; }
-      section.shows .body-shows .featured-show header .presented-by {
-        font-size: 12px; }
-      section.shows .body-shows .featured-show header .show-headline {
-        font-size: 56px;
-        font-family: BebasNeue;
-        line-height: 0.8;
-        padding-top: 4px; }
-      section.shows .body-shows .featured-show header .show-support {
-        font-size: 18px;
-        font-family: BebasNeue; }
-    section.shows .body-shows .featured-show .show-details {
-      font-size: 18px;
-      margin-bottom: 20px;
-      font-family: GothicA1; }
-  section.shows .body-shows .shows-list {
-    height: 100%; }
-    section.shows .body-shows .shows-list .list-title {
       width: 100%;
-      height: 40px;
+      object-fit: cover; }
+  section.shows .body-shows .featured-show header {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 20px 0 25px; }
+    section.shows .body-shows .featured-show header .presented-by {
+      font-size: 12px; }
+    section.shows .body-shows .featured-show header .show-headline {
+      font-size: 56px;
       font-family: BebasNeue;
-      font-size: 18px;
-      letter-spacing: 1.5px;
-      padding-top: 8px;
-      text-align: center;
-      background-color: black;
-      color: white; }
-    section.shows .body-shows .shows-list .list-body {
-      height: 100%;
-      margin: -40px 0 -83px;
-      padding: 40px 20px 103px;
-      text-align: left;
-      border-right: 1px solid darkgray; }
-      section.shows .body-shows .shows-list .list-body .list-item {
-        margin: 0;
-        padding: 29px 0;
-        list-style: none;
-        position: relative; }
-        section.shows .body-shows .shows-list .list-body .list-item .wrapper-left {
-          float: left;
-          margin-right: 80px; }
-        section.shows .body-shows .shows-list .list-body .list-item .wrapper-right {
-          width: 60px;
-          float: right;
-          position: absolute;
-          right: 0;
-          height: 100%;
-          margin-top: -30px;
-          display: flex;
-          align-items: center; }
-        section.shows .body-shows .shows-list .list-body .list-item .event-date {
-          font-family: GothicA1;
-          font-size: 12px;
-          font-weight: bold;
-          letter-spacing: 1.5px;
-          text-transform: uppercase; }
-        section.shows .body-shows .shows-list .list-body .list-item .event-title {
-          margin-top: 10px;
-          color: #D41C53;
-          font-family: BebasNeue;
-          font-size: 34px;
-          font-weight: normal;
-          line-height: 1;
-          letter-spacing: 1.5px; }
-        section.shows .body-shows .shows-list .list-body .list-item .event-icon {
-          width: 60px;
-          height: 60px;
-          float: right; }
-      section.shows .body-shows .shows-list .list-body .list-item:not(:last-child) {
-        border-bottom: 1px solid darkgray; }
-    section.shows .body-shows .shows-list .list-more {
-      padding: 32px 0;
-      background-color: #D41C53;
-      font-family: BebasNeue;
-      font-size: 24px;
-      font-weight: normal;
       line-height: 0.8;
-      letter-spacing: 1.5px; }
-      section.shows .body-shows .shows-list .list-more a {
-        color: white; }
+      padding-top: 4px; }
+    section.shows .body-shows .featured-show header .show-support {
+      font-size: 18px;
+      font-family: BebasNeue; }
+  section.shows .body-shows .featured-show .show-details {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: GothicA1; }
+
+section.shows .body-shows .shows-list {
+  height: 100%; }
+  section.shows .body-shows .shows-list .list-title {
+    width: 100%;
+    height: 40px;
+    font-family: BebasNeue;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    padding-top: 8px;
+    text-align: center;
+    background-color: black;
+    color: white; }
+  section.shows .body-shows .shows-list .list-body {
+    height: 100%;
+    margin: -40px 0 -83px;
+    padding: 40px 20px 103px;
+    text-align: left;
+    border-right: 1px solid darkgray; }
+    section.shows .body-shows .shows-list .list-body .list-item {
+      margin: 0;
+      padding: 29px 0;
+      list-style: none;
+      position: relative; }
+      section.shows .body-shows .shows-list .list-body .list-item .wrapper-left {
+        float: left;
+        margin-right: 80px; }
+      section.shows .body-shows .shows-list .list-body .list-item .wrapper-right {
+        width: 60px;
+        float: right;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        margin-top: -30px;
+        display: flex;
+        align-items: center; }
+      section.shows .body-shows .shows-list .list-body .list-item .event-date {
+        font-family: GothicA1;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        text-transform: uppercase; }
+      section.shows .body-shows .shows-list .list-body .list-item .event-title {
+        margin-top: 10px;
+        color: #D41C53;
+        font-family: BebasNeue;
+        font-size: 34px;
+        font-weight: normal;
+        line-height: 1;
+        letter-spacing: 1.5px; }
+      section.shows .body-shows .shows-list .list-body .list-item .event-icon {
+        width: 60px;
+        height: 60px;
+        float: right; }
+    section.shows .body-shows .shows-list .list-body .list-item:not(:last-child) {
+      border-bottom: 1px solid darkgray; }
+  section.shows .body-shows .shows-list .list-more {
+    padding: 32px 0;
+    background-color: #D41C53;
+    font-family: BebasNeue;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 0.8;
+    letter-spacing: 1.5px; }
+    section.shows .body-shows .shows-list .list-more a {
+      color: white; }
 
 section.classes {
   margin-bottom: 50px; }
@@ -10754,7 +10753,7 @@ section.classes {
 section.blog {
   padding-top: 0px !important;
   color: black;
-  margin-bottom: 100px; }
+  margin-bottom: 50px; }
   section.blog .body {
     text-align: left;
     padding: 0 120px;
@@ -12085,12 +12084,12 @@ section.classes .header-classes, .centered, .entry-content section .header {
     margin-bottom: 35px; }
 
 .entry-content section {
-  padding: 40px 0 0px; }
+  padding: 30px 0 0px; }
   .entry-content section a.bordered-button {
     margin-top: 0px; }
   @media (max-width: 767.98px) {
     .entry-content section {
-      margin: 50px 0px; } }
+      margin: 40px 0px; } }
 
 /* Styling that affects multiple pages */
 #content {
