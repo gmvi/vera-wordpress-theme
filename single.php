@@ -27,13 +27,11 @@ get_header();
                             <img class="h-100 single-blog-featured-image" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full')?>">
                         </div>
                         <div class="col-sm-6 p-0 mh-100 single-blog-featured-text">
-                            <div class="textured-blerg">
-                                <div class="row no-gutters justify-content-center pt-5 content-hero">
-                                    <div class="content-overlay"></div>
-                                    <div class="col-sm-8 mr-2 ml-2">
-                                        <?php get_template_part('partial-templates/category-labels'); ?>
-                                        <h2 class="single-blog-title text-white"><?php the_title()?></h2>
-                                    </div>
+                            <div class="row no-gutters justify-content-center pt-5 content-hero">
+                                <div class="content-overlay"></div>
+                                <div class="col-sm-8 mr-2 ml-2">
+                                    <?php get_template_part('partial-templates/category-labels'); ?>
+                                    <h2 class="single-blog-title text-white"><?php the_title()?></h2>
                                 </div>
                             </div>
                         </div>

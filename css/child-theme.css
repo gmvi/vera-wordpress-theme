@@ -11341,6 +11341,9 @@ div#blog-pagination a {
   background-position: left top;
   background-repeat: no-repeat;
   background-size: auto; }
+  @media (max-width: 767.98px) {
+    .single-blog-featured-text div.col-sm-8 {
+      width: 80%; } }
 
 .blog-contents {
   font-family: GothicA1;
