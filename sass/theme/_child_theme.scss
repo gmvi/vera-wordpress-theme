@@ -259,6 +259,9 @@ div.vera-bordered-social-icons {
     font-family: BebasNeue;
     font-size: 96px;
     letter-spacing: 1.5px;
+	@include media-breakpoint-down(sm) {
+		font-size: 80px;
+	}
 }
 
 .entry-header .wp-post-image {
@@ -438,7 +441,12 @@ ul.menu {
     text-transform: uppercase;
     letter-spacing: 1.8px;
     h1 {font-size: 96px; }
-    h2 { font-size: 72px; }
+    h2 {
+		font-size: 72px;
+		@include media-breakpoint-down(sm) {
+			font-size: 60px;
+		}
+	}
     h3 { font-size: 56px; }
 }
 
@@ -453,6 +461,15 @@ ul.menu {
 
 .entry-content section {
     padding: 40px 0 0px;
+
+	a.bordered-button {
+		margin-top: 0px;
+	}
+
+	//on mobile, increase spacing between sections
+	@include media-breakpoint-down(sm) {
+		margin: 50px 0px;
+	}
 
     .header {
     	@extend %section-header;
@@ -474,6 +491,9 @@ section.blurb {
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 1.5rem;
+	@include media-breakpoint-down(sm) {
+		margin-top: 0px; //override margins since this is first block on front page
+	}
 	div.container {
 		div#blurb-header {
 			p {
@@ -512,6 +532,9 @@ section.blurb {
 		font-weight: 100;
 		font-style: normal;
 		font-stretch: normal;
+		@include media-breakpoint-down(sm) {
+			font-size: 35px;
+		}
 		strong {
 			color: #d41c53;
 			font-family: $header-font;
@@ -524,6 +547,9 @@ section.blurb {
 		line-height: 1.5;
 		text-align: center;
 		letter-spacing: normal;
+		@include media-breakpoint-down(sm) {
+			font-size: 16px;
+		}
 	}
 }
 
@@ -729,7 +755,7 @@ div.centered-text p {
 
 /* Footer */
 
-$footer-height: 400px;
+$footer-height: 340px;
 
 div#wrapper-footer {
 
@@ -846,10 +872,6 @@ div#wrapper-footer {
 			font-family: GothicA1;
 			font-size: 18px;  line-height: 1.5;
 			padding-bottom: 15px;
-
-			@include media-breakpoint-down(sm) {
-				margin-top: 2rem;
-			}
 		}
 
 		.footer-directions {
@@ -860,7 +882,8 @@ div#wrapper-footer {
 			padding: 0 0 5rem 0;
 
 			@include media-breakpoint-down(sm) {
-				margin-top: 1.5rem;
+				padding: 0 0 3rem 0;
+			//	margin-top: 1.5rem;
 			}
 		}
 	}

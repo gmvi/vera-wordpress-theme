@@ -10987,12 +10987,12 @@ section.volunteer-hero {
   transform: translate(-50%, -50%);
   color: white; }
 
-section.classes {
+section.classes-section {
   padding-top: 20px !important;
   padding-bottom: 100px; }
-  section.classes .square-wrapper {
+  section.classes-section .square-wrapper {
     border: 1px solid #EBEEEF; }
-  section.classes .class-title {
+  section.classes-section .class-title {
     text-align: center;
     display: inline-block;
     color: #D41C53;
@@ -11005,15 +11005,15 @@ section.classes {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto; }
-    section.classes .class-title:hover {
+    section.classes-section .class-title:hover {
       opacity: 0.6; }
-    section.classes .class-title a {
+    section.classes-section .class-title a {
       cursor: pointer; }
-    section.classes .class-title h4 {
+    section.classes-section .class-title h4 {
       color: #343434; }
-  section.classes .list-header {
+  section.classes-section .list-header {
     padding-bottom: 30px; }
-    section.classes .list-header .filter-category {
+    section.classes-section .list-header .filter-category {
       height: 24px;
       padding: 6px 15px;
       margin-right: 25px;
@@ -11025,28 +11025,28 @@ section.classes {
       color: #343434;
       background-color: #EBEEEF; }
       @media screen and (max-width: 767px) {
-        section.classes .list-header .filter-category {
+        section.classes-section .list-header .filter-category {
           font-size: 20px !important;
           margin-right: 5px !important; } }
-    section.classes .list-header .filter-category.active {
+    section.classes-section .list-header .filter-category.active {
       color: white;
       background-color: #D41C53; }
-  section.classes .list-item {
+  section.classes-section .list-item {
     position: relative;
     display: flex;
     align-items: center;
     height: 117px; }
-    section.classes .list-item a:hover {
+    section.classes-section .list-item a:hover {
       text-decoration: underline;
       cursor: pointer; }
-    section.classes .list-item .class-row .class-info {
+    section.classes-section .list-item .class-row .class-info {
       text-align: center;
       font-family: GothicA1;
       font-size: 18px; }
       @media screen and (max-width: 767px) {
-        section.classes .list-item .class-row .class-info {
+        section.classes-section .list-item .class-row .class-info {
           font-size: 14px !important; } }
-    section.classes .list-item .class-row .class-register {
+    section.classes-section .list-item .class-row .class-register {
       display: inline-block;
       text-align: center;
       padding-top: 10px;
@@ -11058,9 +11058,9 @@ section.classes {
       color: #343434;
       border: 2px solid #D41C53; }
       @media screen and (max-width: 767px) {
-        section.classes .list-item .class-row .class-register {
+        section.classes-section .list-item .class-row .class-register {
           font-size: 14px !important; } }
-    section.classes .list-item .class-row .class-register.disabled {
+    section.classes-section .list-item .class-row .class-register.disabled {
       color: #C5C2D2; }
 
 .modal .modal-title {
@@ -11948,6 +11948,9 @@ div.vera-bordered-social-icons i[class^="fa fa-youtube-play"] {
   font-family: BebasNeue;
   font-size: 96px;
   letter-spacing: 1.5px; }
+  @media (max-width: 767.98px) {
+    .entry-header .entry-title {
+      font-size: 80px; } }
 
 .entry-header .wp-post-image {
   width: 100%;
@@ -12068,6 +12071,9 @@ section.classes .header-classes, .centered, .entry-content section .header {
     font-size: 96px; }
   section.classes .header-classes h2, .centered h2, .entry-content section .header h2 {
     font-size: 72px; }
+    @media (max-width: 767.98px) {
+      section.classes .header-classes h2, .centered h2, .entry-content section .header h2 {
+        font-size: 60px; } }
   section.classes .header-classes h3, .centered h3, .entry-content section .header h3 {
     font-size: 56px; }
 
@@ -12080,6 +12086,11 @@ section.classes .header-classes, .centered, .entry-content section .header {
 
 .entry-content section {
   padding: 40px 0 0px; }
+  .entry-content section a.bordered-button {
+    margin-top: 0px; }
+  @media (max-width: 767.98px) {
+    .entry-content section {
+      margin: 50px 0px; } }
 
 /* Styling that affects multiple pages */
 #content {
@@ -12090,6 +12101,9 @@ section.blurb {
   margin-left: auto;
   margin-right: auto;
   padding-top: 1.5rem; }
+  @media (max-width: 767.98px) {
+    section.blurb {
+      margin-top: 0px; } }
   section.blurb div.container div#blurb-header p {
     font-family: BebasNeueLight;
     text-align: center;
@@ -12118,6 +12132,9 @@ section.blurb {
     font-weight: 100;
     font-style: normal;
     font-stretch: normal; }
+    @media (max-width: 767.98px) {
+      section.blurb div.container div#blurb-header p {
+        font-size: 35px; } }
     section.blurb div.container div#blurb-header p strong {
       color: #d41c53;
       font-family: BebasNeue; }
@@ -12127,6 +12144,9 @@ section.blurb {
     line-height: 1.5;
     text-align: center;
     letter-spacing: normal; }
+    @media (max-width: 767.98px) {
+      section.blurb div.container div#blurb-text p {
+        font-size: 16px; } }
 
 section.info {
   padding-bottom: 50px; }
@@ -12319,9 +12339,9 @@ div#wrapper-footer .site-footer {
   @media (min-width: 768px) {
     div#wrapper-footer .site-footer {
       padding: 0px 120px;
-      height: 400px; }
+      height: 340px; }
       div#wrapper-footer .site-footer div.footer-overlay {
-        max-height: 400px; } }
+        max-height: 340px; } }
   @media (max-width: 767.98px) {
     div#wrapper-footer .site-footer {
       padding-top: 30px; } }
@@ -12375,9 +12395,6 @@ div#wrapper-footer .site-footer {
     font-size: 18px;
     line-height: 1.5;
     padding-bottom: 15px; }
-    @media (max-width: 767.98px) {
-      div#wrapper-footer .site-footer .footer-content {
-        margin-top: 2rem; } }
   div#wrapper-footer .site-footer .footer-directions {
     font-family: BebasNeue;
     font-size: 34px;
@@ -12386,7 +12403,7 @@ div#wrapper-footer .site-footer {
     padding: 0 0 5rem 0; }
     @media (max-width: 767.98px) {
       div#wrapper-footer .site-footer .footer-directions {
-        margin-top: 1.5rem; } }
+        padding: 0 0 3rem 0; } }
 
 .unselectable {
   user-select: none;
