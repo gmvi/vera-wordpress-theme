@@ -10649,6 +10649,10 @@ section.shows .body-shows .featured-show {
     font-size: 18px;
     margin-bottom: 20px;
     font-family: GothicA1; }
+  section.shows .body-shows .featured-show a.more {
+    margin-right: 30px; }
+    section.shows .body-shows .featured-show a.more:hover {
+      text-decoration: none; }
 
 section.shows .body-shows .shows-list {
   height: 100%; }
@@ -10700,9 +10704,18 @@ section.shows .body-shows .shows-list {
         line-height: 1;
         letter-spacing: 1.5px; }
       section.shows .body-shows .shows-list .list-body .list-item .event-icon {
-        width: 60px;
-        height: 60px;
-        float: right; }
+        float: right;
+        padding: 10px;
+        background-color: #D41C53;
+        color: white;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
     section.shows .body-shows .shows-list .list-body .list-item:not(:last-child) {
       border-bottom: 1px solid darkgray; }
   section.shows .body-shows .shows-list .list-more {

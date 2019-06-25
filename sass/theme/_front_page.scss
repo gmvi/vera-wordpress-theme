@@ -66,6 +66,13 @@ section.shows {
             	margin-bottom: 20px;
             	font-family: GothicA1;
             }
+
+			a.more {
+				margin-right: 30px;
+				&:hover {
+					text-decoration: none;
+				}
+			}
         }
     
         .shows-list {
@@ -132,9 +139,18 @@ section.shows {
 					}
 			
 					.event-icon {
-						width: 60px;
-						height: 60px;
 						float: right;
+						padding: 10px;
+						background-color: $primary;
+						color: white;
+						-webkit-border-radius: 50%;
+						-moz-border-radius: 50%;
+						border-radius: 50%;
+						-webkit-transform: rotate(-45deg);
+						-moz-transform: rotate(-45deg);
+						-ms-transform: rotate(-45deg);
+						-o-transform: rotate(-45deg);
+						transform: rotate(-45deg);
 					}
 				}
 			

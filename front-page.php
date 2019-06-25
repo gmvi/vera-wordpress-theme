@@ -29,10 +29,17 @@ foreach ($event_shows as $show_key => $show) {
 	$show->presenter = $presenter;
 	$show->support = $support;
 	$show->price = $price;
+
+	$show_date_start = DateTime::createFromFormat('Y-m-d', $show->event_begin);
+	$show_time_start = DateTime::createFromFormat('H:i:s', $show->event_time);
+
+	$show->show_date_start = $show_date_start;
+	$show->show_time_start = $show_time_start;
+	$show->detailed_link = mc_get_details_link( $show );
+
 	if ($feature_show) {
 	    $featured_show = $show;
 	    $featured_show->label = 'Featured Show';
-	    //if we found featured show then store and remove
 	    unset($event_shows[$show_key]);
     }
 }
@@ -43,8 +50,6 @@ if (!$featured_show) {
 	$featured_show->label = 'Next Show';
 	unset($event_shows[0]);
 }
-
-error_log(print_r($featured_show, true));
 ?>
 
 <div class="wrapper" id="index-wrapper">
@@ -70,10 +75,6 @@ error_log(print_r($featured_show, true));
 								<h2><b><?php the_field('concert_title_text'); ?></b></h2>
 							</div>
 						</div><!-- .header-concerts -->
-						<?php
-							$first_show = array_shift($shows);
-							$info = vera_shows_get_all_info($first_show);
-						?>
 						<div class="row no-gutters body-shows">
 							<div class="col-md-7">
 								<div class="featured-show">
@@ -85,11 +86,12 @@ error_log(print_r($featured_show, true));
                                         <div class="show-support"><?= $featured_show->support ?></div>
 									</header>
 									<div class="show-details">
-										<?= $info['date']; ?><br>
+										<?= $featured_show->show_date_start->format('D, M j'); ?><br>
 										<i class="fa fa-map-marker"></i> <?= $featured_show->event_label ?><br>
 										<?= $featured_show->price ?><br>
-										<?= $info['time'] ?>
+										<?= $featured_show->show_time_start->format('gA');?>
 									</div>
+                                    <a class="more" target="_blank" href=<?= $featured_show->detailed_link ?> >Learn More</a>
 									<a class="more" target="_blank" href=<?= $featured_show->event_link ?> >Tickets</a>
 								</div>
 							</div>
@@ -98,25 +100,24 @@ error_log(print_r($featured_show, true));
 									<div class="list-title">More Upcoming Shows</div>
 
 									<ul class="list-body">
-										<?  foreach ($shows as $show):
-											$info = vera_shows_get_list_info($show);
-										    error_log('other info');
-											error_log(print_r($info, true));
-										?>
-											<li class="list-item clearfix">
-												<div class="wrapper-left">
-													<div class="event-date"><?= $info['date'] ?></div>
-													<div class="event-title">
-														<a href="<?= $info['link'] ?>"><?= $info['title'] ?></a>
-													</div>
-												</div>
-												<div class="wrapper-right">
-													<span class="event-icon icon-ticket"></span>
-												</div>
-											</li>
-										<? endforeach; ?>
+										<?php
+                                        foreach ($event_shows as $event_show) {
+                                            ?>
+                                            <li class="list-item clearfix">
+                                                <div class="wrapper-left">
+                                                    <div class="event-date"><?= $event_show->show_date_start->format('D, M j'); ?></div>
+                                                    <div class="event-title">
+                                                        <a href="<?= $event_show->detailed_link ?>"><?= $event_show->event_title ?></a>
+                                                    </div>
+                                                </div>
+                                                <div class="wrapper-right">
+                                                    <a href="<?= $event_show->event_link ?>" target="_blank"><span class="event-icon icon-ticket"><i class="fa fa-ticket fa-2x"></i></span></a>
+                                                </div>
+                                            </li>
+
+                                    <?php } ?>
 									</ul>
-                                    <div class="list-more"><a href="http://events.theveraproject.org/" target="_blank">View All</a></div>
+                                    <div class="list-more"><a href="<?= the_field('shows_link') ?>" target="_blank">View All</a></div>
 								</div>
 							</div><!-- .shows-block -->
 						</div><!-- .body-concerts -->
