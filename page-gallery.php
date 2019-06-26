@@ -153,7 +153,11 @@ $gallery = vera_gallery_get_overview();
                             <p class="label">Call For Artists</p>
                             <h2 class="medium-header mb-1"><?php the_field('cfa_block_header'); ?></h2>
                             <p><?php the_field('cfa_block_description'); ?></p>
-                            <a href="<?php the_field('cfa_block_submit_url'); ?>" class="btn bordered-button btn-outline-primary">Submit A Proposal</a>
+                            <?php   $cfa_left_button = get_field('cfa_block_left_button');
+                                    $cfa_right_button = get_field('cfa_block_right_button'); ?>
+
+                            <a href="<?= $cfa_left_button['button_link'] ?>" class="btn bordered-button btn-outline-primary mr-3"><?= $cfa_left_button['button_text'] ?></a>
+                            <a href="<?= $cfa_right_button['button_link'] ?>" class="btn bordered-button btn-outline-primary"><?= $cfa_right_button['button_text'] ?></a>
                         </div>
 
                 </section>
