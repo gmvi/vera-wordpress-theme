@@ -15,6 +15,18 @@ add_action( 'init', 'vera_gallery_init' );
 //TODO: is there any way to hook to my calendar filter and add opening dates for galleries?
 
 function vera_gallery_init() {
+	register_taxonomy( 'gallery_cat', GALLERY_TYPE,
+		array(
+			'label'             => 'Gallery Categories',
+			'hierarchical'      => true,
+			'show_in_quick_edit'=> true,
+			'rewrite'           => array(
+				'slug' => 'galleries/category'
+			),
+			'show_in_nav_menus' => true,
+		)
+	);
+
 	register_post_type( 'galleries',
 
 		array(
@@ -42,16 +54,6 @@ function vera_gallery_init() {
 		)
 	);
 
-	register_taxonomy( 'gallery_cat', GALLERY_TYPE,
-		array(
-			'label'             => 'Gallery Categories',
-			'hierarchical'      => true,
-			'rewrite'           => array(
-				'slug' => 'galleries/category'
-			),
-			'show_in_nav_menus' => false,
-		)
-	);
 }
 
 // add Current Gallery and Up Next Gallery fields to row display
