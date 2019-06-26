@@ -11202,6 +11202,9 @@ section#past-gallery {
     margin-top: 0px;
     width: 30%; }
 
+.single-gallery-page h4.single-blog-title {
+  font-size: 25px; }
+
 .single-gallery-page .gallery-contents {
   padding: 0 30px 30px 0px; }
   .single-gallery-page .gallery-contents h1, .single-gallery-page .gallery-contents h2, .single-gallery-page .gallery-contents h3 {
@@ -11484,6 +11487,16 @@ when My Calendar is drawing out the events.
   .mc-main .my-calendar-nav li a {
     display: block;
     padding: 1px 20px; }
+
+.mc-main ul.mc-list li.mc-events div.list-event-card div.card-img-wrapper {
+  overflow: hidden;
+  max-height: 150px; }
+  .mc-main ul.mc-list li.mc-events div.list-event-card div.card-img-wrapper img.card-img-top {
+    position: relative;
+    top: -50%; }
+    @media (max-width: 767.98px) {
+      .mc-main ul.mc-list li.mc-events div.list-event-card div.card-img-wrapper img.card-img-top {
+        top: -25%; } }
 
 .mc-main table, .mc-main.calendar {
   line-height: 1.2;

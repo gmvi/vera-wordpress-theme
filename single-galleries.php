@@ -22,6 +22,10 @@ $container = get_theme_mod( 'understrap_container_type' );
                 $tag = ( get_field('current_gallery') ? 'current show' : (get_field('up_next_gallery') ? 'up next' : ''));
                 $subtitle = get_field('description');
 
+                $gallery_start = get_field('gallery_opening_datetime');
+                $formatted_opening_date = DateTime::createFromFormat('F j, Y h:i a', $gallery_start);
+                $tagline = 'Opening: ' . $formatted_opening_date->format('F j, h:iA');
+
                 include( locate_template( 'partial-templates/half-or-block-header.php'));
 
                 //get artist information
