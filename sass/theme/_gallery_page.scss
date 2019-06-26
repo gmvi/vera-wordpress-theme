@@ -146,20 +146,24 @@ section#past-gallery {
         font-size: 30px;
       }
 
-      div.past-gallery-nav button {
-        border-radius: 0px;
-        margin-right: 5px;
-        height: 35px;
-        width: 35px;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      div.past-gallery-index {
+      div.past-gallery-nav {
         font-family: BebasNeue;
         letter-spacing: 1.5px;
         color: $primary;
+        button {
+          border-radius: 0px;
+          margin-right: 5px;
+          height: 35px;
+          width: 35px;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      a.btn {
+        margin-top: 0px;
+        width: 30%;
       }
     }
 

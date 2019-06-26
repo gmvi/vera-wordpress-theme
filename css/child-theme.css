@@ -11186,18 +11186,21 @@ section#past-gallery {
     letter-spacing: 1.5px;
     color: #D41C53;
     font-size: 30px; }
-  section#past-gallery div.past-gallery-item div.past-gallery-info div.past-gallery-nav button {
-    border-radius: 0px;
-    margin-right: 5px;
-    height: 35px;
-    width: 35px;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center; }
-  section#past-gallery div.past-gallery-item div.past-gallery-info div.past-gallery-index {
+  section#past-gallery div.past-gallery-item div.past-gallery-info div.past-gallery-nav {
     font-family: BebasNeue;
     letter-spacing: 1.5px;
     color: #D41C53; }
+    section#past-gallery div.past-gallery-item div.past-gallery-info div.past-gallery-nav button {
+      border-radius: 0px;
+      margin-right: 5px;
+      height: 35px;
+      width: 35px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center; }
+  section#past-gallery div.past-gallery-item div.past-gallery-info a.btn, section#past-gallery div.past-gallery-item div.past-gallery-info div.mc-format a, div.mc-format section#past-gallery div.past-gallery-item div.past-gallery-info a {
+    margin-top: 0px;
+    width: 30%; }
 
 .single-gallery-page .gallery-contents {
   padding: 0 30px 30px 0px; }
@@ -12336,6 +12339,10 @@ div.centered-text p {
     color: #D41C53; }
   .embedded-calendar table caption {
     display: none; }
+
+@media (max-width: 767.98px) {
+  section.no-results {
+    padding: 30px 15px; } }
 
 /* Footer */
 div#wrapper-footer div.donate-footer {

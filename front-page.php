@@ -8,7 +8,6 @@ get_header();
 
 // Get container type from Wordpress Customizer
 $container = get_theme_mod( 'understrap_container_type' );
-$shows = vera_shows_get_front_page();
 
 $show_args = array (
         'before'    => 1,

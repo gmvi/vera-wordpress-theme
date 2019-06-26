@@ -102,17 +102,16 @@ $gallery = vera_gallery_get_overview();
                                         <p class="mt-3"><?= $gallery_desc; ?></p>
                                     </div>
 
-                                    <div>
-                                        <div class="float-left past-gallery-nav">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="past-gallery-nav">
                                             <button class="btn bordered-button btn-outline-primary" id="prev-gallery-item">❮</button>
                                             <button class="btn bordered-button btn-outline-primary" id="next-gallery-item">❯</button>
-                                        </div>
-                                        <div class="float-right past-gallery-index">
                                             <span class="gallery-index"></span>
                                             <span>
                                                 &#8213; <?php echo pad_zeroes(sizeof($gallery['past'])); ?>
                                             </span>
                                         </div>
+                                        <a class="btn bordered-button btn-outline-primary" href="<?= the_field('archive_gallery_link') ?>">ARCHIVE</a>
                                     </div>
 
                                 </div>

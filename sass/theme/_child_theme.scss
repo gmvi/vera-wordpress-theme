@@ -761,6 +761,13 @@ div.centered-text p {
 	}
 }
 
+section.no-results {
+	@include media-breakpoint-down(sm) {
+		padding: 30px 15px;
+	}
+}
+
+
 /* Footer */
 
 $footer-height: 340px;
