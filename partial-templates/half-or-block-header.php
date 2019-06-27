@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Allows user to set tag (optional), title, and subtitle (optional).
+ * Allows user to set tag (optional), title, subtitle (optional), and tagline (optional).
  * See page.php and single-galleries.php for usage.
  *
  * Example:
@@ -9,6 +9,7 @@
  * $tag = 'cats'
  * $title = 'is';
  * $subtitle = 'one';
+ * $tagline = 'hellooo';
  *
  * include( locate_template( 'partial-templates/half-or-block-header.php'));
  *
@@ -36,6 +37,9 @@ if (has_post_thumbnail( get_the_ID() )) { ?>
 							echo "<p class=\"text-white-50 mt-3\">" . $subtitle . "</p>";
 						}
 
+						if(strlen(trim($tagline)) > 0) {
+							echo "<h4 class=\"single-blog-title text-white mt-1\">" . $tagline .  "</h4>";
+						}
 						?>
                     </div>
                 </div>

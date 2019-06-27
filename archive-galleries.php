@@ -11,7 +11,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="wrapper" id="index-wrapper">
+<div class="container-fluid">
+    <section class="row justify-content-md-center pb-1 no-gutters">
+        <div class="col-md-8 text-center">
+            <h2 class="medium-header">In the Gallery</h2>
+        </div>
+    </section>
+
+	<?php
+	$menu_name = 'archive-gallery';
+	$wrapper_class_name = 'blog-subheader';
+	include( locate_template( 'partial-templates/centered-submenu.php') );
+
+	?>
 
     <div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
         <div>
@@ -29,10 +41,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
             </div>
         </div>
-
-        <div id="blog-pagination" class="row justify-content-between">
-            <div class="col-md-2 text-center text-md-left"><?php previous_posts_link( '&#8592; Newer posts' ); ?></div>
-            <div class="col-md-2 text-center text-md-left"><?php next_posts_link( 'Older posts &#8594;' ); ?></div>
-        </div>
     </div>
 </div>
+
+<div id="blog-pagination" class="row justify-content-between">
+    <div class="col-md-2 text-center text-md-left"><?php previous_posts_link( '&#8592; Newer posts' ); ?></div>
+    <div class="col-md-2 text-center text-md-left"><?php next_posts_link( 'Older posts &#8594;' ); ?></div>
+</div>
+</div>
+
+<?php get_footer(); ?>

@@ -42,7 +42,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     endforeach;
                 }
                 ?>
-                <div class="vera-bordered-social-icons pl-3 pt-5">
+                <div class="vera-bordered-social-icons pl-3 pt-3">
                     <a href="https://www.facebook.com/theveraproject" target="_blank"><i class="fa fa-facebook-f"></i></a>
                     <a href="https://twitter.com/veraproject" target="_blank"><i class="fa fa-twitter"></i></a>
                     <a href="https://www.instagram.com/veraproject" target="_blank"><i class="fa fa-instagram"></i></a>

@@ -37,6 +37,19 @@ when My Calendar is drawing out the events.
       }
     }
   }
+
+  ul.mc-list li.mc-events div.list-event-card div.card-img-wrapper {
+      overflow: hidden;
+      max-height: 150px;
+      img.card-img-top {
+        position: relative;
+        top: -50%;
+        @include media-breakpoint-down(sm) {
+          top: -25%;
+        }
+      }
+  }
+
   table, &.calendar {
     @extend .w-100;
     line-height: 1.2;

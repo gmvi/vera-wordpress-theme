@@ -21,7 +21,8 @@ $gallery = vera_gallery_get_overview();
             <?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
 
             <?php get_template_part('partial-templates/pageblurb'); ?>
-            <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
+
+            <div class="container-fluid" style="padding-left: 0px; padding-right: 0px; margin-top: 50px;">
                 <section class="row no-gutters current-gallery">
                     <div class="col-sm-6">
                         <div class="row align-items-center h-100 no-gutters">
@@ -101,17 +102,16 @@ $gallery = vera_gallery_get_overview();
                                         <p class="mt-3"><?= $gallery_desc; ?></p>
                                     </div>
 
-                                    <div>
-                                        <div class="float-left past-gallery-nav">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="past-gallery-nav">
                                             <button class="btn bordered-button btn-outline-primary" id="prev-gallery-item">❮</button>
                                             <button class="btn bordered-button btn-outline-primary" id="next-gallery-item">❯</button>
-                                        </div>
-                                        <div class="float-right past-gallery-index">
                                             <span class="gallery-index"></span>
                                             <span>
                                                 &#8213; <?php echo pad_zeroes(sizeof($gallery['past'])); ?>
                                             </span>
                                         </div>
+                                        <a class="btn bordered-button btn-outline-primary" href="<?= the_field('archive_gallery_link') ?>">ARCHIVE</a>
                                     </div>
 
                                 </div>
@@ -153,7 +153,11 @@ $gallery = vera_gallery_get_overview();
                             <p class="label">Call For Artists</p>
                             <h2 class="medium-header mb-1"><?php the_field('cfa_block_header'); ?></h2>
                             <p><?php the_field('cfa_block_description'); ?></p>
-                            <a href="<?php the_field('cfa_block_submit_url'); ?>" class="btn bordered-button btn-outline-primary">Submit A Proposal</a>
+                            <?php   $cfa_left_button = get_field('cfa_block_left_button');
+                                    $cfa_right_button = get_field('cfa_block_right_button'); ?>
+
+                            <a href="<?= $cfa_left_button['button_link'] ?>" class="btn bordered-button btn-outline-primary mr-3"><?= $cfa_left_button['button_text'] ?></a>
+                            <a href="<?= $cfa_right_button['button_link'] ?>" class="btn bordered-button btn-outline-primary"><?= $cfa_right_button['button_text'] ?></a>
                         </div>
 
                 </section>
