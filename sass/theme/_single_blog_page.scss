@@ -19,6 +19,11 @@
   background-position: left top;
   background-repeat: no-repeat;
   background-size: auto;
+  @include media-breakpoint-down(sm) {
+    div.col-sm-8 {
+      width: 80%;
+    }
+  }
 }
 
 .blog-contents {

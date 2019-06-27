@@ -22,6 +22,10 @@ $container = get_theme_mod( 'understrap_container_type' );
                 $tag = ( get_field('current_gallery') ? 'current show' : (get_field('up_next_gallery') ? 'up next' : ''));
                 $subtitle = get_field('description');
 
+                $gallery_start = get_field('gallery_opening_datetime');
+                $formatted_opening_date = DateTime::createFromFormat('F j, Y h:i a', $gallery_start);
+                $tagline = 'Opening: ' . $formatted_opening_date->format('F j, h:iA');
+
                 include( locate_template( 'partial-templates/half-or-block-header.php'));
 
                 //get artist information
@@ -56,6 +60,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 									                    break;
 								                    case 'Twitter':
 									                    echo "<i class=\"fa fa-twitter text-primary\"></i>";
+									                    break;
+								                    case 'Website':
+									                    echo "<i class=\"fa fa-globe text-primary\"></i>";
+									                    break;
+								                    case 'Spotify':
+									                    echo "<i class=\"fa fa-spotify text-primary\"></i>";
+									                    break;
+								                    case 'Soundcloud':
+									                    echo "<i class=\"fa fa-soundcloud text-primary\"></i>";
+									                    break;
+								                    case 'Bandcamp':
+									                    echo "<i class=\"fa fa-bandcamp text-primary\"></i>";
+									                    break;
+								                    case 'Youtube':
+									                    echo "<i class=\"fa fa-youtube-play text-primary\"></i>";
+									                    break;
+								                    case 'Snapchat':
+									                    echo "<i class=\"fa fa-snapchat text-primary\"></i>";
 									                    break;
 							                    }
 

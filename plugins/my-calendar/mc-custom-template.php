@@ -62,7 +62,6 @@ function add_event_location_hidden($body, $event_title, $event) {
  */
 add_filter( 'mc_custom_template', 'my_custom_calendar', 10, 7);
 function my_custom_calendar( $body = false, $data, $event, $type, $process_date, $time, $template ) {
-//    error_log("event is " . json_encode($event), 0 );
 //    $hidden_event_category = '<span class="HIDDEN-CATEGORY" style="display:none;">' . $event['event_label'] . '</span>';
     // todo: add in hidden field w/ all the `event_label`s, use jquery to aggregate them all and create a locations select field
     //   like the categories select
@@ -74,15 +73,18 @@ function my_custom_calendar( $body = false, $data, $event, $type, $process_date,
             $num_words = 65;
             $excerpt   = wp_trim_words( $data['description'], $num_words );
             $body = '<div class="row">
-    <div class="list-event-card card w-100 mx-3 mb-2 rounded-0">
-      <div class="card-body">
-        <a href="'. $data['details_link'] .'" class="stretched-link"><h3 class="card-title my-1">' . $data['title'] . '</h3></a>
-        <h4 class="card-subtitle mb-3">' . $data['timerange'] . '</h4>
-        <p class="card-text">' . $excerpt . '</p>
-      </div>
-    </div>
-    <span class="HIDDEN-CATEGORY" style="display:none;">' . $event->event_label . '</span>
-</div>';
+					    <div class="list-event-card card w-100 mx-3 mb-2 rounded-0">
+					      <div class="card-img-wrapper">
+				          	<img class="card-img-top" src="' . $data['medium_large_url'] . '"/>
+				          </div>
+					      <div class="card-body">
+					        <a href="'. $data['details_link'] .'" class="stretched-link"><h3 class="card-title my-1">' . $data['title'] . '</h3></a>
+					        <h4 class="card-subtitle mb-3">' . $data['timerange'] . '</h4>
+					        <p class="card-text">' . $excerpt . '</p>
+					      </div>
+					    </div>
+					    <span class="HIDDEN-CATEGORY" style="display:none;">' . $event->event_label . '</span>
+					</div>';
             break;
         case 'mini':
             $body = '<div class="mini-event-detail py-1 py-sm-3">

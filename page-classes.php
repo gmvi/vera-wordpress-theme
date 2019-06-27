@@ -124,7 +124,7 @@ function calendar_date_parse($my_calendar_date) {
 						</div><!-- .body -->
 					</section><!-- .info -->
 
-					<section class="classes">
+					<section class="classes-section">
 						<div class="row body">
 							<div class="list-header m-auto">
 								<a class="filter-category<?= cat_active(""); ?>" href="./">All</a>

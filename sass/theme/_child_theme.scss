@@ -225,8 +225,22 @@ left padding is 100px
 	margin-right: 0.4em;
 }
 
-div.vera-bordered-social-icons {
 
+
+//need to set explicit icon padding to make them 37x37
+$social-icons: (
+	'facebook-f' : .6em .81em,
+	'instagram': .6em .69em,
+	'twitter': .6em .64em,
+	'globe': .6em .67em,
+	'spotify': .6em .67em,
+	'soundcloud': .6em .46em,
+	'bandcamp': .6em,
+	'youtube-play': .6em,
+	'snapchat': .6em .67em
+);
+
+div.vera-bordered-social-icons {
 	@include media-breakpoint-down(sm) {
 		text-align: center;
 	}
@@ -235,21 +249,14 @@ div.vera-bordered-social-icons {
 		color: white;
 	}
 
-	i[class^="fa fa-facebook-f"] {
+	i[class^="fa fa-"] {
 		@extend %vera-bordered-social;
-		padding: .6em .8em;
 	}
-	i[class^="fa fa-twitter"] {
-		@extend %vera-bordered-social;
-		padding: .6em .64em;
-	}
-	i[class^="fa fa-instagram"] {
-		@extend %vera-bordered-social;
-		padding: .6em .64em;
-	}
-	i[class^="fa fa-youtube-play"] {
-		@extend %vera-bordered-social;
-		padding: .6em .55em;
+
+	@each $social, $padding in $social-icons {
+		i[class^="fa fa-#{$social}"] {
+			padding: $padding;
+		}
 	}
 }
 
@@ -259,6 +266,9 @@ div.vera-bordered-social-icons {
     font-family: BebasNeue;
     font-size: 96px;
     letter-spacing: 1.5px;
+	@include media-breakpoint-down(sm) {
+		font-size: 80px;
+	}
 }
 
 .entry-header .wp-post-image {
@@ -438,7 +448,12 @@ ul.menu {
     text-transform: uppercase;
     letter-spacing: 1.8px;
     h1 {font-size: 96px; }
-    h2 { font-size: 72px; }
+    h2 {
+		font-size: 72px;
+		@include media-breakpoint-down(sm) {
+			font-size: 60px;
+		}
+	}
     h3 { font-size: 56px; }
 }
 
@@ -452,7 +467,17 @@ ul.menu {
 }
 
 .entry-content section {
-    padding: 40px 0 0px;
+    //padding: 40px 0 0px;
+	padding: 30px 0 0px;
+
+	a.bordered-button {
+		margin-top: 0px;
+	}
+
+	//on mobile, increase spacing between sections
+	@include media-breakpoint-down(sm) {
+		margin: 40px 0px;
+	}
 
     .header {
     	@extend %section-header;
@@ -474,6 +499,9 @@ section.blurb {
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 1.5rem;
+	@include media-breakpoint-down(sm) {
+		margin-top: 0px; //override margins since this is first block on front page
+	}
 	div.container {
 		div#blurb-header {
 			p {
@@ -512,6 +540,9 @@ section.blurb {
 		font-weight: 100;
 		font-style: normal;
 		font-stretch: normal;
+		@include media-breakpoint-down(sm) {
+			font-size: 35px;
+		}
 		strong {
 			color: #d41c53;
 			font-family: $header-font;
@@ -524,6 +555,9 @@ section.blurb {
 		line-height: 1.5;
 		text-align: center;
 		letter-spacing: normal;
+		@include media-breakpoint-down(sm) {
+			font-size: 16px;
+		}
 	}
 }
 
@@ -727,9 +761,16 @@ div.centered-text p {
 	}
 }
 
+section.no-results {
+	@include media-breakpoint-down(sm) {
+		padding: 30px 15px;
+	}
+}
+
+
 /* Footer */
 
-$footer-height: 400px;
+$footer-height: 340px;
 
 div#wrapper-footer {
 
@@ -846,10 +887,6 @@ div#wrapper-footer {
 			font-family: GothicA1;
 			font-size: 18px;  line-height: 1.5;
 			padding-bottom: 15px;
-
-			@include media-breakpoint-down(sm) {
-				margin-top: 2rem;
-			}
 		}
 
 		.footer-directions {
@@ -860,7 +897,8 @@ div#wrapper-footer {
 			padding: 0 0 5rem 0;
 
 			@include media-breakpoint-down(sm) {
-				margin-top: 1.5rem;
+				padding: 0 0 3rem 0;
+			//	margin-top: 1.5rem;
 			}
 		}
 	}
