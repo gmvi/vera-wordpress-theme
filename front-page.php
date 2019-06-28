@@ -10,7 +10,7 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
 $show_args = array (
-        'before'    => 1,
+        'before'    => 0,
         'today'    => 'yes',
         'category'  => 'Shows'
 );
