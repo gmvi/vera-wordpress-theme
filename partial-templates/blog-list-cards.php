@@ -11,7 +11,6 @@
  *      include( locate_template( 'partial-templates/blog-list-cards.php') );?>
  */
 ?>
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
 	<?php $cardclass = (has_post_thumbnail() ? 'card-picture': 'card-pictureless')?>
     <div class="card border-0 <?php echo $cardclass ?> hoverable">
@@ -27,9 +26,15 @@
 
                 if ( is_post_type_archive(GALLERY_TYPE) ) {
 	                $opening_date = get_field('gallery_opening_datetime');
-	                $formatted_opening_date = DateTime::createFromFormat('F j, Y h:i a', $opening_date);
+	                $end_date = get_field('gallery_end_date');
 
-	                echo $formatted_opening_date->format('F j') . ' - ' . get_field('gallery_end_date');
+	                if ( $opening_date && $end_date) {
+	                    $formatted_opening_date = DateTime::createFromFormat('F j, Y h:i a', $opening_date);
+		                $formatted_end_date = DateTime::createFromFormat('F j, Y', $end_date);
+
+	                    echo $formatted_opening_date->format('F Y');
+                    }
+
                 } else {
 	                echo get_the_date();
                 }
