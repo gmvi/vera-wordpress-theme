@@ -20,8 +20,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <?php
-                        $title = get_the_title();
-                        include( locate_template( 'partial-templates/half-or-block-header.php'));
+
+                        if (has_post_thumbnail( get_the_ID() )) {
+                            get_template_part('partial-templates/titlecard-fullwidth');
+                        } else {
+                            get_template_part( 'partial-templates/block-header');
+                        }
 
                         global $post;
                         $wrapper_class_name = 'entry-header';
@@ -33,6 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             $menu_name = get_post_field( 'post_name', $post->post_parent );
                         }
                         include( locate_template( 'partial-templates/centered-submenu.php') );
+
                     ?>
 					<div id="content" class="entry-content">
                         <div class="row pt-4 pb-4 ml-1 no-gutters">
