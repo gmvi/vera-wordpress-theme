@@ -11104,7 +11104,7 @@ section.classes-section {
 
 section#up-next-gallery {
   background: black;
-  height: 200px;
+  min-height: 200px;
   position: relative; }
   @media (min-width: 992px) {
     section#up-next-gallery {
