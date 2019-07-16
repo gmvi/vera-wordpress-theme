@@ -12352,6 +12352,8 @@ div.centered-text p {
     color: #D41C53; }
   .embedded-calendar table caption {
     display: none; }
+  .embedded-calendar .my-calendar-footer div.my-calendar-nav {
+    padding-top: .5rem; }
 
 @media (max-width: 767.98px) {
   section.no-results {

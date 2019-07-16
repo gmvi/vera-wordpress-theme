@@ -759,6 +759,12 @@ div.centered-text p {
 	table caption {
 		display: none;
 	}
+
+	.my-calendar-footer {
+		div.my-calendar-nav {
+			padding-top: .5rem;
+		}
+	}
 }
 
 section.no-results {
