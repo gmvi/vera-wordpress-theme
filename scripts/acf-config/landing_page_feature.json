@@ -1,0 +1,124 @@
+[
+    {
+        "key": "group_5d2d0d74b9f10",
+        "title": "Landing Page Feature",
+        "fields": [
+            {
+                "key": "field_5d2d0da64bbd8",
+                "label": "Program Types",
+                "name": "program_types",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5d2d0dcf4bbd9",
+                        "label": "Program Type Header",
+                        "name": "program_type_header",
+                        "type": "text",
+                        "instructions": "Header for the specific program, e.g. \"open studios\" or \"classes\"",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5d2d0dee4bbda",
+                        "label": "Program Type Signup",
+                        "name": "program_type_signup",
+                        "type": "url",
+                        "instructions": "Link to signup for program type, can be external or internal",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_5d2d0e054bbdb",
+                        "label": "Program Type Image",
+                        "name": "program_type_image",
+                        "type": "image",
+                        "instructions": "Image for the program type, will be displayed to the left of the descriptions \/ header",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_5d2d0e164bbdc",
+                        "label": "Program Type Description",
+                        "name": "program_type_description",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": 5,
+                        "new_lines": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "page-templates\/program-landing-generic.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

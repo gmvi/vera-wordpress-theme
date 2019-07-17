@@ -61,7 +61,12 @@ if (!$featured_show) {
 
 			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-				<?php get_template_part('partial-templates/titlecard-fullwidth'); ?>
+                <?php
+
+                $featured_img_url = $featured_show->event_image;
+                include( locate_template( 'partial-templates/titlecard-fullwidth.php') );
+
+                ?>
 
 				<div class="entry-content text-center">
 

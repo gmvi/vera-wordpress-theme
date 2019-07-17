@@ -27,7 +27,9 @@ if (has_post_thumbnail( get_the_ID() )) { ?>
 
 						if(strlen(trim($tag)) > 0) {
 							echo "<span class=\"label\">" . $tag . " </span>";
-						}
+						} else {
+							get_template_part('partial-templates/category-labels');
+                        }
 
 						if(strlen(trim($title)) > 0) {
 							echo "<h2 class=\"single-blog-title text-white mb-0\">" . $title .  "</h2>";

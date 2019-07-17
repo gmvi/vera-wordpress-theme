@@ -1,6 +1,11 @@
 <?php
 $label = get_field('label');
 $custom_title = get_field('title');
+
+if (!$featured_img_url) {
+    $featured_img_url = get_the_post_thumbnail_url( $post->ID, 'large');
+}
+
 ?>
 
 <header class="entry-header text-center">
@@ -20,7 +25,7 @@ $custom_title = get_field('title');
 						?>
 					</h1>
 				</div>
-				<?php echo get_the_post_thumbnail( $post->ID, 'large'); ?>
+                <img class="attachment-large size-large wp-post-image" src="<?= $featured_img_url ?>">
 			</div>
 		</div>
 	</div>
