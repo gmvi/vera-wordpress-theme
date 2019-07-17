@@ -49,13 +49,21 @@ function vera_gallery_get_overview() {
 	$old_galleries = new WP_Query(array(
 		'post_type' => GALLERY_TYPE,
 		'post_status' => 'published',
-		'posts_per_page' => -1, //TODO: maybe they want to limit this?
+		'posts_per_page' => 10,
 		'meta_query' => array(
 			array(
 				'key' => 'gallery_end_date',
 				'compare' => '<',
 				'value' => current_time('Ymd'),
-			),
+			)
+		),
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'gallery_cat',
+				'field' => 'slug',
+				'terms' => array( 'previous-calls', 'current-calls' ),
+				'operator' => 'NOT IN'
+			)
 		),
 	));
 

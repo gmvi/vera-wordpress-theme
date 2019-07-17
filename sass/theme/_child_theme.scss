@@ -759,6 +759,12 @@ div.centered-text p {
 	table caption {
 		display: none;
 	}
+
+	.my-calendar-footer {
+		div.my-calendar-nav {
+			padding-top: .5rem;
+		}
+	}
 }
 
 section.no-results {
@@ -800,6 +806,10 @@ div#wrapper-footer {
 			font-size: 72px;
 			color: white;
 			letter-spacing: 1.5px;
+
+			@include media-breakpoint-down(sm) {
+				font-size: 35px;
+			}
 
 			strong {
 				color: $primary;
@@ -874,12 +884,14 @@ div#wrapper-footer {
 			margin-top: 2rem;
 			padding-bottom: 1rem;
 			font-family: BebasNeue;
-			font-size: 72px;  line-height: 1;
+			font-size: 72px;
+			line-height: 1;
 			letter-spacing: 1.5px;
 			color: $primary;
 
 			@include media-breakpoint-down(sm) {
 				margin-top: 3rem;
+				font-size: 60px;
 			}
 		}
 

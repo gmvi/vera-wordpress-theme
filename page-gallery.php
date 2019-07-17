@@ -31,7 +31,14 @@ $gallery = vera_gallery_get_overview();
                                 <h2 class="medium-header mb-1"><?php echo $gallery['current']->post_title; ?></h2>
                                 <p><?php the_field('description', $gallery['current']->ID); ?></p>
                                 <p><b>Exhibit up until <?php the_field('gallery_end_date', $gallery['current']->ID); ?><br>
-                                        Opening: <?php the_field('gallery_opening_datetime', $gallery['current']->ID); ?></b></p>
+                                        <?php
+                                        $current_opening = the_field('gallery_opening_datetime', $gallery['current']->ID);
+
+                                        if( $current_opening ):
+                                            echo "Opening: " . $current_opening;
+                                        endif;
+                                        ?>
+                                </b></p>
                                 <a href="<?= get_permalink($gallery['current']->ID); ?>" class=" btn bordered-button btn-outline-primary">Learn More</a>
                             </div>
                         </div>
@@ -61,8 +68,10 @@ $gallery = vera_gallery_get_overview();
 
                             echo $formatted_opening_date->format('F j') . ' - ' . get_field('gallery_end_date', $gallery['up_next']->ID); ?>
                         </p>
+
+
                         <p class="m-0 w-50">
-                            Opening: <?php echo $formatted_opening_date->format('F j, h:i a') ?>
+                            Opening: <?php echo $formatted_opening_date->format('F Y') ?>
                         </p>
                     </div>
                 </section>

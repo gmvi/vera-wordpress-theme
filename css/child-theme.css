@@ -11104,7 +11104,7 @@ section.classes-section {
 
 section#up-next-gallery {
   background: black;
-  height: 200px;
+  min-height: 200px;
   position: relative; }
   @media (min-width: 992px) {
     section#up-next-gallery {
@@ -12352,6 +12352,8 @@ div.centered-text p {
     color: #D41C53; }
   .embedded-calendar table caption {
     display: none; }
+  .embedded-calendar .my-calendar-footer div.my-calendar-nav {
+    padding-top: .5rem; }
 
 @media (max-width: 767.98px) {
   section.no-results {
@@ -12378,6 +12380,9 @@ div#wrapper-footer div.donate-footer {
     font-size: 72px;
     color: white;
     letter-spacing: 1.5px; }
+    @media (max-width: 767.98px) {
+      div#wrapper-footer div.donate-footer h1 {
+        font-size: 35px; } }
     div#wrapper-footer div.donate-footer h1 strong {
       color: #D41C53;
       font-family: BebasNeue;
@@ -12440,7 +12445,8 @@ div#wrapper-footer .site-footer {
     color: #D41C53; }
     @media (max-width: 767.98px) {
       div#wrapper-footer .site-footer .footer-title {
-        margin-top: 3rem; } }
+        margin-top: 3rem;
+        font-size: 60px; } }
   div#wrapper-footer .site-footer .footer-content {
     font-family: GothicA1;
     font-size: 18px;

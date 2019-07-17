@@ -24,7 +24,7 @@ $container-padding: 0px !important;
 
 section#up-next-gallery {
   background: black;
-  height: 200px;
+  min-height: 200px;
   position: relative;
 
   @include media-breakpoint-up(lg) {

@@ -8,8 +8,7 @@
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
-$program_types = SCF::get( 'Program Types' );
-
+$program_types = get_field('program_types');
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -31,28 +30,33 @@ $program_types = SCF::get( 'Program Types' );
                         include( locate_template( 'partial-templates/centered-submenu.php') );
                     ?>
 					<div id="content" class="entry-content text-center">
-                        <?php get_template_part('partial-templates/pageblurb'); ?>
+                        <?php get_template_part('partial-templates/pageblurb');
 
-						<section class="featured">
-						<?php foreach ($program_types as $i => $program) { ?>
-                            <div class="row justify-content-around pb-4 no-gutters">
-                                <div class="col-md-5">
-                                    <img class="featured-image p-2" src="<?php echo wp_get_attachment_url($program['program_type_image']) ?>"/>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="row pl-2 no-gutters">
-                                        <div class="col-sm-10 align-self-center featured-info pt-4">
-                                            <h2><?php echo $program['program_type_header']?></h2>
-                                            <p><?php echo $program['program_type_description']?></p>
-                                            <a class="btn bordered-button btn-outline-primary" href="<?php echo $program['program_type_signup']?>">sign up</a>
+                        if ($program_types) {
+	                        ?>
+                            <section class="featured">
+		                        <?php foreach ( $program_types as $i => $program ) { ?>
+                                    <div class="row justify-content-around pb-4 no-gutters">
+                                        <div class="col-md-5">
+                                            <img class="featured-image p-2"
+                                                 src="<?php echo $program['program_type_image']['sizes']['large']; ?>"/>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="row pl-2 no-gutters">
+                                                <div class="col-sm-10 align-self-center featured-info pt-4">
+                                                    <h2><?php echo $program['program_type_header'] ?></h2>
+                                                    <p><?php echo $program['program_type_description'] ?></p>
+                                                    <a class="btn bordered-button btn-outline-primary"
+                                                       href="<?php echo $program['program_type_signup'] ?>">sign up</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-						<?php } ?>
-						</section>
+		                        <?php } ?>
+                            </section>
+	                        <?php
+                        }
 
-                    <?php
                         if (!get_field('quote_text')) { $no_bottom_cutout = true; }
 					    include( locate_template( 'partial-templates/support-block.php') );
                         if (get_field('quote_text')): ?>
