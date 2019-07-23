@@ -18,7 +18,7 @@
 			<?php get_template_part('partial-templates/category-labels'); ?>
         </div>
 		<?php if (has_post_thumbnail()): ?>
-            <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('medium')?>">
+            <img class="card-img-top square" style="object-fit:cover;" src="<?php echo the_post_thumbnail_url('large')?>">
 		<?php endif ?>
         <div class="card-body d-flex flex-column">
             <p class="blog-overview-date">
