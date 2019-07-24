@@ -35,7 +35,8 @@ $program_types = get_field('program_types');
                         if ($program_types) {
 	                        ?>
                             <section class="featured">
-		                        <?php foreach ( $program_types as $i => $program ) { ?>
+		                        <?php foreach ( $program_types as $i => $program ) {
+		                            ?>
                                     <div class="row justify-content-around pb-4 no-gutters">
                                         <div class="col-md-5">
                                             <img class="featured-image p-2"
@@ -46,8 +47,10 @@ $program_types = get_field('program_types');
                                                 <div class="col-sm-10 align-self-center featured-info pt-4">
                                                     <h2><?php echo $program['program_type_header'] ?></h2>
                                                     <p><?php echo $program['program_type_description'] ?></p>
+                                                    <?php if ($program['program_type_signup']) :?>
                                                     <a class="btn bordered-button btn-outline-primary"
-                                                       href="<?php echo $program['program_type_signup'] ?>">sign up</a>
+                                                       href="<?= $program['program_type_signup'] ?>"><?= $program['program_type_signup_label']?></a>
+                                                    <?php endif; ?>
                                                 </div>
                                             </div>
                                         </div>
