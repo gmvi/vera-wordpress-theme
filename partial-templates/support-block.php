@@ -27,7 +27,7 @@ if (get_field('support_vera_text')):
 		<polygon  points="0,0 50,0 50,50"></polygon>
 	</svg>
     <?php if (!$no_bottom_cutout): ?>
-	<svg class="bottom-cutout" style="display:block; fill: <?php echo $support_footer_color ?>" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
+	<svg class="bottom-cutout" style="fill: <?php echo $support_footer_color ?>" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" preserveAspectRatio="none">
 		<polygon  points="50,50 0,50 0,0"></polygon>
 	</svg>
     <?php endif; ?>
