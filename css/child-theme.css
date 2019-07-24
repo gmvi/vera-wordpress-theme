@@ -12204,22 +12204,32 @@ section.info {
     margin: 0 auto; }
 
 /* svg banners */
+@media (max-width: 767.98px) {
+  .svg-banner-heights, section.volunteer-today svg.top-cutout, section.volunteer-today-landing svg.top-cutout, section.landing-quote svg.top-cutout, section.volunteer-today svg.bottom-cutout, section.volunteer-today-landing svg.bottom-cutout, section.landing-quote svg.bottom-cutout {
+    height: 50px; } }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .svg-banner-heights, section.volunteer-today svg.top-cutout, section.volunteer-today-landing svg.top-cutout, section.landing-quote svg.top-cutout, section.volunteer-today svg.bottom-cutout, section.volunteer-today-landing svg.bottom-cutout, section.landing-quote svg.bottom-cutout {
+    height: 75px; } }
+
+@media (min-width: 992px) {
+  .svg-banner-heights, section.volunteer-today svg.top-cutout, section.volunteer-today-landing svg.top-cutout, section.landing-quote svg.top-cutout, section.volunteer-today svg.bottom-cutout, section.volunteer-today-landing svg.bottom-cutout, section.landing-quote svg.bottom-cutout {
+    height: 100px; } }
+
 section.volunteer-today, section.volunteer-today-landing, section.landing-quote {
   position: relative;
-  min-height: 450px;
+  min-height: 400px;
   color: white; }
   section.volunteer-today svg.top-cutout, section.volunteer-today-landing svg.top-cutout, section.landing-quote svg.top-cutout {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    height: 10vw; }
+    width: 100%; }
   section.volunteer-today svg.bottom-cutout, section.volunteer-today-landing svg.bottom-cutout, section.landing-quote svg.bottom-cutout {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 10vw;
     z-index: 102;
     /* set height to pixels if you want angle to change with screen width */ }
   section.volunteer-today div.content-overlay, section.volunteer-today-landing div.content-overlay, section.landing-quote div.content-overlay {

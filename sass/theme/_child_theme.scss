@@ -577,26 +577,38 @@ section.info {
 
 /* svg banners */
 
+.svg-banner-heights {
+	@include media-breakpoint-down(sm) {
+		height: 50px;
+	}
+	@include media-breakpoint-only(md) {
+		height: 75px;
+	}
+	@include media-breakpoint-up(lg) {
+		height: 100px;
+	}
+}
+
 %banner-base {
 	position: relative;
-	min-height: 450px;
+	min-height: 400px;
 	//background-color: $primary; *extender of this should set background color
 	color: white;
 	svg.top-cutout {
+		@extend .svg-banner-heights;
 		//fill: white; *extender of this should set fill
 		position: absolute;
 		top: 0;
 		right: 0;
 		width: 100%;
-		height: 10vw;
 	}
 	svg.bottom-cutout {
+		@extend .svg-banner-heights;
 		//fill: white; *extender of this should set fill
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 10vw;
 		z-index: 102;
 		/* set height to pixels if you want angle to change with screen width */
 	}

@@ -177,7 +177,7 @@ if (!$featured_show) {
                             </div>
                         </div>
 
-                        <div class="row justify-content-md-center pb-1 no-gutters">
+                        <div class="row justify-content-sm-center pb-1 no-gutters">
                             <div class="col-sm-11">
                                 <div class="card-deck pb-2">
 			                        <?php
@@ -228,7 +228,7 @@ if (!$featured_show) {
 								<!-- TODO: no blog posts are available, need designs for this -->
 							</div>
 <?php	else :?>
-        <div class="row justify-content-md-center pb-1 no-gutters">
+        <div class="row justify-content-sm-center pb-1 no-gutters">
             <div class="col-sm-11">
                 <div class="card-deck pb-2">
                     <?php
